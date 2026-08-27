@@ -26,7 +26,13 @@ import feedparser
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-UA = "Mozilla/5.0 (compatible; MorningBriefBot/1.0; RSS reader)"
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
+HEADERS = {
+    "User-Agent": UA,
+    "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
 CONCURRENCY = 10
 TIMEOUT = httpx.Timeout(20.0, connect=10.0)
 
@@ -34,7 +40,13 @@ CANDIDATE_PATHS = [
     "/rss", "/feed", "/rss.xml", "/feed.xml", "/atom.xml", "/index.xml",
     "/rss/all", "/feeds/all.xml", "/rss/index.xml", "/en/rss",
     "/arc/outboundfeeds/rss/", "/rss/news", "/news/rss", "/rssfeeds",
+    "/feed/", "/rss/all", "/rss/top", "/en/rss", "/rss/news.xml",
+    "/?feed=rss2", "/rss/rss.xml", "/feeds/posts/default",
 ]
+
+# Стрічка часто живе не на домені видання, а на сусідньому піддомені.
+# Саме через це в першій перевірці впала BBC.
+SUBDOMAINS = ["feeds.", "rss.", "feed.", "en.", "english."]
 
 # Стрічка вважається "важкою", якщо середній запис довший за це число символів.
 # Важкі стрічки віддають повний текст статті замість ліду — їх беремо в обмеженій кількості.
@@ -93,17 +105,21 @@ async def find_feed(client, row):
     # Якщо в CSV уже є готова адреса стрічки — перевіряємо тільки її.
     explicit = (row.get("feed") or "").strip()
     candidates = []
+    home_err = None
 
+    # У колонці feed може бути кілька кандидатів через | — перевіряємо всі.
     if explicit:
-        candidates.append(explicit)
-    else:
-        base = f"https://{domain}"
-        r, err = await try_url(client, base)
-        if r is None:
-            out.update(status="unreachable", error=f"головна сторінка: {err}")
-            return out
+        candidates += [u.strip() for u in explicit.split("|") if u.strip()]
+    base = f"https://{domain}"
+    bare = re.sub(r"^www\.", "", domain)
+    html = ""
 
-        html = r.text
+    # Головну смикаємо лише коли явної адреси немає — інакше це зайвий запит.
+    if not explicit:
+        r, home_err = await try_url(client, base)
+        html = r.text if r is not None else ""
+
+    if html:
         for m in re.finditer(
             r'<link[^>]+rel=["\']alternate["\'][^>]*>', html, re.I
         ):
@@ -121,10 +137,13 @@ async def find_feed(client, row):
                     candidates.append(u)
             candidates = candidates[:4]
 
-        candidates += [base + p for p in CANDIDATE_PATHS]
+    candidates += [base + p for p in CANDIDATE_PATHS]
+    for sub in SUBDOMAINS:
+        candidates += [f"https://{sub}{bare}{p}"
+                       for p in ("/rss.xml", "/news/rss.xml", "/rss", "/feed")]
 
-    last_err = "жодна адреса не віддала стрічку"
-    for url in candidates[:14]:
+    last_err = home_err and f"головна: {home_err}" or "жодна адреса не віддала стрічку"
+    for url in candidates[:40]:
         r, err = await try_url(client, url)
         if r is None:
             last_err = err
@@ -148,7 +167,7 @@ async def main():
     sem = asyncio.Semaphore(CONCURRENCY)
     results = []
 
-    async with httpx.AsyncClient(headers={"User-Agent": UA}, timeout=TIMEOUT) as client:
+    async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT) as client:
         async def guarded(row):
             async with sem:
                 res = await find_feed(client, row)
