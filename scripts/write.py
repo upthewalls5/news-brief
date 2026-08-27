@@ -20,7 +20,10 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 MODEL = "claude-sonnet-5"
-MAX_TOKENS = 2000
+VERSION = "2026-08-28.3"
+# Ліміт спільний для міркувань моделі та самого тексту. При 2000 роздуми
+# з'їдали майже все, і випуск обривався на середині першого блоку.
+MAX_TOKENS = 8000
 
 # Запобіжник від несподівано величезного дайджесту (наприклад, якщо якась стрічка
 # почне віддавати повні тексти). Обрізаємо, а не платимо за сюрприз.
@@ -32,6 +35,7 @@ def main():
     if not key:
         sys.exit("Немає секрету ANTHROPIC_API_KEY")
 
+    print(f"write.py версія {VERSION}")
     digest = (ROOT / "digests" / "latest.md").read_text(encoding="utf-8")
     if len(digest) > MAX_DIGEST_CHARS:
         digest = digest[:MAX_DIGEST_CHARS] + "\n\n[дайджест обрізано за розміром]"
@@ -69,8 +73,16 @@ def main():
         sys.exit("API повернув порожню відповідь")
 
     usage = data.get("usage", {})
+    stop = data.get("stop_reason")
     print(f"Вхід: {usage.get('input_tokens')} токенів | "
-          f"вихід: {usage.get('output_tokens')} | довжина брифу: {len(text)} символів")
+          f"вихід: {usage.get('output_tokens')} | причина зупинки: {stop} | "
+          f"довжина брифу: {len(text)} символів")
+
+    if stop == "max_tokens":
+        print("УВАГА: випуск обірвано лімітом токенів. Підніміть MAX_TOKENS.")
+    if len(text) < 900:
+        print(f"УВАГА: бріф підозріло короткий ({len(text)} символів). "
+              "Очікується 2000-3500.")
 
     today = datetime.now(timezone.utc).date().isoformat()
     (ROOT / "issues").mkdir(exist_ok=True)
