@@ -23,7 +23,6 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
-import socket
 import ssl
 
 import feedparser
@@ -64,27 +63,6 @@ SUBDOMAINS = ["feeds.", "rss.", "feed.", "en.", "english."]
 # Стрічка вважається "важкою", якщо середній запис довший за це число символів.
 # Важкі стрічки віддають повний текст статті замість ліду — їх беремо в обмеженій кількості.
 HEAVY_CHARS = 1200
-
-
-DNS_CACHE = {}
-
-
-def resolve(host: str, tries: int = 4) -> bool:
-    """Резолвить хост послідовно, з повторами. Кешує результат.
-    Резолвер раннера GitHub захлинається від паралельних запитів і повертає
-    Errno -2, хоча домен живий. Послідовний прохід із паузами це знімає."""
-    if host in DNS_CACHE:
-        return DNS_CACHE[host]
-    for i in range(tries):
-        try:
-            socket.getaddrinfo(host, 443, 0, socket.SOCK_STREAM)
-            DNS_CACHE[host] = True
-            return True
-        except socket.gaierror:
-            if i < tries - 1:
-                time.sleep(0.4 * (i + 1))
-    DNS_CACHE[host] = False
-    return False
 
 
 def entry_text(e) -> str:
@@ -145,9 +123,6 @@ async def try_insecure(url):
 
 async def try_url(client, url):
     """Повертає (відповідь, помилка). Мережеві збої повторює з відступом."""
-    host = urlparse(url).netloc.split(":")[0]
-    if not resolve(host):
-        return None, "DNS: хост не резолвиться"
     err = None
     for attempt in range(RETRIES):
         try:
@@ -254,6 +229,7 @@ async def find_feed(client, row):
 
 
 async def main():
+    print("discover.py версія 2026-08-28.1")
     src = ROOT / "sources.csv"
     rows = list(csv.DictReader(src.open(encoding="utf-8")))
     sem = asyncio.Semaphore(CONCURRENCY)
