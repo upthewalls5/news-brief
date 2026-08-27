@@ -38,10 +38,11 @@ CONCURRENCY = 8
 RETRIES = 2          # мережеві збої на раннері GitHub майже завжди тимчасові
 LIMITS = httpx.Limits(max_connections=16, max_keepalive_connections=8)
 
-# Раннери GitHub не мають робочої IPv6-зв'язності — прив'язуємось до IPv4,
-# інакше домени за CDN стабільно віддають ConnectError.
+# Транспорт дефолтний: домени бувають як IPv4, так і IPv6-only.
 def make_transport():
-    return httpx.AsyncHTTPTransport(local_address="0.0.0.0", retries=1)
+    # Без local_address: примусовий IPv4 робив недосяжними домени, у яких
+    # є лише AAAA-запис (apnews.com і десятки інших).
+    return httpx.AsyncHTTPTransport(retries=1)
 TIMEOUT = httpx.Timeout(25.0, connect=10.0)
 
 WINDOW_HOURS = 26          # вікно збору
@@ -79,7 +80,7 @@ def resolve(host: str, tries: int = 4) -> bool:
         return DNS_CACHE[host]
     for i in range(tries):
         try:
-            socket.getaddrinfo(host, 443, socket.AF_INET, socket.SOCK_STREAM)
+            socket.getaddrinfo(host, 443, 0, socket.SOCK_STREAM)
             DNS_CACHE[host] = True
             return True
         except socket.gaierror:
