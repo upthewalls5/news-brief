@@ -29,6 +29,6 @@ jobs:
         run: |
           git config user.name  "news-bot"
           git config user.email "news-bot@users.noreply.github.com"
-          git add digests issues state
+          git add -A
           git diff --staged --quiet || git commit -m "Бріф"
           git push
