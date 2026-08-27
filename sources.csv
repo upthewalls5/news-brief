@@ -1,5 +1,4 @@
 country,name,lang,domain,pole,tier,feed
-Global,Associated Press,en,apnews.com,reference,1,https://apnews.com/index.rss|https://apnews.com/apf-topnews?format=rss|https://apnews.com/hub/world-news?format=rss|https://apnews.com/rss
 Global,Financial Times,en,ft.com,business,1,https://www.ft.com/rss/home|https://www.ft.com/world?format=rss
 Global,The Economist,en,economist.com,analysis,1,https://www.economist.com/international/rss.xml
 Global,Foreign Affairs,en,foreignaffairs.com,analysis,2,
@@ -17,9 +16,9 @@ Ukraine,Suspilne,uk,suspilne.media,public,1,https://suspilne.media/rss/all.rss|h
 Ukraine,NV,uk,nv.ua,center-right,1,https://nv.ua/ukr/rss/all.xml
 Ukraine,Babel,uk,babel.ua,investigative,1,
 Ukraine,Liga.net,uk,liga.net,business,1,https://www.liga.net/news/rss.xml|https://www.liga.net/allnews/rss.xml
-Ukraine,Forbes Ukraine,uk,forbes.ua,business,2,https://forbes.ua/rss|https://forbes.ua/feed
+Ukraine,Forbes Ukraine,uk,forbes.ua,business,2,https://forbes.ua/feed|https://forbes.ua/rss/all
 Ukraine,Kyiv Independent,en,kyivindependent.com,reference,1,
-Ukraine,Hromadske,uk,hromadske.ua,center-left,2,https://hromadske.ua/feed|https://hromadske.ua/rss
+Ukraine,Hromadske,uk,hromadske.ua,center-left,2,https://hromadske.ua/feed/|https://hromadske.ua/rss
 Russia,TASS,ru,tass.ru,state,1,https://tass.ru/rss/v2.xml
 Russia,RIA Novosti,ru,ria.ru,state,1,
 Russia,Kommersant,ru,kommersant.ru,business,1,https://www.kommersant.ru/RSS/news.xml|https://www.kommersant.ru/RSS/main.xml
@@ -32,10 +31,10 @@ Russia,The Moscow Times,en,themoscowtimes.com,exile,2,
 Russia,Verstka,ru,verstka.media,exile-investigative,2,https://verstka.media/rss|https://verstka.media/feed
 Russia,Faridaily,ru,faridaily.substack.com,exile-analysis,2,https://faridaily.substack.com/feed
 Belarus,Zerkalo,ru,news.zerkalo.io,exile,2,https://news.zerkalo.io/feed/|https://news.zerkalo.io/rss.xml
-Belarus,Nasha Niva,be,nashaniva.com,exile,2,https://nashaniva.com/rss.xml|https://nashaniva.com/feed|https://nashaniva.com/rss
+Belarus,Nasha Niva,be,nashaniva.com,exile,2,https://nashaniva.com/feed/|https://nashaniva.com/rss/
 Belarus,BelTA,ru,belta.by,state,2,
 USA,The New York Times,en,nytimes.com,center-left,1,
-USA,The Wall Street Journal,en,wsj.com,center-right-business,1,https://feeds.a.dj.com/rss/RSSWorldNews.xml
+USA,The Wall Street Journal,en,wsj.com,center-right-business,1,https://feeds.content.dowjones.io/public/rss/RSSWorldNews|https://feeds.a.dj.com/rss/RSSWorldNews.xml
 USA,The Washington Post,en,washingtonpost.com,center-left,1,https://feeds.washingtonpost.com/rss/world
 USA,Politico,en,politico.com,reference,1,https://rss.politico.com/politics-news.xml
 USA,Axios,en,axios.com,reference,1,https://api.axios.com/feed/
@@ -47,7 +46,7 @@ USA,NPR,en,npr.org,public,2,https://feeds.npr.org/1001/rss.xml
 UK,BBC News,en,bbc.com,public,1,https://feeds.bbci.co.uk/news/world/rss.xml
 UK,The Guardian,en,theguardian.com,center-left,1,
 UK,The Telegraph,en,telegraph.co.uk,center-right,1,
-UK,The Spectator,en,spectator.co.uk,right-analysis,2,https://www.spectator.co.uk/feed
+UK,The Spectator,en,spectator.co.uk,right-analysis,2,https://www.spectator.co.uk/feed/|https://www.spectator.co.uk/rss
 UK,New Statesman,en,newstatesman.com,left-analysis,2,https://www.newstatesman.com/feed
 UK,Sky News,en,news.sky.com,reference,2,https://feeds.skynews.com/feeds/rss/world.xml
 Germany,Frankfurter Allgemeine,de,faz.net,center-right,1,
@@ -63,10 +62,10 @@ France,Liberation,fr,liberation.fr,left,1,https://www.liberation.fr/arc/outbound
 France,Les Echos,fr,lesechos.fr,business,1,https://www.lesechos.fr/rss/rss_une_titres.xml|https://services.lesechos.fr/rss/les-echos-monde.xml
 France,Mediapart,fr,mediapart.fr,investigative-left,2,https://www.mediapart.fr/articles/feed
 France,France 24,fr,france24.com,public,2,
-Italy,Corriere della Sera,it,corriere.it,center,1,https://xml2.corriereobjects.it/rss/homepage.xml|https://www.corriere.it/rss/homepage.xml|https://xml2.corriereobjects.it/rss/esteri.xml
+Italy,Corriere della Sera,it,corriere.it,center,1,https://www.corriere.it/rss/homepage.xml|https://xml2.corriereobjects.it/rss/esteri.xml
 Italy,La Repubblica,it,repubblica.it,center-left,1,https://www.repubblica.it/rss/homepage/rss2.0.xml|https://www.repubblica.it/rss/esteri/rss2.0.xml
 Italy,Il Sole 24 Ore,it,ilsole24ore.com,business,1,https://www.ilsole24ore.com/rss/mondo.xml
-Italy,Il Foglio,it,ilfoglio.it,right-analysis,2,https://www.ilfoglio.it/rss.xml|https://www.ilfoglio.it/rss/
+Italy,Il Foglio,it,ilfoglio.it,right-analysis,2,https://www.ilfoglio.it/rss/home.xml|https://www.ilfoglio.it/feed
 Italy,La Stampa,it,lastampa.it,center-left,2,
 Italy,ANSA,it,ansa.it,reference,2,
 Spain,El Pais,es,elpais.com,center-left,1,https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada
@@ -132,7 +131,7 @@ Romania,Digi24,ro,digi24.ro,center,2,
 Bulgaria,Dnevnik,bg,dnevnik.bg,center-right,2,https://www.dnevnik.bg/rss/
 Bulgaria,Capital,bg,capital.bg,business,2,https://www.capital.bg/rss/|https://www.capital.bg/rss/?rubrid=0
 Bulgaria,Mediapool,bg,mediapool.bg,independent,2,https://www.mediapool.bg/rss/
-Greece,Kathimerini,el,kathimerini.gr,center-right,2,https://www.kathimerini.gr/feed/|https://www.kathimerini.gr/rss
+Greece,Kathimerini,el,kathimerini.gr,center-right,2,https://www.ekathimerini.com/feed/|https://www.kathimerini.gr/rss/
 Greece,Ta Nea,el,tanea.gr,center-left,2,
 Greece,Efimerida ton Syntakton,el,efsyn.gr,left,2,
 Croatia,Jutarnji list,hr,jutarnji.hr,center,2,
@@ -163,11 +162,11 @@ Israel,The Times of Israel,en,timesofisrael.com,center,1,https://www.timesofisra
 Israel,The Jerusalem Post,en,jpost.com,center-right,1,https://www.jpost.com/rss/rssfeedsfrontpage.aspx
 Israel,Israel Hayom,en,israelhayom.com,right,1,https://www.israelhayom.com/feed/|https://www.israelhayom.co.il/rss.xml
 Israel,Ynet,he,ynet.co.il,center,1,https://www.ynet.co.il/Integration/StoryRss2.xml
-Israel,Kan 11,he,kan.org.il,public,2,https://www.kan.org.il/feed/|https://www.kan.org.il/rss/news.xml|https://kan.org.il/feed/
+Israel,Kan 11,he,kan.org.il,public,2,https://www.kan.org.il/rss/news.xml|https://www.kan.org.il/rss/
 Israel,Calcalist,he,calcalist.co.il,business,2,"https://www.calcalist.co.il/GeneralRSS/0,16335,L-8,00.xml|https://www.calcalist.co.il/integration/StoryRss2.xml"
 Iran,IRNA,fa,irna.ir,state,1,
 Iran,Tasnim,fa,tasnimnews.com,hardline,1,https://www.tasnimnews.com/fa/rss/feed/0/7/0/|https://www.tasnimnews.com/en/rss/feed/0/8/0/
-Iran,Fars News,fa,farsnews.ir,hardline,2,https://www.farsnews.ir/rss|https://www.farsnews.ir/showrss/all
+Iran,Fars News,fa,farsnews.ir,hardline,2,https://www.farsnews.ir/rss/allnews|https://www.farsnews.ir/showrss/all
 Iran,Shargh,fa,sharghdaily.com,reformist,1,
 Iran,Etemad,fa,etemadnewspaper.ir,reformist,2,https://www.etemadnewspaper.ir/fa/rss/allnews|https://etemadnewspaper.ir/rss
 Iran,Iran International,fa,iranintl.com,opposition-exile,1,
@@ -188,36 +187,35 @@ India,Scroll.in,en,scroll.in,left-critical,2,
 India,The Wire,en,thewire.in,left-critical,2,https://m.thewire.in/rss|https://thewire.in/rss/feed|https://thewire.in/rss
 India,Mint,en,livemint.com,business,2,
 India,NDTV,en,ndtv.com,mainstream,2,https://feeds.feedburner.com/ndtvnews-top-stories
-China,Xinhua,zh,xinhuanet.com,state,1,https://english.news.cn/rss/world.xml|http://www.xinhuanet.com/english/rss/worldrss.xml
-China,People's Daily,zh,people.com.cn,party-organ,1,http://en.people.cn/rss/90777.xml|http://en.people.cn/rss/China.xml
+China,Xinhua,zh,xinhuanet.com,state,1,http://www.news.cn/english/rss/worldrss.xml|https://english.news.cn/rss/world.xml
+China,People's Daily,zh,people.com.cn,party-organ,1,http://en.people.cn/rss/China.xml|http://www.people.com.cn/rss/politics.xml
 China,Global Times,en,globaltimes.cn,state-nationalist,1,https://www.globaltimes.cn/rss/outbrain.xml
-China,Caixin,zh,caixin.com,independent-business,1,https://www.caixinglobal.com/feed/|https://www.caixin.com/rss/all.xml|https://www.caixinglobal.com/rss/all.xml
+China,Caixin,zh,caixin.com,independent-business,1,https://www.caixinglobal.com/rss/all.xml|https://www.caixin.com/rss/all.xml
 China,South China Morning Post,en,scmp.com,hongkong,1,
-China,Yicai,zh,yicai.com,business,2,https://www.yicai.com/rss/news.xml|https://www.yicai.com/api/rss/news
 China,China Digital Times,en,chinadigitaltimes.net,censorship-watch,2,https://chinadigitaltimes.net/feed/
 China,Sinocism,en,sinocism.com,analysis,2,
 Taiwan,Liberty Times,zh,ltn.com.tw,green-DPP,1,
 Taiwan,United Daily News,zh,udn.com,blue-KMT,1,
-Taiwan,China Times,zh,chinatimes.com,blue-KMT,1,https://www.chinatimes.com/rss/realtimenews.xml|https://www.chinatimes.com/rss/politic.xml
+Taiwan,China Times,zh,chinatimes.com,blue-KMT,1,https://www.chinatimes.com/rss/politic.xml|https://www.chinatimes.com/rss/realtimenews.xml
 Taiwan,Focus Taiwan CNA,en,focustaiwan.tw,reference,1,
 Taiwan,Taipei Times,en,taipeitimes.com,green-DPP,2,
 Taiwan,The Reporter,zh,twreporter.org,investigative,2,
 Japan,Asahi Shimbun,ja,asahi.com,liberal,1,https://www.asahi.com/rss/asahi/newsheadlines.rdf
 Japan,Yomiuri Shimbun,ja,yomiuri.co.jp,conservative,1,https://www.yomiuri.co.jp/rss/yol/topstories|https://assets.wor.jp/rss/rdf/yomiuri/national.rdf
 Japan,Nikkei,ja,nikkei.com,business,1,https://www.nikkei.com/rss/index.rdf|https://assets.wor.jp/rss/rdf/nikkei/news.rdf
-Japan,NHK,ja,nhk.or.jp,public,1,https://www3.nhk.or.jp/rss/news/cat0.xml
+Japan,NHK,ja,nhk.or.jp,public,1,https://www.nhk.or.jp/rss/news/cat0.xml|https://www3.nhk.or.jp/rss/news/cat6.xml|https://www3.nhk.or.jp/rss/news/cat0.xml
 Japan,Mainichi Shimbun,ja,mainichi.jp,center-left,2,https://mainichi.jp/rss/etc/mainichi-flash.rss
-Japan,Sankei Shimbun,ja,sankei.com,right,2,https://www.sankei.com/rss/news/flash.xml|https://assets.wor.jp/rss/rdf/sankei/news.rdf
-Japan,Kyodo News,ja,kyodonews.jp,reference,2,https://english.kyodonews.net/rss/news.xml|https://english.kyodonews.net/rss/all.xml
+Japan,Sankei Shimbun,ja,sankei.com,right,2,https://www.sankei.com/rss/news/points.xml|https://assets.wor.jp/rss/rdf/sankei/news.rdf
+Japan,Kyodo News,ja,kyodonews.jp,reference,2,https://english.kyodonews.net/rss/all.xml|https://english.kyodonews.net/rss/world.xml
 Japan,The Japan Times,en,japantimes.co.jp,reference,2,
 South Korea,Yonhap,ko,yna.co.kr,reference,1,https://en.yna.co.kr/RSS/news.xml
 South Korea,Chosun Ilbo,ko,chosun.com,conservative,1,https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml
-South Korea,JoongAng Ilbo,ko,joongang.co.kr,conservative,1,https://koreajoongangdaily.joins.com/xmls/joins|https://koreajoongangdaily.joins.com/rss
+South Korea,JoongAng Ilbo,ko,joongang.co.kr,conservative,1,https://koreajoongangdaily.joins.com/rss|https://koreajoongangdaily.joins.com/xmls/joins
 South Korea,Hankyoreh,ko,hani.co.kr,progressive,1,
 South Korea,Kyunghyang Shinmun,ko,khan.co.kr,progressive,2,https://www.khan.co.kr/rss/rssdata/total_news.xml
 South Korea,The Korea Herald,en,koreaherald.com,reference,2,
 South Korea,KBS,ko,kbs.co.kr,public,2,http://world.kbs.co.kr/rss/rss_news.htm?lang=e
-Kazakhstan,Tengrinews,ru,tengrinews.kz,mainstream,2,https://tengrinews.kz/rss/|https://tengrinews.kz/userdata/rss/rss.xml
+Kazakhstan,Tengrinews,ru,tengrinews.kz,mainstream,2,https://tengrinews.kz/userdata/rss/rss.xml|https://tengrinews.kz/rss/
 Kazakhstan,Kursiv,ru,kz.kursiv.media,business,2,
 Kazakhstan,Vlast.kz,ru,vlast.kz,independent,2,
 Kazakhstan,Orda.kz,ru,orda.kz,independent,2,https://orda.kz/feed/
@@ -225,7 +223,7 @@ Kazakhstan,Radio Azattyq,kk,azattyq.org,exile-funded,2,
 Kazakhstan,Kazinform,kk,inform.kz,state,2,https://www.inform.kz/rss|https://www.inform.kz/rss/all|https://kz.kursiv.media/feed/
 Brazil,Folha de S.Paulo,pt,folha.uol.com.br,center-left,2,https://feeds.folha.uol.com.br/emcimadahora/rss091.xml
 Brazil,O Globo,pt,oglobo.globo.com,center-right,2,
-Brazil,Estadao,pt,estadao.com.br,center-right,2,https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/ultimas/?outputType=xml|https://www.estadao.com.br/rss/ultimas.xml
+Brazil,Estadao,pt,estadao.com.br,center-right,2,https://www.estadao.com.br/rss/ultimas.xml|https://www.estadao.com.br/rss/internacional.xml
 Brazil,Valor Economico,pt,valor.globo.com,business,2,
 Brazil,UOL,pt,uol.com.br,mainstream,2,
 Brazil,Poder360,pt,poder360.com.br,reference,2,
@@ -239,10 +237,10 @@ Mexico,Reforma,es,reforma.com,center-right,2,
 Mexico,El Universal,es,eluniversal.com.mx,center,2,
 Mexico,La Jornada,es,jornada.com.mx,left-pro-government,2,https://www.jornada.com.mx/rss/edicion.xml
 Mexico,Milenio,es,milenio.com,center,2,https://www.milenio.com/rss|https://www.milenio.com/rss/internacional
-Mexico,Animal Politico,es,animalpolitico.com,investigative,2,https://animalpolitico.com/feed|https://www.animalpolitico.com/feed/
+Mexico,Animal Politico,es,animalpolitico.com,investigative,2,https://animalpolitico.com/feed/|https://www.animalpolitico.com/feed
 Mexico,El Financiero,es,elfinanciero.com.mx,business,2,
 Mexico,Aristegui Noticias,es,aristeguinoticias.com,critical,2,https://aristeguinoticias.com/feed/
 Australia,ABC News,en,abc.net.au,public,2,https://www.abc.net.au/news/feed/51120/rss.xml
 Australia,Sydney Morning Herald,en,smh.com.au,center-left,2,
-Australia,Australian Financial Review,en,afr.com,business,2,https://www.afr.com/rss/feed|https://www.afr.com/rss/world|https://www.afr.com/rss.xml
+Australia,Australian Financial Review,en,afr.com,business,2,https://www.afr.com/rss/world|https://www.afr.com/rss/feed
 Australia,Guardian Australia,en,theguardian.com,center-left,2,https://www.theguardian.com/australia-news/rss
