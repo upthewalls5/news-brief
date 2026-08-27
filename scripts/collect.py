@@ -42,8 +42,8 @@ def make_transport():
 TIMEOUT = httpx.Timeout(25.0, connect=10.0)
 
 WINDOW_HOURS = 26          # вікно збору
-PER_COUNTRY = 6            # скільки заголовків на країну лишаємо в дайджесті
-PER_SOURCE = 8             # скільки записів беремо з однієї стрічки
+PER_COUNTRY = 14           # заголовків на країну — модель зшиває мови сама
+PER_SOURCE = 12            # записів з однієї стрічки
 SEEN_DAYS = 7              # глибина пам'яті для індексу новизни
 LEAD_CHARS = 180           # обрізаємо лід — у Claude не потрібен повний текст
 
@@ -168,7 +168,7 @@ def parse_items(feed, raw, cutoff):
     return items
 
 
-def cluster(items, min_sources=3):
+def cluster(items, min_sources=2):
     """Групує матеріали за перетином ключових токенів.
     Працює всередині мови; крос-мовне зіставлення лишаємо Claude."""
     clusters = []
@@ -180,9 +180,9 @@ def cluster(items, min_sources=3):
         for c in clusters:
             inter = len(sig & c["sig"])
             score = inter / max(3, min(len(sig), len(c["sig"])))
-            if inter >= 3 and score > best_score:
+            if inter >= 2 and score > best_score:
                 best, best_score = c, score
-        if best and best_score >= 0.45:
+        if best and best_score >= 0.38:
             best["items"].append(it)
             best["sig"] |= sig
         else:
@@ -217,7 +217,7 @@ def load_seen():
 
 
 def main():
-    print("collect.py версія 2026-08-28.1")
+    print("collect.py версія 2026-08-28.4")
     feeds = json.loads((ROOT / "feeds.json").read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=WINDOW_HOURS)
 
@@ -287,11 +287,11 @@ def main():
     L.append("")
     L.append("Формат: [джерел / країн] · НОВЕ якщо не траплялось 7 днів")
     L.append("")
-    for c in clusters[:18]:
+    for c in clusters[:25]:
         flag = " · НОВЕ" if is_new(c) else ""
         L.append(f"### [{c['n_sources']} дж. / {len(c['countries'])} країн]{flag} "
                  f"{c['items'][0]['title']}")
-        for it in c["items"][:6]:
+        for it in c["items"][:8]:
             L.append(f"- {it['country']} · {it['source']} ({it['pole']}): {it['title']}")
             if it["lead"]:
                 L.append(f"  {it['lead']}")
@@ -299,9 +299,16 @@ def main():
 
     L.append("## По країнах")
     L.append("")
+    L.append("Кластери вище зібрані машинно за збігом слів, тому працюють лише "
+             "всередині однієї мови. Нижче — сирі заголовки. Крос-мовне "
+             "зіставлення роби сам: та сама подія тут присутня різними мовами "
+             "й машиною не помічена.")
+    L.append("")
+    total = max(1, len(items))
     for country in sorted(by_country):
         rows = by_country[country][:PER_COUNTRY]
-        L.append(f"### {country}")
+        share = round(100 * len(by_country[country]) / total, 1)
+        L.append(f"### {country}  ({len(by_country[country])} матеріалів, {share}% дня)")
         for it in rows:
             L.append(f"- [{it['source']} · {it['pole']}] {it['title']}")
         L.append("")
