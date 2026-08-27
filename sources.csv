@@ -1,5 +1,5 @@
 country,name,lang,domain,pole,tier,feed
-Global,Associated Press,en,apnews.com,reference,1,https://apnews.com/hub/ap-top-news.rss|https://apnews.com/hub/world-news.rss|https://apnews.com/index.rss
+Global,Associated Press,en,apnews.com,reference,1,https://apnews.com/index.rss|https://apnews.com/apf-topnews?format=rss|https://apnews.com/hub/world-news?format=rss|https://apnews.com/rss
 Global,Financial Times,en,ft.com,business,1,https://www.ft.com/rss/home|https://www.ft.com/world?format=rss
 Global,The Economist,en,economist.com,analysis,1,https://www.economist.com/international/rss.xml
 Global,Foreign Affairs,en,foreignaffairs.com,analysis,2,
@@ -63,7 +63,7 @@ France,Liberation,fr,liberation.fr,left,1,https://www.liberation.fr/arc/outbound
 France,Les Echos,fr,lesechos.fr,business,1,https://www.lesechos.fr/rss/rss_une_titres.xml|https://services.lesechos.fr/rss/les-echos-monde.xml
 France,Mediapart,fr,mediapart.fr,investigative-left,2,https://www.mediapart.fr/articles/feed
 France,France 24,fr,france24.com,public,2,
-Italy,Corriere della Sera,it,corriere.it,center,1,https://www.corriere.it/rss/homepage.xml|https://xml2.corriereobjects.it/rss/esteri.xml|https://xml2.corriereobjects.it/rss/homepage.xml
+Italy,Corriere della Sera,it,corriere.it,center,1,https://xml2.corriereobjects.it/rss/homepage.xml|https://www.corriere.it/rss/homepage.xml|https://xml2.corriereobjects.it/rss/esteri.xml
 Italy,La Repubblica,it,repubblica.it,center-left,1,https://www.repubblica.it/rss/homepage/rss2.0.xml|https://www.repubblica.it/rss/esteri/rss2.0.xml
 Italy,Il Sole 24 Ore,it,ilsole24ore.com,business,1,https://www.ilsole24ore.com/rss/mondo.xml
 Italy,Il Foglio,it,ilfoglio.it,right-analysis,2,https://www.ilfoglio.it/rss.xml|https://www.ilfoglio.it/rss/
@@ -163,7 +163,7 @@ Israel,The Times of Israel,en,timesofisrael.com,center,1,https://www.timesofisra
 Israel,The Jerusalem Post,en,jpost.com,center-right,1,https://www.jpost.com/rss/rssfeedsfrontpage.aspx
 Israel,Israel Hayom,en,israelhayom.com,right,1,https://www.israelhayom.com/feed/|https://www.israelhayom.co.il/rss.xml
 Israel,Ynet,he,ynet.co.il,center,1,https://www.ynet.co.il/Integration/StoryRss2.xml
-Israel,Kan 11,he,kan.org.il,public,2,https://www.kan.org.il/feed/|https://kan.org.il/rss/news.xml|https://www.kan.org.il/rss/
+Israel,Kan 11,he,kan.org.il,public,2,https://www.kan.org.il/feed/|https://www.kan.org.il/rss/news.xml|https://kan.org.il/feed/
 Israel,Calcalist,he,calcalist.co.il,business,2,"https://www.calcalist.co.il/GeneralRSS/0,16335,L-8,00.xml|https://www.calcalist.co.il/integration/StoryRss2.xml"
 Iran,IRNA,fa,irna.ir,state,1,
 Iran,Tasnim,fa,tasnimnews.com,hardline,1,https://www.tasnimnews.com/fa/rss/feed/0/7/0/|https://www.tasnimnews.com/en/rss/feed/0/8/0/
