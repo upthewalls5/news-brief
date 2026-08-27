@@ -1,6 +1,32 @@
 [
   {
     "country": "Global",
+    "name": "Financial Times",
+    "lang": "en",
+    "domain": "ft.com",
+    "pole": "business",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.ft.com/rss/home/international",
+    "entries": 8,
+    "newest_hours": 0.7,
+    "weight": "light"
+  },
+  {
+    "country": "Global",
+    "name": "The Economist",
+    "lang": "en",
+    "domain": "economist.com",
+    "pole": "analysis",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.economist.com/international/rss.xml",
+    "entries": 300,
+    "newest_hours": 44.7,
+    "weight": "light"
+  },
+  {
+    "country": "Global",
     "name": "Foreign Affairs",
     "lang": "en",
     "domain": "foreignaffairs.com",
@@ -9,7 +35,20 @@
     "status": "ok",
     "feed": "https://www.foreignaffairs.com/rss.xml",
     "entries": 20,
-    "newest_hours": 9.3,
+    "newest_hours": 10.3,
+    "weight": "light"
+  },
+  {
+    "country": "Global",
+    "name": "Nikkei Asia",
+    "lang": "en",
+    "domain": "asia.nikkei.com",
+    "pole": "business",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://asia.nikkei.com/rss/feed/nar",
+    "entries": 50,
+    "newest_hours": null,
     "weight": "light"
   },
   {
@@ -22,7 +61,20 @@
     "status": "ok",
     "feed": "https://www.aljazeera.com/xml/rss/all.xml",
     "entries": 25,
-    "newest_hours": 0.6,
+    "newest_hours": 0.3,
+    "weight": "light"
+  },
+  {
+    "country": "Global",
+    "name": "Deutsche Welle",
+    "lang": "en",
+    "domain": "dw.com",
+    "pole": "reference",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://rss.dw.com/rdf/rss-en-all",
+    "entries": 136,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -35,7 +87,7 @@
     "status": "ok",
     "feed": "https://www.politico.eu/feed/",
     "entries": 10,
-    "newest_hours": 1.6,
+    "newest_hours": 0.1,
     "weight": "heavy"
   },
   {
@@ -48,7 +100,7 @@
     "status": "ok",
     "feed": "https://euobserver.com/feed/",
     "entries": 20,
-    "newest_hours": 1.3,
+    "newest_hours": 0.6,
     "weight": "heavy"
   },
   {
@@ -87,8 +139,21 @@
     "status": "ok",
     "feed": "https://zn.ua/ukr/rss/full/",
     "entries": 25,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
     "weight": "heavy"
+  },
+  {
+    "country": "Ukraine",
+    "name": "NV",
+    "lang": "uk",
+    "domain": "nv.ua",
+    "pole": "center-right",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://nv.ua/ukr/rss/all.xml",
+    "entries": 40,
+    "newest_hours": 0.2,
+    "weight": "light"
   },
   {
     "country": "Ukraine",
@@ -99,8 +164,21 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://babel.ua/rss.xml",
-    "entries": 173,
-    "newest_hours": 0.7,
+    "entries": 175,
+    "newest_hours": 0.5,
+    "weight": "light"
+  },
+  {
+    "country": "Ukraine",
+    "name": "Forbes Ukraine",
+    "lang": "uk",
+    "domain": "forbes.ua",
+    "pole": "business",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://forbes.ua/rss/news.xml",
+    "entries": 50,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -113,7 +191,20 @@
     "status": "ok",
     "feed": "https://kyivindependent.com/news-archive/rss/",
     "entries": 15,
-    "newest_hours": 1.4,
+    "newest_hours": 2.4,
+    "weight": "light"
+  },
+  {
+    "country": "Russia",
+    "name": "TASS",
+    "lang": "ru",
+    "domain": "tass.ru",
+    "pole": "state",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://tass.ru/rss/v2.xml",
+    "entries": 98,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -125,8 +216,21 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://ria.ru/export/rss2/archive/index.xml",
-    "entries": 99,
+    "entries": 97,
     "newest_hours": 0.0,
+    "weight": "light"
+  },
+  {
+    "country": "Russia",
+    "name": "RBC",
+    "lang": "ru",
+    "domain": "rbc.ru",
+    "pole": "business",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://rssexport.rbc.ru/rbcnews/news/30/full.rss",
+    "entries": 30,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -139,7 +243,7 @@
     "status": "ok",
     "feed": "https://www.vedomosti.ru/rss/articles",
     "entries": 200,
-    "newest_hours": 1.5,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -152,8 +256,21 @@
     "status": "ok",
     "feed": "https://meduza.io/rss/all",
     "entries": 30,
-    "newest_hours": 0.2,
+    "newest_hours": 0.7,
     "weight": "heavy"
+  },
+  {
+    "country": "Russia",
+    "name": "The Bell",
+    "lang": "ru",
+    "domain": "thebell.io",
+    "pole": "exile-business",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://thebell.io/feed",
+    "entries": 20,
+    "newest_hours": 0.2,
+    "weight": "light"
   },
   {
     "country": "Russia",
@@ -165,7 +282,7 @@
     "status": "ok",
     "feed": "https://novayagazeta.eu/feed/rss",
     "entries": 100,
-    "newest_hours": 0.5,
+    "newest_hours": 0.0,
     "weight": "heavy"
   },
   {
@@ -178,7 +295,7 @@
     "status": "ok",
     "feed": "https://www.themoscowtimes.com/rss/news",
     "entries": 50,
-    "newest_hours": 1.0,
+    "newest_hours": 0.7,
     "weight": "light"
   },
   {
@@ -191,7 +308,7 @@
     "status": "ok",
     "feed": "https://verstka.media/feed",
     "entries": 10,
-    "newest_hours": 0.0,
+    "newest_hours": 1.0,
     "weight": "heavy"
   },
   {
@@ -217,8 +334,47 @@
     "status": "ok",
     "feed": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
     "entries": 29,
-    "newest_hours": 0.3,
+    "newest_hours": 0.1,
     "weight": "light"
+  },
+  {
+    "country": "USA",
+    "name": "The Washington Post",
+    "lang": "en",
+    "domain": "washingtonpost.com",
+    "pole": "center-left",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://feeds.washingtonpost.com/rss/world",
+    "entries": 16,
+    "newest_hours": 1.1,
+    "weight": "light"
+  },
+  {
+    "country": "USA",
+    "name": "Politico",
+    "lang": "en",
+    "domain": "politico.com",
+    "pole": "reference",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://rss.politico.com/politics-news.xml",
+    "entries": 30,
+    "newest_hours": 5.3,
+    "weight": "heavy"
+  },
+  {
+    "country": "USA",
+    "name": "Axios",
+    "lang": "en",
+    "domain": "axios.com",
+    "pole": "reference",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://api.axios.com/feed/",
+    "entries": 100,
+    "newest_hours": 1.5,
+    "weight": "heavy"
   },
   {
     "country": "USA",
@@ -230,8 +386,21 @@
     "status": "ok",
     "feed": "https://moxie.foxnews.com/google-publisher/latest.xml",
     "entries": 25,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
     "weight": "heavy"
+  },
+  {
+    "country": "USA",
+    "name": "National Review",
+    "lang": "en",
+    "domain": "nationalreview.com",
+    "pole": "right-analysis",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.nationalreview.com/feed/",
+    "entries": 20,
+    "newest_hours": 3.8,
+    "weight": "light"
   },
   {
     "country": "USA",
@@ -243,8 +412,47 @@
     "status": "ok",
     "feed": "https://www.theatlantic.com/feed/all/",
     "entries": 25,
-    "newest_hours": 1.3,
+    "newest_hours": 0.2,
     "weight": "heavy"
+  },
+  {
+    "country": "USA",
+    "name": "The Free Press",
+    "lang": "en",
+    "domain": "thefp.com",
+    "pole": "heterodox",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.thefp.com/feed",
+    "entries": 20,
+    "newest_hours": 4.2,
+    "weight": "heavy"
+  },
+  {
+    "country": "USA",
+    "name": "NPR",
+    "lang": "en",
+    "domain": "npr.org",
+    "pole": "public",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://feeds.npr.org/1001/rss.xml",
+    "entries": 10,
+    "newest_hours": 0.7,
+    "weight": "light"
+  },
+  {
+    "country": "UK",
+    "name": "BBC News",
+    "lang": "en",
+    "domain": "bbc.com",
+    "pole": "public",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "entries": 20,
+    "newest_hours": 0.1,
+    "weight": "light"
   },
   {
     "country": "UK",
@@ -255,9 +463,9 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://www.theguardian.com/us/rss",
-    "entries": 125,
-    "newest_hours": 0.2,
-    "weight": "light"
+    "entries": 123,
+    "newest_hours": 0.3,
+    "weight": "heavy"
   },
   {
     "country": "UK",
@@ -269,7 +477,20 @@
     "status": "ok",
     "feed": "https://www.telegraph.co.uk/rss.xml",
     "entries": 120,
-    "newest_hours": 2.0,
+    "newest_hours": 3.0,
+    "weight": "light"
+  },
+  {
+    "country": "UK",
+    "name": "Sky News",
+    "lang": "en",
+    "domain": "news.sky.com",
+    "pole": "reference",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://feeds.skynews.com/feeds/rss/world.xml",
+    "entries": 9,
+    "newest_hours": 1.1,
     "weight": "light"
   },
   {
@@ -281,8 +502,34 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://www.faz.net/rss/aktuell/",
-    "entries": 166,
-    "newest_hours": 0.1,
+    "entries": 164,
+    "newest_hours": 0.2,
+    "weight": "light"
+  },
+  {
+    "country": "Germany",
+    "name": "Sueddeutsche Zeitung",
+    "lang": "de",
+    "domain": "sueddeutsche.de",
+    "pole": "center-left",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://rss.sueddeutsche.de/rss/Topthemen",
+    "entries": 15,
+    "newest_hours": 0.5,
+    "weight": "light"
+  },
+  {
+    "country": "Germany",
+    "name": "Die Welt",
+    "lang": "de",
+    "domain": "welt.de",
+    "pole": "right",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.welt.de/feeds/topnews.rss",
+    "entries": 23,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -295,7 +542,20 @@
     "status": "ok",
     "feed": "https://www.spiegel.de/schlagzeilen/index.rss",
     "entries": 30,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
+    "weight": "light"
+  },
+  {
+    "country": "Germany",
+    "name": "Handelsblatt",
+    "lang": "de",
+    "domain": "handelsblatt.com",
+    "pole": "business",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://feeds.cms.handelsblatt.com/schlagzeilen",
+    "entries": 50,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -320,8 +580,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://www.tagesschau.de/index~atom.xml",
-    "entries": 73,
-    "newest_hours": 0.1,
+    "entries": 77,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -332,9 +592,48 @@
     "pole": "center-left",
     "tier": "1",
     "status": "ok",
-    "feed": "https://www.lemonde.fr/rss/une.xml",
-    "entries": 16,
-    "newest_hours": 0.4,
+    "feed": "https://www.lemonde.fr/en/rss/une.xml",
+    "entries": 18,
+    "newest_hours": 1.3,
+    "weight": "light"
+  },
+  {
+    "country": "France",
+    "name": "Le Figaro",
+    "lang": "fr",
+    "domain": "lefigaro.fr",
+    "pole": "center-right",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.lefigaro.fr/rss/figaro_actualites.xml",
+    "entries": 20,
+    "newest_hours": 0.0,
+    "weight": "light"
+  },
+  {
+    "country": "France",
+    "name": "Liberation",
+    "lang": "fr",
+    "domain": "liberation.fr",
+    "pole": "left",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.liberation.fr/arc/outboundfeeds/rss/?outputType=xml",
+    "entries": 50,
+    "newest_hours": 0.0,
+    "weight": "light"
+  },
+  {
+    "country": "France",
+    "name": "Mediapart",
+    "lang": "fr",
+    "domain": "mediapart.fr",
+    "pole": "investigative-left",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.mediapart.fr/articles/feed",
+    "entries": 10,
+    "newest_hours": 2.6,
     "weight": "light"
   },
   {
@@ -347,7 +646,33 @@
     "status": "ok",
     "feed": "https://www.france24.com/en/rss",
     "entries": 24,
-    "newest_hours": 0.4,
+    "newest_hours": 0.3,
+    "weight": "light"
+  },
+  {
+    "country": "Italy",
+    "name": "La Repubblica",
+    "lang": "it",
+    "domain": "repubblica.it",
+    "pole": "center-left",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.repubblica.it/rss/homepage/rss2.0.xml",
+    "entries": 30,
+    "newest_hours": 1.4,
+    "weight": "light"
+  },
+  {
+    "country": "Italy",
+    "name": "Il Sole 24 Ore",
+    "lang": "it",
+    "domain": "ilsole24ore.com",
+    "pole": "business",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.ilsole24ore.com/rss/mondo.xml",
+    "entries": 12,
+    "newest_hours": 1.3,
     "weight": "light"
   },
   {
@@ -359,8 +684,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.lastampa.it/rss/copertina.xml",
-    "entries": 68,
-    "newest_hours": 2.4,
+    "entries": 71,
+    "newest_hours": 2.9,
     "weight": "light"
   },
   {
@@ -373,21 +698,8 @@
     "status": "ok",
     "feed": "https://www.ansa.it/rss.xml",
     "entries": 28,
-    "newest_hours": 0.1,
-    "weight": "light"
-  },
-  {
-    "country": "Spain",
-    "name": "El Pais",
-    "lang": "es",
-    "domain": "elpais.com",
-    "pole": "center-left",
-    "tier": "1",
-    "status": "ok",
-    "feed": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada",
-    "entries": 148,
     "newest_hours": 0.2,
-    "weight": "heavy"
+    "weight": "light"
   },
   {
     "country": "Spain",
@@ -398,8 +710,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://www.elmundo.es/rss/googlenews/portada.xml",
-    "entries": 30,
-    "newest_hours": 0.0,
+    "entries": 31,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -412,7 +724,7 @@
     "status": "ok",
     "feed": "https://www.abc.es/rss/2.0/portada/",
     "entries": 25,
-    "newest_hours": 0.3,
+    "newest_hours": 0.4,
     "weight": "heavy"
   },
   {
@@ -424,8 +736,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.lavanguardia.com/rss/home.xml",
-    "entries": 138,
-    "newest_hours": 1.0,
+    "entries": 137,
+    "newest_hours": 1.1,
     "weight": "light"
   },
   {
@@ -438,7 +750,7 @@
     "status": "ok",
     "feed": "https://www.eldiario.es/rss/",
     "entries": 84,
-    "newest_hours": 30.8,
+    "newest_hours": 31.8,
     "weight": "light"
   },
   {
@@ -450,8 +762,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://e01-expansion.uecdn.es/rss/portada.xml",
-    "entries": 68,
-    "newest_hours": 0.3,
+    "entries": 70,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -464,7 +776,7 @@
     "status": "ok",
     "feed": "https://wyborcza.pl/pub/rss/najnowsze_wyborcza.xml",
     "entries": 50,
-    "newest_hours": 1.5,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -477,7 +789,33 @@
     "status": "ok",
     "feed": "https://www.rp.pl/rss_main",
     "entries": 20,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
+    "weight": "light"
+  },
+  {
+    "country": "Poland",
+    "name": "Onet",
+    "lang": "pl",
+    "domain": "onet.pl",
+    "pole": "reference",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://wiadomosci.onet.pl/.feed",
+    "entries": 20,
+    "newest_hours": 0.1,
+    "weight": "light"
+  },
+  {
+    "country": "Poland",
+    "name": "TVN24",
+    "lang": "pl",
+    "domain": "tvn24.pl",
+    "pole": "center-left",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://tvn24.pl/najnowsze.xml",
+    "entries": 26,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -490,7 +828,7 @@
     "status": "ok",
     "feed": "https://dorzeczy.pl/feed",
     "entries": 100,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -503,7 +841,7 @@
     "status": "ok",
     "feed": "https://www.polityka.pl/rss/articles.xml?list=517",
     "entries": 50,
-    "newest_hours": -3.1,
+    "newest_hours": -2.1,
     "weight": "light"
   },
   {
@@ -516,7 +854,7 @@
     "status": "ok",
     "feed": "https://notesfrompoland.com/feed/",
     "entries": 12,
-    "newest_hours": 4.0,
+    "newest_hours": 0.5,
     "weight": "heavy"
   },
   {
@@ -528,7 +866,7 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.nrc.nl/rss/",
-    "entries": 155,
+    "entries": 154,
     "newest_hours": 0.3,
     "weight": "light"
   },
@@ -541,8 +879,21 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.volkskrant.nl/rss.xml",
-    "entries": 85,
-    "newest_hours": 0.4,
+    "entries": 84,
+    "newest_hours": 0.3,
+    "weight": "light"
+  },
+  {
+    "country": "Netherlands",
+    "name": "De Telegraaf",
+    "lang": "nl",
+    "domain": "telegraaf.nl",
+    "pole": "right",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.telegraaf.nl/rss/",
+    "entries": 50,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -555,21 +906,34 @@
     "status": "ok",
     "feed": "https://feeds.nos.nl/nosnieuwsalgemeen",
     "entries": 20,
-    "newest_hours": 0.1,
+    "newest_hours": 0.3,
     "weight": "heavy"
   },
   {
     "country": "Belgium",
-    "name": "Le Soir",
-    "lang": "fr",
-    "domain": "lesoir.be",
-    "pole": "center-left",
+    "name": "De Standaard",
+    "lang": "nl",
+    "domain": "standaard.be",
+    "pole": "center-right",
     "tier": "2",
     "status": "ok",
-    "feed": "https://www.lesoir.be/rss.xml",
-    "entries": 10,
+    "feed": "https://www.standaard.be/rss/",
+    "entries": 50,
     "newest_hours": 0.1,
-    "weight": "heavy"
+    "weight": "light"
+  },
+  {
+    "country": "Belgium",
+    "name": "VRT NWS",
+    "lang": "nl",
+    "domain": "vrt.be",
+    "pole": "public",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.vrt.be/vrtnws/nl.rss.articles.xml",
+    "entries": 50,
+    "newest_hours": 0.1,
+    "weight": "light"
   },
   {
     "country": "Austria",
@@ -581,7 +945,7 @@
     "status": "ok",
     "feed": "https://www.derstandard.at/rss",
     "entries": 156,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -593,8 +957,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.diepresse.com/rss//",
-    "entries": 73,
-    "newest_hours": 0.1,
+    "entries": 76,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -606,8 +970,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://rss.orf.at/news.xml",
-    "entries": 24,
-    "newest_hours": 0.1,
+    "entries": 25,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -619,7 +983,7 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.nzz.ch/startseite.rss",
-    "entries": 79,
+    "entries": 77,
     "newest_hours": 0.2,
     "weight": "light"
   },
@@ -633,8 +997,34 @@
     "status": "ok",
     "feed": "https://www.letemps.ch/articles.rss",
     "entries": 21,
-    "newest_hours": 0.6,
+    "newest_hours": 0.0,
     "weight": "heavy"
+  },
+  {
+    "country": "Switzerland",
+    "name": "SRF",
+    "lang": "de",
+    "domain": "srf.ch",
+    "pole": "public",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.srf.ch/news/bnf/rss/1646",
+    "entries": 84,
+    "newest_hours": 0.2,
+    "weight": "light"
+  },
+  {
+    "country": "Portugal",
+    "name": "Publico",
+    "lang": "pt",
+    "domain": "publico.pt",
+    "pole": "center-left",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://feeds.feedburner.com/PublicoRSS",
+    "entries": 10,
+    "newest_hours": 1.5,
+    "weight": "light"
   },
   {
     "country": "Portugal",
@@ -646,7 +1036,7 @@
     "status": "ok",
     "feed": "https://observador.pt/feed/",
     "entries": 51,
-    "newest_hours": 0.0,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -659,8 +1049,34 @@
     "status": "ok",
     "feed": "https://www.irishtimes.com/arc/outboundfeeds/rss/",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "heavy"
+  },
+  {
+    "country": "Ireland",
+    "name": "RTE",
+    "lang": "en",
+    "domain": "rte.ie",
+    "pole": "public",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.rte.ie/feeds/rss/?index=/news/",
+    "entries": 60,
+    "newest_hours": 0.7,
+    "weight": "light"
+  },
+  {
+    "country": "Ireland",
+    "name": "Irish Independent",
+    "lang": "en",
+    "domain": "independent.ie",
+    "pole": "center-right",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.independent.ie/rss/",
+    "entries": 50,
+    "newest_hours": 0.2,
+    "weight": "light"
   },
   {
     "country": "Sweden",
@@ -671,8 +1087,21 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.dn.se/rss/",
-    "entries": 116,
-    "newest_hours": 0.2,
+    "entries": 117,
+    "newest_hours": 0.0,
+    "weight": "light"
+  },
+  {
+    "country": "Sweden",
+    "name": "Svenska Dagbladet",
+    "lang": "sv",
+    "domain": "svd.se",
+    "pole": "center-right",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.svd.se/feed/articles.rss",
+    "entries": 30,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -685,7 +1114,7 @@
     "status": "ok",
     "feed": "https://www.svt.se/rss.xml",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -698,7 +1127,7 @@
     "status": "ok",
     "feed": "https://www.aftenposten.no/rss",
     "entries": 25,
-    "newest_hours": 0.4,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -711,7 +1140,20 @@
     "status": "ok",
     "feed": "https://www.nrk.no/toppsaker.rss",
     "entries": 100,
-    "newest_hours": 2.9,
+    "newest_hours": 0.3,
+    "weight": "light"
+  },
+  {
+    "country": "Denmark",
+    "name": "Politiken",
+    "lang": "da",
+    "domain": "politiken.dk",
+    "pole": "center-left",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://politiken.dk/rss/senestenyt.rss",
+    "entries": 20,
+    "newest_hours": 0.9,
     "weight": "light"
   },
   {
@@ -724,7 +1166,33 @@
     "status": "ok",
     "feed": "https://newsletter-proxy.aws.jyllands-posten.dk/v1/top-stories/jyllands-posten.dk",
     "entries": 10,
-    "newest_hours": 1.3,
+    "newest_hours": 0.9,
+    "weight": "light"
+  },
+  {
+    "country": "Denmark",
+    "name": "DR",
+    "lang": "da",
+    "domain": "dr.dk",
+    "pole": "public",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
+    "entries": 20,
+    "newest_hours": 0.3,
+    "weight": "light"
+  },
+  {
+    "country": "Finland",
+    "name": "Helsingin Sanomat",
+    "lang": "fi",
+    "domain": "hs.fi",
+    "pole": "center",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.hs.fi/rss/tuoreimmat.xml",
+    "entries": 98,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -737,7 +1205,7 @@
     "status": "ok",
     "feed": "https://yle.fi/rss/news",
     "entries": 20,
-    "newest_hours": 0.1,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -750,7 +1218,7 @@
     "status": "ok",
     "feed": "https://www.ruv.is/rss/all",
     "entries": 1,
-    "newest_hours": 0.0,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -763,7 +1231,7 @@
     "status": "ok",
     "feed": "https://denikn.cz/feed/",
     "entries": 40,
-    "newest_hours": 0.2,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -776,7 +1244,20 @@
     "status": "ok",
     "feed": "https://www.seznamzpravy.cz/rss",
     "entries": 30,
-    "newest_hours": 0.0,
+    "newest_hours": 0.1,
+    "weight": "light"
+  },
+  {
+    "country": "Czechia",
+    "name": "Hospodarske noviny",
+    "lang": "cs",
+    "domain": "hn.cz",
+    "pole": "business",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://hn.cz/?m=rss",
+    "entries": 150,
+    "newest_hours": 0.8,
     "weight": "light"
   },
   {
@@ -789,7 +1270,33 @@
     "status": "ok",
     "feed": "https://servis.idnes.cz/rss.aspx",
     "entries": 30,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
+    "weight": "light"
+  },
+  {
+    "country": "Slovakia",
+    "name": "Dennik N",
+    "lang": "sk",
+    "domain": "dennikn.sk",
+    "pole": "center-right",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://dennikn.sk/feed/",
+    "entries": 10,
+    "newest_hours": 0.3,
+    "weight": "light"
+  },
+  {
+    "country": "Slovakia",
+    "name": "SME",
+    "lang": "sk",
+    "domain": "sme.sk",
+    "pole": "center",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.sme.sk/rss-title",
+    "entries": 22,
+    "newest_hours": 0.8,
     "weight": "light"
   },
   {
@@ -801,7 +1308,7 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.aktuality.sk/rss-articles.xml",
-    "entries": 171,
+    "entries": 173,
     "newest_hours": 0.1,
     "weight": "light"
   },
@@ -815,7 +1322,7 @@
     "status": "ok",
     "feed": "https://telex.hu/rss",
     "entries": 50,
-    "newest_hours": 0.1,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -828,7 +1335,7 @@
     "status": "ok",
     "feed": "https://444.hu/feed",
     "entries": 30,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
     "weight": "heavy"
   },
   {
@@ -841,7 +1348,7 @@
     "status": "ok",
     "feed": "https://hvg.hu/rss",
     "entries": 60,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -867,7 +1374,7 @@
     "status": "ok",
     "feed": "https://index.hu/24ora/rss/",
     "entries": 57,
-    "newest_hours": 0.0,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -880,7 +1387,7 @@
     "status": "ok",
     "feed": "https://hotnews.ro/feed",
     "entries": 20,
-    "newest_hours": 0.0,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -893,7 +1400,7 @@
     "status": "ok",
     "feed": "https://www.g4media.ro/feed",
     "entries": 10,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -905,8 +1412,34 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.digi24.ro/rss",
-    "entries": 269,
-    "newest_hours": 0.1,
+    "entries": 265,
+    "newest_hours": 0.0,
+    "weight": "light"
+  },
+  {
+    "country": "Bulgaria",
+    "name": "Dnevnik",
+    "lang": "bg",
+    "domain": "dnevnik.bg",
+    "pole": "center-right",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.dnevnik.bg/rss/",
+    "entries": 30,
+    "newest_hours": 0.0,
+    "weight": "light"
+  },
+  {
+    "country": "Bulgaria",
+    "name": "Mediapool",
+    "lang": "bg",
+    "domain": "mediapool.bg",
+    "pole": "independent",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.mediapool.bg/rss/",
+    "entries": 15,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -932,7 +1465,7 @@
     "status": "ok",
     "feed": "https://www.efsyn.gr/feed/",
     "entries": 90,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "heavy"
   },
   {
@@ -945,7 +1478,7 @@
     "status": "ok",
     "feed": "https://www.jutarnji.hr/feed",
     "entries": 50,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -971,7 +1504,7 @@
     "status": "ok",
     "feed": "https://n1info.hr/feed/",
     "entries": 50,
-    "newest_hours": 0.4,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -984,7 +1517,20 @@
     "status": "ok",
     "feed": "https://www.delo.si/rss",
     "entries": 60,
-    "newest_hours": 0.2,
+    "newest_hours": 0.4,
+    "weight": "light"
+  },
+  {
+    "country": "Slovenia",
+    "name": "RTVSLO",
+    "lang": "sl",
+    "domain": "rtvslo.si",
+    "pole": "public",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://img.rtvslo.si/feeds/00.xml",
+    "entries": 20,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -997,7 +1543,7 @@
     "status": "ok",
     "feed": "https://n1info.rs/feed/",
     "entries": 50,
-    "newest_hours": 0.0,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1010,6 +1556,19 @@
     "status": "ok",
     "feed": "https://www.danas.rs/feed/",
     "entries": 50,
+    "newest_hours": 0.0,
+    "weight": "light"
+  },
+  {
+    "country": "Serbia",
+    "name": "Politika",
+    "lang": "sr",
+    "domain": "politika.rs",
+    "pole": "pro-government",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.politika.rs/rss",
+    "entries": 20,
     "newest_hours": 0.1,
     "weight": "light"
   },
@@ -1023,7 +1582,7 @@
     "status": "ok",
     "feed": "https://nova.rs/feed/",
     "entries": 50,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -1049,7 +1608,7 @@
     "status": "ok",
     "feed": "https://www.err.ee/rss",
     "entries": 50,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -1062,7 +1621,7 @@
     "status": "ok",
     "feed": "https://www.postimees.ee/rss",
     "entries": 25,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -1075,7 +1634,7 @@
     "status": "ok",
     "feed": "https://www.lsm.lv/rss/",
     "entries": 50,
-    "newest_hours": 0.1,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -1088,7 +1647,7 @@
     "status": "ok",
     "feed": "https://www.delfi.lv/rss/index.xml",
     "entries": 50,
-    "newest_hours": 1.0,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -1101,7 +1660,7 @@
     "status": "ok",
     "feed": "https://www.lrt.lt/?rss",
     "entries": 100,
-    "newest_hours": 15.7,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -1114,7 +1673,7 @@
     "status": "ok",
     "feed": "https://www.15min.lt/rss",
     "entries": 20,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -1127,7 +1686,7 @@
     "status": "ok",
     "feed": "https://newsmaker.md/ru/feed",
     "entries": 10,
-    "newest_hours": 1.5,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1140,7 +1699,20 @@
     "status": "ok",
     "feed": "https://www.zdg.md/feed/",
     "entries": 10,
-    "newest_hours": 0.0,
+    "newest_hours": 0.1,
+    "weight": "light"
+  },
+  {
+    "country": "Turkey",
+    "name": "Hurriyet",
+    "lang": "tr",
+    "domain": "hurriyet.com.tr",
+    "pole": "center-right",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.hurriyet.com.tr/rss/gundem",
+    "entries": 100,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -1153,7 +1725,7 @@
     "status": "ok",
     "feed": "https://www.dailysabah.com/rss/all",
     "entries": 50,
-    "newest_hours": 0.6,
+    "newest_hours": 0.8,
     "weight": "light"
   },
   {
@@ -1166,7 +1738,33 @@
     "status": "ok",
     "feed": "https://www.cumhuriyet.com.tr/rss",
     "entries": 100,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
+    "weight": "light"
+  },
+  {
+    "country": "Israel",
+    "name": "The Jerusalem Post",
+    "lang": "en",
+    "domain": "jpost.com",
+    "pole": "center-right",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.jpost.com/rss/rssfeedsfrontpage.aspx",
+    "entries": 26,
+    "newest_hours": -2.1,
+    "weight": "light"
+  },
+  {
+    "country": "Israel",
+    "name": "Ynet",
+    "lang": "he",
+    "domain": "ynet.co.il",
+    "pole": "center",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.ynet.co.il/Integration/StoryRss2.xml",
+    "entries": 30,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1192,7 +1790,7 @@
     "status": "ok",
     "feed": "https://www.sharghdaily.com/feeds/",
     "entries": 30,
-    "newest_hours": 0.5,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1205,7 +1803,7 @@
     "status": "ok",
     "feed": "https://www.iranintl.com/feed",
     "entries": 50,
-    "newest_hours": 0.4,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -1218,7 +1816,7 @@
     "status": "ok",
     "feed": "https://www.radiofarda.com/api/",
     "entries": 20,
-    "newest_hours": 1.8,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1230,7 +1828,7 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://gulfnews.com/stories.rss",
-    "entries": 49,
+    "entries": 39,
     "newest_hours": 0.5,
     "weight": "heavy"
   },
@@ -1244,7 +1842,7 @@
     "status": "ok",
     "feed": "https://www.khaleejtimes.com/api/v1/collections/top-section.rss",
     "entries": 20,
-    "newest_hours": 2.0,
+    "newest_hours": 0.6,
     "weight": "heavy"
   },
   {
@@ -1257,7 +1855,7 @@
     "status": "ok",
     "feed": "https://www.middleeasteye.net/rss",
     "entries": 20,
-    "newest_hours": 0.6,
+    "newest_hours": 0.2,
     "weight": "heavy"
   },
   {
@@ -1270,7 +1868,33 @@
     "status": "ok",
     "feed": "https://www.thehindu.com/feeder/default.rss",
     "entries": 60,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
+    "weight": "light"
+  },
+  {
+    "country": "India",
+    "name": "The Times of India",
+    "lang": "en",
+    "domain": "timesofindia.indiatimes.com",
+    "pole": "mainstream",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    "entries": 43,
+    "newest_hours": 0.3,
+    "weight": "light"
+  },
+  {
+    "country": "India",
+    "name": "The Economic Times",
+    "lang": "en",
+    "domain": "economictimes.indiatimes.com",
+    "pole": "business",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://economictimes.indiatimes.com/rssfeedstopstories.cms",
+    "entries": 50,
+    "newest_hours": 0.8,
     "weight": "light"
   },
   {
@@ -1283,7 +1907,7 @@
     "status": "ok",
     "feed": "https://feeds.feedburner.com/ScrollinArticles.rss",
     "entries": 100,
-    "newest_hours": 0.4,
+    "newest_hours": 1.4,
     "weight": "heavy"
   },
   {
@@ -1296,7 +1920,33 @@
     "status": "ok",
     "feed": "https://www.livemint.com/rss/news",
     "entries": 35,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
+    "weight": "light"
+  },
+  {
+    "country": "India",
+    "name": "NDTV",
+    "lang": "en",
+    "domain": "ndtv.com",
+    "pole": "mainstream",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://feeds.feedburner.com/ndtvnews-top-stories",
+    "entries": 20,
+    "newest_hours": 1.6,
+    "weight": "light"
+  },
+  {
+    "country": "China",
+    "name": "Global Times",
+    "lang": "en",
+    "domain": "globaltimes.cn",
+    "pole": "state-nationalist",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.globaltimes.cn/rss/outbrain.xml",
+    "entries": 50,
+    "newest_hours": 110.3,
     "weight": "light"
   },
   {
@@ -1309,8 +1959,21 @@
     "status": "ok",
     "feed": "https://www.scmp.com/rss/feed/",
     "entries": 50,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "light"
+  },
+  {
+    "country": "China",
+    "name": "China Digital Times",
+    "lang": "en",
+    "domain": "chinadigitaltimes.net",
+    "pole": "censorship-watch",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://chinadigitaltimes.net/feed/",
+    "entries": 15,
+    "newest_hours": 86.7,
+    "weight": "heavy"
   },
   {
     "country": "China",
@@ -1322,7 +1985,7 @@
     "status": "ok",
     "feed": "https://sinocism.com/feed",
     "entries": 20,
-    "newest_hours": 3.3,
+    "newest_hours": 4.3,
     "weight": "heavy"
   },
   {
@@ -1335,7 +1998,7 @@
     "status": "ok",
     "feed": "https://news.ltn.com.tw/rss/all.xml",
     "entries": 40,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1347,8 +2010,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://udn.com/news/rssfeed/",
-    "entries": 97,
-    "newest_hours": 0.1,
+    "entries": 99,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -1360,8 +2023,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://feeds.feedburner.com/rsscna/engnews/",
-    "entries": 65,
-    "newest_hours": 2.7,
+    "entries": 67,
+    "newest_hours": 2.5,
     "weight": "light"
   },
   {
@@ -1374,7 +2037,7 @@
     "status": "ok",
     "feed": "https://www.taipeitimes.com/xml/index.rss",
     "entries": 56,
-    "newest_hours": 13.3,
+    "newest_hours": 14.3,
     "weight": "light"
   },
   {
@@ -1387,7 +2050,33 @@
     "status": "ok",
     "feed": "https://public.twreporter.org/rss/twreporter-rss.xml",
     "entries": 10,
-    "newest_hours": 21.3,
+    "newest_hours": 22.3,
+    "weight": "light"
+  },
+  {
+    "country": "Japan",
+    "name": "Asahi Shimbun",
+    "lang": "ja",
+    "domain": "asahi.com",
+    "pole": "liberal",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.asahi.com/rss/asahi/newsheadlines.rdf",
+    "entries": 40,
+    "newest_hours": 0.4,
+    "weight": "light"
+  },
+  {
+    "country": "Japan",
+    "name": "Mainichi Shimbun",
+    "lang": "ja",
+    "domain": "mainichi.jp",
+    "pole": "center-left",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://mainichi.jp/rss/etc/mainichi-flash.rss",
+    "entries": 20,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -1400,7 +2089,33 @@
     "status": "ok",
     "feed": "https://www.japantimes.co.jp/feed/",
     "entries": 30,
-    "newest_hours": 1.4,
+    "newest_hours": 2.4,
+    "weight": "light"
+  },
+  {
+    "country": "South Korea",
+    "name": "Yonhap",
+    "lang": "ko",
+    "domain": "yna.co.kr",
+    "pole": "reference",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://en.yna.co.kr/RSS/news.xml",
+    "entries": 103,
+    "newest_hours": 3.7,
+    "weight": "light"
+  },
+  {
+    "country": "South Korea",
+    "name": "Chosun Ilbo",
+    "lang": "ko",
+    "domain": "chosun.com",
+    "pole": "conservative",
+    "tier": "1",
+    "status": "ok",
+    "feed": "https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml",
+    "entries": 100,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -1418,6 +2133,19 @@
   },
   {
     "country": "South Korea",
+    "name": "Kyunghyang Shinmun",
+    "lang": "ko",
+    "domain": "khan.co.kr",
+    "pole": "progressive",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.khan.co.kr/rss/rssdata/total_news.xml",
+    "entries": 50,
+    "newest_hours": 1.0,
+    "weight": "light"
+  },
+  {
+    "country": "South Korea",
     "name": "The Korea Herald",
     "lang": "en",
     "domain": "koreaherald.com",
@@ -1426,7 +2154,7 @@
     "status": "ok",
     "feed": "https://www.koreaherald.com/rss/newsAll",
     "entries": 50,
-    "newest_hours": 0.7,
+    "newest_hours": 1.7,
     "weight": "light"
   },
   {
@@ -1439,7 +2167,7 @@
     "status": "ok",
     "feed": "https://kz.kursiv.media/feed/",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.3,
     "weight": "heavy"
   },
   {
@@ -1452,7 +2180,20 @@
     "status": "ok",
     "feed": "https://vlast.kz/feed/",
     "entries": 30,
-    "newest_hours": 0.8,
+    "newest_hours": 1.8,
+    "weight": "heavy"
+  },
+  {
+    "country": "Kazakhstan",
+    "name": "Orda.kz",
+    "lang": "ru",
+    "domain": "orda.kz",
+    "pole": "independent",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://orda.kz/feed/",
+    "entries": 10,
+    "newest_hours": 1.8,
     "weight": "heavy"
   },
   {
@@ -1465,7 +2206,20 @@
     "status": "ok",
     "feed": "https://www.azattyq.org/api/",
     "entries": 20,
-    "newest_hours": 1.0,
+    "newest_hours": 2.0,
+    "weight": "light"
+  },
+  {
+    "country": "Brazil",
+    "name": "Folha de S.Paulo",
+    "lang": "pt",
+    "domain": "folha.uol.com.br",
+    "pole": "center-left",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://feeds.folha.uol.com.br/emcimadahora/rss091.xml",
+    "entries": 100,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -1478,7 +2232,7 @@
     "status": "ok",
     "feed": "https://oglobo.globo.com/rss/oglobo",
     "entries": 100,
-    "newest_hours": 0.3,
+    "newest_hours": 0.4,
     "weight": "heavy"
   },
   {
@@ -1491,7 +2245,7 @@
     "status": "ok",
     "feed": "https://valor.globo.com/rss/valor",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "heavy"
   },
   {
@@ -1517,7 +2271,7 @@
     "status": "ok",
     "feed": "https://www.poder360.com.br/feed/",
     "entries": 10,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "heavy"
   },
   {
@@ -1530,7 +2284,7 @@
     "status": "ok",
     "feed": "https://www.clarin.com/rss/lo-ultimo/",
     "entries": 10,
-    "newest_hours": 0.7,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -1556,8 +2310,21 @@
     "status": "ok",
     "feed": "https://www.infobae.com/arc/outboundfeeds/rss/category/estados-unidos/",
     "entries": 100,
-    "newest_hours": 0.3,
+    "newest_hours": 0.1,
     "weight": "heavy"
+  },
+  {
+    "country": "Argentina",
+    "name": "Ambito Financiero",
+    "lang": "es",
+    "domain": "ambito.com",
+    "pole": "business",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.ambito.com/rss/pages/economia.xml",
+    "entries": 20,
+    "newest_hours": 0.6,
+    "weight": "light"
   },
   {
     "country": "Mexico",
@@ -1569,7 +2336,7 @@
     "status": "ok",
     "feed": "https://www.reforma.com/rss/portada.xml",
     "entries": 6,
-    "newest_hours": 0.5,
+    "newest_hours": 1.5,
     "weight": "light"
   },
   {
@@ -1582,8 +2349,21 @@
     "status": "ok",
     "feed": "https://www.eluniversal.com.mx/arc/outboundfeeds/rss/",
     "entries": 100,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
     "weight": "heavy"
+  },
+  {
+    "country": "Mexico",
+    "name": "La Jornada",
+    "lang": "es",
+    "domain": "jornada.com.mx",
+    "pole": "left-pro-government",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.jornada.com.mx/rss/edicion.xml",
+    "entries": 104,
+    "newest_hours": 4.4,
+    "weight": "light"
   },
   {
     "country": "Mexico",
@@ -1595,8 +2375,21 @@
     "status": "ok",
     "feed": "https://www.elfinanciero.com.mx/arc/outboundfeeds/rss/?outputType=xml",
     "entries": 100,
-    "newest_hours": 0.2,
+    "newest_hours": 0.3,
     "weight": "heavy"
+  },
+  {
+    "country": "Australia",
+    "name": "ABC News",
+    "lang": "en",
+    "domain": "abc.net.au",
+    "pole": "public",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.abc.net.au/news/feed/51120/rss.xml",
+    "entries": 25,
+    "newest_hours": 0.9,
+    "weight": "light"
   },
   {
     "country": "Australia",
@@ -1608,7 +2401,7 @@
     "status": "ok",
     "feed": "https://www.smh.com.au/rss/feed.xml",
     "entries": 20,
-    "newest_hours": 0.9,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1620,8 +2413,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.theguardian.com/au/rss",
-    "entries": 120,
-    "newest_hours": 0.1,
+    "entries": 121,
+    "newest_hours": 0.0,
     "weight": "light"
   }
 ]
