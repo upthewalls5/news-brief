@@ -29,9 +29,14 @@ HEADERS = {
     "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
-CONCURRENCY = 5
-RETRIES = 3          # мережеві збої на раннері GitHub майже завжди тимчасові
-LIMITS = httpx.Limits(max_connections=10, max_keepalive_connections=5)
+CONCURRENCY = 8
+RETRIES = 2          # мережеві збої на раннері GitHub майже завжди тимчасові
+LIMITS = httpx.Limits(max_connections=16, max_keepalive_connections=8)
+
+# Раннери GitHub не мають робочої IPv6-зв'язності — прив'язуємось до IPv4,
+# інакше домени за CDN стабільно віддають ConnectError.
+def make_transport():
+    return httpx.AsyncHTTPTransport(local_address="0.0.0.0", retries=1)
 TIMEOUT = httpx.Timeout(25.0, connect=10.0)
 
 WINDOW_HOURS = 26          # вікно збору
@@ -107,8 +112,8 @@ async def fetch_one(client, feed):
         try:
             r = await client.get(url, follow_redirects=True)
         except Exception as exc:
-            err = type(exc).__name__
-            if err in TRANSIENT and attempt < RETRIES - 1:
+            err = f"{type(exc).__name__}: {str(exc)[:80]}"
+            if err.split(":")[0] in TRANSIENT and attempt < RETRIES - 1:
                 await asyncio.sleep(1.5 * (attempt + 1))
                 continue
             return feed, None, err
@@ -124,7 +129,8 @@ async def fetch_one(client, feed):
 
 async def gather_all(feeds):
     sem = asyncio.Semaphore(CONCURRENCY)
-    async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT, limits=LIMITS) as client:
+    async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT, limits=LIMITS,
+                                 transport=make_transport()) as client:
         async def guarded(f):
             async with sem:
                 return await fetch_one(client, f)
