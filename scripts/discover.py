@@ -41,10 +41,12 @@ CONCURRENCY = 6
 RETRIES = 2          # ConnectError на раннері GitHub — майже завжди тимчасовий
 LIMITS = httpx.Limits(max_connections=12, max_keepalive_connections=6)
 
-# Раннери GitHub не мають робочої IPv6-зв'язності. Якщо домен віддає AAAA-запис,
-# клієнт іде в IPv6 і повертає ConnectError. local_address прив'язує до IPv4.
+# Транспорт лишаємо дефолтним: хай сам обирає IPv4 чи IPv6 залежно від того,
+# що є в домена.
 def make_transport():
-    return httpx.AsyncHTTPTransport(local_address="0.0.0.0", retries=1)
+    # Без local_address: примусовий IPv4 робив недосяжними домени, у яких
+    # є лише AAAA-запис (apnews.com і десятки інших).
+    return httpx.AsyncHTTPTransport(retries=1)
 TIMEOUT = httpx.Timeout(20.0, connect=10.0)
 
 CANDIDATE_PATHS = [
@@ -75,7 +77,7 @@ def resolve(host: str, tries: int = 4) -> bool:
         return DNS_CACHE[host]
     for i in range(tries):
         try:
-            socket.getaddrinfo(host, 443, socket.AF_INET, socket.SOCK_STREAM)
+            socket.getaddrinfo(host, 443, 0, socket.SOCK_STREAM)
             DNS_CACHE[host] = True
             return True
         except socket.gaierror:
@@ -134,7 +136,7 @@ async def try_insecure(url):
     try:
         async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT, verify=INSECURE,
                                      transport=httpx.AsyncHTTPTransport(
-                                         local_address="0.0.0.0", verify=INSECURE)) as c:
+                                         verify=INSECURE)) as c:
             r = await c.get(url, follow_redirects=True)
         return (r, None) if r.status_code < 400 else (None, f"HTTP {r.status_code}")
     except Exception as exc:
