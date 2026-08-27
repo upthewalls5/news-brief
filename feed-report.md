@@ -1,84 +1,67 @@
 # Звіт перевірки стрічок
 
-Дата: 2026-08-27 22:49 UTC
+Дата: 2026-08-27 23:39 UTC
 
 - Перевірено видань: **247**
-- Живих стрічок: **183** (легких 146, важких 37)
-- Не вдалося: **64**
+- Живих стрічок: **201** (легких 159, важких 42)
+- Не вдалося: **46**
 
 ## Не вдалося — потрібна заміна
 
 | Країна | Видання | Причина |
 |---|---|---|
-| Argentina | La Nacion | ConnectTimeout:  |
-| Australia | Australian Financial Review | ConnectError: [Errno -2] Name or service not known |
-| Belarus | Nasha Niva | ConnectError: [Errno -2] Name or service not known |
-| Belarus | Zerkalo | ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010) |
-| Belgium | Le Soir | ConnectError: [Errno -2] Name or service not known |
-| Brazil | Estadao | ConnectError: [Errno -2] Name or service not known |
-| Brazil | Gazeta do Povo | ConnectError: [Errno -2] Name or service not known |
-| Bulgaria | Capital | ConnectError: [Errno -2] Name or service not known |
-| China | Caixin | ConnectError: [Errno -2] Name or service not known |
-| China | People's Daily | ConnectTimeout:  |
-| China | Xinhua | ConnectError: [Errno -2] Name or service not known |
-| China | Yicai | ConnectError: [Errno -2] Name or service not known |
-| EU-Brussels | Euractiv | ConnectError: [Errno -2] Name or service not known |
-| France | Les Echos | ConnectError: [Errno -2] Name or service not known |
-| Global | Associated Press | ConnectError: [Errno -5] No address associated with hostname |
-| Greece | Kathimerini | ConnectError: [Errno -2] Name or service not known |
-| India | The Indian Express | ConnectError: [Errno -2] Name or service not known |
-| India | The Wire | ConnectError: [Errno -2] Name or service not known |
-| India | ThePrint | ConnectError: [Errno -2] Name or service not known |
-| Iran | Amwaj.media | ConnectError: [Errno -2] Name or service not known |
-| Iran | Etemad | ConnectError: [Errno -2] Name or service not known |
-| Iran | Fars News | ConnectError: [Errno -2] Name or service not known |
-| Iran | Tasnim | ConnectError: [Errno -2] Name or service not known |
-| Israel | Calcalist | ConnectError: [Errno -2] Name or service not known |
-| Israel | Haaretz | ConnectError: [Errno -2] Name or service not known |
-| Israel | Israel Hayom | ConnectError: [Errno -2] Name or service not known |
-| Israel | Kan 11 | HTTP 404 |
-| Israel | The Times of Israel | ConnectError: [Errno -2] Name or service not known |
-| Italy | Corriere della Sera | HTTP 404 |
-| Italy | Il Foglio | ConnectError: [Errno -2] Name or service not known |
-| Italy | La Repubblica | ConnectError: [Errno -5] No address associated with hostname |
-| Italy | La Stampa | ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) |
-| Japan | Kyodo News | ConnectError: [Errno -2] Name or service not known |
-| Japan | NHK | ConnectError: [Errno -2] Name or service not known |
-| Japan | Nikkei | ConnectError: [Errno -2] Name or service not known |
-| Japan | Sankei Shimbun | ConnectError: [Errno -2] Name or service not known |
-| Japan | Yomiuri Shimbun | ConnectError: [Errno -2] Name or service not known |
-| Kazakhstan | Kazinform | ConnectError: [Errno -2] Name or service not known |
-| Kazakhstan | Tengrinews | ConnectError: [Errno -2] Name or service not known |
-| Mexico | Animal Politico | ConnectError: [Errno -2] Name or service not known |
-| Mexico | Aristegui Noticias | ConnectError: [Errno -2] Name or service not known |
-| Mexico | Milenio | ConnectError: [Errno -2] Name or service not known |
-| Norway | Dagens Naeringsliv | ConnectError: [Errno -2] Name or service not known |
-| Poland | PAP | ConnectError: [Errno -2] Name or service not known |
-| Poland | TVN24 | ConnectError: [Errno -2] Name or service not known |
-| Portugal | Expresso | ConnectError: [Errno -2] Name or service not known |
-| Russia | Faridaily | ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010) |
-| Russia | Kommersant | ConnectError: [Errno -2] Name or service not known |
-| Russia | Verstka | ConnectError: [Errno -2] Name or service not known |
-| South Korea | JoongAng Ilbo | ConnectError: [Errno -2] Name or service not known |
-| Taiwan | China Times | ConnectError: [Errno -2] Name or service not known |
-| Turkey | Gazete Duvar | ConnectError: [Errno -2] Name or service not known |
-| Turkey | T24 | ConnectError: [Errno -2] Name or service not known |
-| UAE | Al Arabiya | HTTP 403 |
-| UAE | The National | ConnectError: [Errno -2] Name or service not known |
-| UAE | WAM | ConnectError: [Errno -2] Name or service not known |
-| UK | New Statesman | ConnectError: [Errno -2] Name or service not known |
-| UK | The Spectator | ConnectError: [Errno -2] Name or service not known |
-| USA | The Wall Street Journal | ConnectError: [Errno -2] Name or service not known |
-| Ukraine | Ekonomichna Pravda | ConnectError: [Errno -2] Name or service not known |
-| Ukraine | Forbes Ukraine | ConnectError: [Errno -2] Name or service not known |
-| Ukraine | Hromadske | ConnectError: [Errno -2] Name or service not known |
-| Ukraine | Liga.net | ConnectError: [Errno -2] Name or service not known |
-| Ukraine | Suspilne | ConnectError: [Errno -2] Name or service not known |
+| Argentina | La Nacion | стрічка порожня  [https://www.lanacion.com.ar/arc/outboundfeeds/rss/?outputType=xml] |
+| Australia | Australian Financial Review | HTTP 404  [https://www.afr.com/rss/feed] |
+| Belarus | Nasha Niva | HTTP 404  [https://nashaniva.com/rss.xml] |
+| Brazil | Estadao | застаріла: найновіше 1807.6 год тому  [https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/ultimas/?outputType=xml] |
+| Bulgaria | Capital | HTTP 403 (chrome: HTTP 403)  [https://www.capital.bg/rss/] |
+| China | Caixin | HTTP 404  [https://www.caixinglobal.com/feed/] |
+| China | People's Daily | застаріла: найновіше 10770.0 год тому  [http://en.people.cn/rss/90777.xml] |
+| China | Xinhua | HTTP 404  [https://english.news.cn/rss/world.xml] |
+| China | Yicai | HTTP 404  [https://www.yicai.com/rss/news.xml] |
+| Global | Associated Press | HTTP 401 (chrome: HTTP 401)  [https://apnews.com/index.rss] |
+| Greece | Kathimerini | HTTP 410  [https://www.kathimerini.gr/feed/] |
+| India | The Indian Express | HTTP 403 (chrome: HTTP 403)  [https://indianexpress.com/section/world/feed/] |
+| India | The Wire | HTTP 403 (chrome: HTTP 403)  [https://m.thewire.in/rss] |
+| India | ThePrint | не парситься: SAXParseException  [https://theprint.in/feed/] |
+| Iran | Amwaj.media | HTTP 429 (chrome: HTTP 429)  [https://amwaj.media/rss] |
+| Iran | Etemad | ConnectTimeout:   [https://www.etemadnewspaper.ir/fa/rss/allnews] |
+| Iran | Fars News | HTTP 404  [https://www.farsnews.ir/rss] |
+| Iran | Tasnim | ConnectError: [Errno -2] Name or service not known  [https://www.tasnimnews.com/fa/rss/feed/0/7/0/] |
+| Israel | Calcalist | HTTP 403 (chrome: HTTP 404)  [https://www.calcalist.co.il/GeneralRSS/0,16335,L-8,00.xml] |
+| Israel | Kan 11 | HTTP 404  [https://www.kan.org.il/feed/] |
+| Israel | The Times of Israel | HTTP 403 (chrome: HTTP 403)  [https://www.timesofisrael.com/feed/] |
+| Italy | Corriere della Sera | застаріла: найновіше 20081.5 год тому  [https://xml2.corriereobjects.it/rss/homepage.xml] |
+| Italy | Il Foglio | HTTP 404  [https://www.ilfoglio.it/rss.xml] |
+| Japan | Kyodo News | HTTP 404  [https://english.kyodonews.net/rss/news.xml] |
+| Japan | NHK | застаріла: найновіше 465.3 год тому  [https://www3.nhk.or.jp/rss/news/cat0.xml] |
+| Japan | Sankei Shimbun | HTTP 404  [https://www.sankei.com/rss/news/flash.xml] |
+| Kazakhstan | Tengrinews | HTTP 500  [https://tengrinews.kz/rss/] |
+| Mexico | Animal Politico | HTTP 404  [https://animalpolitico.com/feed] |
+| Mexico | Aristegui Noticias | стрічка порожня  [https://aristeguinoticias.com/feed/] |
+| Mexico | Milenio | HTTP 403 (chrome: HTTP 403)  [https://www.milenio.com/rss] |
+| Norway | Dagens Naeringsliv | не парситься: SAXParseException  [https://www.dn.no/rss] |
+| Poland | PAP | не парситься: SAXParseException  [https://www.pap.pl/rss.xml] |
+| Russia | Faridaily | HTTP 403 (chrome: HTTP 403)  [https://faridaily.substack.com/feed] |
+| Russia | Verstka | HTTP 502  [https://verstka.media/rss] |
+| South Korea | JoongAng Ilbo | HTTP 404  [https://koreajoongangdaily.joins.com/xmls/joins] |
+| Taiwan | China Times | HTTP 404  [https://www.chinatimes.com/rss/realtimenews.xml] |
+| Turkey | Gazete Duvar | HTTP 403 (chrome: HTTP 403)  [https://www.gazeteduvar.com.tr/rss] |
+| Turkey | T24 | не парситься: SAXParseException  [https://t24.com.tr/rss] |
+| UAE | WAM | не парситься: SAXParseException  [https://www.wam.ae/en/feed] |
+| UK | New Statesman | HTTP 403 (chrome: HTTP 403)  [https://www.newstatesman.com/feed] |
+| UK | The Spectator | HTTP 404  [https://www.spectator.co.uk/feed] |
+| USA | The Wall Street Journal | застаріла: найновіше 13852.2 год тому  [https://feeds.a.dj.com/rss/RSSWorldNews.xml] |
+| Ukraine | Ekonomichna Pravda | HTTP 403 (chrome: HTTP 403)  [https://www.epravda.com.ua/rss/] |
+| Ukraine | Forbes Ukraine | HTTP 404  [https://forbes.ua/rss] |
+| Ukraine | Hromadske | HTTP 404  [https://hromadske.ua/feed] |
+| Ukraine | Liga.net | HTTP 403 (chrome: HTTP 403)  [https://www.liga.net/news/rss.xml] |
 
 ## Важкі стрічки (віддають повний текст)
 
 - Argentina · Infobae
 - Australia · Guardian Australia
+- Belgium · Le Soir
 - Brazil · O Globo
 - Brazil · Valor Economico
 - Brazil · Poder360
@@ -91,9 +74,11 @@
 - Hungary · 444
 - India · Scroll.in
 - Ireland · The Irish Times
+- Israel · Israel Hayom
 - Kazakhstan · Kursiv
 - Kazakhstan · Vlast.kz
 - Kazakhstan · Orda.kz
+- Kazakhstan · Kazinform
 - Mexico · El Universal
 - Mexico · El Financiero
 - Netherlands · NOS
@@ -103,8 +88,10 @@
 - Spain · El Pais
 - Spain · ABC
 - Switzerland · Le Temps
+- UAE · The National
 - UAE · Gulf News
 - UAE · Khaleej Times
+- UAE · Al Arabiya
 - UAE · Middle East Eye
 - UK · The Guardian
 - USA · Politico
