@@ -198,7 +198,15 @@ async def find_feed(client, row):
     last_err = home_err and f"головна: {home_err}" or "жодна адреса не віддала стрічку"
     seen_c = set()
     ordered = [u for u in candidates if not (u in seen_c or seen_c.add(u))][:16]
-    ordered += [u for u in fallback if u not in seen_c][:12]
+
+    # Запасні піддомени вигадані нами, їх існування ніхто не обіцяв.
+    # Коли явна адреса стрічки задана, вони лише засмічують діагностику:
+    # у звіт потрапляла помилка неіснуючого feeds.apnews.com замість
+    # справжньої причини відмови самої стрічки.
+    if not explicit:
+        ordered += [u for u in fallback if u not in seen_c][:12]
+
+    primary_err = None      # помилка ПЕРШОЇ, найдостовірнішої адреси
 
     # Якщо до хоста не вдалось під'єднатись, решту адрес на ньому пропускаємо:
     # мовчить весь хост, а не конкретний шлях. Саме це раніше давало
@@ -211,6 +219,8 @@ async def find_feed(client, row):
             continue
         r, err = await try_url(client, url)
         if r is None:
+            if primary_err is None:
+                primary_err = f"{err}  [{url}]"
             last_err = err
             if err.split(":")[0] in ("ConnectError", "ConnectTimeout"):
                 dead_hosts.add(host)
@@ -223,13 +233,15 @@ async def find_feed(client, row):
             )
             return out
         last_err = why or "невідома помилка"
+        if primary_err is None:
+            primary_err = f"{last_err}  [{url}]"
 
-    out.update(status="failed", error=last_err)
+    out.update(status="failed", error=primary_err or last_err)
     return out
 
 
 async def main():
-    print("discover.py версія 2026-08-28.1")
+    print("discover.py версія 2026-08-28.2")
     src = ROOT / "sources.csv"
     rows = list(csv.DictReader(src.open(encoding="utf-8")))
     sem = asyncio.Semaphore(CONCURRENCY)
