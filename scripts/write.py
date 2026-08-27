@@ -13,6 +13,7 @@ write.py — перетворює дайджест на готовий бріф 
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -20,10 +21,12 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 MODEL = "claude-sonnet-5"
-VERSION = "2026-08-28.4"
+VERSION = "2026-08-28.5"
 # Ліміт спільний для міркувань моделі та самого тексту. При 2000 роздуми
 # з'їдали майже все, і випуск обривався на середині першого блоку.
-MAX_TOKENS = 16000   # довший випуск + міркування моделі
+MAX_TOKENS = 12000   # довший випуск + міркування моделі
+TIMEOUT = 900.0      # 100 КБ на вхід і 1200 слів на вихід не вкладаються в 180 с
+ATTEMPTS = 3
 
 # Запобіжник від несподівано величезного дайджесту (наприклад, якщо якась стрічка
 # почне віддавати повні тексти). Обрізаємо, а не платимо за сюрприз.
@@ -50,17 +53,28 @@ def main():
         "messages": [{"role": "user", "content": digest}],
     }
 
-    with httpx.Client(timeout=180.0) as client:
-        r = client.post(
-            "https://api.anthropic.com/v1/messages",
-            headers={
-                "x-api-key": key,
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json",
-            },
-            json=payload,
-        )
+    r = None
+    for attempt in range(ATTEMPTS):
+        try:
+            with httpx.Client(timeout=TIMEOUT) as client:
+                r = client.post(
+                    "https://api.anthropic.com/v1/messages",
+                    headers={
+                        "x-api-key": key,
+                        "anthropic-version": "2023-06-01",
+                        "content-type": "application/json",
+                    },
+                    json=payload,
+                )
+            break
+        except (httpx.ReadTimeout, httpx.ConnectError, httpx.RemoteProtocolError) as exc:
+            print(f"Спроба {attempt + 1}: {type(exc).__name__}")
+            if attempt == ATTEMPTS - 1:
+                sys.exit(f"API не відповів за {ATTEMPTS} спроби: {type(exc).__name__}")
+            time.sleep(10 * (attempt + 1))
 
+    if r.status_code in (429, 529) or r.status_code >= 500:
+        sys.exit(f"API перевантажений ({r.status_code}). Спробуйте перезапустити.")
     if r.status_code >= 400:
         sys.exit(f"API повернув {r.status_code}: {r.text[:400]}")
 
