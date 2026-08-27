@@ -1,6 +1,11 @@
 name: Ранковий бріф
 
-on: {workflow_dispatch: {}, schedule: [{cron: '0 4 * * *'}]}
+on:
+  schedule:
+    # 04:00 UTC = 07:00 Київ влітку, 06:00 взимку.
+    # Взимку за потреби змінити на '0 5 * * *'.
+    - cron: '0 4 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -10,25 +15,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Публічний DNS
+        run: |
+          sudo sh -c 'printf "nameserver 1.1.1.1\nnameserver 8.8.8.8\nnameserver 9.9.9.9\noptions timeout:3 attempts:3\n" > /etc/resolv.conf'
+          echo "перевірка:"; getent hosts apnews.com haaretz.com nhk.or.jp || true
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
+        with:
+          python-version: '3.12'
       - run: pip install -r requirements.txt
+
       - name: 1. Зібрати новини
         run: python scripts/collect.py
+
       - name: 2. Написати бріф
-        env: {ANTHROPIC_API_KEY: '${{ secrets.ANTHROPIC_API_KEY }}'}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/write.py
+
       - name: 3. Відправити в Telegram
         if: always()
         env:
-          TELEGRAM_BOT_TOKEN: '${{ secrets.TELEGRAM_BOT_TOKEN }}'
-          TELEGRAM_CHAT_ID: '${{ secrets.TELEGRAM_CHAT_ID }}'
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/send.py
+
       - name: 4. Зберегти в архів
         if: always()
         run: |
           git config user.name  "news-bot"
           git config user.email "news-bot@users.noreply.github.com"
-          git add -A
-          git diff --staged --quiet || git commit -m "Бріф"
+          git add digests issues state
+          git diff --staged --quiet || git commit -m "Бріф $(date -u +%Y-%m-%d)"
           git push
