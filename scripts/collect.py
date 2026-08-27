@@ -38,7 +38,7 @@ LIMITS = httpx.Limits(max_connections=16, max_keepalive_connections=8)
 def make_transport():
     # Без local_address: примусовий IPv4 робив недосяжними домени, у яких
     # є лише AAAA-запис (apnews.com і десятки інших).
-    return httpx.AsyncHTTPTransport(retries=1)
+    return httpx.AsyncHTTPTransport(retries=1, http2=True)
 TIMEOUT = httpx.Timeout(25.0, connect=10.0)
 
 WINDOW_HOURS = 26          # вікно збору
@@ -101,6 +101,39 @@ def signature(title: str):
     return out
 
 
+# ── Обхід антибот-захисту ──────────────────────────────────────────────
+# Cloudflare розрізняє клієнтів за відбитком TLS-рукостискання, а не за
+# заголовками. httpx завжди виглядає як робот, скільки User-Agent не став.
+# curl_cffi повторює рукостискання справжнього Chrome, і це знімає 403.
+# Імпорт захищений: якщо бібліотеки немає, працюємо як раніше.
+try:
+    from curl_cffi import requests as _cffi
+    HAVE_CFFI = True
+except Exception:
+    HAVE_CFFI = False
+
+BLOCKED_CODES = (401, 403, 405, 406, 429, 503)
+
+
+def _cffi_get(url):
+    r = _cffi.get(url, impersonate="chrome", timeout=30,
+                  allow_redirects=True)
+    return r.status_code, r.content
+
+
+async def try_browser(url):
+    """Другий захід під виглядом Chrome. Повертає (content, помилка)."""
+    if not HAVE_CFFI:
+        return None, "curl_cffi недоступний"
+    try:
+        code, content = await asyncio.to_thread(_cffi_get, url)
+    except Exception as exc:
+        return None, f"chrome: {type(exc).__name__}"
+    if code >= 400:
+        return None, f"chrome: HTTP {code}"
+    return content, None
+
+
 TRANSIENT = ("ConnectError", "ConnectTimeout", "ReadTimeout",
              "RemoteProtocolError", "ReadError", "PoolTimeout")
 
@@ -123,6 +156,11 @@ async def fetch_one(client, feed):
             err = f"HTTP {r.status_code}"
             await asyncio.sleep(2.0 * (attempt + 1))
             continue
+        if r.status_code in BLOCKED_CODES:
+            content, cerr = await try_browser(url)
+            if content is not None:
+                return feed, content, None
+            return feed, None, f"HTTP {r.status_code} ({cerr})"
         if r.status_code >= 400:
             return feed, None, f"HTTP {r.status_code}"
         return feed, r.content, None
@@ -217,7 +255,7 @@ def load_seen():
 
 
 def main():
-    print("collect.py версія 2026-08-28.4")
+    print("collect.py версія 2026-08-28.6")
     feeds = json.loads((ROOT / "feeds.json").read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=WINDOW_HOURS)
 
