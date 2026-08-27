@@ -166,7 +166,7 @@ Israel,Ynet,he,ynet.co.il,center,1,https://www.ynet.co.il/Integration/StoryRss2.
 Israel,Kan 11,he,kan.org.il,public,2,https://www.kan.org.il/rss/|https://www.kan.org.il/feed/
 Israel,Calcalist,he,calcalist.co.il,business,2,"https://www.calcalist.co.il/GeneralRSS/0,16335,L-8,00.xml"
 Iran,IRNA,fa,irna.ir,state,1,
-Iran,Tasnim,fa,tasnimnews.com,hardline,1,https://www.tasnimnews.com/en/rss/feed/0/8/0/
+Iran,Tasnim,fa,tasnimnews.com,hardline,1,https://www.tasnimnews.com/fa/rss/feed/0/7/0/|https://www.tasnimnews.com/en/rss/feed/0/8/0/
 Iran,Fars News,fa,farsnews.ir,hardline,2,https://www.farsnews.ir/rss
 Iran,Shargh,fa,sharghdaily.com,reformist,1,
 Iran,Etemad,fa,etemadnewspaper.ir,reformist,2,https://www.etemadnewspaper.ir/fa/rss/allnews
@@ -205,7 +205,7 @@ Taiwan,The Reporter,zh,twreporter.org,investigative,2,
 Japan,Asahi Shimbun,ja,asahi.com,liberal,1,https://www.asahi.com/rss/asahi/newsheadlines.rdf
 Japan,Yomiuri Shimbun,ja,yomiuri.co.jp,conservative,1,https://www.yomiuri.co.jp/rss/yol/topstories
 Japan,Nikkei,ja,nikkei.com,business,1,https://www.nikkei.com/rss/index.rdf
-Japan,NHK,ja,nhk.or.jp,public,1,https://www3.nhk.or.jp/rss/news/cat0.xml
+Japan,NHK,ja,www3.nhk.or.jp,public,1,https://www3.nhk.or.jp/rss/news/cat0.xml
 Japan,Mainichi Shimbun,ja,mainichi.jp,center-left,2,https://mainichi.jp/rss/etc/mainichi-flash.rss
 Japan,Sankei Shimbun,ja,sankei.com,right,2,https://www.sankei.com/rss/news/flash.xml
 Japan,Kyodo News,ja,kyodonews.jp,reference,2,https://english.kyodonews.net/rss/news.xml|https://english.kyodonews.net/rss/all.xml
@@ -245,4 +245,4 @@ Mexico,Aristegui Noticias,es,aristeguinoticias.com,critical,2,https://aristeguin
 Australia,ABC News,en,abc.net.au,public,2,https://www.abc.net.au/news/feed/51120/rss.xml
 Australia,Sydney Morning Herald,en,smh.com.au,center-left,2,
 Australia,Australian Financial Review,en,afr.com,business,2,https://www.afr.com/rss/feed
-Australia,Guardian Australia,en,theguardian.com/au,center-left,2,
+Australia,Guardian Australia,en,theguardian.com,center-left,2,https://www.theguardian.com/australia-news/rss
