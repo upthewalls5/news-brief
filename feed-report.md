@@ -1,10 +1,10 @@
 # Звіт перевірки стрічок
 
-Дата: 2026-08-27 21:55 UTC
+Дата: 2026-08-27 22:16 UTC
 
 - Перевірено видань: **247**
-- Живих стрічок: **185** (легких 151, важких 34)
-- Не вдалося: **62**
+- Живих стрічок: **186** (легких 150, важких 36)
+- Не вдалося: **61**
 
 ## Не вдалося — потрібна заміна
 
@@ -36,7 +36,7 @@
 | Israel | Calcalist | DNS: хост не резолвиться |
 | Israel | Haaretz | DNS: хост не резолвиться |
 | Israel | Israel Hayom | DNS: хост не резолвиться |
-| Israel | Kan 11 | HTTP 404 |
+| Israel | Kan 11 | ConnectTimeout:  |
 | Israel | The Times of Israel | DNS: хост не резолвиться |
 | Italy | Corriere della Sera | HTTP 404 |
 | Italy | Il Foglio | DNS: хост не резолвиться |
@@ -50,7 +50,6 @@
 | Mexico | Animal Politico | DNS: хост не резолвиться |
 | Mexico | Aristegui Noticias | DNS: хост не резолвиться |
 | Mexico | Milenio | DNS: хост не резолвиться |
-| Mexico | Reforma | DNS: хост не резолвиться |
 | Norway | Dagens Naeringsliv | DNS: хост не резолвиться |
 | Poland | PAP | DNS: хост не резолвиться |
 | Portugal | Expresso | DNS: хост не резолвиться |
@@ -76,6 +75,7 @@
 ## Важкі стрічки (віддають повний текст)
 
 - Argentina · Infobae
+- Australia · Guardian Australia
 - Brazil · O Globo
 - Brazil · Valor Economico
 - Brazil · Poder360
@@ -108,4 +108,5 @@
 - USA · Fox News
 - USA · The Atlantic
 - USA · The Free Press
+- Ukraine · Ukrainska Pravda
 - Ukraine · Dzerkalo Tyzhnia

@@ -9,7 +9,7 @@
     "status": "ok",
     "feed": "https://www.ft.com/rss/home/international",
     "entries": 9,
-    "newest_hours": 1.1,
+    "newest_hours": 1.5,
     "weight": "light"
   },
   {
@@ -22,7 +22,7 @@
     "status": "ok",
     "feed": "https://www.economist.com/international/rss.xml",
     "entries": 300,
-    "newest_hours": 7.7,
+    "newest_hours": 8.0,
     "weight": "light"
   },
   {
@@ -35,7 +35,7 @@
     "status": "ok",
     "feed": "https://www.foreignaffairs.com/rss.xml",
     "entries": 20,
-    "newest_hours": 17.7,
+    "newest_hours": 18.1,
     "weight": "light"
   },
   {
@@ -61,7 +61,7 @@
     "status": "ok",
     "feed": "https://www.aljazeera.com/xml/rss/all.xml",
     "entries": 25,
-    "newest_hours": 0.4,
+    "newest_hours": 0.8,
     "weight": "light"
   },
   {
@@ -74,7 +74,7 @@
     "status": "ok",
     "feed": "https://rss.dw.com/rdf/rss-en-all",
     "entries": 139,
-    "newest_hours": 2.1,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -87,7 +87,7 @@
     "status": "ok",
     "feed": "https://www.politico.eu/feed/",
     "entries": 10,
-    "newest_hours": 0.5,
+    "newest_hours": 0.9,
     "weight": "heavy"
   },
   {
@@ -100,7 +100,7 @@
     "status": "ok",
     "feed": "https://euobserver.com/feed/",
     "entries": 20,
-    "newest_hours": 5.2,
+    "newest_hours": 5.6,
     "weight": "heavy"
   },
   {
@@ -113,7 +113,7 @@
     "status": "ok",
     "feed": "https://www.euronews.com/rss",
     "entries": 50,
-    "newest_hours": 1.3,
+    "newest_hours": 1.6,
     "weight": "light"
   },
   {
@@ -126,8 +126,8 @@
     "status": "ok",
     "feed": "https://www.pravda.com.ua/rss",
     "entries": 20,
-    "newest_hours": 1.0,
-    "weight": "light"
+    "newest_hours": 0.5,
+    "weight": "heavy"
   },
   {
     "country": "Ukraine",
@@ -152,7 +152,7 @@
     "status": "ok",
     "feed": "https://nv.ua/ukr/rss/all.xml",
     "entries": 40,
-    "newest_hours": 0.1,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -165,7 +165,7 @@
     "status": "ok",
     "feed": "https://babel.ua/rss.xml",
     "entries": 178,
-    "newest_hours": 2.1,
+    "newest_hours": 2.5,
     "weight": "light"
   },
   {
@@ -178,7 +178,7 @@
     "status": "ok",
     "feed": "https://kyivindependent.com/news-archive/rss/",
     "entries": 15,
-    "newest_hours": 0.3,
+    "newest_hours": 0.7,
     "weight": "light"
   },
   {
@@ -191,7 +191,7 @@
     "status": "ok",
     "feed": "https://tass.ru/rss/v2.xml",
     "entries": 99,
-    "newest_hours": 0.2,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -204,7 +204,7 @@
     "status": "ok",
     "feed": "https://ria.ru/export/rss2/archive/index.xml",
     "entries": 99,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -217,7 +217,7 @@
     "status": "ok",
     "feed": "https://rssexport.rbc.ru/rbcnews/news/30/full.rss",
     "entries": 30,
-    "newest_hours": 0.0,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -230,7 +230,7 @@
     "status": "ok",
     "feed": "https://www.vedomosti.ru/rss/articles",
     "entries": 200,
-    "newest_hours": 0.1,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -243,7 +243,7 @@
     "status": "ok",
     "feed": "https://meduza.io/rss/all",
     "entries": 30,
-    "newest_hours": 1.2,
+    "newest_hours": 1.6,
     "weight": "heavy"
   },
   {
@@ -256,7 +256,7 @@
     "status": "ok",
     "feed": "https://thebell.io/feed",
     "entries": 20,
-    "newest_hours": 2.0,
+    "newest_hours": 2.3,
     "weight": "light"
   },
   {
@@ -269,7 +269,7 @@
     "status": "ok",
     "feed": "https://novayagazeta.eu/feed/rss",
     "entries": 100,
-    "newest_hours": 2.9,
+    "newest_hours": 3.3,
     "weight": "heavy"
   },
   {
@@ -282,7 +282,7 @@
     "status": "ok",
     "feed": "https://www.themoscowtimes.com/rss/news",
     "entries": 50,
-    "newest_hours": 6.9,
+    "newest_hours": 7.2,
     "weight": "light"
   },
   {
@@ -295,7 +295,7 @@
     "status": "ok",
     "feed": "https://belta.by/rss/",
     "entries": 30,
-    "newest_hours": 0.3,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -307,8 +307,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
-    "entries": 25,
-    "newest_hours": 0.2,
+    "entries": 24,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -320,8 +320,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://feeds.washingtonpost.com/rss/world",
-    "entries": 15,
-    "newest_hours": 4.2,
+    "entries": 16,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -334,7 +334,7 @@
     "status": "ok",
     "feed": "https://rss.politico.com/politics-news.xml",
     "entries": 30,
-    "newest_hours": 12.7,
+    "newest_hours": 13.1,
     "weight": "heavy"
   },
   {
@@ -347,7 +347,7 @@
     "status": "ok",
     "feed": "https://api.axios.com/feed/",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.5,
     "weight": "heavy"
   },
   {
@@ -373,7 +373,7 @@
     "status": "ok",
     "feed": "https://www.nationalreview.com/feed/",
     "entries": 20,
-    "newest_hours": 11.2,
+    "newest_hours": 11.6,
     "weight": "light"
   },
   {
@@ -386,7 +386,7 @@
     "status": "ok",
     "feed": "https://www.theatlantic.com/feed/all/",
     "entries": 25,
-    "newest_hours": 0.5,
+    "newest_hours": 0.0,
     "weight": "heavy"
   },
   {
@@ -399,7 +399,7 @@
     "status": "ok",
     "feed": "https://www.thefp.com/feed",
     "entries": 20,
-    "newest_hours": 0.2,
+    "newest_hours": 0.6,
     "weight": "heavy"
   },
   {
@@ -412,7 +412,7 @@
     "status": "ok",
     "feed": "https://feeds.npr.org/1001/rss.xml",
     "entries": 10,
-    "newest_hours": 2.8,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -425,7 +425,7 @@
     "status": "ok",
     "feed": "https://feeds.bbci.co.uk/news/world/rss.xml",
     "entries": 20,
-    "newest_hours": 0.6,
+    "newest_hours": 1.0,
     "weight": "light"
   },
   {
@@ -437,8 +437,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://www.theguardian.com/us/rss",
-    "entries": 129,
-    "newest_hours": 0.6,
+    "entries": 130,
+    "newest_hours": 1.0,
     "weight": "light"
   },
   {
@@ -451,7 +451,7 @@
     "status": "ok",
     "feed": "https://www.telegraph.co.uk/rss.xml",
     "entries": 120,
-    "newest_hours": 2.3,
+    "newest_hours": 2.7,
     "weight": "light"
   },
   {
@@ -464,7 +464,7 @@
     "status": "ok",
     "feed": "https://feeds.skynews.com/feeds/rss/world.xml",
     "entries": 8,
-    "newest_hours": 1.7,
+    "newest_hours": 2.0,
     "weight": "light"
   },
   {
@@ -477,7 +477,7 @@
     "status": "ok",
     "feed": "https://www.faz.net/rss/aktuell/",
     "entries": 169,
-    "newest_hours": 0.3,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -490,7 +490,7 @@
     "status": "ok",
     "feed": "https://rss.sueddeutsche.de/rss/Topthemen",
     "entries": 15,
-    "newest_hours": 2.2,
+    "newest_hours": 2.5,
     "weight": "light"
   },
   {
@@ -503,7 +503,7 @@
     "status": "ok",
     "feed": "https://www.welt.de/feeds/topnews.rss",
     "entries": 22,
-    "newest_hours": 1.2,
+    "newest_hours": 1.6,
     "weight": "light"
   },
   {
@@ -516,7 +516,7 @@
     "status": "ok",
     "feed": "https://www.spiegel.de/schlagzeilen/index.rss",
     "entries": 30,
-    "newest_hours": 0.6,
+    "newest_hours": 1.0,
     "weight": "light"
   },
   {
@@ -529,7 +529,7 @@
     "status": "ok",
     "feed": "https://feeds.cms.handelsblatt.com/schlagzeilen",
     "entries": 50,
-    "newest_hours": 0.2,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -542,7 +542,7 @@
     "status": "ok",
     "feed": "https://newsfeed.zeit.de/index",
     "entries": 15,
-    "newest_hours": 0.5,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -580,8 +580,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://www.lefigaro.fr/rss/figaro_actualites.xml",
-    "entries": 20,
-    "newest_hours": 0.3,
+    "entries": 19,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -594,7 +594,7 @@
     "status": "ok",
     "feed": "https://www.liberation.fr/arc/outboundfeeds/rss/?outputType=xml",
     "entries": 50,
-    "newest_hours": 1.8,
+    "newest_hours": 2.1,
     "weight": "light"
   },
   {
@@ -607,7 +607,7 @@
     "status": "ok",
     "feed": "https://www.mediapart.fr/articles/feed",
     "entries": 10,
-    "newest_hours": 1.3,
+    "newest_hours": 1.6,
     "weight": "light"
   },
   {
@@ -620,7 +620,7 @@
     "status": "ok",
     "feed": "https://www.france24.com/en/rss",
     "entries": 24,
-    "newest_hours": 0.0,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -633,7 +633,7 @@
     "status": "ok",
     "feed": "https://www.repubblica.it/rss/homepage/rss2.0.xml",
     "entries": 30,
-    "newest_hours": 1.8,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -646,7 +646,7 @@
     "status": "ok",
     "feed": "https://www.ilsole24ore.com/rss/mondo.xml",
     "entries": 12,
-    "newest_hours": 0.5,
+    "newest_hours": 0.9,
     "weight": "light"
   },
   {
@@ -658,8 +658,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.lastampa.it/rss/copertina.xml",
-    "entries": 65,
-    "newest_hours": 3.3,
+    "entries": 40,
+    "newest_hours": 3.7,
     "weight": "light"
   },
   {
@@ -672,7 +672,7 @@
     "status": "ok",
     "feed": "https://www.ansa.it/rss.xml",
     "entries": 28,
-    "newest_hours": 0.5,
+    "newest_hours": 0.8,
     "weight": "light"
   },
   {
@@ -698,7 +698,7 @@
     "status": "ok",
     "feed": "https://www.elmundo.es/rss/googlenews/portada.xml",
     "entries": 34,
-    "newest_hours": 0.4,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -711,7 +711,7 @@
     "status": "ok",
     "feed": "https://www.abc.es/rss/2.0/portada/",
     "entries": 25,
-    "newest_hours": 0.5,
+    "newest_hours": 0.9,
     "weight": "heavy"
   },
   {
@@ -724,7 +724,7 @@
     "status": "ok",
     "feed": "https://www.lavanguardia.com/rss/home.xml",
     "entries": 133,
-    "newest_hours": 1.7,
+    "newest_hours": 0.9,
     "weight": "light"
   },
   {
@@ -737,7 +737,7 @@
     "status": "ok",
     "feed": "https://www.eldiario.es/rss/",
     "entries": 84,
-    "newest_hours": 39.2,
+    "newest_hours": 39.6,
     "weight": "light"
   },
   {
@@ -750,7 +750,7 @@
     "status": "ok",
     "feed": "https://e01-expansion.uecdn.es/rss/portada.xml",
     "entries": 74,
-    "newest_hours": 1.3,
+    "newest_hours": 1.7,
     "weight": "light"
   },
   {
@@ -763,7 +763,7 @@
     "status": "ok",
     "feed": "https://wyborcza.pl/pub/rss/najnowsze_wyborcza.xml",
     "entries": 50,
-    "newest_hours": 2.7,
+    "newest_hours": 3.1,
     "weight": "light"
   },
   {
@@ -776,7 +776,7 @@
     "status": "ok",
     "feed": "https://www.rp.pl/rss_main",
     "entries": 20,
-    "newest_hours": 0.3,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -789,7 +789,7 @@
     "status": "ok",
     "feed": "https://wiadomosci.onet.pl/.feed",
     "entries": 20,
-    "newest_hours": 0.4,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -802,7 +802,7 @@
     "status": "ok",
     "feed": "https://tvn24.pl/najnowsze.xml",
     "entries": 24,
-    "newest_hours": 1.2,
+    "newest_hours": 1.5,
     "weight": "light"
   },
   {
@@ -815,7 +815,7 @@
     "status": "ok",
     "feed": "https://dorzeczy.pl/feed",
     "entries": 100,
-    "newest_hours": 0.7,
+    "newest_hours": 1.1,
     "weight": "light"
   },
   {
@@ -828,7 +828,7 @@
     "status": "ok",
     "feed": "https://www.polityka.pl/rss/articles.xml?list=517",
     "entries": 50,
-    "newest_hours": 1.7,
+    "newest_hours": 2.0,
     "weight": "light"
   },
   {
@@ -841,7 +841,7 @@
     "status": "ok",
     "feed": "https://notesfrompoland.com/feed/",
     "entries": 12,
-    "newest_hours": 8.0,
+    "newest_hours": 8.3,
     "weight": "heavy"
   },
   {
@@ -854,7 +854,7 @@
     "status": "ok",
     "feed": "https://www.nrc.nl/rss/",
     "entries": 153,
-    "newest_hours": 1.5,
+    "newest_hours": 1.9,
     "weight": "light"
   },
   {
@@ -867,7 +867,7 @@
     "status": "ok",
     "feed": "https://www.volkskrant.nl/rss.xml",
     "entries": 77,
-    "newest_hours": 0.3,
+    "newest_hours": 0.7,
     "weight": "light"
   },
   {
@@ -880,7 +880,7 @@
     "status": "ok",
     "feed": "https://www.telegraaf.nl/rss/",
     "entries": 50,
-    "newest_hours": 0.2,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -893,7 +893,7 @@
     "status": "ok",
     "feed": "https://feeds.nos.nl/nosnieuwsalgemeen",
     "entries": 20,
-    "newest_hours": 1.4,
+    "newest_hours": 1.8,
     "weight": "heavy"
   },
   {
@@ -906,7 +906,7 @@
     "status": "ok",
     "feed": "https://www.standaard.be/rss/",
     "entries": 50,
-    "newest_hours": 0.5,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -919,7 +919,7 @@
     "status": "ok",
     "feed": "https://www.vrt.be/vrtnws/nl.rss.articles.xml",
     "entries": 50,
-    "newest_hours": 1.7,
+    "newest_hours": 2.0,
     "weight": "light"
   },
   {
@@ -932,7 +932,7 @@
     "status": "ok",
     "feed": "https://www.derstandard.at/rss",
     "entries": 157,
-    "newest_hours": 0.5,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -944,8 +944,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.diepresse.com/rss//",
-    "entries": 69,
-    "newest_hours": 3.3,
+    "entries": 70,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -958,7 +958,7 @@
     "status": "ok",
     "feed": "https://rss.orf.at/news.xml",
     "entries": 23,
-    "newest_hours": 0.3,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -971,7 +971,7 @@
     "status": "ok",
     "feed": "https://www.nzz.ch/startseite.rss",
     "entries": 80,
-    "newest_hours": 0.5,
+    "newest_hours": 0.8,
     "weight": "light"
   },
   {
@@ -984,7 +984,7 @@
     "status": "ok",
     "feed": "https://www.letemps.ch/articles.rss",
     "entries": 21,
-    "newest_hours": 1.4,
+    "newest_hours": 1.8,
     "weight": "heavy"
   },
   {
@@ -997,7 +997,7 @@
     "status": "ok",
     "feed": "https://www.srf.ch/news/bnf/rss/1646",
     "entries": 88,
-    "newest_hours": 1.0,
+    "newest_hours": 1.4,
     "weight": "light"
   },
   {
@@ -1010,7 +1010,7 @@
     "status": "ok",
     "feed": "https://feeds.feedburner.com/PublicoRSS",
     "entries": 10,
-    "newest_hours": 1.7,
+    "newest_hours": 1.5,
     "weight": "light"
   },
   {
@@ -1023,7 +1023,7 @@
     "status": "ok",
     "feed": "https://observador.pt/feed/",
     "entries": 51,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -1036,7 +1036,7 @@
     "status": "ok",
     "feed": "https://www.irishtimes.com/arc/outboundfeeds/rss/",
     "entries": 100,
-    "newest_hours": 0.8,
+    "newest_hours": 1.2,
     "weight": "heavy"
   },
   {
@@ -1049,7 +1049,7 @@
     "status": "ok",
     "feed": "https://www.rte.ie/feeds/rss/?index=/news/",
     "entries": 60,
-    "newest_hours": 1.6,
+    "newest_hours": 2.0,
     "weight": "light"
   },
   {
@@ -1075,7 +1075,7 @@
     "status": "ok",
     "feed": "https://www.dn.se/rss/",
     "entries": 115,
-    "newest_hours": 1.0,
+    "newest_hours": 1.4,
     "weight": "light"
   },
   {
@@ -1088,7 +1088,7 @@
     "status": "ok",
     "feed": "https://www.svd.se/feed/articles.rss",
     "entries": 30,
-    "newest_hours": 1.0,
+    "newest_hours": 1.4,
     "weight": "light"
   },
   {
@@ -1101,7 +1101,7 @@
     "status": "ok",
     "feed": "https://www.svt.se/rss.xml",
     "entries": 100,
-    "newest_hours": 1.5,
+    "newest_hours": 1.8,
     "weight": "light"
   },
   {
@@ -1114,7 +1114,7 @@
     "status": "ok",
     "feed": "https://www.aftenposten.no/rss",
     "entries": 25,
-    "newest_hours": 0.2,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -1127,7 +1127,7 @@
     "status": "ok",
     "feed": "https://www.nrk.no/toppsaker.rss",
     "entries": 100,
-    "newest_hours": 1.6,
+    "newest_hours": 2.0,
     "weight": "light"
   },
   {
@@ -1140,7 +1140,7 @@
     "status": "ok",
     "feed": "https://politiken.dk/rss/senestenyt.rss",
     "entries": 20,
-    "newest_hours": 0.7,
+    "newest_hours": 1.1,
     "weight": "light"
   },
   {
@@ -1153,7 +1153,7 @@
     "status": "ok",
     "feed": "https://newsletter-proxy.aws.jyllands-posten.dk/v1/top-stories/jyllands-posten.dk",
     "entries": 9,
-    "newest_hours": 2.7,
+    "newest_hours": 3.1,
     "weight": "light"
   },
   {
@@ -1166,7 +1166,7 @@
     "status": "ok",
     "feed": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
     "entries": 20,
-    "newest_hours": 1.8,
+    "newest_hours": 2.1,
     "weight": "light"
   },
   {
@@ -1179,7 +1179,7 @@
     "status": "ok",
     "feed": "https://www.hs.fi/rss/tuoreimmat.xml",
     "entries": 99,
-    "newest_hours": 1.0,
+    "newest_hours": 1.4,
     "weight": "light"
   },
   {
@@ -1192,7 +1192,7 @@
     "status": "ok",
     "feed": "https://yle.fi/rss/news",
     "entries": 20,
-    "newest_hours": 8.0,
+    "newest_hours": 8.4,
     "weight": "light"
   },
   {
@@ -1218,7 +1218,7 @@
     "status": "ok",
     "feed": "https://denikn.cz/feed/",
     "entries": 40,
-    "newest_hours": 5.2,
+    "newest_hours": 5.6,
     "weight": "light"
   },
   {
@@ -1231,7 +1231,7 @@
     "status": "ok",
     "feed": "https://www.seznamzpravy.cz/rss",
     "entries": 30,
-    "newest_hours": 0.1,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -1244,7 +1244,7 @@
     "status": "ok",
     "feed": "https://hn.cz/?m=rss",
     "entries": 150,
-    "newest_hours": 3.7,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1270,7 +1270,7 @@
     "status": "ok",
     "feed": "https://dennikn.sk/feed/",
     "entries": 10,
-    "newest_hours": 3.8,
+    "newest_hours": 4.2,
     "weight": "light"
   },
   {
@@ -1282,8 +1282,8 @@
     "tier": "2",
     "status": "ok",
     "feed": "https://www.sme.sk/rss-title",
-    "entries": 22,
-    "newest_hours": 0.6,
+    "entries": 23,
+    "newest_hours": 0.9,
     "weight": "light"
   },
   {
@@ -1296,7 +1296,7 @@
     "status": "ok",
     "feed": "https://www.aktuality.sk/rss-articles.xml",
     "entries": 166,
-    "newest_hours": 1.7,
+    "newest_hours": 2.1,
     "weight": "light"
   },
   {
@@ -1309,7 +1309,7 @@
     "status": "ok",
     "feed": "https://telex.hu/rss",
     "entries": 50,
-    "newest_hours": 0.8,
+    "newest_hours": 1.2,
     "weight": "light"
   },
   {
@@ -1322,7 +1322,7 @@
     "status": "ok",
     "feed": "https://444.hu/feed",
     "entries": 30,
-    "newest_hours": 1.1,
+    "newest_hours": 1.5,
     "weight": "heavy"
   },
   {
@@ -1335,7 +1335,7 @@
     "status": "ok",
     "feed": "https://hvg.hu/rss",
     "entries": 60,
-    "newest_hours": 1.8,
+    "newest_hours": 2.1,
     "weight": "light"
   },
   {
@@ -1348,7 +1348,7 @@
     "status": "ok",
     "feed": "https://magyarnemzet.hu/publicapi/hu/rss/magyar_nemzet/articles",
     "entries": 50,
-    "newest_hours": 1.4,
+    "newest_hours": 1.8,
     "weight": "light"
   },
   {
@@ -1361,7 +1361,7 @@
     "status": "ok",
     "feed": "https://index.hu/24ora/rss/",
     "entries": 8,
-    "newest_hours": 1.4,
+    "newest_hours": 1.8,
     "weight": "light"
   },
   {
@@ -1374,7 +1374,7 @@
     "status": "ok",
     "feed": "https://hotnews.ro/feed",
     "entries": 20,
-    "newest_hours": 0.5,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -1387,7 +1387,7 @@
     "status": "ok",
     "feed": "https://www.g4media.ro/feed",
     "entries": 10,
-    "newest_hours": 1.8,
+    "newest_hours": 2.2,
     "weight": "light"
   },
   {
@@ -1400,7 +1400,7 @@
     "status": "ok",
     "feed": "https://www.digi24.ro/rss",
     "entries": 263,
-    "newest_hours": 0.1,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -1413,7 +1413,7 @@
     "status": "ok",
     "feed": "https://www.dnevnik.bg/rss/",
     "entries": 30,
-    "newest_hours": 0.6,
+    "newest_hours": 1.0,
     "weight": "light"
   },
   {
@@ -1426,7 +1426,7 @@
     "status": "ok",
     "feed": "https://www.mediapool.bg/rss/",
     "entries": 15,
-    "newest_hours": 4.1,
+    "newest_hours": 4.5,
     "weight": "light"
   },
   {
@@ -1452,7 +1452,7 @@
     "status": "ok",
     "feed": "https://www.efsyn.gr/feed/",
     "entries": 90,
-    "newest_hours": 0.8,
+    "newest_hours": 1.2,
     "weight": "heavy"
   },
   {
@@ -1465,7 +1465,7 @@
     "status": "ok",
     "feed": "https://www.jutarnji.hr/feed",
     "entries": 50,
-    "newest_hours": 0.0,
+    "newest_hours": 0.4,
     "weight": "light"
   },
   {
@@ -1491,7 +1491,7 @@
     "status": "ok",
     "feed": "https://n1info.hr/feed/",
     "entries": 50,
-    "newest_hours": 0.5,
+    "newest_hours": 0.9,
     "weight": "light"
   },
   {
@@ -1504,7 +1504,7 @@
     "status": "ok",
     "feed": "https://www.delo.si/rss",
     "entries": 60,
-    "newest_hours": 1.0,
+    "newest_hours": 1.3,
     "weight": "light"
   },
   {
@@ -1517,7 +1517,7 @@
     "status": "ok",
     "feed": "https://img.rtvslo.si/feeds/00.xml",
     "entries": 20,
-    "newest_hours": 1.9,
+    "newest_hours": 2.3,
     "weight": "light"
   },
   {
@@ -1543,7 +1543,7 @@
     "status": "ok",
     "feed": "https://www.danas.rs/feed/",
     "entries": 50,
-    "newest_hours": 0.1,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -1556,7 +1556,7 @@
     "status": "ok",
     "feed": "https://www.politika.rs/rss",
     "entries": 20,
-    "newest_hours": 0.2,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -1569,7 +1569,7 @@
     "status": "ok",
     "feed": "https://nova.rs/feed/",
     "entries": 50,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -1582,7 +1582,7 @@
     "status": "ok",
     "feed": "https://www.klix.ba/rss",
     "entries": 30,
-    "newest_hours": 0.0,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -1595,7 +1595,7 @@
     "status": "ok",
     "feed": "https://www.err.ee/rss",
     "entries": 50,
-    "newest_hours": 1.1,
+    "newest_hours": 1.4,
     "weight": "light"
   },
   {
@@ -1608,7 +1608,7 @@
     "status": "ok",
     "feed": "https://www.postimees.ee/rss",
     "entries": 25,
-    "newest_hours": 0.7,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -1621,7 +1621,7 @@
     "status": "ok",
     "feed": "https://www.lsm.lv/rss/",
     "entries": 50,
-    "newest_hours": 2.7,
+    "newest_hours": 3.0,
     "weight": "light"
   },
   {
@@ -1634,7 +1634,7 @@
     "status": "ok",
     "feed": "https://www.delfi.lv/rss/index.xml",
     "entries": 50,
-    "newest_hours": 2.6,
+    "newest_hours": 2.9,
     "weight": "light"
   },
   {
@@ -1647,7 +1647,7 @@
     "status": "ok",
     "feed": "https://www.lrt.lt/?rss",
     "entries": 100,
-    "newest_hours": 0.5,
+    "newest_hours": 0.9,
     "weight": "light"
   },
   {
@@ -1660,7 +1660,7 @@
     "status": "ok",
     "feed": "https://www.15min.lt/rss",
     "entries": 20,
-    "newest_hours": 0.8,
+    "newest_hours": 1.2,
     "weight": "light"
   },
   {
@@ -1673,7 +1673,7 @@
     "status": "ok",
     "feed": "https://newsmaker.md/ru/feed",
     "entries": 10,
-    "newest_hours": 3.6,
+    "newest_hours": 4.0,
     "weight": "light"
   },
   {
@@ -1686,7 +1686,7 @@
     "status": "ok",
     "feed": "https://www.zdg.md/feed/",
     "entries": 10,
-    "newest_hours": 2.7,
+    "newest_hours": 3.1,
     "weight": "light"
   },
   {
@@ -1699,7 +1699,7 @@
     "status": "ok",
     "feed": "https://www.hurriyet.com.tr/rss/gundem",
     "entries": 100,
-    "newest_hours": 1.7,
+    "newest_hours": 2.0,
     "weight": "light"
   },
   {
@@ -1712,7 +1712,7 @@
     "status": "ok",
     "feed": "https://www.dailysabah.com/rss/all",
     "entries": 50,
-    "newest_hours": 0.7,
+    "newest_hours": 1.1,
     "weight": "light"
   },
   {
@@ -1725,7 +1725,7 @@
     "status": "ok",
     "feed": "https://www.cumhuriyet.com.tr/rss",
     "entries": 100,
-    "newest_hours": 0.2,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -1738,7 +1738,7 @@
     "status": "ok",
     "feed": "https://www.jpost.com/rss/rssfeedsfrontpage.aspx",
     "entries": 26,
-    "newest_hours": -1.1,
+    "newest_hours": -0.8,
     "weight": "light"
   },
   {
@@ -1751,7 +1751,7 @@
     "status": "ok",
     "feed": "https://www.ynet.co.il/Integration/StoryRss2.xml",
     "entries": 30,
-    "newest_hours": 0.4,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -1777,7 +1777,7 @@
     "status": "ok",
     "feed": "https://www.sharghdaily.com/feeds/",
     "entries": 30,
-    "newest_hours": 0.3,
+    "newest_hours": 0.7,
     "weight": "light"
   },
   {
@@ -1790,7 +1790,7 @@
     "status": "ok",
     "feed": "https://www.iranintl.com/feed",
     "entries": 50,
-    "newest_hours": 0.9,
+    "newest_hours": 1.3,
     "weight": "light"
   },
   {
@@ -1803,7 +1803,7 @@
     "status": "ok",
     "feed": "https://www.radiofarda.com/api/",
     "entries": 20,
-    "newest_hours": 0.3,
+    "newest_hours": 0.7,
     "weight": "light"
   },
   {
@@ -1816,7 +1816,7 @@
     "status": "ok",
     "feed": "https://gulfnews.com/stories.rss",
     "entries": 12,
-    "newest_hours": 0.1,
+    "newest_hours": 0.5,
     "weight": "heavy"
   },
   {
@@ -1829,7 +1829,7 @@
     "status": "ok",
     "feed": "https://www.khaleejtimes.com/api/v1/collections/top-section.rss",
     "entries": 14,
-    "newest_hours": 4.1,
+    "newest_hours": 4.4,
     "weight": "heavy"
   },
   {
@@ -1842,7 +1842,7 @@
     "status": "ok",
     "feed": "https://www.middleeasteye.net/rss",
     "entries": 20,
-    "newest_hours": 0.6,
+    "newest_hours": 0.9,
     "weight": "heavy"
   },
   {
@@ -1855,7 +1855,7 @@
     "status": "ok",
     "feed": "https://www.thehindu.com/feeder/default.rss",
     "entries": 60,
-    "newest_hours": 0.4,
+    "newest_hours": 0.8,
     "weight": "light"
   },
   {
@@ -1868,7 +1868,7 @@
     "status": "ok",
     "feed": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
     "entries": 44,
-    "newest_hours": 3.1,
+    "newest_hours": 1.0,
     "weight": "light"
   },
   {
@@ -1881,7 +1881,7 @@
     "status": "ok",
     "feed": "https://economictimes.indiatimes.com/rssfeedstopstories.cms",
     "entries": 52,
-    "newest_hours": 2.3,
+    "newest_hours": 2.6,
     "weight": "light"
   },
   {
@@ -1894,7 +1894,7 @@
     "status": "ok",
     "feed": "https://feeds.feedburner.com/ScrollinArticles.rss",
     "entries": 100,
-    "newest_hours": 3.5,
+    "newest_hours": 3.8,
     "weight": "heavy"
   },
   {
@@ -1907,7 +1907,7 @@
     "status": "ok",
     "feed": "https://www.livemint.com/rss/news",
     "entries": 35,
-    "newest_hours": 0.2,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -1920,7 +1920,7 @@
     "status": "ok",
     "feed": "https://feeds.feedburner.com/ndtvnews-top-stories",
     "entries": 20,
-    "newest_hours": 2.2,
+    "newest_hours": 0.5,
     "weight": "light"
   },
   {
@@ -1933,7 +1933,7 @@
     "status": "ok",
     "feed": "https://www.globaltimes.cn/rss/outbrain.xml",
     "entries": 50,
-    "newest_hours": 117.8,
+    "newest_hours": 118.2,
     "weight": "light"
   },
   {
@@ -1946,7 +1946,7 @@
     "status": "ok",
     "feed": "https://www.scmp.com/rss/feed/",
     "entries": 50,
-    "newest_hours": 0.3,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -1959,7 +1959,7 @@
     "status": "ok",
     "feed": "https://chinadigitaltimes.net/feed/",
     "entries": 15,
-    "newest_hours": 94.2,
+    "newest_hours": 94.6,
     "weight": "heavy"
   },
   {
@@ -1972,7 +1972,7 @@
     "status": "ok",
     "feed": "https://sinocism.com/feed",
     "entries": 20,
-    "newest_hours": 11.9,
+    "newest_hours": 12.2,
     "weight": "heavy"
   },
   {
@@ -1985,7 +1985,7 @@
     "status": "ok",
     "feed": "https://news.ltn.com.tw/rss/all.xml",
     "entries": 40,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -1998,7 +1998,7 @@
     "status": "ok",
     "feed": "https://udn.com/news/rssfeed/",
     "entries": 396,
-    "newest_hours": 0.4,
+    "newest_hours": 0.3,
     "weight": "light"
   },
   {
@@ -2011,7 +2011,7 @@
     "status": "ok",
     "feed": "https://feeds.feedburner.com/rsscna/engnews/",
     "entries": 43,
-    "newest_hours": 8.3,
+    "newest_hours": 8.7,
     "weight": "light"
   },
   {
@@ -2024,7 +2024,7 @@
     "status": "ok",
     "feed": "https://www.taipeitimes.com/xml/index.rss",
     "entries": 47,
-    "newest_hours": -2.2,
+    "newest_hours": -1.8,
     "weight": "light"
   },
   {
@@ -2037,7 +2037,7 @@
     "status": "ok",
     "feed": "https://public.twreporter.org/rss/twreporter-rss.xml",
     "entries": 10,
-    "newest_hours": 29.8,
+    "newest_hours": 30.2,
     "weight": "light"
   },
   {
@@ -2050,7 +2050,7 @@
     "status": "ok",
     "feed": "https://www.asahi.com/rss/asahi/newsheadlines.rdf",
     "entries": 40,
-    "newest_hours": 0.8,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -2063,7 +2063,7 @@
     "status": "ok",
     "feed": "https://mainichi.jp/rss/etc/mainichi-flash.rss",
     "entries": 20,
-    "newest_hours": 0.0,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -2076,7 +2076,7 @@
     "status": "ok",
     "feed": "https://www.japantimes.co.jp/feed/",
     "entries": 30,
-    "newest_hours": 9.9,
+    "newest_hours": 0.0,
     "weight": "light"
   },
   {
@@ -2088,8 +2088,8 @@
     "tier": "1",
     "status": "ok",
     "feed": "https://en.yna.co.kr/RSS/news.xml",
-    "entries": 102,
-    "newest_hours": 0.9,
+    "entries": 103,
+    "newest_hours": 0.1,
     "weight": "light"
   },
   {
@@ -2128,7 +2128,7 @@
     "status": "ok",
     "feed": "https://www.khan.co.kr/rss/rssdata/total_news.xml",
     "entries": 50,
-    "newest_hours": 0.6,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -2141,7 +2141,7 @@
     "status": "ok",
     "feed": "https://www.koreaherald.com/rss/newsAll",
     "entries": 50,
-    "newest_hours": 1.4,
+    "newest_hours": 1.7,
     "weight": "light"
   },
   {
@@ -2154,7 +2154,7 @@
     "status": "ok",
     "feed": "http://world.kbs.co.kr/rss/rss_news.htm?lang=e",
     "entries": 30,
-    "newest_hours": 11.9,
+    "newest_hours": 12.3,
     "weight": "light"
   },
   {
@@ -2167,7 +2167,7 @@
     "status": "ok",
     "feed": "https://kz.kursiv.media/feed/",
     "entries": 100,
-    "newest_hours": 1.5,
+    "newest_hours": 0.1,
     "weight": "heavy"
   },
   {
@@ -2180,7 +2180,7 @@
     "status": "ok",
     "feed": "https://vlast.kz/feed/",
     "entries": 30,
-    "newest_hours": 9.4,
+    "newest_hours": 9.7,
     "weight": "heavy"
   },
   {
@@ -2193,7 +2193,7 @@
     "status": "ok",
     "feed": "https://orda.kz/feed/",
     "entries": 10,
-    "newest_hours": 2.3,
+    "newest_hours": 2.6,
     "weight": "heavy"
   },
   {
@@ -2206,7 +2206,7 @@
     "status": "ok",
     "feed": "https://www.azattyq.org/api/",
     "entries": 20,
-    "newest_hours": 6.8,
+    "newest_hours": 7.2,
     "weight": "light"
   },
   {
@@ -2219,7 +2219,7 @@
     "status": "ok",
     "feed": "https://feeds.folha.uol.com.br/emcimadahora/rss091.xml",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -2232,7 +2232,7 @@
     "status": "ok",
     "feed": "https://oglobo.globo.com/rss/oglobo",
     "entries": 100,
-    "newest_hours": 0.4,
+    "newest_hours": 0.8,
     "weight": "heavy"
   },
   {
@@ -2245,7 +2245,7 @@
     "status": "ok",
     "feed": "https://valor.globo.com/rss/valor",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.3,
     "weight": "heavy"
   },
   {
@@ -2271,7 +2271,7 @@
     "status": "ok",
     "feed": "https://www.poder360.com.br/feed/",
     "entries": 10,
-    "newest_hours": 0.2,
+    "newest_hours": 0.3,
     "weight": "heavy"
   },
   {
@@ -2284,7 +2284,7 @@
     "status": "ok",
     "feed": "https://www.clarin.com/rss/lo-ultimo/",
     "entries": 10,
-    "newest_hours": 0.4,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -2297,7 +2297,7 @@
     "status": "ok",
     "feed": "https://www.pagina12.com.ar/arc/outboundfeeds/rss/",
     "entries": 25,
-    "newest_hours": -5.1,
+    "newest_hours": -4.8,
     "weight": "light"
   },
   {
@@ -2310,7 +2310,7 @@
     "status": "ok",
     "feed": "https://www.infobae.com/arc/outboundfeeds/rss/category/estados-unidos/",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.5,
     "weight": "heavy"
   },
   {
@@ -2323,7 +2323,20 @@
     "status": "ok",
     "feed": "https://www.ambito.com/rss/pages/economia.xml",
     "entries": 20,
-    "newest_hours": 1.6,
+    "newest_hours": 1.9,
+    "weight": "light"
+  },
+  {
+    "country": "Mexico",
+    "name": "Reforma",
+    "lang": "es",
+    "domain": "reforma.com",
+    "pole": "center-right",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.reforma.com/rss/portada.xml",
+    "entries": 10,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -2336,7 +2349,7 @@
     "status": "ok",
     "feed": "https://www.eluniversal.com.mx/arc/outboundfeeds/rss/",
     "entries": 100,
-    "newest_hours": 0.1,
+    "newest_hours": 0.2,
     "weight": "heavy"
   },
   {
@@ -2349,7 +2362,7 @@
     "status": "ok",
     "feed": "https://www.jornada.com.mx/rss/edicion.xml",
     "entries": 104,
-    "newest_hours": 12.0,
+    "newest_hours": 12.3,
     "weight": "light"
   },
   {
@@ -2375,7 +2388,7 @@
     "status": "ok",
     "feed": "https://www.abc.net.au/news/feed/51120/rss.xml",
     "entries": 25,
-    "newest_hours": 0.3,
+    "newest_hours": 0.2,
     "weight": "light"
   },
   {
@@ -2388,7 +2401,7 @@
     "status": "ok",
     "feed": "https://www.smh.com.au/rss/feed.xml",
     "entries": 20,
-    "newest_hours": 0.2,
+    "newest_hours": 0.6,
     "weight": "light"
   },
   {
@@ -2402,6 +2415,6 @@
     "feed": "https://www.theguardian.com/au/rss",
     "entries": 115,
     "newest_hours": 0.1,
-    "weight": "light"
+    "weight": "heavy"
   }
 ]
