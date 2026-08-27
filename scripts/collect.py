@@ -15,8 +15,13 @@ import json
 import re
 import unicodedata
 from collections import defaultdict
+from urllib.parse import urlparse
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+
+import socket
+import ssl
+import time
 
 import feedparser
 import httpx
@@ -64,6 +69,33 @@ NOISE = [
 NOISE_CATS = {"sport", "sports", "entertainment", "lifestyle", "culture", "showbiz", "спорт"}
 
 
+DNS_CACHE = {}
+
+
+def resolve(host: str, tries: int = 4) -> bool:
+    """Послідовне резолвення з повторами. Резолвер раннера GitHub захлинається
+    від паралельних запитів і повертає Errno -2 на цілком живі домени."""
+    if host in DNS_CACHE:
+        return DNS_CACHE[host]
+    for i in range(tries):
+        try:
+            socket.getaddrinfo(host, 443, socket.AF_INET, socket.SOCK_STREAM)
+            DNS_CACHE[host] = True
+            return True
+        except socket.gaierror:
+            if i < tries - 1:
+                time.sleep(0.4 * (i + 1))
+    DNS_CACHE[host] = False
+    return False
+
+
+def prewarm(feeds):
+    """Резолвимо всі хости один раз до збору — далі DNS уже з кешу."""
+    hosts = {urlparse(f["feed"]).netloc.split(":")[0] for f in feeds}
+    ok = sum(1 for h in sorted(hosts) if resolve(h))
+    print(f"DNS: {ok} з {len(hosts)} хостів резолвиться")
+
+
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFKC", s or "")
     s = re.sub(r"<[^>]+>", " ", s)
@@ -107,6 +139,8 @@ async def fetch_one(client, feed):
     """Тягне одну стрічку. Мережевий збій повторює — інакше щоранку тихо
     губилися б десятки джерел, і бріф виходив би дірявим без жодного сигналу."""
     url = feed["feed"]
+    if not resolve(urlparse(url).netloc.split(":")[0]):
+        return feed, None, "DNS"
     err = None
     for attempt in range(RETRIES):
         try:
@@ -218,6 +252,7 @@ def main():
     feeds = json.loads((ROOT / "feeds.json").read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=WINDOW_HOURS)
 
+    prewarm(feeds)
     results = asyncio.run(gather_all(feeds))
 
     items, dead = [], []
