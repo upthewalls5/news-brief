@@ -72,6 +72,18 @@ def entry_text(e) -> str:
     return " ".join(parts)
 
 
+def feeds_in_html(text, base_url):
+    """Якщо замість XML прийшла сторінка — шукаємо в ній посилання на стрічку."""
+    found = []
+    for m in re.finditer(r'<link[^>]+rel=["\']alternate["\'][^>]*>', text, re.I):
+        tag = m.group(0)
+        if re.search(r'type=["\'][^"\']*(rss|atom|xml)', tag, re.I):
+            href = re.search(r'href=["\']([^"\']+)["\']', tag)
+            if href:
+                found.append(urljoin(base_url, href.group(1)))
+    return found
+
+
 def assess(raw: bytes, url: str):
     """Парсить стрічку. Повертає (ok, кількість_записів, свіжість_годин, вага, помилка)."""
     parsed = feedparser.parse(raw)
@@ -250,16 +262,6 @@ async def find_feed(client, row):
 
     last_err = home_err and f"головна: {home_err}" or "жодна адреса не віддала стрічку"
 
-    def feeds_in_html(text, base_url):
-        """Якщо замість XML прийшла сторінка — шукаємо в ній посилання на стрічку."""
-        found = []
-        for m in re.finditer(r'<link[^>]+rel=["\']alternate["\'][^>]*>', text, re.I):
-            tag = m.group(0)
-            if re.search(r'type=["\'][^"\']*(rss|atom|xml)', tag, re.I):
-                href = re.search(r'href=["\']([^"\']+)["\']', tag)
-                if href:
-                    found.append(urljoin(base_url, href.group(1)))
-        return found
     seen_c = set()
     ordered = [u for u in candidates if not (u in seen_c or seen_c.add(u))][:16]
 
@@ -317,12 +319,33 @@ async def find_feed(client, row):
         if primary_err is None:
             primary_err = f"{last_err}  [{url}]"
 
+    # Явні адреси не спрацювали. Наша адреса могла просто застаріти —
+    # відкриваємо головну й шукаємо стрічку в її розмітці. Раніше цей
+    # механізм вмикався лише за відсутності явної адреси, тож будь-яка
+    # моя помилка в реєстрі глушила автопошук для цілого видання.
+    if explicit:
+        r0, e0 = await try_url(client, base)
+        if r0 is not None:
+            declared = feeds_in_html(r0.text[:120000], str(r0.url))
+            extra = [u for u in declared if u not in seen_c][:4]
+            extra += [u for u in fallback if u not in seen_c][:8]
+            for url in extra:
+                r, err = await try_url(client, url)
+                if r is None:
+                    continue
+                ok, n, age, weight, why = assess(r.content, url)
+                if ok:
+                    print(f"     автопошук врятував: {url}", flush=True)
+                    out.update(status="ok", feed=str(r.url), entries=n,
+                               newest_hours=age, weight=weight)
+                    return out
+
     out.update(status="failed", error=primary_err or last_err)
     return out
 
 
 async def main():
-    print("discover.py версія 2026-08-28.7")
+    print("discover.py версія 2026-08-28.8")
     src = ROOT / "sources.csv"
     rows = list(csv.DictReader(src.open(encoding="utf-8")))
     sem = asyncio.Semaphore(CONCURRENCY)
