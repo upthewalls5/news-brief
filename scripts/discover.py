@@ -45,7 +45,7 @@ LIMITS = httpx.Limits(max_connections=12, max_keepalive_connections=6)
 def make_transport():
     # Без local_address: примусовий IPv4 робив недосяжними домени, у яких
     # є лише AAAA-запис (apnews.com і десятки інших).
-    return httpx.AsyncHTTPTransport(retries=1)
+    return httpx.AsyncHTTPTransport(retries=1, http2=True)
 TIMEOUT = httpx.Timeout(20.0, connect=10.0)
 
 CANDIDATE_PATHS = [
@@ -99,6 +99,48 @@ def assess(raw: bytes, url: str):
     return True, len(parsed.entries), age_h, weight, None
 
 
+# ── Обхід антибот-захисту ──────────────────────────────────────────────
+# Cloudflare розрізняє клієнтів за відбитком TLS-рукостискання, а не за
+# заголовками. httpx завжди виглядає як робот, скільки User-Agent не став.
+# curl_cffi повторює рукостискання справжнього Chrome, і це знімає 403.
+# Імпорт захищений: якщо бібліотеки немає, працюємо як раніше.
+try:
+    from curl_cffi import requests as _cffi
+    HAVE_CFFI = True
+except Exception:
+    HAVE_CFFI = False
+
+BLOCKED_CODES = (401, 403, 405, 406, 429, 503)
+
+
+class _FakeResp:
+    """Відповідь від curl_cffi у вигляді, який очікує решта коду."""
+    def __init__(self, content, url):
+        self.content = content
+        self.text = content.decode("utf-8", "replace")
+        self.status_code = 200
+        self.url = url
+
+
+def _cffi_get(url):
+    r = _cffi.get(url, impersonate="chrome", timeout=30,
+                  allow_redirects=True)
+    return r.status_code, r.content
+
+
+async def try_browser(url):
+    """Другий захід під виглядом Chrome. Повертає (content, помилка)."""
+    if not HAVE_CFFI:
+        return None, "curl_cffi недоступний"
+    try:
+        code, content = await asyncio.to_thread(_cffi_get, url)
+    except Exception as exc:
+        return None, f"chrome: {type(exc).__name__}"
+    if code >= 400:
+        return None, f"chrome: HTTP {code}"
+    return content, None
+
+
 TRANSIENT = ("ConnectError", "ConnectTimeout", "ReadTimeout",
              "RemoteProtocolError", "ReadError", "PoolTimeout")
 
@@ -143,6 +185,11 @@ async def try_url(client, url):
             await asyncio.sleep(2.0 * (attempt + 1))
             err = f"HTTP {r.status_code}"
             continue
+        if r.status_code in BLOCKED_CODES:
+            content, cerr = await try_browser(url)
+            if content is not None:
+                return _FakeResp(content, url), None
+            return None, f"HTTP {r.status_code} ({cerr})"
         if r.status_code >= 400:
             return None, f"HTTP {r.status_code}"
         return r, None
@@ -241,7 +288,7 @@ async def find_feed(client, row):
 
 
 async def main():
-    print("discover.py версія 2026-08-28.2")
+    print("discover.py версія 2026-08-28.6")
     src = ROOT / "sources.csv"
     rows = list(csv.DictReader(src.open(encoding="utf-8")))
     sem = asyncio.Semaphore(CONCURRENCY)
