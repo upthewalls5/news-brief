@@ -15,11 +15,13 @@ markdown і повертає помилку 400 на будь-який неек�
 import os
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
+VERSION = "2026-08-28.5"
 LIMIT = 3900  # запас до телеграмівських 4096
 
 
@@ -60,17 +62,27 @@ def send(token, chat_id, text):
 
 
 def main():
+    print(f"send.py версія {VERSION}")
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     if not token or not chat_id:
         sys.exit("Немає секретів TELEGRAM_BOT_TOKEN або TELEGRAM_CHAT_ID")
 
-    path = ROOT / "issues" / "latest.md"
+    # Читаємо СЬОГОДНІШНІЙ файл, а не latest.md. Інакше при падінні кроку
+    # написання пішов би вчорашній випуск, і про поломку ніхто б не дізнався.
+    today = datetime.now(timezone.utc).date().isoformat()
+    path = ROOT / "issues" / f"{today}.md"
+
     if path.exists():
         text = path.read_text(encoding="utf-8").strip()
     else:
-        text = ("Бріф сьогодні не сформувався — дайджест зібрався, "
-                "але випуск не написався. Подивіться Actions у репозиторії.")
+        prev = sorted((ROOT / "issues").glob("20*.md")) if (ROOT / "issues").exists() else []
+        last = prev[-1].stem if prev else "немає"
+        text = ("⚠️ Бріф за сьогодні не сформувався.\n\n"
+                "Стрічки зібрались, але крок написання випуску впав. "
+                f"Останній наявний випуск: {last}.\n\n"
+                "Подивіться вкладку Actions у репозиторії — там причина.")
+        print(f"УВАГА: {path.name} відсутній, надсилаю повідомлення про збій")
 
     parts = split_message(text)
     for i, part in enumerate(parts):
