@@ -1,10 +1,10 @@
 # Звіт перевірки стрічок
 
-Дата: 2026-08-27 14:21 UTC
+Дата: 2026-08-27 21:24 UTC
 
 - Перевірено видань: **247**
-- Живих стрічок: **186** (легких 150, важких 36)
-- Не вдалося: **61**
+- Живих стрічок: **187** (легких 151, важких 36)
+- Не вдалося: **60**
 
 ## Не вдалося — потрібна заміна
 
@@ -18,8 +18,8 @@
 | Brazil | Estadao | ConnectError |
 | Brazil | Gazeta do Povo | ConnectError |
 | Bulgaria | Capital | ConnectError |
-| China | Caixin | не парситься: SAXParseException |
-| China | People's Daily | ConnectError |
+| China | Caixin | ConnectError |
+| China | People's Daily | ConnectTimeout |
 | China | Xinhua | ConnectError |
 | China | Yicai | ConnectError |
 | EU-Brussels | Euractiv | ConnectError |
@@ -36,11 +36,11 @@
 | Israel | Calcalist | ConnectError |
 | Israel | Haaretz | ConnectError |
 | Israel | Israel Hayom | ConnectError |
-| Israel | Kan 11 | HTTP 404 |
+| Israel | Kan 11 | ConnectError |
 | Israel | The Times of Israel | ConnectError |
-| Italy | Corriere della Sera | ConnectError |
+| Italy | Corriere della Sera | HTTP 404 |
 | Italy | Il Foglio | ConnectError |
-| Japan | Kyodo News | HTTP 403 |
+| Japan | Kyodo News | ConnectError |
 | Japan | NHK | ConnectError |
 | Japan | Nikkei | ConnectError |
 | Japan | Sankei Shimbun | ConnectError |
@@ -56,8 +56,6 @@
 | Russia | Faridaily | ConnectError |
 | Russia | Kommersant | ConnectError |
 | South Korea | JoongAng Ilbo | ConnectError |
-| South Korea | KBS | не парситься: SAXParseException |
-| Spain | El Pais | HTTP 404 |
 | Taiwan | China Times | ConnectError |
 | Turkey | Gazete Duvar | ConnectError |
 | Turkey | T24 | ConnectError |
@@ -68,6 +66,7 @@
 | UK | The Spectator | ConnectError |
 | USA | The Wall Street Journal | ConnectError |
 | Ukraine | Ekonomichna Pravda | ConnectError |
+| Ukraine | Forbes Ukraine | ConnectError |
 | Ukraine | Hromadske | ConnectError |
 | Ukraine | Liga.net | ConnectError |
 | Ukraine | Suspilne | ConnectError |
@@ -97,12 +96,12 @@
 - Russia · Meduza
 - Russia · Novaya Gazeta Europe
 - Russia · Verstka
+- Spain · El Pais
 - Spain · ABC
 - Switzerland · Le Temps
 - UAE · Gulf News
 - UAE · Khaleej Times
 - UAE · Middle East Eye
-- UK · The Guardian
 - USA · Politico
 - USA · Axios
 - USA · Fox News
