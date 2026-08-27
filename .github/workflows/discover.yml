@@ -1,6 +1,9 @@
 name: Перевірити стрічки
 
-on: {workflow_dispatch: {}}
+# Запускається вручну: вкладка Actions -> "Перевірити стрічки" -> Run workflow.
+# Проганяє всі видання з sources.csv, знаходить робочі RSS і пише звіт.
+on:
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -10,8 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Публічний DNS
+        run: |
+          sudo sh -c 'printf "nameserver 1.1.1.1\nnameserver 8.8.8.8\nnameserver 9.9.9.9\noptions timeout:3 attempts:3\n" > /etc/resolv.conf'
+          echo "перевірка:"; getent hosts apnews.com haaretz.com nhk.or.jp || true
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
+        with:
+          python-version: '3.12'
       - run: pip install -r requirements.txt
       - run: python scripts/discover.py
       - name: Зберегти результат
@@ -19,5 +27,5 @@ jobs:
           git config user.name  "news-bot"
           git config user.email "news-bot@users.noreply.github.com"
           git add feeds.json feed-report.md
-          git diff --staged --quiet || git commit -m "Перевірка стрічок"
+          git diff --staged --quiet || git commit -m "Перевірка стрічок $(date -u +%Y-%m-%d)"
           git push
