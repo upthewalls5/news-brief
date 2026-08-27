@@ -33,7 +33,9 @@ HEADERS = {
     "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
-CONCURRENCY = 10
+CONCURRENCY = 4
+RETRIES = 3          # ConnectError на раннері GitHub — майже завжди тимчасовий
+LIMITS = httpx.Limits(max_connections=8, max_keepalive_connections=4)
 TIMEOUT = httpx.Timeout(20.0, connect=10.0)
 
 CANDIDATE_PATHS = [
@@ -87,14 +89,30 @@ def assess(raw: bytes, url: str):
     return True, len(parsed.entries), age_h, weight, None
 
 
+TRANSIENT = ("ConnectError", "ConnectTimeout", "ReadTimeout",
+             "RemoteProtocolError", "ReadError", "PoolTimeout")
+
+
 async def try_url(client, url):
-    try:
-        r = await client.get(url, follow_redirects=True)
-    except Exception as exc:
-        return None, f"{type(exc).__name__}"
-    if r.status_code >= 400:
-        return None, f"HTTP {r.status_code}"
-    return r, None
+    """Повертає (відповідь, помилка). Мережеві збої повторює з відступом."""
+    err = None
+    for attempt in range(RETRIES):
+        try:
+            r = await client.get(url, follow_redirects=True)
+        except Exception as exc:
+            err = type(exc).__name__
+            if err in TRANSIENT and attempt < RETRIES - 1:
+                await asyncio.sleep(1.5 * (attempt + 1))
+                continue
+            return None, err
+        if r.status_code in (429, 502, 503, 504) and attempt < RETRIES - 1:
+            await asyncio.sleep(2.0 * (attempt + 1))
+            err = f"HTTP {r.status_code}"
+            continue
+        if r.status_code >= 400:
+            return None, f"HTTP {r.status_code}"
+        return r, None
+    return None, err
 
 
 async def find_feed(client, row):
@@ -138,12 +156,17 @@ async def find_feed(client, row):
             candidates = candidates[:4]
 
     candidates += [base + p for p in CANDIDATE_PATHS]
+    fallback = []
     for sub in SUBDOMAINS:
-        candidates += [f"https://{sub}{bare}{p}"
-                       for p in ("/rss.xml", "/news/rss.xml", "/rss", "/feed")]
+        fallback += [f"https://{sub}{bare}{p}"
+                     for p in ("/rss.xml", "/news/rss.xml", "/rss", "/feed")]
 
     last_err = home_err and f"головна: {home_err}" or "жодна адреса не віддала стрічку"
-    for url in candidates[:40]:
+    seen_c = set()
+    ordered = [u for u in candidates if not (u in seen_c or seen_c.add(u))][:16]
+    ordered += [u for u in fallback if u not in seen_c][:12]
+
+    for url in ordered:
         r, err = await try_url(client, url)
         if r is None:
             last_err = err
@@ -167,7 +190,7 @@ async def main():
     sem = asyncio.Semaphore(CONCURRENCY)
     results = []
 
-    async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT) as client:
+    async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT, limits=LIMITS) as client:
         async def guarded(row):
             async with sem:
                 res = await find_feed(client, row)
@@ -177,6 +200,23 @@ async def main():
                 return res
 
         results = await asyncio.gather(*(guarded(r) for r in rows))
+
+    results = list(results)
+
+    # Другий прохід: невдалі пробуємо ще раз, по одному й без поспіху.
+    # Половина відмов у першому проході — це не сайт, а перевантажений раннер.
+    retry_idx = [i for i, r in enumerate(results) if r["status"] != "ok"]
+    if retry_idx:
+        print(f"\nДругий прохід по {len(retry_idx)} невдалих, повільно...", flush=True)
+        async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT,
+                                     limits=httpx.Limits(max_connections=2)) as client:
+            for i in retry_idx:
+                row = rows[i]
+                res = await find_feed(client, row)
+                if res["status"] == "ok":
+                    print(f"  врятовано: {res['country']} · {res['name']}", flush=True)
+                    results[i] = res
+                await asyncio.sleep(0.8)
 
     live = [r for r in results if r["status"] == "ok"]
     dead = [r for r in results if r["status"] != "ok"]
