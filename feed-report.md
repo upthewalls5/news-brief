@@ -1,10 +1,10 @@
 # Звіт перевірки стрічок
 
-Дата: 2026-08-27 22:16 UTC
+Дата: 2026-08-27 22:33 UTC
 
 - Перевірено видань: **247**
-- Живих стрічок: **186** (легких 150, важких 36)
-- Не вдалося: **61**
+- Живих стрічок: **185** (легких 148, важких 37)
+- Не вдалося: **62**
 
 ## Не вдалося — потрібна заміна
 
@@ -36,7 +36,7 @@
 | Israel | Calcalist | DNS: хост не резолвиться |
 | Israel | Haaretz | DNS: хост не резолвиться |
 | Israel | Israel Hayom | DNS: хост не резолвиться |
-| Israel | Kan 11 | ConnectTimeout:  |
+| Israel | Kan 11 | HTTP 404 |
 | Israel | The Times of Israel | DNS: хост не резолвиться |
 | Italy | Corriere della Sera | HTTP 404 |
 | Italy | Il Foglio | DNS: хост не резолвиться |
@@ -52,6 +52,7 @@
 | Mexico | Milenio | DNS: хост не резолвиться |
 | Norway | Dagens Naeringsliv | DNS: хост не резолвиться |
 | Poland | PAP | DNS: хост не резолвиться |
+| Poland | TVN24 | DNS: хост не резолвиться |
 | Portugal | Expresso | DNS: хост не резолвиться |
 | Russia | Faridaily | ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010) |
 | Russia | Kommersant | DNS: хост не резолвиться |
@@ -103,6 +104,7 @@
 - UAE · Gulf News
 - UAE · Khaleej Times
 - UAE · Middle East Eye
+- UK · The Guardian
 - USA · Politico
 - USA · Axios
 - USA · Fox News
