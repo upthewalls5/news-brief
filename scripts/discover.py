@@ -20,7 +20,7 @@ import re
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import feedparser
 import httpx
@@ -33,9 +33,14 @@ HEADERS = {
     "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
-CONCURRENCY = 4
-RETRIES = 3          # ConnectError на раннері GitHub — майже завжди тимчасовий
-LIMITS = httpx.Limits(max_connections=8, max_keepalive_connections=4)
+CONCURRENCY = 6
+RETRIES = 2          # ConnectError на раннері GitHub — майже завжди тимчасовий
+LIMITS = httpx.Limits(max_connections=12, max_keepalive_connections=6)
+
+# Раннери GitHub не мають робочої IPv6-зв'язності. Якщо домен віддає AAAA-запис,
+# клієнт іде в IPv6 і повертає ConnectError. local_address прив'язує до IPv4.
+def make_transport():
+    return httpx.AsyncHTTPTransport(local_address="0.0.0.0", retries=1)
 TIMEOUT = httpx.Timeout(20.0, connect=10.0)
 
 CANDIDATE_PATHS = [
@@ -100,8 +105,8 @@ async def try_url(client, url):
         try:
             r = await client.get(url, follow_redirects=True)
         except Exception as exc:
-            err = type(exc).__name__
-            if err in TRANSIENT and attempt < RETRIES - 1:
+            err = f"{type(exc).__name__}: {str(exc)[:120]}"
+            if err.split(":")[0] in TRANSIENT and attempt < RETRIES - 1:
                 await asyncio.sleep(1.5 * (attempt + 1))
                 continue
             return None, err
@@ -166,10 +171,20 @@ async def find_feed(client, row):
     ordered = [u for u in candidates if not (u in seen_c or seen_c.add(u))][:16]
     ordered += [u for u in fallback if u not in seen_c][:12]
 
+    # Якщо до хоста не вдалось під'єднатись, решту адрес на ньому пропускаємо:
+    # мовчить весь хост, а не конкретний шлях. Саме це раніше давало
+    # 28 марних спроб на кожне недоступне видання.
+    dead_hosts = set()
+
     for url in ordered:
+        host = urlparse(url).netloc
+        if host in dead_hosts:
+            continue
         r, err = await try_url(client, url)
         if r is None:
             last_err = err
+            if err.split(":")[0] in ("ConnectError", "ConnectTimeout"):
+                dead_hosts.add(host)
             continue
         ok, n, age, weight, why = assess(r.content, url)
         if ok:
@@ -190,7 +205,8 @@ async def main():
     sem = asyncio.Semaphore(CONCURRENCY)
     results = []
 
-    async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT, limits=LIMITS) as client:
+    async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT, limits=LIMITS,
+                                 transport=make_transport()) as client:
         async def guarded(row):
             async with sem:
                 res = await find_feed(client, row)
@@ -200,23 +216,6 @@ async def main():
                 return res
 
         results = await asyncio.gather(*(guarded(r) for r in rows))
-
-    results = list(results)
-
-    # Другий прохід: невдалі пробуємо ще раз, по одному й без поспіху.
-    # Половина відмов у першому проході — це не сайт, а перевантажений раннер.
-    retry_idx = [i for i, r in enumerate(results) if r["status"] != "ok"]
-    if retry_idx:
-        print(f"\nДругий прохід по {len(retry_idx)} невдалих, повільно...", flush=True)
-        async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT,
-                                     limits=httpx.Limits(max_connections=2)) as client:
-            for i in retry_idx:
-                row = rows[i]
-                res = await find_feed(client, row)
-                if res["status"] == "ok":
-                    print(f"  врятовано: {res['country']} · {res['name']}", flush=True)
-                    results[i] = res
-                await asyncio.sleep(0.8)
 
     live = [r for r in results if r["status"] == "ok"]
     dead = [r for r in results if r["status"] != "ok"]
