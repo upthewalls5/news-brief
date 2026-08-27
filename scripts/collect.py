@@ -22,8 +22,16 @@ import feedparser
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-UA = "Mozilla/5.0 (compatible; MorningBriefBot/1.0; RSS reader)"
-CONCURRENCY = 12
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
+HEADERS = {
+    "User-Agent": UA,
+    "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+CONCURRENCY = 5
+RETRIES = 3          # мережеві збої на раннері GitHub майже завжди тимчасові
+LIMITS = httpx.Limits(max_connections=10, max_keepalive_connections=5)
 TIMEOUT = httpx.Timeout(25.0, connect=10.0)
 
 WINDOW_HOURS = 26          # вікно збору
@@ -86,20 +94,37 @@ def signature(title: str):
     return out
 
 
+TRANSIENT = ("ConnectError", "ConnectTimeout", "ReadTimeout",
+             "RemoteProtocolError", "ReadError", "PoolTimeout")
+
+
 async def fetch_one(client, feed):
+    """Тягне одну стрічку. Мережевий збій повторює — інакше щоранку тихо
+    губилися б десятки джерел, і бріф виходив би дірявим без жодного сигналу."""
     url = feed["feed"]
-    try:
-        r = await client.get(url, follow_redirects=True)
+    err = None
+    for attempt in range(RETRIES):
+        try:
+            r = await client.get(url, follow_redirects=True)
+        except Exception as exc:
+            err = type(exc).__name__
+            if err in TRANSIENT and attempt < RETRIES - 1:
+                await asyncio.sleep(1.5 * (attempt + 1))
+                continue
+            return feed, None, err
+        if r.status_code in (429, 502, 503, 504) and attempt < RETRIES - 1:
+            err = f"HTTP {r.status_code}"
+            await asyncio.sleep(2.0 * (attempt + 1))
+            continue
         if r.status_code >= 400:
             return feed, None, f"HTTP {r.status_code}"
         return feed, r.content, None
-    except Exception as exc:
-        return feed, None, type(exc).__name__
+    return feed, None, err
 
 
 async def gather_all(feeds):
     sem = asyncio.Semaphore(CONCURRENCY)
-    async with httpx.AsyncClient(headers={"User-Agent": UA}, timeout=TIMEOUT) as client:
+    async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT, limits=LIMITS) as client:
         async def guarded(f):
             async with sem:
                 return await fetch_one(client, f)
@@ -241,6 +266,10 @@ def main():
     L.append(f"Зібрано {len(items)} матеріалів з {len(feeds) - len(dead)} стрічок "
              f"за {WINDOW_HOURS} год.")
     if dead:
+        share = len(dead) / max(1, len(feeds))
+        if share > 0.25:
+            L.append(f"УВАГА: не відповіла {round(share * 100)}% стрічок. "
+                     f"Покриття сьогодні неповне — врахуй це у випуску.")
         L.append(f"Не відповіли ({len(dead)}): " + ", ".join(dead[:15])
                  + (" …" if len(dead) > 15 else ""))
     L.append("")
