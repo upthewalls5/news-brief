@@ -1,12 +1,12 @@
 # Дайджест 2026-08-27
 
-Зібрано 1375 матеріалів з 183 стрічок за 26 год.
+Зібрано 1374 матеріалів з 183 стрічок за 26 год.
 
 ## Кластери — сюжети в кількох країнах
 
 Формат: [джерел / країн] · НОВЕ якщо не траплялось 7 днів
 
-### [17 дж. / 12 країн] · НОВЕ Trump orders Lake Ontario to be renamed ‘Lake America’ in new slight to Canada
+### [15 дж. / 11 країн] Trump orders Lake Ontario to be renamed ‘Lake America’ in new slight to Canada
 - Global · Financial Times (business): Trump orders Lake Ontario to be renamed ‘Lake America’ in new slight to Canada
   US president’s executive order underscores fraying relations between allies after trade talks collapsed
 - Global · Al Jazeera English (center-left): Video: Trump signs order to re-name Lake Ontario as Lake America
@@ -20,7 +20,7 @@
 - USA · Axios (reference): Trump moves to rename Lake Ontario to "Lake America"
   President Trump signed an executive order renaming Lake Ontario to "Lake America" on Thursday. Why it matters: The president is following through on his threat over the lake after 
 
-### [5 дж. / 5 країн] · НОВЕ Trump says he had 'good talks' with Putin, Russia is 'not going to attack' NATO territory
+### [6 дж. / 6 країн] Trump says he had 'good talks' with Putin, Russia is 'not going to attack' NATO territory
 - EU-Brussels · Euronews (reference): Trump says he had 'good talks' with Putin, Russia is 'not going to attack' NATO territory
   The Kremlin also dismissed as "scare stories" US media reports suggesting that Russia could attack NATO, following a rare visit by the CIA director to Moscow.
 - USA · Axios (reference): Trump to Axios: I'm not worried Russia will attack NATO
@@ -31,8 +31,10 @@
   Trump revelou na Casa Branca ter tido "boas conversas" com Putin, sem revelar datas, depois de a CIA ter enviado o seu director a Moscovo.
 - Turkey · Daily Sabah (pro-government): Putin won't attack NATO territory, Trump insists
   U.S. President Donald Trump on Thursday insisted Russian leader Vladimir Putin would not attack NATO territory, downplaying reports that Washington had warned Moscow against a poss
+- India · The Hindu (center-left): Trump says Putin won’t attack NATO territory
+  Kremlin also dismissed the reports that Washington had warned Moscow against a possible move on Europe, following a rare visit to the Russian capital by CIA Director John Ratcliffe
 
-### [5 дж. / 4 країн] · НОВЕ The man behind Srebrenica: Ratko Mladic dies at 84
+### [5 дж. / 4 країн] The man behind Srebrenica: Ratko Mladic dies at 84
 - Global · Deutsche Welle (reference): The man behind Srebrenica: Ratko Mladic dies at 84
   For many, Ratko Mladic represented the horrors of the Bosnian War. He was convicted of genocide for the Srebrenica massacre and of other war crimes. Now he has died in detention at
 - USA · The Washington Post (center-left): Ratko Mladic, Bosnian Serb commander found guilty of genocide, dies in prison
@@ -44,7 +46,7 @@
 - Ireland · RTE (public): Ex-Bosnian Serb military leader Ratko Mladic dies
   Ratko Mladic, who was serving ‌a ⁠life sentence for genocide in the 1992-95 war ‌in Bosnia, ⁠has ‌died in the U⁠N detention ‌centre in The Hague, a UN official has said.
 
-### [5 дж. / 4 країн] · НОВЕ Ratko Mladić, ‘butcher of Bosnia’, dies at the Hague aged 84
+### [5 дж. / 4 країн] Ratko Mladić, ‘butcher of Bosnia’, dies at the Hague aged 84
 - EU-Brussels · Politico Europe (reference): Ratko Mladić, ‘butcher of Bosnia’, dies at the Hague aged 84
   Thousands of Bosniaks and Bosnian Croats were murdered, tortured and displaced by armed forces under his command.
 - USA · Fox News (right): Ratko Mladić, 'Butcher of Bosnia' convicted of genocide, dies at 84
@@ -56,7 +58,7 @@
 - India · NDTV (mainstream): "Butcher Of Bosnia" Ratko Mladic Dies While Serving Life Sentence For Genocide
   Mladic, who had suffered several strokes in recent months, was serving a life sentence
 
-### [3 дж. / 3 країн] · НОВЕ Hundreds killed, over 1,000 missing after Himalayan flood
+### [3 дж. / 3 країн] Hundreds killed, over 1,000 missing after Himalayan flood
 - Ireland · RTE (public): Hundreds killed, over 1,000 missing after Himalayan flood
   Rescuers searched Himalayan valleys and hillsides after a flash flood that killed at least 359 people and left nearly 1,000 missing, as Nepal and China warned of a risk of fresh fl
 - Finland · Yle (public): Finnish citizen among hundreds missing in Nepal after catastrophic flash flood
@@ -64,7 +66,7 @@
 - India · The Times of India (mainstream): Nepal flood toll hits 392; 288 Indians among 1,468 missing
   Latest available National Disaster Risk Reduction and Management Authority tally put 910 people missing or “out of contact” in Nepal, which includes MEA’s assessment of 288 Indian 
 
-### [3 дж. / 3 країн] · НОВЕ Trump signals US may sanction Chinese banks over Iran links
+### [3 дж. / 3 країн] Trump signals US may sanction Chinese banks over Iran links
 - Turkey · Daily Sabah (pro-government): Trump signals US may sanction Chinese banks over Iran links
   U.S. President Donald Trump hinted Thursday that his administration may be preparing sanctions targeting Chinese banks over their links to Iran, in what would be a major escalation
 - India · NDTV (mainstream): Trump Hints US Could Sanction Chinese Banks Over Iran Links
@@ -72,7 +74,7 @@
 - China · South China Morning Post (hongkong): Trump hints at sanctions on Chinese banks over Iran ties before Xi’s expected US visit
   US President Donald Trump on Thursday hinted at sanctioning Chinese banks over their commercial links with Iran, just weeks before Chinese leader Xi Jinping is expected to visit Wa
 
-### [4 дж. / 2 країн] · НОВЕ Kanadski premijer Trumpu: Jezero se zove Ontario i tako će se nastaviti zvati
+### [4 дж. / 2 країн] Kanadski premijer Trumpu: Jezero se zove Ontario i tako će se nastaviti zvati
 - Croatia · Index.hr (independent): Kanadski premijer Trumpu: Jezero se zove Ontario i tako će se nastaviti zvati
   KANADSKI premijer Carney odbacio je Trumpovu uredbu o preimenovanju jezera Ontario u jezero Amerika, poručivši da taj povijesni naziv ostaje isti.
 - Croatia · N1 Croatia (reference): Kanadski premijer odgovorio Trumpu: Jezero će se zvati kako se zvalo više od 400 godina - Ontario
@@ -82,7 +84,7 @@
 - Serbia · Danas (independent-left): Kanadski premijer Karni: I dalje će se zvati Jezero Ontario
   Kanadski premijer Mark Karni izjavio je da će se jezero Ontario i dalje tako zvati.
 
-### [3 дж. / 2 країн] · НОВЕ Présidentielle : les 8 temps forts des candidats devant le Medef
+### [3 дж. / 2 країн] Présidentielle : les 8 temps forts des candidats devant le Medef
 - EU-Brussels · Politico Europe (reference): Présidentielle : les 8 temps forts des candidats devant le Medef
   Les principaux candidats à l’élection présidentielle ont déroulé jeudi leurs idées devant le patronat. POLITICO vous résume ce qu’il ne fallait pas rater.
 - France · Liberation (left): Au débat du Medef, les candidats à la présidentielle roulent leur boss
@@ -90,7 +92,7 @@
 - France · Mediapart (investigative-left): Pour leur premier débat, les candidats à la présidentielle sommés par le Medef de faire des économies
   Sept candidats, pas tous investis ou certains d’aller jusqu’au bout, ont répondu aux questions d’un parterre de patrons décidés à peser sur le scrutin de 2027. Droite et extrême dr
 
-### [3 дж. / 2 країн] · НОВЕ 4 takeaways from France’s first presidential debate
+### [3 дж. / 2 країн] 4 takeaways from France’s first presidential debate
 - EU-Brussels · Politico Europe (reference): 4 takeaways from France’s first presidential debate
   The main candidates for next year's French presidential election took the stage together for the first time in the campaign.
 - France · Le Monde (center-left): French presidential candidates clash in first debate
@@ -98,7 +100,7 @@
 - France · France 24 (public): French presidential candidates clash at first debate before upcoming elections
   Seven of France's leading candidates locked horns on Thursday in their first debate, eight months ahead of an increasingly tight and crowded election to succeed President Emmanuel 
 
-### [3 дж. / 2 країн] · НОВЕ Trump preimenovao jezero Ontario u jezero Amerika
+### [3 дж. / 2 країн] Trump preimenovao jezero Ontario u jezero Amerika
 - Croatia · N1 Croatia (reference): Trump preimenovao jezero Ontario u jezero Amerika
   Američki predsjednik Donald Trump je potpisao izvršnu uredbu kojom se jezero Ontario preimenuje u jezero Amerika, a promjena stupa na snagu odmah.
 - Slovenia · Delo (center): Ontario bo Ameriško jezero, je odločil Trump
@@ -106,7 +108,15 @@
 - Slovenia · RTVSLO (public): Trump preimenoval Ontarijsko jezero v Ameriško jezero
   Ameriški predsednik Donald Trump je v Beli hiši podpisal ukaz, s katerim je preimenoval Ontarijsko jezero, po katerem poteka del meje med Kanado in ZDA, v Ameriško jezero. Kot je p
 
-### [3 дж. / 1 країн] · НОВЕ Killarney sees ‘worst flooding in a lifetime’ with orange rain warning issued for Dublin
+### [3 дж. / 1 країн] · НОВЕ На сайті президента з’явилася петиція про проведення пресконференції з незалежними медіа
+- Ukraine · Ukrainska Pravda (reference): На сайті президента з’явилася петиція про проведення пресконференції з незалежними медіа
+  На сайті Офісу президента 27 серпня опублікували петицію із закликом провести відкриту пресконференцію Володимира Зеленського з журналістами незалежних медіа.
+- Ukraine · Dzerkalo Tyzhnia (analysis): На сайті президента з’явилася петиція про пресконференцію Зеленського з незалежними медіа
+  Авторка ініціативи пропонує запросити журналістів, які зможуть ставити запитання без погодження.
+- Ukraine · NV (center-right): На сайті президента з’явилася петиція про проведення відкритої пресконференції Зеленського з незалежними медіа
+  У четвер, 27 серпня, на сайті Офісу президента з’явилася петиція із закликом провести відкриту пресконференцію Володимира Зеленського за участю журналістів незалежних медіа та сусп
+
+### [3 дж. / 1 країн] Killarney sees ‘worst flooding in a lifetime’ with orange rain warning issued for Dublin
 - Ireland · The Irish Times (center): Killarney sees ‘worst flooding in a lifetime’ with orange rain warning issued for Dublin
   ‘Clean up job will be immense’, says mayor of Co Kerry town
 - Ireland · RTE (public): Status Orange rain warning for Dublin, flooding in Kerry
@@ -114,7 +124,7 @@
 - Ireland · Irish Independent (center-right): Met Éireann issues Status Orange rain warning for Dublin and Status Yellow rain warning for seven other counties
   Electric Picnic attendees should prepare for a few showers, but you might need sunscreen too
 
-### [3 дж. / 1 країн] · НОВЕ Magyar Péter felszólította a „Fidesz maradékát”, hogy neveljék meg Pócs Jánost, vagy távolítsák el az Országgyűlésből
+### [3 дж. / 1 країн] Magyar Péter felszólította a „Fidesz maradékát”, hogy neveljék meg Pócs Jánost, vagy távolítsák el az Országgyűlésből
 - Hungary · Telex (independent): Magyar Péter felszólította a „Fidesz maradékát”, hogy neveljék meg Pócs Jánost, vagy távolítsák el az Országgyűlésből
   „Nem fogom eltűrni, hogy bármelyik bűnöző még egyszer a kiskorú gyermekeimet a szájára vegye” – írta a miniszterelnök.
 - Hungary · 444 (independent-left): Magyar Péter: Felszólítom a Fideszt, hogy vagy neveljék meg Pócs Jánost, vagy távolítsák el a parlamentből
@@ -173,12 +183,12 @@
 - [Klix · reference] Aktivisti pronašli način da spriječe dolazak AfD-a na vlast: Vodi se kampanja da što više stranaka uđe u parlament
 
 ### Brazil
+- [Folha de S.Paulo · center-left] Francesa Voltalia garante aprovação para data center em complexo no Ceará
 - [Folha de S.Paulo · center-left] Decisão da USP de levar Fuvest para Fortaleza é questionada na Assembleia Legislativa
 - [Folha de S.Paulo · center-left] TSE autoriza envio de militares para reforçar eleição em 5 estados no 1o turno
 - [Folha de S.Paulo · center-left] Zanin e Toffoli votam para manter exigência do Marco Civil da Internet sobre dados de usuários
 - [Folha de S.Paulo · center-left] Luana Piovani e Ana Paula Renault se encontram e brincam: 'Duas bravas'
 - [Folha de S.Paulo · center-left] Canadá e as eleições nos EUA
-- [Folha de S.Paulo · center-left] TRE proíbe Garotinho de usar fundo eleitoral e veicular programa de TV
 
 ### Bulgaria
 - [Dnevnik · center-right] Капитан Саблезъб и графинята от Грел
@@ -189,12 +199,12 @@
 - [Dnevnik · center-right] Койота срещу Акме
 
 ### China
+- [South China Morning Post · hongkong] Tiger, Futu post strong overseas gains after Beijing clampdown stalls mainland growth
 - [South China Morning Post · hongkong] Trump hints at sanctions on Chinese banks over Iran ties before Xi’s expected US visit
 - [South China Morning Post · hongkong] Peter Cullen, voice of Optimus Prime and Eeyore, dies at 85
 - [South China Morning Post · hongkong] Chinese executives may join Xi’s US trip, as trade truce extension ‘almost certain’
 - [South China Morning Post · hongkong] Why Southeast Asia isn’t buying the US’ offer of ‘flexible realism’
 - [South China Morning Post · hongkong] Trump’s new US mail voting rules take effect as states warn of midterm disruption
-- [South China Morning Post · hongkong] US air traffic controllers left work early before fatal crash. The FAA wants them fired
 
 ### Croatia
 - [Jutarnji list · center] Procurio šokantan Trumpov memorandum vojsci: ‘Ne sviđa mi se kako izgledaju, mijenjajte to!‘
@@ -237,12 +247,12 @@
 - [ERR · public] ETV spordisaade, 27. august
 
 ### Finland
-- [Helsingin Sanomat · center] Pelit | Netflix esitteli valtavan odotetun GTA 6:n: kaikkien aikojen kallein videopeli voi jopa ylittää odotukset
-- [Helsingin Sanomat · center] Lähi-itä | Iran lupaa kymmenen miljoonaa dollaria Trumpin pojan hengestä
-- [Helsingin Sanomat · center] Yleisurheilu | ”Kaikkien aikojen ilta Timanttiliigassa” – kaksi ME:tä, historian kovin seiväskisa, yli 92 metriä keihäässä ja SE-naisen huippuaika
-- [Helsingin Sanomat · center] Yhdysvallat | Trump muuttaa Ontario­järven nimen Amerikka­järveksi
-- [Helsingin Sanomat · center] Koripallo | Ruotsin supertähti kertoo, miksi Suomi hävisi
-- [Helsingin Sanomat · center] Häiriöt | Husin puhelin­palveluissa oli laaja häiriö
+- [Helsingin Sanomat · center] Riita suojelupoliisista | Orpon esikunta selittää poikkeuksellista soppaa: Virka­mies ei painanut nappia
+- [Helsingin Sanomat · center] Uutisvisa | Millä tavalla teatterinuken tunteita voidaan näyttää?
+- [Helsingin Sanomat · center] Lasten uutiset | Serkukset näyttävät, kuinka marjoja kerätään
+- [Helsingin Sanomat · center] Fanikulttuuri | Poptähti ei ole faninsa ystävä
+- [Helsingin Sanomat · center] Muistokirjoitus | Palkittu kuvanveistäjä
+- [Helsingin Sanomat · center] Frisbeegolf | Espoon Ämmässuolle nousi 100 000 eurolla rata, jollaista ei muualla ole
 
 ### France
 - [Le Monde · center-left] Floods in Nepal and Tibet: 'The disaster began with a landslide that swept a glacier along with it'
@@ -288,20 +298,20 @@
 - [RUV · public] Síða fannst ekki
 
 ### India
+- [The Hindu · center-left] Trump says Putin won’t attack NATO territory
 - [The Hindu · center-left] Nepal flash floods LIVE: Nepal, China warn of fresh flood risks; At least 290 Indians remain ‘uncontactable’
 - [The Hindu · center-left] India crosses 300 GW non-fossil capacity, on track for 500 GW by 2030: Pralhad Joshi
 - [The Hindu · center-left] BJD opposes Odisha government’s proposal for biometric attendance for college students
 - [The Hindu · center-left] Bihar CM Samrat Choudhary announces the establishment of Bihar’s first women’s university
 - [The Hindu · center-left] Stop making false statements, focus on the real problems of U.P., wrote State Congress chief Ajay Rai to CM
-- [The Hindu · center-left] ‘Two systems’: Rahul attacks Modi government over NCLT settlement plan for Subhash Chandra
 
 ### Iran
+- [IRNA · state] واکنش کانادا به تغییر نام «دریاچه اونتاریو» از سوی ترامپ
 - [IRNA · state] بهره‌برداری از ۲۳ پروژه با اعتبار ۲۸۰ میلیارد تومان در زرقان
 - [IRNA · state] پیروزی بارسلونا در شب جنجالی نیوکمپ و رونمایی از رودری
 - [IRNA · state] زمین لرزه ۶.۲ ریشتری شرق خلیج عدن را لرزاند
 - [IRNA · state] مقام‌های اوکراینی خواستار تخلیه شهر خرسون شدند
 - [IRNA · state] مدرسه تلویزیونی دسترسی برابر به محتوای آموزشی را محقق می‌کند
-- [IRNA · state] فرمانده نیروهای دموکراتیک کرد مشاور ریاست جمهوری سوریه شد
 
 ### Ireland
 - [The Irish Times · center] Irish woman named as Spanish police await postmortems on couple found dead in hot tub
@@ -352,12 +362,12 @@
 - [LSM · public] Daudzveidība un ātrums – Ādažu poligonā testē jauno kājnieku kaujas mašīnu «Hunter»
 
 ### Lithuania
-- [LRT · public] Nepralaimėjusį varžovą pasitinkantis Kurtinaitis – apie lyderius ir svarbiausius akcentus
-- [LRT · public] Po JAV praleistų metų grįžęs duetas „CinAmono“ surengs koncertą Vilniuje
-- [LRT · public] Paaiškėjo Dambrausko auklėtinių varžovai Čempionų lygoje
-- [LRT · public] Demotyvacija: moksleivis vasarą dirbo, mokėjo mokesčius, bet susirgęs ligos išmokos negavo
-- [LRT · public] Vasaros pabaigos ritmu: jau 33-ąjį kartą nuskambėjo festivalis „Visagino Country“
-- [LRT · public] Mirė Lietuvos Karinių jūrų pajėgų kūrėjas Vytautas Kazimieras Urbas
+- [LRT · public] Kandidatai į Prancūzijos prezidentus surėmė ietis pirmuosiuose debatuose
+- [LRT · public] „Barcelona“ tęsia sėkmingą sezono pradžią Ispanijoje
+- [LRT · public] Kylant susirūpinimui dėl gerovės ir higienos, Japonija atliks gyvūnų kavinių tyrimą
+- [LRT · public] Pukšto įvartis išgelbėjo „Hajduk“ klubą, Lasicko ekipa pralaimėjo
+- [LRT · public] Sinkevičius susitikime su Estijos lietuvių bendruomene akcentavo svarbų diasporos vaidmenį
+- [LRT · public] Prancūzijoje medūzų antplūdis sustabdė branduolinius reaktorius
 
 ### Mexico
 - [Reforma · center-right] Tienen exportaciones récord en julio: 77 mil 263 mdd
@@ -416,12 +426,12 @@
 - [HotNews · reference] Trump a semnat un ordin executiv prin care Lacul Ontario a fost redenumit Lacul America
 
 ### Russia
+- [TASS · state] Обвиняемого по делу об убийстве Трабера освободили из СИЗО
+- [TASS · state] Торгпред Грир: только Канада ввела ответные торговые меры против США
+- [TASS · state] Bloomberg заявило о подготовке судебного иска против YouTube регулятором США
+- [TASS · state] Директор Леонтьева допустил, что артист вновь выступит в России
+- [TASS · state] Главком ВМС Великобритании рассказал об альтернативе НАТО в Северной Европе
 - [TASS · state] Эксперт Иванова-Швец назвала самые востребованные профессии 2026 года
-- [TASS · state] Беженец рассказал, как ВСУ в Константиновке сожгли дом с мирными жителями
-- [TASS · state] Над Черным морем заметили разведывательный беспилотник НАТО
-- [TASS · state] Работа аэропорта Ульяновска временно ограничена
-- [TASS · state] Аэропорты Калуги и Тамбова приостановили прием и выпуск самолетов
-- [TASS · state] Фадеев высказался за необходимость четких критериев перевода в 10-й класс
 
 ### Serbia
 - [N1 Serbia · independent] Poljska ne želi savezničko nuklearno oružje na svojoj teritoriji
