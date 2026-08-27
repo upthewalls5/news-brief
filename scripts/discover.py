@@ -18,9 +18,13 @@ import csv
 import json
 import re
 import sys
+import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
+
+import socket
+import ssl
 
 import feedparser
 import httpx
@@ -58,6 +62,27 @@ SUBDOMAINS = ["feeds.", "rss.", "feed.", "en.", "english."]
 # Стрічка вважається "важкою", якщо середній запис довший за це число символів.
 # Важкі стрічки віддають повний текст статті замість ліду — їх беремо в обмеженій кількості.
 HEAVY_CHARS = 1200
+
+
+DNS_CACHE = {}
+
+
+def resolve(host: str, tries: int = 4) -> bool:
+    """Резолвить хост послідовно, з повторами. Кешує результат.
+    Резолвер раннера GitHub захлинається від паралельних запитів і повертає
+    Errno -2, хоча домен живий. Послідовний прохід із паузами це знімає."""
+    if host in DNS_CACHE:
+        return DNS_CACHE[host]
+    for i in range(tries):
+        try:
+            socket.getaddrinfo(host, 443, socket.AF_INET, socket.SOCK_STREAM)
+            DNS_CACHE[host] = True
+            return True
+        except socket.gaierror:
+            if i < tries - 1:
+                time.sleep(0.4 * (i + 1))
+    DNS_CACHE[host] = False
+    return False
 
 
 def entry_text(e) -> str:
@@ -98,14 +123,41 @@ TRANSIENT = ("ConnectError", "ConnectTimeout", "ReadTimeout",
              "RemoteProtocolError", "ReadError", "PoolTimeout")
 
 
+INSECURE = ssl.create_default_context()
+INSECURE.check_hostname = False
+INSECURE.verify_mode = ssl.CERT_NONE
+INSECURE.set_ciphers("DEFAULT@SECLEVEL=1")   # старі сайти з застарілим рукостисканням
+
+
+async def try_insecure(url):
+    """Останній шанс для сайтів зі зламаним TLS. Ми лише читаємо публічний RSS."""
+    try:
+        async with httpx.AsyncClient(headers=HEADERS, timeout=TIMEOUT, verify=INSECURE,
+                                     transport=httpx.AsyncHTTPTransport(
+                                         local_address="0.0.0.0", verify=INSECURE)) as c:
+            r = await c.get(url, follow_redirects=True)
+        return (r, None) if r.status_code < 400 else (None, f"HTTP {r.status_code}")
+    except Exception as exc:
+        return None, f"{type(exc).__name__}: {str(exc)[:100]}"
+
+
 async def try_url(client, url):
     """Повертає (відповідь, помилка). Мережеві збої повторює з відступом."""
+    host = urlparse(url).netloc.split(":")[0]
+    if not resolve(host):
+        return None, "DNS: хост не резолвиться"
     err = None
     for attempt in range(RETRIES):
         try:
             r = await client.get(url, follow_redirects=True)
         except Exception as exc:
             err = f"{type(exc).__name__}: {str(exc)[:120]}"
+            if "SSL" in err or "CERTIFICATE" in err.upper():
+                r2, e2 = await try_insecure(url)
+                if r2 is not None:
+                    return r2, None
+                err = e2 or err
+                return None, err
             if err.split(":")[0] in TRANSIENT and attempt < RETRIES - 1:
                 await asyncio.sleep(1.5 * (attempt + 1))
                 continue
