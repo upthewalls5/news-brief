@@ -1,77 +1,79 @@
 # Звіт перевірки стрічок
 
-Дата: 2026-08-27 22:33 UTC
+Дата: 2026-08-27 22:49 UTC
 
 - Перевірено видань: **247**
-- Живих стрічок: **185** (легких 148, важких 37)
-- Не вдалося: **62**
+- Живих стрічок: **183** (легких 146, важких 37)
+- Не вдалося: **64**
 
 ## Не вдалося — потрібна заміна
 
 | Країна | Видання | Причина |
 |---|---|---|
 | Argentina | La Nacion | ConnectTimeout:  |
-| Australia | Australian Financial Review | DNS: хост не резолвиться |
-| Belarus | Nasha Niva | DNS: хост не резолвиться |
+| Australia | Australian Financial Review | ConnectError: [Errno -2] Name or service not known |
+| Belarus | Nasha Niva | ConnectError: [Errno -2] Name or service not known |
 | Belarus | Zerkalo | ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010) |
-| Belgium | Le Soir | DNS: хост не резолвиться |
-| Brazil | Estadao | DNS: хост не резолвиться |
-| Brazil | Gazeta do Povo | DNS: хост не резолвиться |
-| Bulgaria | Capital | DNS: хост не резолвиться |
-| China | Caixin | DNS: хост не резолвиться |
+| Belgium | Le Soir | ConnectError: [Errno -2] Name or service not known |
+| Brazil | Estadao | ConnectError: [Errno -2] Name or service not known |
+| Brazil | Gazeta do Povo | ConnectError: [Errno -2] Name or service not known |
+| Bulgaria | Capital | ConnectError: [Errno -2] Name or service not known |
+| China | Caixin | ConnectError: [Errno -2] Name or service not known |
 | China | People's Daily | ConnectTimeout:  |
-| China | Xinhua | DNS: хост не резолвиться |
-| China | Yicai | DNS: хост не резолвиться |
-| EU-Brussels | Euractiv | DNS: хост не резолвиться |
-| France | Les Echos | DNS: хост не резолвиться |
-| Global | Associated Press | DNS: хост не резолвиться |
-| Greece | Kathimerini | DNS: хост не резолвиться |
-| India | The Indian Express | DNS: хост не резолвиться |
-| India | The Wire | DNS: хост не резолвиться |
-| India | ThePrint | DNS: хост не резолвиться |
-| Iran | Amwaj.media | DNS: хост не резолвиться |
-| Iran | Etemad | DNS: хост не резолвиться |
-| Iran | Fars News | DNS: хост не резолвиться |
-| Iran | Tasnim | DNS: хост не резолвиться |
-| Israel | Calcalist | DNS: хост не резолвиться |
-| Israel | Haaretz | DNS: хост не резолвиться |
-| Israel | Israel Hayom | DNS: хост не резолвиться |
+| China | Xinhua | ConnectError: [Errno -2] Name or service not known |
+| China | Yicai | ConnectError: [Errno -2] Name or service not known |
+| EU-Brussels | Euractiv | ConnectError: [Errno -2] Name or service not known |
+| France | Les Echos | ConnectError: [Errno -2] Name or service not known |
+| Global | Associated Press | ConnectError: [Errno -5] No address associated with hostname |
+| Greece | Kathimerini | ConnectError: [Errno -2] Name or service not known |
+| India | The Indian Express | ConnectError: [Errno -2] Name or service not known |
+| India | The Wire | ConnectError: [Errno -2] Name or service not known |
+| India | ThePrint | ConnectError: [Errno -2] Name or service not known |
+| Iran | Amwaj.media | ConnectError: [Errno -2] Name or service not known |
+| Iran | Etemad | ConnectError: [Errno -2] Name or service not known |
+| Iran | Fars News | ConnectError: [Errno -2] Name or service not known |
+| Iran | Tasnim | ConnectError: [Errno -2] Name or service not known |
+| Israel | Calcalist | ConnectError: [Errno -2] Name or service not known |
+| Israel | Haaretz | ConnectError: [Errno -2] Name or service not known |
+| Israel | Israel Hayom | ConnectError: [Errno -2] Name or service not known |
 | Israel | Kan 11 | HTTP 404 |
-| Israel | The Times of Israel | DNS: хост не резолвиться |
+| Israel | The Times of Israel | ConnectError: [Errno -2] Name or service not known |
 | Italy | Corriere della Sera | HTTP 404 |
-| Italy | Il Foglio | DNS: хост не резолвиться |
-| Japan | Kyodo News | DNS: хост не резолвиться |
-| Japan | NHK | DNS: хост не резолвиться |
-| Japan | Nikkei | DNS: хост не резолвиться |
-| Japan | Sankei Shimbun | DNS: хост не резолвиться |
-| Japan | Yomiuri Shimbun | DNS: хост не резолвиться |
-| Kazakhstan | Kazinform | DNS: хост не резолвиться |
-| Kazakhstan | Tengrinews | DNS: хост не резолвиться |
-| Mexico | Animal Politico | DNS: хост не резолвиться |
-| Mexico | Aristegui Noticias | DNS: хост не резолвиться |
-| Mexico | Milenio | DNS: хост не резолвиться |
-| Norway | Dagens Naeringsliv | DNS: хост не резолвиться |
-| Poland | PAP | DNS: хост не резолвиться |
-| Poland | TVN24 | DNS: хост не резолвиться |
-| Portugal | Expresso | DNS: хост не резолвиться |
+| Italy | Il Foglio | ConnectError: [Errno -2] Name or service not known |
+| Italy | La Repubblica | ConnectError: [Errno -5] No address associated with hostname |
+| Italy | La Stampa | ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) |
+| Japan | Kyodo News | ConnectError: [Errno -2] Name or service not known |
+| Japan | NHK | ConnectError: [Errno -2] Name or service not known |
+| Japan | Nikkei | ConnectError: [Errno -2] Name or service not known |
+| Japan | Sankei Shimbun | ConnectError: [Errno -2] Name or service not known |
+| Japan | Yomiuri Shimbun | ConnectError: [Errno -2] Name or service not known |
+| Kazakhstan | Kazinform | ConnectError: [Errno -2] Name or service not known |
+| Kazakhstan | Tengrinews | ConnectError: [Errno -2] Name or service not known |
+| Mexico | Animal Politico | ConnectError: [Errno -2] Name or service not known |
+| Mexico | Aristegui Noticias | ConnectError: [Errno -2] Name or service not known |
+| Mexico | Milenio | ConnectError: [Errno -2] Name or service not known |
+| Norway | Dagens Naeringsliv | ConnectError: [Errno -2] Name or service not known |
+| Poland | PAP | ConnectError: [Errno -2] Name or service not known |
+| Poland | TVN24 | ConnectError: [Errno -2] Name or service not known |
+| Portugal | Expresso | ConnectError: [Errno -2] Name or service not known |
 | Russia | Faridaily | ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010) |
-| Russia | Kommersant | DNS: хост не резолвиться |
-| Russia | Verstka | DNS: хост не резолвиться |
-| South Korea | JoongAng Ilbo | DNS: хост не резолвиться |
-| Taiwan | China Times | DNS: хост не резолвиться |
-| Turkey | Gazete Duvar | DNS: хост не резолвиться |
-| Turkey | T24 | DNS: хост не резолвиться |
+| Russia | Kommersant | ConnectError: [Errno -2] Name or service not known |
+| Russia | Verstka | ConnectError: [Errno -2] Name or service not known |
+| South Korea | JoongAng Ilbo | ConnectError: [Errno -2] Name or service not known |
+| Taiwan | China Times | ConnectError: [Errno -2] Name or service not known |
+| Turkey | Gazete Duvar | ConnectError: [Errno -2] Name or service not known |
+| Turkey | T24 | ConnectError: [Errno -2] Name or service not known |
 | UAE | Al Arabiya | HTTP 403 |
-| UAE | The National | DNS: хост не резолвиться |
-| UAE | WAM | DNS: хост не резолвиться |
-| UK | New Statesman | DNS: хост не резолвиться |
-| UK | The Spectator | DNS: хост не резолвиться |
-| USA | The Wall Street Journal | DNS: хост не резолвиться |
-| Ukraine | Ekonomichna Pravda | DNS: хост не резолвиться |
-| Ukraine | Forbes Ukraine | DNS: хост не резолвиться |
-| Ukraine | Hromadske | DNS: хост не резолвиться |
-| Ukraine | Liga.net | DNS: хост не резолвиться |
-| Ukraine | Suspilne | DNS: хост не резолвиться |
+| UAE | The National | ConnectError: [Errno -2] Name or service not known |
+| UAE | WAM | ConnectError: [Errno -2] Name or service not known |
+| UK | New Statesman | ConnectError: [Errno -2] Name or service not known |
+| UK | The Spectator | ConnectError: [Errno -2] Name or service not known |
+| USA | The Wall Street Journal | ConnectError: [Errno -2] Name or service not known |
+| Ukraine | Ekonomichna Pravda | ConnectError: [Errno -2] Name or service not known |
+| Ukraine | Forbes Ukraine | ConnectError: [Errno -2] Name or service not known |
+| Ukraine | Hromadske | ConnectError: [Errno -2] Name or service not known |
+| Ukraine | Liga.net | ConnectError: [Errno -2] Name or service not known |
+| Ukraine | Suspilne | ConnectError: [Errno -2] Name or service not known |
 
 ## Важкі стрічки (віддають повний текст)
 
