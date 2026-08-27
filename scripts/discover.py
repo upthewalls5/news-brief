@@ -122,9 +122,11 @@ class _FakeResp:
         self.url = url
 
 
-def _cffi_get(url):
-    r = _cffi.get(url, impersonate="chrome", timeout=30,
-                  allow_redirects=True)
+PROFILES = ("chrome", "safari", "chrome110")
+
+
+def _cffi_get(url, profile):
+    r = _cffi.get(url, impersonate=profile, timeout=30, allow_redirects=True)
     return r.status_code, r.content
 
 
@@ -132,13 +134,17 @@ async def try_browser(url):
     """Другий захід під виглядом Chrome. Повертає (content, помилка)."""
     if not HAVE_CFFI:
         return None, "curl_cffi недоступний"
-    try:
-        code, content = await asyncio.to_thread(_cffi_get, url)
-    except Exception as exc:
-        return None, f"chrome: {type(exc).__name__}"
-    if code >= 400:
-        return None, f"chrome: HTTP {code}"
-    return content, None
+    last = "невідомо"
+    for profile in PROFILES:
+        try:
+            code, content = await asyncio.to_thread(_cffi_get, url, profile)
+        except Exception as exc:
+            last = f"{profile}: {type(exc).__name__}"
+            continue
+        if code < 400:
+            return content, None
+        last = f"{profile}: HTTP {code}"
+    return None, last
 
 
 TRANSIENT = ("ConnectError", "ConnectTimeout", "ReadTimeout",
@@ -181,7 +187,7 @@ async def try_url(client, url):
                 await asyncio.sleep(1.5 * (attempt + 1))
                 continue
             return None, err
-        if r.status_code in (429, 502, 503, 504) and attempt < RETRIES - 1:
+        if r.status_code in (429, 500, 502, 503, 504) and attempt < RETRIES - 1:
             await asyncio.sleep(2.0 * (attempt + 1))
             err = f"HTTP {r.status_code}"
             continue
@@ -243,6 +249,17 @@ async def find_feed(client, row):
                      for p in ("/rss.xml", "/news/rss.xml", "/rss", "/feed")]
 
     last_err = home_err and f"головна: {home_err}" or "жодна адреса не віддала стрічку"
+
+    def feeds_in_html(text, base_url):
+        """Якщо замість XML прийшла сторінка — шукаємо в ній посилання на стрічку."""
+        found = []
+        for m in re.finditer(r'<link[^>]+rel=["\']alternate["\'][^>]*>', text, re.I):
+            tag = m.group(0)
+            if re.search(r'type=["\'][^"\']*(rss|atom|xml)', tag, re.I):
+                href = re.search(r'href=["\']([^"\']+)["\']', tag)
+                if href:
+                    found.append(urljoin(base_url, href.group(1)))
+        return found
     seen_c = set()
     ordered = [u for u in candidates if not (u in seen_c or seen_c.add(u))][:16]
 
@@ -273,6 +290,23 @@ async def find_feed(client, row):
                 dead_hosts.add(host)
             continue
         ok, n, age, weight, why = assess(r.content, url)
+
+        # Прийшов HTML замість стрічки — шукаємо справжню адресу в ньому
+        if not ok and why and "не парситься" in why:
+            head = r.content[:60000].decode("utf-8", "replace")
+            for cand in feeds_in_html(head, url)[:3]:
+                if cand in seen_c:
+                    continue
+                seen_c.add(cand)
+                r2, e2 = await try_url(client, cand)
+                if r2 is None:
+                    continue
+                ok2, n2, age2, w2, why2 = assess(r2.content, cand)
+                if ok2:
+                    out.update(status="ok", feed=str(r2.url), entries=n2,
+                               newest_hours=age2, weight=w2)
+                    return out
+
         if ok:
             out.update(
                 status="ok", feed=str(r.url), entries=n,
@@ -288,7 +322,7 @@ async def find_feed(client, row):
 
 
 async def main():
-    print("discover.py версія 2026-08-28.6")
+    print("discover.py версія 2026-08-28.7")
     src = ROOT / "sources.csv"
     rows = list(csv.DictReader(src.open(encoding="utf-8")))
     sem = asyncio.Semaphore(CONCURRENCY)
