@@ -13,14 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Публічний DNS
-        run: |
-          sudo sh -c 'printf "nameserver 1.1.1.1\nnameserver 8.8.8.8\nnameserver 9.9.9.9\noptions timeout:3 attempts:3\n" > /etc/resolv.conf'
-          echo "перевірка:"; getent hosts apnews.com haaretz.com nhk.or.jp || true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
+      - name: DNS через HTTPS
+        run: |
+          pip install httpx
+          sudo $(which python) scripts/prewarm_dns.py || true
+          echo "контрольна перевірка:"
+          getent hosts apnews.com www.haaretz.com www3.nhk.or.jp suspilne.media feeds.a.dj.com || true
       - run: python scripts/discover.py
       - name: Зберегти результат
         run: |
