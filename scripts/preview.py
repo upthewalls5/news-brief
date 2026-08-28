@@ -37,6 +37,15 @@ UA = {"Ukraine": "Україна", "USA": "США", "Russia": "росія", "Chi
       "EU-Brussels": "Брюссель", "Global": "Агенції"}
 
 
+def read_greeting(iso):
+    p = ROOT / "issues" / f"greet-{iso}.txt"
+    if p.exists():
+        g = p.read_text(encoding="utf-8").strip().split("\n")[0][:60]
+        if len(g) > 4:
+            return g.upper()
+    return "РАНКОВИЙ БРІФ"
+
+
 def read_hooks(iso, limit=2):
     p = ROOT / "issues" / f"hook-{iso}.txt"
     if not p.exists():
@@ -154,9 +163,10 @@ def main():
     right = text_right
     y = H - PAD_TOP
 
-    ax.text(x, y, "РАНКОВИЙ БРІФ", fontsize=13, color=MUTED,
+    ax.text(x, y, read_greeting(iso), fontsize=13, color=MUTED,
             fontweight="bold", va="top")
-    ax.text(W - PAD_X, y, f"{today.day} {MONTHS[today.month - 1]}", fontsize=13,
+    ax.text(W - PAD_X, y,
+            f"{today.day} {MONTHS[today.month - 1]} {today.year}", fontsize=13,
             color=DIM, va="top", ha="right")
     y -= H_HEADER
     ax.plot([x, right], [y, y], color="#2b3240", linewidth=1.2)
