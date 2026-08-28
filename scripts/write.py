@@ -15,6 +15,7 @@ write.py — перетворює дайджест на бріф, веде па�
 не чіпаємо — краще втратити оновлення пам'яті, ніж затерти її сміттям.
 """
 
+import json
 import os
 import re
 import sys
@@ -25,10 +26,11 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.11"
+VERSION = "2026-08-28.13"
 MODEL = "claude-sonnet-5"
 MAX_TOKENS = 20000
-TIMEOUT = 900.0
+TIMEOUT = 1200.0      # загальний бюджет на запит
+READ_TIMEOUT = 180.0  # пауза МІЖ частинами потоку, а не на всю відповідь
 ATTEMPTS = 3
 
 MAX_DIGEST_CHARS = 120_000
@@ -54,39 +56,87 @@ def read_state(key):
     return p.read_text(encoding="utf-8") if p.exists() else ""
 
 
+def stream_once(key, payload):
+    """Один потоковий запит. Відповідь приходить частинами, тому з'єднання
+    не мовчить чверть години й таймаут по дорозі не спрацьовує."""
+    text_parts = []
+    usage = {"input": None, "output": None}
+    stop = None
+    ticks = 0
+
+    headers = {"x-api-key": key, "anthropic-version": "2023-06-01",
+               "content-type": "application/json"}
+    with httpx.Client(timeout=httpx.Timeout(TIMEOUT, read=READ_TIMEOUT)) as client:
+        with client.stream("POST", "https://api.anthropic.com/v1/messages",
+                           headers=headers, json={**payload, "stream": True}) as r:
+            if r.status_code >= 400:
+                r.read()
+                return None, r.status_code, r.text[:300], stop, usage
+
+            event = None
+            for line in r.iter_lines():
+                if not line:
+                    continue
+                if line.startswith("event: "):
+                    event = line[7:].strip()
+                    continue
+                if not line.startswith("data: "):
+                    continue
+                try:
+                    data = json.loads(line[6:])
+                except Exception:
+                    continue
+
+                if event == "content_block_delta":
+                    delta = data.get("delta", {})
+                    if delta.get("type") == "text_delta":
+                        text_parts.append(delta.get("text", ""))
+                        ticks += 1
+                        if ticks % 400 == 0:
+                            print(f"    …{sum(len(t) for t in text_parts)} символів",
+                                  flush=True)
+                elif event == "message_start":
+                    usage["input"] = data.get("message", {}).get(
+                        "usage", {}).get("input_tokens")
+                elif event == "message_delta":
+                    stop = data.get("delta", {}).get("stop_reason", stop)
+                    usage["output"] = data.get("usage", {}).get("output_tokens")
+                elif event == "error":
+                    return None, 0, str(data)[:300], stop, usage
+
+    return "".join(text_parts).strip(), 200, None, stop, usage
+
+
 def call_api(key, system, user):
     payload = {"model": MODEL, "max_tokens": MAX_TOKENS,
                "system": system, "messages": [{"role": "user", "content": user}]}
-    r = None
+
     for attempt in range(ATTEMPTS):
         try:
-            with httpx.Client(timeout=TIMEOUT) as client:
-                r = client.post("https://api.anthropic.com/v1/messages",
-                                headers={"x-api-key": key,
-                                         "anthropic-version": "2023-06-01",
-                                         "content-type": "application/json"},
-                                json=payload)
-            break
-        except (httpx.ReadTimeout, httpx.ConnectError, httpx.RemoteProtocolError) as exc:
-            print(f"Спроба {attempt + 1}: {type(exc).__name__}")
+            text, code, err, stop, usage = stream_once(key, payload)
+        except (httpx.ReadTimeout, httpx.ConnectError, httpx.RemoteProtocolError,
+                httpx.ReadError) as exc:
+            print(f"  спроба {attempt + 1}: {type(exc).__name__}")
             if attempt == ATTEMPTS - 1:
                 sys.exit(f"API не відповів за {ATTEMPTS} спроби")
             time.sleep(10 * (attempt + 1))
+            continue
 
-    if r.status_code in (429, 529) or r.status_code >= 500:
-        sys.exit(f"API перевантажений ({r.status_code})")
-    if r.status_code >= 400:
-        sys.exit(f"API повернув {r.status_code}: {r.text[:400]}")
+        if code in (429, 529) or code >= 500:
+            print(f"  спроба {attempt + 1}: API перевантажений ({code})")
+            if attempt == ATTEMPTS - 1:
+                sys.exit(f"API перевантажений ({code})")
+            time.sleep(20 * (attempt + 1))
+            continue
+        if code >= 400:
+            sys.exit(f"API повернув {code}: {err}")
 
-    data = r.json()
-    text = "".join(b.get("text", "") for b in data.get("content", [])
-                   if b.get("type") == "text").strip()
-    usage = data.get("usage", {})
-    print(f"  вхід {usage.get('input_tokens')} | вихід {usage.get('output_tokens')} "
-          f"| зупинка: {data.get('stop_reason')}")
-    if data.get("stop_reason") == "max_tokens":
-        print("  УВАГА: обірвано лімітом токенів")
-    return text
+        print(f"  вхід {usage['input']} | вихід {usage['output']} | зупинка: {stop}")
+        if stop == "max_tokens":
+            print("  УВАГА: обірвано лімітом токенів")
+        return text
+
+    sys.exit("API не відповів")
 
 
 def split_parts(text):
@@ -189,6 +239,12 @@ def main():
 
     (ROOT / "issues" / f"{today}.md").write_text(brief + "\n", encoding="utf-8")
     (ROOT / "issues" / "latest.md").write_text(brief + "\n", encoding="utf-8")
+    # Мітка свіжості: публікація й відправка орієнтуються на неї, а не на
+    # наявність файлу. Інакше повторний запуск того ж дня випустив би
+    # попередній випуск ще раз.
+    (ROOT / "state" / "last-write.txt").write_text(
+        datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+
     print(f"Бріф: {len(brief)} символів")
     if len(brief) < 3000:
         print("УВАГА: бріф підозріло короткий, очікується 6000-9000")
