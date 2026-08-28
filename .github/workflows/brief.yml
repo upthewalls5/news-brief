@@ -7,10 +7,6 @@ on:
     - cron: '0 4 * * *'
   workflow_dispatch:
 
-concurrency:
-  group: news-brief-repo
-  cancel-in-progress: false
-
 permissions:
   contents: write
 
