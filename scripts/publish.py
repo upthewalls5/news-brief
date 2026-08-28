@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-28.7"
+VERSION = "2026-08-29.1"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -34,6 +34,9 @@ MONTHS = ("січня", "лютого", "березня", "квітня", "тр�
 
 RUBRIC_EMOJI = "🌍🔀📍💰🗞🕳📡🔮🧭📖📅📈📉🎯🔭"
 FLAG = re.compile(r"^([\U0001F1E6-\U0001F1FF]{2})\s*([^:]{2,48}):\s*(.*)$")
+# У «Розколі оптики» полюсом може бути не країна, а глобальне видання —
+# тоді перед назвою стоїть звичайне емодзі, а не прапор.
+POLE = re.compile(r"^([^\w\s\d.,;:!?()\[\]«»\"'-])\s+([^:]{2,48}):\s*(.*)$")
 URL = re.compile(r"(https?://\S+)")
 LABELS = ("Замовчують:", "Чому розходяться:", "Наші:", "Кажуть інші:")
 
@@ -206,13 +209,6 @@ def build_nodes(brief, weekly=None, iso=None):
     nodes = []
     sources_all = []
 
-    # Зміст: із восьми рубрик читач одразу бачить, що всередині
-    titles = [l.strip() for l in brief.split("\n")
-              if l.strip() and l.strip()[0] in RUBRIC_EMOJI]
-    if len(titles) > 3:
-        nodes.append({"tag": "aside", "children": [" · ".join(titles)]})
-        nodes.append({"tag": "hr"})
-
     # Графік не дублюємо: він уже є на картці, яка приходить у Telegram.
     nodes.extend(calendar_nodes())
 
@@ -223,11 +219,15 @@ def build_nodes(brief, weekly=None, iso=None):
             if not line:
                 continue
 
-            # Рубрика
+            # Рубрика: емодзі + КОРОТКА НАЗВА ВЕЛИКИМИ ЛІТЕРАМИ.
+            # Без перевірки регістру рядок «🌍 Al Jazeera: …» з Розколу
+            # оптики теж ставав заголовком.
             if line[0] in RUBRIC_EMOJI:
-                rubric = line
-                nodes.append({"tag": level, "children": [line]})
-                continue
+                body = line[1:].strip()
+                if body and len(body) <= 40 and body == body.upper():
+                    rubric = line
+                    nodes.append({"tag": level, "children": [line]})
+                    continue
 
             # Виноска з джерелами під рубрикою
             if line.startswith("Джерела:"):
@@ -239,7 +239,7 @@ def build_nodes(brief, weekly=None, iso=None):
 
             # Прапор + назва. Цитата доречна лише в «Розколі оптики»:
             # у «Пульсі країн» двадцять цитат поспіль перевантажують сторінку.
-            m = FLAG.match(line)
+            m = FLAG.match(line) or ("РОЗКОЛ" in rubric and POLE.match(line))
             if m:
                 flag, name, rest = m.groups()
                 inner = [f"{flag} ", {"tag": "b", "children": [f"{name.strip()}: "]}]
@@ -256,6 +256,17 @@ def build_nodes(brief, weekly=None, iso=None):
                               [{"tag": "i", "children": [lab + " "]}] + rich(rest)})
                 continue
 
+            # У суцільних рубриках виділяємо перше речення: у ГОЛОВНОМУ це
+            # сама подія, а наслідок лишається звичайним текстом. Око чіпляється
+            # за подію, а читає далі за потреби.
+            if any(k in rubric for k in ("ГОЛОВНЕ", "ГРОШІ", "СЛІПА",
+                                         "РАДАР", "ВИМІР")):
+                m2 = re.match(r"^(.{15,110}?[.!?…])(\s+)(.+)$", line)
+                if m2:
+                    nodes.append({"tag": "p", "children":
+                                  [{"tag": "b", "children": [m2.group(1)]}, " "]
+                                  + rich(m2.group(3))})
+                    continue
             nodes.append({"tag": "p", "children": rich(line)})
 
     render(brief)
@@ -329,7 +340,12 @@ def main():
     # Окрема назва: раніше цей рядок затирав змінну token із токеном
     # Telegraph, і в API летів шестисимвольний хвіст замість ключа.
     slug = secrets.token_hex(3)
-    title = f"Бріф {today.day} {MONTHS[today.month - 1]} {today.year} {slug}"[:200]
+    # Адреса на telegra.ph утворюється із заголовка ПРИ СТВОРЕННІ і далі
+    # не змінюється. Тому створюємо під випадковою назвою, а одразу після
+    # цього перейменовуємо на людську: адреса лишається невгадуваною,
+    # а в заголовку немає технічного хвоста.
+    tmp_title = f"b{slug}"
+    title = f"Ранковий бріф · {today.day} {MONTHS[today.month - 1]} {today.year}"
 
     with httpx.Client(timeout=60.0) as client:
         nodes = build_nodes(brief, weekly, iso)
@@ -339,7 +355,7 @@ def main():
             attempt = full if step == 1.0 else full[:max(8, int(len(full) * step))]
             r = client.post(f"{API}/createPage", json={
                 "access_token": token,
-                "title": title[:256],
+                "title": tmp_title,
                 "author_name": "Ранковий бріф",
                 "content": attempt,
                 "return_content": False,
@@ -371,6 +387,15 @@ def main():
         return
 
     url = data["result"]["url"]
+    path = data["result"].get("path")
+    if path:
+        with httpx.Client(timeout=60.0) as client:
+            client.post(f"{API}/editPage/{path}", json={
+                "access_token": token, "title": title[:256],
+                "author_name": "Ранковий бріф",
+                "content": data.get("_nodes") or attempt,
+                "return_content": False,
+            })
     state = {"pages": ([{"date": iso, "url": url}] + state.get("pages", []))[:120]}
     STATE.parent.mkdir(exist_ok=True)
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
