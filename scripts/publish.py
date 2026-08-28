@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-28.3"
+VERSION = "2026-08-28.4"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -179,8 +179,7 @@ def build_nodes(brief, weekly=None, iso=None):
         nodes.append({"tag": "aside", "children": [" · ".join(titles)]})
         nodes.append({"tag": "hr"})
 
-    if iso:
-        nodes.extend(attention_nodes(iso))
+    # Графік не дублюємо: він уже є на картці, яка приходить у Telegram.
     nodes.extend(calendar_nodes())
 
     def render(body, level="h3"):
