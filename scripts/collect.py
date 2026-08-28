@@ -11,6 +11,7 @@ collect.py — щоденний збір. Тягне всі живі стріч�
 """
 
 import asyncio
+import csv
 import json
 import re
 import unicodedata
@@ -177,6 +178,88 @@ async def gather_all(feeds):
         return await asyncio.gather(*(guarded(f) for f in feeds))
 
 
+# ── Добір через freenewsapi.ai ─────────────────────────────────────────
+# Частина видань закрита для дата-центрів (403) або не має робочої стрічки.
+# Для них беремо матеріали з freenewsapi.ai: ключа не треба, квоти немає.
+# RSS лишається основним джерелом — API лише закриває дірки.
+API_BASE = "https://freenewsapi.ai/v1/search"
+API_SIZE = 15
+
+
+def outlet_meta():
+    """Країна й полюс для кожного видання — беремо з реєстру."""
+    meta = {}
+    src = ROOT / "sources.csv"
+    if src.exists():
+        for row in csv.DictReader(src.open(encoding="utf-8")):
+            meta[row["name"]] = (row["country"], row["pole"])
+    return meta
+
+
+async def fetch_api_outlets(cutoff):
+    """Повертає (матеріали, назви_що_не_відповіли)."""
+    path = ROOT / "api-hosts.json"
+    if not path.exists():
+        return [], []
+    try:
+        hosts = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return [], []
+    if not hosts:
+        return [], []
+
+    meta = outlet_meta()
+    items, dead = [], []
+
+    async with httpx.AsyncClient(timeout=TIMEOUT, headers=HEADERS,
+                                 follow_redirects=True) as client:
+        for name, host in hosts.items():
+            country, pole = meta.get(name, ("Global", "unknown"))
+            try:
+                r = await client.get(API_BASE, params={
+                    "host": host, "date": "24h", "size": API_SIZE, "sort": "date"})
+                if r.status_code >= 400:
+                    dead.append(f"{name} (API HTTP {r.status_code})")
+                    continue
+                results = r.json().get("results") or []
+            except Exception as exc:
+                dead.append(f"{name} (API {type(exc).__name__})")
+                continue
+
+            got = 0
+            for a in results:
+                title = norm(a.get("title", ""))
+                if not title or len(title) < 12 or is_noise(title, []):
+                    continue
+                when = a.get("published_at", "")
+                if when:
+                    try:
+                        dt = datetime.fromisoformat(when.replace("Z", "+00:00"))
+                        if dt < cutoff:
+                            continue
+                    except Exception:
+                        pass
+                items.append({
+                    "title": title,
+                    "lead": norm(a.get("description", ""))[:LEAD_CHARS],
+                    "link": a.get("url", ""),
+                    "when": when,
+                    "country": country,
+                    "source": name,
+                    "pole": pole,
+                })
+                got += 1
+                if got >= PER_SOURCE:
+                    break
+            if got == 0:
+                dead.append(f"{name} (API порожньо)")
+
+    ok_outlets = len({i["source"] for i in items})
+    print(f"API добрав {len(items)} матеріалів з {ok_outlets} видань "
+          f"(усього в списку {len(hosts)})")
+    return items, dead
+
+
 def parse_items(feed, raw, cutoff):
     parsed = feedparser.parse(raw)
     items = []
@@ -255,7 +338,7 @@ def load_seen():
 
 
 def main():
-    print("collect.py версія 2026-08-28.6")
+    print("collect.py версія 2026-08-28.9")
     feeds = json.loads((ROOT / "feeds.json").read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=WINDOW_HOURS)
 
@@ -270,6 +353,10 @@ def main():
         got = parse_items(feed, raw, cutoff)
         per_feed[feed["name"]] = len(got)
         items.extend(got)
+
+    api_items, api_dead = asyncio.run(fetch_api_outlets(cutoff))
+    items.extend(api_items)
+    dead.extend(api_dead)
 
     # прибираємо точні дублі заголовків усередині країни
     seen_titles = set()
@@ -310,8 +397,8 @@ def main():
     L = []
     L.append(f"# Дайджест {today}")
     L.append("")
-    L.append(f"Зібрано {len(items)} матеріалів з {len(feeds) - len(dead)} стрічок "
-             f"за {WINDOW_HOURS} год.")
+    L.append(f"Зібрано {len(items)} матеріалів за {WINDOW_HOURS} год "
+             f"({len(feeds)} стрічок RSS + {len(api_items)} матеріалів через API).")
     if dead:
         share = len(dead) / max(1, len(feeds))
         if share > 0.25:
