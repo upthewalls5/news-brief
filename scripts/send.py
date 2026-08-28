@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.11"
+VERSION = "2026-08-28.12"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -188,6 +188,21 @@ def send(token, chat_id, text, top=None, html=True):
         raise RuntimeError(f"Telegram {r.status_code}: {r.text[:300]}")
 
 
+def written_recently(minutes: int = 90) -> bool:
+    """Чи писався випуск у цьому запуску. Крок написання може впасти, а
+    публікація й відправка помічені if:always і відпрацюють однаково —
+    без цієї перевірки вони випустили б учорашній файл ще раз."""
+    p = ROOT / "state" / "last-write.txt"
+    if not p.exists():
+        return False
+    try:
+        stamp = datetime.fromisoformat(p.read_text(encoding="utf-8").strip())
+    except Exception:
+        return False
+    age = (datetime.now(timezone.utc) - stamp).total_seconds() / 60
+    return age <= minutes
+
+
 def main():
     print(f"send.py версія {VERSION}")
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
@@ -200,7 +215,7 @@ def main():
     today = datetime.now(timezone.utc).date().isoformat()
     path = ROOT / "issues" / f"{today}.md"
 
-    if path.exists():
+    if path.exists() and written_recently():
         text = path.read_text(encoding="utf-8").strip()
         weekly = ROOT / "issues" / f"weekly-{today}.md"
         if weekly.exists():
