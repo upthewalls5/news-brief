@@ -87,15 +87,18 @@ def main():
 
     months = []
     y, m = today.year, today.month
-    for _ in range(MONTHS_IN):
-        months.append((y, m))
+    for i in range(MONTHS_IN):
+        # Два місяці показуємо завжди, третій — тільки якщо в ньому є події.
+        # Порожня колонка нічого не додає, а місця з'їдає третину.
+        if i < 2 or any(d.year == y and d.month == m for d in marked):
+            months.append((y, m))
         y, m = y + (m == 12), (m % 12) + 1
 
     shown = [e for e in events if e[0] <= date(months[-1][0], months[-1][1], 28)]
     shown = shown[:10]
 
     COL_W, ROW_H = 3.5, 0.34
-    W = 11.0
+    W = 3.9 * len(months) + 0.6
     weeks = max(len(month_matrix(yy, mm)) for yy, mm in months)
     grid_h = 1.05 + 0.62 + weeks * ROW_H      # заголовок + дні тижня + рядки
     list_h = 0.34 * len(shown) + 0.55
