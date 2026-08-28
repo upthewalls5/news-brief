@@ -26,10 +26,13 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.16"
+VERSION = "2026-08-28.17"
 MODEL = "claude-sonnet-5"
-MAX_TOKENS = 16000      # на випуск
-MAX_TOKENS_STATE = 16000  # на файли стану
+# Ліміт спільний для міркувань моделі й тексту. Міркування над дайджестом
+# на 50 тисяч токенів самі з'їдають більшу частину бюджету, тому запас
+# має бути кратним, а не впритул.
+MAX_TOKENS = 32000        # на випуск
+MAX_TOKENS_STATE = 20000  # на файли стану
 TIMEOUT = 1200.0      # загальний бюджет на запит
 READ_TIMEOUT = 180.0  # пауза МІЖ частинами потоку, а не на всю відповідь
 ATTEMPTS = 3
@@ -232,7 +235,8 @@ def main():
     text = call_api(key, (ROOT / "prompts" / "brief.md").read_text(encoding="utf-8"),
                     user, MAX_TOKENS)
     if not text:
-        sys.exit("API повернув порожню відповідь")
+        sys.exit("API повернув порожню відповідь: увесь бюджет пішов на "
+                 "міркування. Підніміть MAX_TOKENS у scripts/write.py.")
 
     parts, structured = split_parts(text)
     brief = parts.get("brief", "").strip()
