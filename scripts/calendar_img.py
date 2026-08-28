@@ -94,31 +94,28 @@ def main():
             months.append((y, m))
         y, m = y + (m == 12), (m % 12) + 1
 
-    shown = [e for e in events if e[0] <= date(months[-1][0], months[-1][1], 28)]
-    shown = shown[:10]
-
-    COL_W, ROW_H = 3.5, 0.34
-    W = 3.9 * len(months) + 0.6
+    COL_W, ROW_H = 3.5, 0.36
+    # Тільки сітка: перелік подій живе текстом на сторінці, бо на телефоні
+    # він читається, а дрібний текст усередині картинки — ні.
+    W = 3.55 * len(months) + 0.5
     weeks = max(len(month_matrix(yy, mm)) for yy, mm in months)
-    grid_h = 1.05 + 0.62 + weeks * ROW_H      # заголовок + дні тижня + рядки
-    list_h = 0.34 * len(shown) + 0.55
-    H = grid_h + list_h + 0.55
+    H = 0.95 + 0.55 + weeks * ROW_H + 0.42
 
     fig = plt.figure(figsize=(W, H), dpi=140)
     fig.patch.set_facecolor(BG)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, W); ax.set_ylim(0, H); ax.axis("off")
-    ax.add_patch(Rectangle((0.25, 0.22), W - 0.5, H - 0.44,
+    ax.add_patch(Rectangle((0.18, 0.16), W - 0.36, H - 0.32,
                            facecolor=CARD, edgecolor="none"))
-    ax.add_patch(Rectangle((0.25, 0.22), 0.07, H - 0.44,
+    ax.add_patch(Rectangle((0.18, 0.16), 0.06, H - 0.32,
                            facecolor=ACCENT, edgecolor="none"))
 
-    ax.text(0.62, H - 0.55, "КАЛЕНДАР ПОДІЙ ПОПЕРЕДУ", fontsize=11.5,
+    ax.text(0.55, H - 0.42, "КАЛЕНДАР ПОДІЙ ПОПЕРЕДУ", fontsize=11.5,
             color=MUTED, fontweight="bold", va="top")
 
-    top = H - 1.02
+    top = H - 0.92
     for i, (yy, mm) in enumerate(months):
-        ox = 0.62 + i * COL_W
+        ox = 0.55 + i * COL_W
         ax.text(ox, top, f"{MONTH_NAME[mm - 1]} {yy}", fontsize=10.5,
                 color=INK, fontweight="bold", va="top")
         for k, wd in enumerate(WEEKDAYS):
@@ -146,23 +143,13 @@ def main():
                 ax.text(cx, cy, str(day), fontsize=8, color=color,
                         ha="center", va="center", fontweight=weight)
 
-    ly = list_h - 0.10
-    ax.plot([0.62, W - 0.62], [ly + 0.30, ly + 0.30], color=GRID, linewidth=1)
-    for start, end, body in shown:
-        when = f"{start.day:02d}.{start.month:02d}"
-        if end != start:
-            when += f"–{end.day:02d}.{end.month:02d}"
-        ax.text(0.62, ly, when, fontsize=9, color=ACCENT,
-                fontweight="bold", va="top")
-        ax.text(1.60, ly, body[:96], fontsize=9, color=MUTED, va="top")
-        ly -= 0.34
 
     out = ROOT / "charts"
     out.mkdir(exist_ok=True)
     path = out / f"calendar-{today.isoformat()}.png"
     fig.savefig(path, facecolor=BG, bbox_inches="tight", pad_inches=0.18)
     plt.close(fig)
-    print(f"Календар: {path.name}, подій {len(events)}, у списку {len(shown)}")
+    print(f"Календар: {path.name}, місяців {len(months)}, подій {len(events)}")
 
 
 if __name__ == "__main__":
