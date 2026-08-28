@@ -26,9 +26,10 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.15"
+VERSION = "2026-08-28.16"
 MODEL = "claude-sonnet-5"
-MAX_TOKENS = 32000
+MAX_TOKENS = 16000      # на випуск
+MAX_TOKENS_STATE = 16000  # на файли стану
 TIMEOUT = 1200.0      # загальний бюджет на запит
 READ_TIMEOUT = 180.0  # пауза МІЖ частинами потоку, а не на всю відповідь
 ATTEMPTS = 3
@@ -111,8 +112,8 @@ def stream_once(key, payload):
     return "".join(text_parts).strip(), 200, None, stop, usage
 
 
-def call_api(key, system, user):
-    payload = {"model": MODEL, "max_tokens": MAX_TOKENS,
+def call_api(key, system, user, max_tokens=None):
+    payload = {"model": MODEL, "max_tokens": max_tokens or MAX_TOKENS,
                "system": system, "messages": [{"role": "user", "content": user}]}
 
     for attempt in range(ATTEMPTS):
@@ -143,10 +144,11 @@ def call_api(key, system, user):
     sys.exit("API не відповів")
 
 
-def split_parts(text):
-    """Ділить відповідь за маркерами. Без маркерів — усе вважаємо брифом."""
-    if MARKERS["brief"] not in text:
-        return {"brief": text}, False
+def split_parts(text, require="brief"):
+    """Ділить відповідь за маркерами. Якщо обов'язкового маркера немає —
+    для випуску вважаємо весь текст брифом, для стану нічого не чіпаємо."""
+    if not text or MARKERS[require] not in text:
+        return ({"brief": text}, False) if require == "brief" else ({}, False)
 
     # Порядок розбору не залежить від порядку в тексті — беремо за позиціями.
     order = ["greeting", "hook", "brief", "calendar", "threads",
@@ -196,7 +198,8 @@ def weekly(key, today):
             f"ЧУЖІ ПРОГНОЗИ:\n{read_state('external')}")
 
     print(f"Тижневий огляд за {len(issues)} випусками...")
-    text = call_api(key, (ROOT / "prompts" / "weekly.md").read_text(encoding="utf-8"), user)
+    text = call_api(key, (ROOT / "prompts" / "weekly.md").read_text(encoding="utf-8"),
+                    user, MAX_TOKENS)
     if not text:
         return None
     path = ROOT / "issues" / f"weekly-{today}.md"
@@ -222,8 +225,12 @@ def main():
             f"ЧУЖІ ПРОГНОЗИ:\n{read_state('external')}\n\n"
             f"СЬОГОДНІ {today}\n\nДАЙДЖЕСТ:\n{digest}")
 
-    print("Готую випуск...")
-    text = call_api(key, (ROOT / "prompts" / "brief.md").read_text(encoding="utf-8"), user)
+    # Два окремі запити замість одного. При одному відповідь стабільно
+    # не вкладалась у ліміт: міркування з'їдали бюджет, і файли стану,
+    # які стоять у кінці, обривались. Тепер у кожного запиту свій бюджет.
+    print("Запит 1: випуск...")
+    text = call_api(key, (ROOT / "prompts" / "brief.md").read_text(encoding="utf-8"),
+                    user, MAX_TOKENS)
     if not text:
         sys.exit("API повернув порожню відповідь")
 
@@ -231,17 +238,29 @@ def main():
     brief = parts.get("brief", "").strip()
     if not brief:
         sys.exit("У відповіді немає тексту брифу")
+    if not structured:
+        print("УВАГА: маркерів немає у відповіді на перший запит")
 
-    if structured:
-        missing = [k for k in ("greeting", "hook", "calendar", "threads",
-                               "predictions", "external")
-                   if not parts.get(k, "").strip()]
+    print("Запит 2: файли стану...")
+    state_user = (f"СЬОГОДНІШНІЙ ВИПУСК:\n{brief}\n\n"
+                  f"ПОТОЧНИЙ КАЛЕНДАР:\n{read_state('calendar')}\n\n"
+                  f"ПОТОЧНА ПАМ'ЯТЬ:\n{read_state('threads')}\n\n"
+                  f"НАШІ ПРОГНОЗИ:\n{read_state('predictions')}\n\n"
+                  f"ЧУЖІ ПРОГНОЗИ:\n{read_state('external')}\n\n"
+                  f"СЬОГОДНІ {today}")
+    state_text = call_api(
+        key, (ROOT / "prompts" / "state.md").read_text(encoding="utf-8"),
+        state_user, MAX_TOKENS_STATE)
+
+    state_parts, ok = split_parts(state_text, require="threads")
+    if ok:
+        missing = [k for k in ("calendar", "threads", "predictions", "external")
+                   if not state_parts.get(k, "").strip()]
         if missing:
-            print(f"УВАГА: у відповіді немає частин: {', '.join(missing)}. "
-                  "Найімовірніше, її обірвало лімітом токенів.")
-        save_state(parts)
+            print(f"УВАГА: у відповіді немає частин: {', '.join(missing)}")
+        save_state(state_parts)
     else:
-        print("УВАГА: маркерів немає, стан не оновлюю")
+        print("УВАГА: маркерів у відповіді на другий запит немає, стан не чіпаю")
 
     (ROOT / "issues").mkdir(exist_ok=True)
     greet = parts.get("greeting", "").strip().split("\n")[0][:60]
