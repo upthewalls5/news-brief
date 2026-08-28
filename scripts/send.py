@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.6"
+VERSION = "2026-08-28.7"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -83,10 +83,12 @@ def decorate(text: str) -> str:
 
 
 def header() -> str:
+    """Простий текст без тегів: розмітку навісить send(), уже після
+    екранування. Інакше decorate() сумлінно екранує наші власні теги."""
     months = ("січня", "лютого", "березня", "квітня", "травня", "червня",
               "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
     now = datetime.now(timezone.utc)
-    return f"<b>РАНКОВИЙ БРІФ</b>\n{now.day} {months[now.month - 1]}\n"
+    return f"РАНКОВИЙ БРІФ · {now.day} {months[now.month - 1]}"
 
 
 def split_message(text: str):
@@ -117,16 +119,21 @@ def _post(token, payload):
             f"https://api.telegram.org/bot{token}/sendMessage", json=payload)
 
 
-def send(token, chat_id, text, html=True):
+def send(token, chat_id, text, top=None, html=True):
     """Пробує HTML. Якщо Telegram не прийняв розмітку — шле плаский текст,
-    щоб зіпсоване оформлення ніколи не з'їдало сам випуск."""
+    щоб зіпсоване оформлення ніколи не з'їдало сам випуск.
+    top — шапка простим текстом, теги на неї навішуються тут."""
     base = {"chat_id": chat_id, "disable_web_page_preview": True}
     if html:
-        r = _post(token, {**base, "text": decorate(text), "parse_mode": "HTML"})
+        body = decorate(text)
+        if top:
+            body = f"<b>{esc(top)}</b>\n\n{body}"
+        r = _post(token, {**base, "text": body, "parse_mode": "HTML"})
         if r.status_code < 400:
             return
         print(f"Telegram не прийняв HTML ({r.status_code}), шлю без розмітки")
-    r = _post(token, {**base, "text": text})
+    plain = f"{top}\n\n{text}" if top else text
+    r = _post(token, {**base, "text": plain})
     if r.status_code >= 400:
         raise RuntimeError(f"Telegram {r.status_code}: {r.text[:300]}")
 
@@ -156,11 +163,9 @@ def main():
 
     parts = split_message(text)
     for i, part in enumerate(parts):
-        if i == 0:
-            part = header() + "\n" + part
         if len(parts) > 1:
             part = f"{part}\n\n({i + 1}/{len(parts)})"
-        send(token, chat_id, part)
+        send(token, chat_id, part, top=header() if i == 0 else None)
         if i < len(parts) - 1:
             time.sleep(1)
 
