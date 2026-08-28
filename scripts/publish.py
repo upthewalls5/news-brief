@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-28.2"
+VERSION = "2026-08-28.3"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -293,8 +293,10 @@ def main():
     # Адреса на telegra.ph утворюється із заголовка, тому «бріф + дата» легко
     # вгадується. Додаємо випадковий хвіст: сторінка лишається публічною,
     # але знайти її перебором дат уже не вийде.
-    token = secrets.token_hex(3)
-    title = f"Бріф {today.day} {MONTHS[today.month - 1]} {today.year} {token}"[:200]
+    # Окрема назва: раніше цей рядок затирав змінну token із токеном
+    # Telegraph, і в API летів шестисимвольний хвіст замість ключа.
+    slug = secrets.token_hex(3)
+    title = f"Бріф {today.day} {MONTHS[today.month - 1]} {today.year} {slug}"[:200]
 
     with httpx.Client(timeout=60.0) as client:
         nodes = build_nodes(brief, weekly, iso)
