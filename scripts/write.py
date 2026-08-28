@@ -25,7 +25,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.10"
+VERSION = "2026-08-28.11"
 MODEL = "claude-sonnet-5"
 MAX_TOKENS = 20000
 TIMEOUT = 900.0
@@ -41,6 +41,7 @@ STATE = {
 }
 
 MARKERS = {
+    "hook": "===АНОНС===",
     "brief": "===БРІФ===",
     "threads": "===ПАМЯТЬ===",
     "predictions": "===НАШІ ПРОГНОЗИ===",
@@ -93,7 +94,7 @@ def split_parts(text):
     if MARKERS["brief"] not in text:
         return {"brief": text}, False
 
-    order = ["brief", "threads", "predictions", "external"]
+    order = ["hook", "brief", "threads", "predictions", "external"]
     positions = []
     for key in order:
         i = text.find(MARKERS[key])
@@ -181,6 +182,11 @@ def main():
         print("УВАГА: маркерів немає, стан не оновлюю")
 
     (ROOT / "issues").mkdir(exist_ok=True)
+    hook = parts.get("hook", "").strip()
+    if hook:
+        (ROOT / "issues" / f"hook-{today}.txt").write_text(hook, encoding="utf-8")
+        print(f"Анонс: {len(hook.splitlines())} рядків")
+
     (ROOT / "issues" / f"{today}.md").write_text(brief + "\n", encoding="utf-8")
     (ROOT / "issues" / "latest.md").write_text(brief + "\n", encoding="utf-8")
     print(f"Бріф: {len(brief)} символів")
