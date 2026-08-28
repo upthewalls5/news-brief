@@ -36,6 +36,66 @@ URL = re.compile(r"(https?://\S+)")
 LABELS = ("Замовчують:", "Чому розходяться:", "Наші:", "Кажуть інші:")
 
 
+
+# ── Візуальні елементи ─────────────────────────────────────────────────
+# Дві речі, обидві з наших власних даних. Фотографії з матеріалів — чужі,
+# передруковувати їх не можна, тому візуал будуємо з того, що порахували самі.
+
+COUNTRY_HEAD = re.compile(r"^###\s+(.+?)\s+\((\d+)\s+матеріал\w*,\s*([\d.]+)%")
+
+
+def read_shares(limit=12):
+    d = ROOT / "digests" / "latest.md"
+    if not d.exists():
+        return []
+    rows = []
+    for line in d.read_text(encoding="utf-8").split("\n"):
+        m = COUNTRY_HEAD.match(line.strip())
+        if m:
+            rows.append((m.group(1), int(m.group(2)), float(m.group(3))))
+    rows.sort(key=lambda x: x[1], reverse=True)
+    return rows[:limit]
+
+
+def chart_url(iso):
+    """Графік лежить у репозиторії; беремо його за прямою адресою.
+    З'явиться на сторінці після кроку збереження в архів."""
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    if not repo or not (ROOT / "charts" / f"{iso}.png").exists():
+        return None
+    return f"https://raw.githubusercontent.com/{repo}/main/charts/{iso}.png"
+
+
+def attention_nodes(iso):
+    """Картинка плюс текстова карта. Текст лишається читабельним навіть
+    якщо картинка не завантажилась."""
+    rows = read_shares()
+    if not rows:
+        return []
+
+    nodes = [{"tag": "h3", "children": ["📊 Карта уваги"]}]
+
+    url = chart_url(iso)
+    if url:
+        nodes.append({"tag": "figure", "children": [
+            {"tag": "img", "attrs": {"src": url}},
+            {"tag": "figcaption", "children": [
+                "Частка країни в денному обсязі матеріалів"]}]})
+
+    top = max(r[2] for r in rows)
+    lines = []
+    for name, count, share in rows:
+        bar = "█" * max(1, round(share / top * 22))
+        lines.append(f"{name[:18]:<18} {bar} {share}%")
+    nodes.append({"tag": "pre", "children": ["\n".join(lines)]})
+    nodes.append({"tag": "aside", "children": [
+        "Скільки місця країна зайняла в новинному потоці за добу. "
+        "Висока частка означає, що в країні щось відбувається — навіть коли "
+        "світові медіа цього ще не помітили."]})
+    nodes.append({"tag": "hr"})
+    return nodes
+
+
 def load_state():
     if STATE.exists():
         try:
@@ -70,10 +130,20 @@ def rich(text):
     return nodes or [text]
 
 
-def build_nodes(brief, weekly=None):
+def build_nodes(brief, weekly=None, iso=None):
     """Перетворює плаский випуск на оформлену сторінку."""
     nodes = []
     sources_all = []
+
+    # Зміст: із восьми рубрик читач одразу бачить, що всередині
+    titles = [l.strip() for l in brief.split("\n")
+              if l.strip() and l.strip()[0] in RUBRIC_EMOJI]
+    if len(titles) > 3:
+        nodes.append({"tag": "aside", "children": [" · ".join(titles)]})
+        nodes.append({"tag": "hr"})
+
+    if iso:
+        nodes.extend(attention_nodes(iso))
 
     def render(body, level="h3"):
         rubric = ""
@@ -184,7 +254,7 @@ def main():
     title = f"Ранковий бріф · {today.day} {MONTHS[today.month - 1]}"
 
     with httpx.Client(timeout=60.0) as client:
-        nodes = build_nodes(brief, weekly)
+        nodes = build_nodes(brief, weekly, iso)
         r = client.post(f"{API}/createPage", json={
             "access_token": token,
             "title": title[:256],
