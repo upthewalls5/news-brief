@@ -107,7 +107,7 @@ def main():
     iso = today.isoformat()
 
     hooks = read_hooks(iso)
-    points = read_points(iso)
+    points = []   # тези прибрані: на картці лишаються тільки гачки
     shares, total, n_countries = read_shares()
     if not hooks and not points:
         print("Немає ні гачків, ні тез — картку не малюю")
@@ -124,7 +124,7 @@ def main():
 
     # Розкладка рахується в дюймах від верху, і вже під неї підбирається
     # висота полотна. Інакше при короткому випуску лишається провал по центру.
-    PAD_TOP, PAD_BOTTOM, PAD_X = 0.62, 0.78, 0.72
+    PAD_TOP, PAD_BOTTOM, PAD_X = 0.62, 0.58, 0.72
     H_HEADER, H_RULE = 0.34, 0.30
     H_HOOK, GAP_HOOK = 0.42, 0.12
     H_POINT, GAP_POINT = 0.27, 0.10
@@ -147,7 +147,7 @@ def main():
         content += H_STRIP
     H = content + PAD_BOTTOM
     if has_collage:
-        H = max(H, 5.6)
+        H = max(H, 4.9)
 
     fig = plt.figure(figsize=(W, H), dpi=110)
     fig.patch.set_facecolor(BG)
@@ -191,9 +191,9 @@ def main():
     if has_collage:
         import matplotlib.image as mpimg
         img = mpimg.imread(str(COLLAGE))
-        side = min(3.5, H - 1.4)
-        cx = (text_right + W - PAD_X) / 2 + 0.55
-        cy = H / 2 + 0.15
+        side = min(2.85, H - 2.05)
+        cx = (text_right + W - PAD_X) / 2 + 0.25
+        cy = H / 2 + 0.18
         ax.imshow(img, extent=(cx - side / 2, cx + side / 2,
                                cy - side / 2, cy + side / 2), zorder=2)
         ax.set_xlim(0, W); ax.set_ylim(0, H)
@@ -202,8 +202,8 @@ def main():
         y -= 0.34
         ax.text(x, y, "УВАГА ПРЕСИ ЗА ДОБУ", fontsize=9.5, color=DIM,
                 fontweight="bold", va="top")
-        ax.text(W - PAD_X, y, f"{total} матеріалів · {n_countries} країн",
-                fontsize=9.5, color=DIM, va="top", ha="right")
+        ax.text(x + 2.15, y, f"{total} матеріалів · {n_countries} країн",
+                fontsize=9.5, color=DIM, va="top")
         y -= 0.46
 
         top = shares[0][2]
