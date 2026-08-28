@@ -7,6 +7,10 @@ on:
     - cron: '0 4 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: news-brief-repo
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -34,18 +38,29 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/write.py
 
-      - name: 3. Відправити в Telegram
+      - name: 3. Опублікувати на telegra.ph
+        if: always()
+        env: {TELEGRAPH_TOKEN: '${{ secrets.TELEGRAPH_TOKEN }}'}
+        run: python scripts/publish.py
+      - name: 4. Відправити в Telegram
         if: always()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/send.py
 
-      - name: 4. Зберегти в архів
+      - name: 5. Зберегти в архів
         if: always()
         run: |
           git config user.name  "news-bot"
           git config user.email "news-bot@users.noreply.github.com"
-          git add digests issues state
-          git diff --staged --quiet || git commit -m "Бріф $(date -u +%Y-%m-%d)"
-          git push
+          git add -A
+          git diff --staged --quiet && echo "змін немає" && exit 0
+          git commit -m "Бріф $(date -u +%Y-%m-%d)"
+          for i in 1 2 3 4 5; do
+            if git push; then echo "збережено"; exit 0; fi
+            echo "репозиторій змінився паралельним запуском, підтягую і пробую ще ($i)"
+            git pull --rebase --autostash origin main || git rebase --abort
+            sleep $((i * 4))
+          done
+          echo "не вдалося запушити після 5 спроб"; exit 1
