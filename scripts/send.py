@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.7"
+VERSION = "2026-08-28.9"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -91,6 +91,43 @@ def header() -> str:
     return f"РАНКОВИЙ БРІФ · {now.day} {months[now.month - 1]}"
 
 
+# ── Коротка версія для повідомлення ────────────────────────────────────
+# Повний випуск живе на telegra.ph. У Telegram іде верхівка: те, що має
+# бути видно зі сповіщення без жодного тапу.
+
+KEEP = ("🌍", "🔀", "🔮")
+
+
+def shorten(text: str, limit: int = 2400) -> str:
+    """Лишає ГОЛОВНЕ, перший сюжет РОЗКОЛУ ОПТИКИ і наші прогнози."""
+    blocks, current, keep = [], [], False
+    for line in text.split("\n"):
+        stripped = line.strip()
+        if stripped[:1] in "🌍🔀📍💰🗞🕳📡🔮🧭📖":
+            if current and keep:
+                blocks.append("\n".join(current).strip())
+            current, keep = [line], stripped[:1] in KEEP
+        else:
+            current.append(line)
+    if current and keep:
+        blocks.append("\n".join(current).strip())
+
+    out = []
+    for b in blocks:
+        b = "\n".join(l for l in b.split("\n")
+                      if not l.strip().startswith("Джерела:"))
+        if sum(len(x) for x in out) + len(b) > limit:
+            break
+        out.append(b.strip())
+    return "\n\n".join(out) if out else text[:limit]
+
+
+def read_link():
+    iso = datetime.now(timezone.utc).date().isoformat()
+    p = ROOT / "issues" / f"link-{iso}.txt"
+    return p.read_text(encoding="utf-8").strip() if p.exists() else None
+
+
 def split_message(text: str):
     if len(text) <= LIMIT:
         return [text]
@@ -152,6 +189,11 @@ def main():
 
     if path.exists():
         text = path.read_text(encoding="utf-8").strip()
+        weekly = ROOT / "issues" / f"weekly-{today}.md"
+        if weekly.exists():
+            extra = weekly.read_text(encoding="utf-8").strip()
+            text = f"{text}\n\n{'-' * 24}\n\n📅 ОГЛЯД ТИЖНЯ\n\n{extra}"
+            print("Додано тижневий огляд")
     else:
         prev = sorted((ROOT / "issues").glob("20*.md")) if (ROOT / "issues").exists() else []
         last = prev[-1].stem if prev else "немає"
@@ -161,7 +203,16 @@ def main():
                 "Подивіться вкладку Actions у репозиторії — там причина.")
         print(f"УВАГА: {path.name} відсутній, надсилаю повідомлення про збій")
 
-    parts = split_message(text)
+    link = read_link()
+    if link:
+        # Повний випуск на telegra.ph — у повідомленні лише верхівка
+        body = shorten(text) + f"\n\n📄 Повний випуск: {link}"
+        parts = split_message(body)
+        print(f"Коротка версія: {len(body)} символів, посилання є")
+    else:
+        parts = split_message(text)
+        print("Посилання немає, шлю випуск повністю")
+
     for i, part in enumerate(parts):
         if len(parts) > 1:
             part = f"{part}\n\n({i + 1}/{len(parts)})"
