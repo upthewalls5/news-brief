@@ -1,10 +1,10 @@
 # Звіт перевірки стрічок
 
-Дата: 2026-08-27 23:50 UTC
+Дата: 2026-08-28 00:07 UTC
 
 - Перевірено видань: **245**
-- Живих стрічок: **203** (легких 160, важких 43)
-- Не вдалося: **42**
+- Живих стрічок: **201** (легких 159, важких 42)
+- Не вдалося: **44**
 
 ## Не вдалося — потрібна заміна
 
@@ -16,8 +16,8 @@
 | Brazil | Estadao | HTTP 404  [https://www.estadao.com.br/rss/ultimas.xml] |
 | Bulgaria | Capital | HTTP 403 (chrome110: HTTP 403)  [https://www.capital.bg/rss/] |
 | China | Caixin | HTTP 404  [https://www.caixinglobal.com/rss/all.xml] |
-| China | People's Daily | застаріла: найновіше 131450.8 год тому  [http://en.people.cn/rss/China.xml] |
-| China | Xinhua | застаріла: найновіше 75311.8 год тому  [http://www.news.cn/english/rss/worldrss.xml] |
+| China | People's Daily | застаріла: найновіше 131451.0 год тому  [http://en.people.cn/rss/China.xml] |
+| China | Xinhua | застаріла: найновіше 75312.0 год тому  [http://www.news.cn/english/rss/worldrss.xml] |
 | Greece | Kathimerini | HTTP 403 (chrome110: HTTP 403)  [https://www.ekathimerini.com/feed/] |
 | India | The Indian Express | HTTP 403 (chrome110: HTTP 403)  [https://indianexpress.com/section/world/feed/] |
 | India | The Wire | HTTP 403 (chrome110: HTTP 403)  [https://m.thewire.in/rss] |
@@ -29,13 +29,14 @@
 | Israel | Calcalist | HTTP 403 (chrome110: HTTP 403)  [https://www.calcalist.co.il/GeneralRSS/0,16335,L-8,00.xml] |
 | Israel | Kan 11 | HTTP 404  [https://www.kan.org.il/rss/news.xml] |
 | Israel | The Times of Israel | HTTP 403 (chrome110: HTTP 403)  [https://www.timesofisrael.com/feed/] |
-| Italy | Corriere della Sera | застаріла: найновіше 20081.6 год тому  [https://www.corriere.it/rss/homepage.xml] |
+| Italy | Corriere della Sera | застаріла: найновіше 20081.8 год тому  [https://www.corriere.it/rss/homepage.xml] |
 | Italy | Il Foglio | HTTP 404  [https://www.ilfoglio.it/rss/home.xml] |
 | Japan | Kyodo News | HTTP 404  [https://english.kyodonews.net/rss/all.xml] |
 | Japan | Sankei Shimbun | HTTP 404  [https://www.sankei.com/rss/news/points.xml] |
 | Kazakhstan | Tengrinews | HTTP 404  [https://tengrinews.kz/userdata/rss/rss.xml] |
 | Mexico | Animal Politico | HTTP 404  [https://animalpolitico.com/feed/] |
 | Mexico | Aristegui Noticias | стрічка порожня  [https://aristeguinoticias.com/feed/] |
+| Mexico | El Universal | HTTP 404  [https://eluniversal.com.mx/rss] |
 | Mexico | Milenio | HTTP 403 (chrome110: HTTP 404)  [https://www.milenio.com/rss] |
 | Norway | Dagens Naeringsliv | не парситься: SAXParseException  [https://www.dn.no/rss] |
 | Poland | PAP | не парситься: SAXParseException  [https://www.pap.pl/rss.xml] |
@@ -43,6 +44,7 @@
 | Russia | Verstka | HTTP 502  [https://verstka.media/rss] |
 | South Korea | JoongAng Ilbo | HTTP 404  [https://koreajoongangdaily.joins.com/rss] |
 | Taiwan | China Times | HTTP 404  [https://www.chinatimes.com/rss/politic.xml] |
+| Turkey | Daily Sabah | HTTP 403 (chrome110: HTTP 403)  [https://dailysabah.com/rss] |
 | Turkey | Gazete Duvar | HTTP 403 (chrome110: HTTP 403)  [https://www.gazeteduvar.com.tr/rss] |
 | Turkey | T24 | не парситься: SAXParseException  [https://t24.com.tr/rss] |
 | UAE | WAM | не парситься: SAXParseException  [https://www.wam.ae/en/feed] |
@@ -75,7 +77,6 @@
 - Kazakhstan · Vlast.kz
 - Kazakhstan · Orda.kz
 - Kazakhstan · Kazinform
-- Mexico · El Universal
 - Mexico · El Financiero
 - Netherlands · NOS
 - Poland · Notes from Poland
