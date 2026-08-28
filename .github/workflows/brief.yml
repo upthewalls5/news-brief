@@ -39,6 +39,7 @@ jobs:
         run: |
           python scripts/chart.py
           python scripts/collage.py
+          python scripts/calendar_img.py
           python scripts/preview.py
       - name: 4. Опублікувати на telegra.ph
         if: always()
