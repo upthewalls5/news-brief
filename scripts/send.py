@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.9"
+VERSION = "2026-08-28.11"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -82,6 +82,17 @@ def decorate(text: str) -> str:
     return "\n".join(out)
 
 
+def read_hook():
+    """Гачки, згенеровані разом із випуском."""
+    iso = datetime.now(timezone.utc).date().isoformat()
+    p = ROOT / "issues" / f"hook-{iso}.txt"
+    if not p.exists():
+        return []
+    lines = [l.strip().lstrip("-•—").strip()
+             for l in p.read_text(encoding="utf-8").splitlines()]
+    return [l for l in lines if len(l) > 12][:3]
+
+
 def header() -> str:
     """Простий текст без тегів: розмітку навісить send(), уже після
     екранування. Інакше decorate() сумлінно екранує наші власні теги."""
@@ -103,7 +114,9 @@ def shorten(text: str, limit: int = 2400) -> str:
     blocks, current, keep = [], [], False
     for line in text.split("\n"):
         stripped = line.strip()
-        if stripped[:1] in "🌍🔀📍💰🗞🕳📡🔮🧭📖":
+        # Порожній рядок НЕ є рубрикою: "" є підрядком будь-якого рядка,
+        # тому без перевірки на порожнечу кожен відступ обривав би блок.
+        if stripped and stripped[0] in "🌍🔀📍💰🗞🕳📡🔮🧭📖":
             if current and keep:
                 blocks.append("\n".join(current).strip())
             current, keep = [line], stripped[:1] in KEEP
@@ -206,7 +219,11 @@ def main():
     link = read_link()
     if link:
         # Повний випуск на telegra.ph — у повідомленні лише верхівка
-        body = shorten(text) + f"\n\n📄 Повний випуск: {link}"
+        hooks = read_hook()
+        intro = ("\n".join(f"→ {h}" for h in hooks) + "\n\n") if hooks else ""
+        body = intro + shorten(text) + f"\n\n📄 Повний випуск: {link}"
+        if hooks:
+            print(f"Анонс: {len(hooks)} рядків")
         parts = split_message(body)
         print(f"Коротка версія: {len(body)} символів, посилання є")
     else:
