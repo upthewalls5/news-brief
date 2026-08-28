@@ -26,9 +26,9 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.14"
+VERSION = "2026-08-28.15"
 MODEL = "claude-sonnet-5"
-MAX_TOKENS = 20000
+MAX_TOKENS = 32000
 TIMEOUT = 1200.0      # загальний бюджет на запит
 READ_TIMEOUT = 180.0  # пауза МІЖ частинами потоку, а не на всю відповідь
 ATTEMPTS = 3
@@ -148,8 +148,9 @@ def split_parts(text):
     if MARKERS["brief"] not in text:
         return {"brief": text}, False
 
-    order = ["greeting", "hook", "brief", "threads",
-             "predictions", "external", "calendar"]
+    # Порядок розбору не залежить від порядку в тексті — беремо за позиціями.
+    order = ["greeting", "hook", "brief", "calendar", "threads",
+             "predictions", "external"]
     positions = []
     for key in order:
         i = text.find(MARKERS[key])
@@ -232,6 +233,12 @@ def main():
         sys.exit("У відповіді немає тексту брифу")
 
     if structured:
+        missing = [k for k in ("greeting", "hook", "calendar", "threads",
+                               "predictions", "external")
+                   if not parts.get(k, "").strip()]
+        if missing:
+            print(f"УВАГА: у відповіді немає частин: {', '.join(missing)}. "
+                  "Найімовірніше, її обірвало лімітом токенів.")
         save_state(parts)
     else:
         print("УВАГА: маркерів немає, стан не оновлюю")
