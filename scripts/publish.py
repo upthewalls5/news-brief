@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-28.4"
+VERSION = "2026-08-28.5"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -120,6 +120,17 @@ def calendar_nodes():
     rows.sort(key=lambda r: r[0])
 
     nodes = [{"tag": "h3", "children": ["🗓 Календар подій попереду"]}]
+
+    iso_today = datetime.now(timezone.utc).date().isoformat()
+    img = ROOT / "charts" / f"calendar-{iso_today}.png"
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    if repo and img.exists():
+        nodes.append({"tag": "figure", "children": [
+            {"tag": "img", "attrs": {"src":
+                f"https://raw.githubusercontent.com/{repo}/main/charts/{img.name}"}},
+            {"tag": "figcaption", "children": [
+                "Підсвічені дати — події, навколо яких формуватиметься "
+                "новинний потік"]}]})
     for start, end, body in rows[:20]:
         when = human_date(start)
         if end:
