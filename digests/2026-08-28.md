@@ -1,7 +1,7 @@
 # Дайджест 2026-08-28
 
-Зібрано 2278 матеріалів за 26 год (201 стрічок RSS + 133 матеріалів через API).
-Не відповіли (3): Vlast.kz (HTTP 522), Il Foglio (API порожньо), Milenio (API порожньо)
+Зібрано 2276 матеріалів за 26 год (201 стрічок RSS + 122 матеріалів через API).
+Не відповіли (3): Australian Financial Review (API ReadTimeout), Il Foglio (API порожньо), Milenio (API порожньо)
 
 ## Кластери — сюжети в кількох країнах
 
@@ -13,7 +13,7 @@
 - France · Le Monde (center-left): Nepal floods: Number of missing jumps to over 2,400
   The disaster is the deadliest for Nepal since 2015.
 - Ireland · RTE (public): Over 2,400 missing after deadly Nepal, China floods
-  The number of people missing in Nepal and China leapt to more than 2,400 today, underscoring the scale of the disaster days after a tsunami-like wall of water and debris swept away
+  The number of people missing in Nepal and China leapt to more than 2,400, days after a tsunami-like wall of water and debris swept away villages and killed hundreds.
 - UAE · Khaleej Times (center-state): At least 579 killed, 1,924 missing in deadly Nepal floods: Disaster authority
 - India · The Times of India (mainstream): Nepal floods: How recent reports warned of this disaster months ago
   Recent floods in Nepal and Tibet followed ICIMOD's warnings about melting glaciers. These reports highlighted doubled ice loss rates and increased flood risks across the region. A 
@@ -85,13 +85,6 @@
   Army helicopters ferry survivors from inaccessible areas to a camp at a barracks in Bidur The three women sat together in the army tent and wept. They cried out for their sons, the
 - UAE · Khaleej Times (center-state): In pictures: Nepal flood survivors return to devastated homes, searching for lost belongings
 
-### [3 дж. / 3 країн] Death Toll Rises as Rescuers Search for Victims of Nepal Flood
-- USA · The Wall Street Journal (center-right-business): Death Toll Rises as Rescuers Search for Victims of Nepal Flood
-  More than 1,500 people are missing and at least 558 are confirmed dead following the devastating flood.
-- Ireland · RTE (public): Ireland's Nepalese are fundraising for flood victims
-  Fundraising is under way in Ireland's Nepalese community to support victims of the devastating floods in their home country.
-- Australia · Australian Financial Review (business): Nepal flood death toll passes 500
-
 ### [3 дж. / 3 країн] Norway mourns King Harald as Haakon VIII ascends throne
 - UK · BBC News (public): Norway mourns King Harald as Haakon VIII ascends throne
   Mourners gather outside the palace as royals, politicians and citizens remember a beloved king, whose son has adopted the family motto "all for norway".
@@ -131,7 +124,7 @@
 - USA · Axios (reference): Trump loses longshot bid to erase hush money conviction
   A federal judge again declined to erase President Trump 's hush money conviction on Friday, noting that the president's arguments were "neither new nor legally sufficient." Why it 
 
-### [2 дж. / 2 країн] · НОВЕ US Treasury imposes limits on Egyptian bank for doing business with Iran
+### [2 дж. / 2 країн] US Treasury imposes limits on Egyptian bank for doing business with Iran
 - Global · Financial Times (business): US Treasury imposes limits on Egyptian bank for doing business with Iran
   Measures targeting UAE branches of Banque Misr are part of Trump administration’s efforts to isolate Tehran
 - USA · The Wall Street Journal (center-right-business): A Core Egyptian Bank Gets Caught Up in Treasury’s Iran Crackdown
@@ -183,23 +176,28 @@
 - UAE · Middle East Eye (qatar-aligned): Israeli strikes kill five in Gaza
   Israeli strikes kill five in Gaza Israeli strikes killed five people in Gaza on Friday, authorities in the Strip said, in the latest day of attacks despite international appeals to
 
-### [2 дж. / 2 країн] Major highway section near Kyiv closed after Russian attack sparks warehouse fires
-- Ukraine · Kyiv Independent (reference): Major highway section near Kyiv closed after Russian attack sparks warehouse fires
-  A major highway connecting Kyiv with western Ukraine has been temporarily closed on Aug. 28 after a Russian attack sparked fires and explosions at warehouse facilities in Kyiv Obla
-- China · South China Morning Post (hongkong): 2 dead in school attack near Berlin
-  One of the two people killed in an attack at a school near Berlin was a 30-year-old nursery worker, police said on Friday. It had previously been reported that the man who was kill
-
 ### [2 дж. / 2 країн] Media identify Russian officer killed in St. Petersburg car blast
 - Ukraine · Kyiv Independent (reference): Media identify Russian officer killed in St. Petersburg car blast
   The victim is reportedly Sergei Sechkov, an officer at Russia’s 332nd Separate Helicopter Regiment.
 - Russia · The Moscow Times (exile): Car Bomb Kills Military Officer in St. Petersburg
   The lieutenant colonel’s wife was also in the car at the moment of the blast and was badly injured, local media reported.
 
-### [2 дж. / 2 країн] Новый король Норвегии: кто такой Хокон VIII
-- Russia · Vedomosti (business): Новый король Норвегии: кто такой Хокон VIII
-  Король Норвегии Харальд V умер на 90-м году жизни после 35 лет пребывания на престоле. Новым монархом стал его сын – кронпринц Хокон, взявший тронное имя Хокон VIII (полное имя – Х
-- Belarus · Zerkalo (exile): Новый король Норвегии Хокон VIII - что он за человек и каким будет королем
-  «Мне очень повезло, что мое дело продолжит именно кронпринц Хокон», - писал король Харальд в автобиографии.
+### [2 дж. / 2 країн] Зеленский заявил, что поставил задачу запускать по России тысячу дронов в день
+- Russia · Meduza (exile): Зеленский заявил, что поставил задачу запускать по России тысячу дронов в день
+  Владимир Зеленский заявил, что поставил украинским военным задачу запускать по тысяче дронов в день по России.
+- Belarus · Zerkalo (exile): «Задача - тысяча дронов в день». Зеленский объявил новую цель для ударов по России
+  По словам политика, одним из главных приоритетов для Украины остается наращивание собственного производства оружия - как для дальних ударов по территории РФ, так и для защиты город
+
+### [2 дж. / 2 країн] Disaster Experts Say Nepal Glacier Collapse Was Difficult to Predict
+- USA · The New York Times (center-left): Disaster Experts Say Nepal Glacier Collapse Was Difficult to Predict
+  Given the challenges in forecasting and detecting such calamities, researchers advised banning construction on floodplains and marking out clear evacuation routes.
+- China · South China Morning Post (hongkong): China’s radar satellites capture sharp images of glacier collapse site in Nepal
+  Within hours of a devastating glacier collapse on the China-Nepal border, a Beijing-based satellite company had already redirected six of its satellites to survey the disaster zone
+
+### [2 дж. / 2 країн] See How the World Has Changed Since the Start of the Iran War
+- USA · The Wall Street Journal (center-right-business): See How the World Has Changed Since the Start of the Iran War
+  From oil prices to regional alliances, the six-month-old conflict has defied expectations and unsteadied the global balance of power.
+- Ireland · Irish Independent (center-right): Finn Lynch suffers nightmare in Dún Laoghaire as false start chaos sees him drop off at ILCA 7 World Championships
 
 ## По країнах
 
@@ -216,12 +214,12 @@
 - [Clarin · center-right] Kily González, la apuesta para dirigir a Messi: por qué genera dudas su elección y cuál es su gran reto en Inter Miami
 - [Clarin · center-right] Adriana Cavarero, filósofa italiana: “El yo no está creado por mí, está creado por las circunstancias, por los lugares, es un constructo cultural”
 - [Clarin · center-right] Miles de personas defienden el derecho al voto en EEUU por aniversario de "Tengo un sueño"
+- [Pagina 12 · left] Mayra Mendoza destacó la aprobación de la Ley EMA: “Buscamos proteger a nuestras infancias”
 - [Pagina 12 · left] Detuvieron a Bebote Álvarez, exjefe de la barra de Independiente
 - [Pagina 12 · left] Un exdirector de la ORT criticó la presencia de Milei en la escuela
 - [Pagina 12 · left] Que la inocencia te valga
-- [Pagina 12 · left] Fracasó la reunión por el Salario Mínimo: los empresarios ofrecieron $6.800 de aumento y define el Gobierno
 
-### Australia  (45 матеріалів, 2.0% дня)
+### Australia  (33 матеріалів, 1.4% дня)
 - [ABC News · public] Cost of chicken to rise soon, even if bird flu doesn't spread
 - [ABC News · public] Documents allege former KPMG partner made 'unwanted sexual advances'
 - [ABC News · public] The injured workers claiming Gallagher Bassett failed them
@@ -234,8 +232,8 @@
 - [ABC News · public] Australia's tobacco tax crushed smoking. Has it gone too far?
 - [ABC News · public] 'Darn good' or 'functioning': Closing arguments in mother's murder trial
 - [ABC News · public] Landscape just one challenge for Nepal-Tibet rescuers
-- [Sydney Morning Herald · center-left] The behavioural red flags the Swans should have noticed before Melbourne bender
-- [Sydney Morning Herald · center-left] Jem Cassar-Daley had to be bribed to sing with her famous dad – but not any more
+- [Sydney Morning Herald · center-left] ‘The whole MCG was spinning’: The story behind Demon’s scary on-field episode
+- [Sydney Morning Herald · center-left] From sidelines to centre stage, Blues ruckman ready to pit himself against Gawn the great
 
 ### Austria  (35 матеріалів, 1.5% дня)
 - [Der Standard · center-left] 41 Schläge auf Vitrine: Eine Rekonstruktion des Juwelen-Coups im Mak
@@ -244,16 +242,17 @@
 - [Der Standard · center-left] Einige unangenehme Wahrheiten zur FPÖ
 - [Der Standard · center-left] Aufregung rund um Bergführer am Großglockner
 - [Der Standard · center-left] Norwegens neuer König Haakon muss in große Fußstapfen treten
-- [Der Standard · center-left] So sah die Mondfinsternis Donnerstagnacht aus
+- [Der Standard · center-left] Fast 600 Todesopfer nach Sturzflut in Nepal
 - [Der Standard · center-left] RAM-Krise sei Dank: Google zwingt Android-Entwickler zu geringerem Speicherverbrauch
 - [Der Standard · center-left] Flatpak: Wichtiges Linux-Projekt erhält große Geldspritze, Google arbeitet an Chrome-Support
 - [Der Standard · center-left] Staatsbegräbnis in Serbien für Massenmörder und Muslimenfeind Mladić
 - [Der Standard · center-left] Nigeria: Wo Massenentführungen zum lukrativen Geschäftsmodell wurden
-- [Der Standard · center-left] Jason Statham meuchelt wieder: "Stirb langsam" auf hoher See
+- [Der Standard · center-left] So sah die Mondfinsternis Donnerstagnacht aus
 - [Die Presse · center-right] Selenskyj droht Russland mit bis zu 1000 Drohnen täglich
 - [Die Presse · center-right] Pensionen: Stocker bringt Staatsfonds ins Spiel
 
 ### Belarus  (24 матеріалів, 1.1% дня)
+- [Zerkalo · exile] «Спасите наши голоса!» Британские актеры и певцы требуют принятия закона, регулирующего клонирование голоса ИИ
 - [Zerkalo · exile] «Задача - тысяча дронов в день». Зеленский объявил новую цель для ударов по России
 - [Zerkalo · exile] «Вход через единую калитку». На фоне ограничений для родителей и досмотров школьников высказался генерал милиции
 - [Zerkalo · exile] В Минске останавливали метро на одной линии из-за запаха гари
@@ -265,7 +264,6 @@
 - [Zerkalo · exile] Жители Швейцарии по просьбе ученых закопали 2000 пар трусов. Что показал необычный эксперимент
 - [Zerkalo · exile] Пропавший в 2022 году украинский экс-депутат нашелся в Беларуси - во главе одного из заводов
 - [Zerkalo · exile] Цены на муку в Беларуси могут вырасти более чем на 50%
-- [Zerkalo · exile] Новый король Норвегии Хокон VIII - что он за человек и каким будет королем
 - [BelTA · state] МЧС выехали по сообщению об инциденте на станции метро Слуцкий гостинец
 - [BelTA · state] Лучших операторов БПЛА среди работников МЧС определили под Борисовом
 
@@ -282,10 +280,14 @@
 - [De Standaard · center-right] Israël voert dodelijke luchtaanval uit op bezette Westelijke Jordaanoever
 - [De Standaard · center-right] Federal Reserve-voorzitter Kevin Warsh wil dat beleggers zelf hun huiswerk maken: “Luister vooral niet naar mij”
 - [De Standaard · center-right] Indonesiërs gaan opnieuw massaal de straat op tegen corruptie en groeiende legermacht
+- [Le Soir · center-left] EuroMillions : un Belge remporte une belle somme
 - [Le Soir · center-left] Crue au Népal et au Tibet : un nouveau bilan fait état d’au moins 586 morts et près de 2.500 disparus
-- [Le Soir · center-left] Les Red Lions doivent accepter de ne « plus être exceptionnels »
 
 ### Bosnia  (12 матеріалів, 0.5% дня)
+- [Klix · reference] (Ne)očekivan pozdrav privukao pažnju, rukovali se Dodik i Blanuša
+- [Klix · reference] Bayern na otvaranju sezone deklasirao Demirovićev Stuttgart, Neuer odigrao 600 utakmica za Bavarce
+- [Klix · reference] Zašto vas bole uši tokom polijetanja aviona i kako spriječiti neugodan pritisak
+- [Klix · reference] Pogledajte kako je krcati Mejdan dočekao kraj utakmice, uslijedilo veliko slavlje s košarkašima
 - [Klix · reference] Košarkaši BiH na krilima Nurkića srušili Italiju i pobjedom počeli drugu fazu kvalifikacija za SP
 - [Klix · reference] Čelik razbio Velež za prvi trijumf u elitnom rangu nakon šest godina, hat-trick Mašića
 - [Klix · reference] Sarajevskoj policiji predali se Adnan Maglić i Haris Ćatović, osumnjičeni su u "Cateringu"
@@ -294,12 +296,9 @@
 - [Klix · reference] Bivši desničarski ministar odbrane Grčke odao počast ratnom zločincu Ratku Mladiću
 - [Klix · reference] Zrak u Sarajevu sve zagađeniji zbog prašine iz Sahare
 - [Klix · reference] Nastavlja rešetati mreže: Pogledajte novi sjajan gol Jove Lukića
-- [Klix · reference] Peto izdanje programa NPS "Kultura na ulice!" otvoreno koncertom CordAria Duo: Spoj više žanrova
-- [Klix · reference] Banja Luka: Dojave o postavljenim bombama na pet lokacije bile su lažne
-- [Klix · reference] Ponovo se rasplamsao požar na Trebeviću, vatrogasci kažu da gori i u zemlji
-- [Klix · reference] Film "The Whisper Man" stigao na Netflix: Uprkos De Niru u glavnoj ulozi, razočarao je dio kritičara
 
-### Brazil  (58 матеріалів, 2.5% дня)
+### Brazil  (57 матеріалів, 2.5% дня)
+- [Folha de S.Paulo · center-left] Time de Messi anuncia técnico argentino Kily González
 - [Folha de S.Paulo · center-left] Veja a população da sua cidade em 2026, segundo o IBGE
 - [Folha de S.Paulo · center-left] Técnicos da Funai pedem anulação de licença para Belo Sun minerar ouro no Xingu
 - [Folha de S.Paulo · center-left] 1926: Marie Curie se despede do Brasil após visita de mais de 40 dias
@@ -311,9 +310,8 @@
 - [Folha de S.Paulo · center-left] Raríssimo, feito põe Piu no olimpo de recordistas mundiais brasileiros
 - [Folha de S.Paulo · center-left] Putin testa míssil nuclear em meio à crise com a Otan; assista
 - [Folha de S.Paulo · center-left] Quem é Agostinho Paulo Moura, marido de Maju Coutinho
-- [Folha de S.Paulo · center-left] Lula ganha destaque em programas estaduais de aliados; Flávio é exibido no RJ e no PR
-- [O Globo · center-right] Rede de inovação de abrangência nacional do Senac tem evento de lançamento no Rio Grande do Sul
-- [O Globo · center-right] Vaivem de Cleitinho, Patrus com Lula e Roscoe com Nikolas: como foi a estreia dos candidatos ao governo de Minas na TV
+- [O Globo · center-right] Palmeiras projeta mais um mês para ter Paulinho de volta após nova lesão
+- [O Globo · center-right] Imobiliárias do Grupo Cyrela celebram Dia do Corretor
 
 ### Bulgaria  (24 матеріалів, 1.1% дня)
 - [Dnevnik · center-right] Михайло Федоров ще съветва Италия за военни иновации
@@ -332,6 +330,7 @@
 - [Mediapool · independent] Велосипедисти протестираха в столицата
 
 ### China  (13 матеріалів, 0.6% дня)
+- [South China Morning Post · hongkong] China-Nepal floods: rescuers pull out survivors caked in mud as toll climbs
 - [South China Morning Post · hongkong] Trump orders creation of US ‘Space Academy’, amid rivalry with China
 - [South China Morning Post · hongkong] As Iran war hits six-month mark, Trump says he’s ‘not in a hurry’
 - [South China Morning Post · hongkong] BYD posts US$1.2 billion profit in second quarter on surging global demand
@@ -343,11 +342,12 @@
 - [South China Morning Post · hongkong] Uzbekistan tests US-China AI rift with bid to join rival tech bloc
 - [South China Morning Post · hongkong] China’s radar satellites capture sharp images of glacier collapse site in Nepal
 - [South China Morning Post · hongkong] China’s chip supply chain ‘safer’ as self-sufficiency push gains traction, says top planner
-- [South China Morning Post · hongkong] 2 dead in school attack near Berlin
 - [China Digital Times · censorship-watch] Translations: Surprise Viral Hit “Niu Lai” Represents “a Revenge-Vote by Chinese Filmgoers” Amid Ban Rumors
 
 ### Croatia  (35 матеріалів, 1.5% дня)
-- [Jutarnji list · center] Sateliti otkrili velike promjene u tajnovitom kineskom kompleksu, analitičari imaju teoriju
+- [Jutarnji list · center] UŽIVO: Dinamo dovodi Esmira Bajraktarevića?
+- [Jutarnji list · center] Predsjednik Hajduka: ‘Prihode od Europe nikad nismo ni planirali, imamo spremna pojačanja!‘
+- [Jutarnji list · center] Otkrivene velike promjene u tajnovitoj kineskoj bazi, analitičar ima teoriju: ‘Gledajte hangare...‘
 - [Jutarnji list · center] Poraz od boljeg ili upozorenje na dublje probleme? Ne, Rijeka nije napravila sve da bi uspjela!
 - [Jutarnji list · center] Sindikat: ‘Rukovoditelj je pucao iznad glava pravosudnih policajaca. Pokušalo se sve staviti pod tepih‘
 - [Jutarnji list · center] Bez obzira na dva kluba sudionika u skupinama europskih kupova, hrvatski je nogomet tek osrednje dobar
@@ -357,10 +357,8 @@
 - [Jutarnji list · center] VIDEO U Šibeniku uhićen Poljak (30) za kojim je raspisan europski uhidbeni nalog
 - [Jutarnji list · center] Cure detalji posjeta šefa CIA-e Moskvi, Ukrajinci: ‘Vrlo je znakovito kamo je sletio odmah poslije‘
 - [Jutarnji list · center] VIDEO Bivši igrač Dinama i Hajduka režirao nevjerojatan preokret: Asistirao pa zabio dva gola, prvi s centra!
-- [Jutarnji list · center] Ovog ljeta u formi nisu bili ni Kovačević niti Boban! Tko je glavni krivac što je Dinamo ostao bez Lige prvaka?
-- [Jutarnji list · center] Carina prodaje 4000 litara domaće rakije: Litra košta samo 1,20 eura, ali uz par posebnih uvjeta
-- [Index.hr · independent] Muž joj umro tijekom leta, ona slomila kralježnicu. Sada tuži Singapore Airlines
-- [Index.hr · independent] Najbolji puderi s potpunim prekrivanjem za besprijekoran ten
+- [Index.hr · independent] Nicole Kidman otkrila bizarnu stvar koju radi kad je ljuta 👀
+- [Index.hr · independent] Umro najmlađi kralj na svijetu
 
 ### Czechia  (48 матеріалів, 2.1% дня)
 - [Denik N · center-right] Válečný zločinec Mladić zemřel ve věku 84 let, mnohé jeho oběti se nedožily ani šestnácti
@@ -379,7 +377,7 @@
 - [Seznam Zpravy · investigative] Trump opět nedosáhl zrušení odsuzujícího verdiktu v kauze plateb pornoherečce
 
 ### Denmark  (33 матеріалів, 1.4% дня)
-- [Politiken · center-left] Hun er en stadig mere fantastisk sanger
+- [Politiken · center-left] Hun nægter at tie stille: »Det bliver et nej tak. Og et fuck you!«
 - [Politiken · center-left] Kraftig regn bevæger sig mod øst
 - [Politiken · center-left] Viborg tromler videre efter målrig affære i Horsens
 - [Politiken · center-left] Elgiganten og Power står uden MacBooks
@@ -423,8 +421,8 @@
 - [ERR · public] Laupäev tuleb soe ja valdavalt sajuta
 - [ERR · public] Pevkur: ministeerium võtab kaitseväe varade haldamise ajutiselt üle
 - [ERR · public] Maailma edetabelis 11. kohale tõusnud Selevko esines USA iluuisutamisõhtul
-- [Postimees · center-right] GALERII ⟩ Patarei kindluse müür joonistati täis
-- [Postimees · center-right] AJUVEREJOOKSUD JA SURMAD ⟩ Ameerika populaarne lõbustuspargi atraktsioon on seotud ränkade juhtumitega
+- [Postimees · center-right] KINDEL LAKS ⟩ Teatrifestival, uus vinüülipood ja eriti pika mõjuga film
+- [Postimees · center-right] Pevkuri sõnul liigub kaitseväe varade haldamine ajutiselt ministeeriumi alla
 
 ### Finland  (19 матеріалів, 0.8% дня)
 - [Helsingin Sanomat · center] Norja | Kuningas Haraldin arkku saapui linnalle: ihmiset seurasivat katujen varsilla
@@ -447,7 +445,7 @@
 - [Le Monde · center-left] Nepal floods: Number of missing jumps to over 2,400
 - [Le Monde · center-left] French economy stagnates as deficit persists, complicating budget plans
 - [Le Monde · center-left] French presidential candidates gather for first debate as left-right divide emerges on economic issues
-- [Le Monde · center-left] The Suez Canal's early years, under the shadow of the French and British empires
+- [Le Monde · center-left] Ukraine's Black Sea port blockade strangles grain exports
 - [Le Monde · center-left] The French eco-community helping people reconnect with nature
 - [Le Monde · center-left] Israel's dashed ambitions to topple the Iranian regime
 - [Le Monde · center-left] Ousted Ukraine defense minister Fedorov accepts job advising Italian minister
@@ -491,6 +489,7 @@
 - [Nikkei Asia · business] Japan's Sumitomo joins copper-gold mine project in Chile
 
 ### Greece  (36 матеріалів, 1.6% дня)
+- [Ta Nea · center-left] Κύκλωμα διακίνησης ναρκωτικών στην Αττική: Ο «γιατρός», τα «δέματα» και η λαϊκή τραγουδίστρια – Αποκαλυπτικοί διάλογοι
 - [Ta Nea · center-left] Τουρκική ομάδα χρηστών του διαδικτύου υποστηρίζει ότι χαρτογράφησε όλες τις αποθήκες πυρομαχικών στην Ελλάδα
 - [Ta Nea · center-left] «Λαχτάρα» στην Παρί Σεν Ζερμέν με το απρόοπτο του Σαφόνοφ στην προθέρμανση (vid)
 - [Ta Nea · center-left] Ο Μιχαΐλο Φέντοροφ αναλαμβάνει σύμβουλος στο ιταλικό υπουργείο Άμυνας
@@ -502,9 +501,8 @@
 - [Ta Nea · center-left] Συγκλονιστική επανένωση στο Νεπάλ: Μητέρα βρήκε τον 8χρονο γιο της σε νοσοκομείο με τη βοήθεια δημοσιογράφου
 - [Ta Nea · center-left] Καίτη Φίνου: «Δεν περίμενα ποτέ ότι θα υπάρχει τόση κακία για το ότι μένω στο Σπίτι του Ηθοποιού»
 - [Ta Nea · center-left] «Φεγγάρι του Οξύρρυγχου»: Η τελευταία πανσέληνος του καλοκαιριού φώτισε την Ελλάδα – Φωτογραφίες
-- [Ta Nea · center-left] Χατ-τρικ από τον 21χρονο Ζαμπίρι σε ένα ημίχρονο στο ντεμπούτο του ως βασικός στη La Liga (vids)
+- [Efimerida ton Syntakton · left] Φονικές πλημμύρες στο Νεπάλ: Μητέρα βρήκε τον 8χρονο γιο της που νόμιζε νεκρό – Σώθηκε σκαρφαλώνοντας σε δέντρο
 - [Efimerida ton Syntakton · left] «Έλυσες το πρόβλημα της ζωής σου»: Οι κυνικοί διάλογοι διακινητή και ψυχολόγου για το delivery των ναρκωτικών [βίντεο]
-- [Efimerida ton Syntakton · left] Υπουργείο Εργασίας: Ο «χάρτης» των πληρωμών από τον e-ΕΦΚΑ και τη ΔΥΠΑ έως τις 4 Σεπτεμβρίου
 
 ### Hungary  (60 матеріалів, 2.6% дня)
 - [Telex · independent] Ebben a játékban még a legbénábbak is óriási királynak érezhetik magukat
@@ -526,6 +524,8 @@
 - [RUV · public] Síða fannst ekki
 
 ### India  (84 матеріалів, 3.7% дня)
+- [The Hindu · center-left] Literature is more powerful than history: Su. Venkatesan
+- [The Hindu · center-left] AIMIM expels MLC Mirza Rahmat Baig from party
 - [The Hindu · center-left] West Bengal CM flays ‘Azadi’ slogans at Jadavpur
 - [The Hindu · center-left] ‘City of ponds’: residents of Bihar’s Darbhanga town wade into legal battle to save water bodies
 - [The Hindu · center-left] Conservancy workers seek permanency; residents demand action on open dumping
@@ -536,12 +536,15 @@
 - [The Hindu · center-left] Nepal flash floods LIVE: Death toll rises to 579; nearly 2,000 people still missing
 - [The Hindu · center-left] Chennai Corporation floated over 14,500 tenders last year, says Commissioner
 - [The Hindu · center-left] Ethiraj College signs MoU with US-based public accounting for industry interaction
-- [The Hindu · center-left] GCC seeks ₹300 cr. overdraft as pending bills cross ₹2,000 crore
-- [The Hindu · center-left] Councillors raise concern over faecal contamination of water
 - [The Times of India · mainstream] Nepal floods: How recent reports warned of this disaster months ago
 - [The Times of India · mainstream] CNG price hiked by Rs 3.89/kg in Delhi-NCR amid rising LNG cost
 
-### Iran  (48 матеріалів, 2.1% дня)
+### Iran  (47 матеріалів, 2.1% дня)
+- [IRNA · state] مخالفت بلژیک با انتقال دارایی‌های مسدودشده روسیه به اوکراین
+- [IRNA · state] سرلشکر رضایی: تاکیدات امروز رهبر معظم انقلاب روشن و غیرقابل تفسیر است‏
+- [IRNA · state] رحمتی: خودم را مقصر اصلی شکست مقابل سپاهان می‌دانم
+- [IRNA · state] نیروی دریایی سپاه: تسلط رزمندگان اسلام بر آبراه راهبردی تنگه هرمز کاملا قاطع است
+- [IRNA · state] پزشکیان: ایران برنده تفاهم اسلام‌آباد است/ نرخ سوم بنزین بیش از ۱۰ هزار تومان نخواهد بود
 - [IRNA · state] جوان ۲۸ ساله خانمیرزایی در رودخانه کَره‌بس غرق شد
 - [IRNA · state] شکسته‌شدن رکورد ملی در گام نخست مسابقات دوومیدانی بانوان کشور
 - [IRNA · state] سرمربی خیبر: کسب یک امتیاز از میدان سخت اراک ارزشمند بود
@@ -549,18 +552,13 @@
 - [IRNA · state] فولاد و استقلال امتیازات را تقسیم کردند
 - [IRNA · state] بهره‌برداری از۲۰۰ واحد مسکن ملی و یک مدرسه در قروه
 - [IRNA · state] سازمان ملل: از آمریکا و ایران می‌خواهیم وارد مذاکره شوند
-- [IRNA · state] انتقاد سرمربی چادرملو از داوری‌ها
-- [IRNA · state] فیلم| جشن بزرگ مهمانی امت احمد(ص) در سنندج
-- [IRNA · state] حماسه وحدت در قلب کردستان، سنندج غرق در شور "مهمانی امت احمد(ص)"
-- [IRNA · state] کلنگ خانه هنر معلولان در شیراز به زمین خورد
-- [IRNA · state] حضور پرشور بانوان خوزستانی در دیدار بین تیم های فولاد و استقلال
 - [Shargh · reformist] نتیجه بازی النصر و التعاون؛ ۲ بر یک به نفع النصر
 - [Shargh · reformist] جدول لیگ برتر در روز اول هفته چهارم
 
 ### Ireland  (36 матеріалів, 1.6% дня)
+- [The Irish Times · center] Number of homeless people in State increases to more than 17,500, data shows
 - [The Irish Times · center] Zoe Hyde and Mags Cremen win gold for Ireland at World Rowing Championships
 - [The Irish Times · center] Civil servant to face non-jury Special Criminal Court over alleged leaks to foreign handler
-- [The Irish Times · center] Number of homeless people in State increases to more than 17,500, data shows
 - [The Irish Times · center] US college football is back in Dublin with one of its biggest names and an ex-GAA kicker
 - [The Irish Times · center] Walsh and Screene show grit to survive Women’s Irish Open cut
 - [The Irish Times · center] ‘It was awful’: Electric Picnic early arrivals face washout night
@@ -573,7 +571,7 @@
 - [RTE · public] Over 2,400 missing after deadly Nepal, China floods
 - [RTE · public] New AI tech considered to tackle wrong-way driving
 
-### Israel  (38 матеріалів, 1.7% дня)
+### Israel  (37 матеріалів, 1.6% дня)
 - [Haaretz · left] IDF says three Palestinians killed in targeted strike near West Bank's Jenin
 - [Haaretz · left] Israeli judoka Gefen Primo wins Lausanne Grand Slam
 - [Haaretz · left] Is Israel really 'one step away' from total victory in Gaza?
@@ -589,7 +587,7 @@
 - [The Jerusalem Post · center-right] Finland discontinues €20 million UNRWA funding agreement
 - [The Jerusalem Post · center-right] Following DNA trails, a Jewish family shattered by the Holocaust discovers its lost branches
 
-### Italy  (47 матеріалів, 2.1% дня)
+### Italy  (48 матеріалів, 2.1% дня)
 - [La Repubblica · center-left] Baresi, il ricordo commosso di San Siro: le lacrime di Massaro e Stroppa
 - [La Repubblica · center-left] Giulia Presutti e Daniele Piervincenzi, chi sono i nuovi conduttori di Report
 - [La Repubblica · center-left] Ranucci via da Report: “Al mio posto due persone che mortificano la professionalità”
@@ -621,21 +619,21 @@
 - [Yomiuri Shimbun · conservative] 群馬・関越道の67台絡む2人死亡事故、男女26人を書類送検...速度調整など安全走行を怠った疑い
 - [Yomiuri Shimbun · conservative] イエローハットのサイトに不正アクセス、最大180万人分の顧客情報漏えいの恐れ...名前や電話番号など
 
-### Kazakhstan  (22 матеріалів, 1.0% дня)
+### Kazakhstan  (34 матеріалів, 1.5% дня)
+- [Vlast.kz · independent] В Алматы на выходных перекроют часть проспекта Абылай хана из-за строительства ЛРТ
+- [Vlast.kz · independent] Здание бывшего отеля Кайрата Сатыбалды на берегу Есентая в Алматы не сносят, а ремонтируют, заявили в СПК
+- [Vlast.kz · independent] Доллар торгуется на бирже по 464,5 тенге
+- [Vlast.kz · independent] Диагноза «псевдоаутизм» не существует – Минздрав
+- [Vlast.kz · independent] 7,7 млн тонн зерна намолочено в Казахстане – Минсельхоз
+- [Vlast.kz · independent] The Week in Kazakhstan: Too Early, Yes
+- [Vlast.kz · independent] Полиция Алматы просит жителей не пользоваться личными автомобилями 1 сентября
+- [Vlast.kz · independent] В курултае созданы восемь комитетов
+- [Vlast.kz · independent] Избраны трое вице-спикеров курултая
+- [Vlast.kz · independent] Айбек Дадебай избран председателем курултая
+- [Vlast.kz · independent] Самолет FlyArystan загорелся во время технических работ в аэропорту Алматы
+- [Vlast.kz · independent] На реставрацию дома купца Шахворостова в Алматы требуется не менее 15 млн тенге
 - [Orda.kz · independent] Дети спят на полу: казахстанцы застряли в аэропорту Дананга из-за задержки рейса Air Astana
 - [Orda.kz · independent] В Минпросвещения ответили на споры о цветах учителям 1 сентября
-- [Orda.kz · independent] Казахстанца задержали в Якутии по делу о мошенничестве
-- [Orda.kz · independent] Около 600 погибших: после разрушительного наводнения Непалу грозит новая катастрофа
-- [Orda.kz · independent] Не понравилось замечание: пациент ударил врача в поликлинике Петропавловска
-- [Orda.kz · independent] Бесплатная вакцинация от гриппа в Казахстане: кто получит прививку
-- [Orda.kz · independent] Крупный банк на грани краха смогут выкупить за государственные деньги
-- [Orda.kz · independent] Экономию на глаз не засчитают: бизнесу ужесточили энергоаудит
-- [Orda.kz · independent] Обещал закрыть дело за 300 тысяч: подполковнику полиции вынесли приговор в Жамбылской области
-- [Orda.kz · independent] Почему жители малоэтажных районов Алматы так отчаянно выступают против нового генплана
-- [Radio Azattyq · exile-funded] Үмбетәлиева: Суперпрезиденттік жүйе сол қалпы қалды
-- [Radio Azattyq · exile-funded] Құрылтай отырысы, ант берген депутаттар, Непалдағы қазақтар — AzatNEWS l 28.08.2026.
-- [Radio Azattyq · exile-funded] Пашинян Қазақстанға TRIPP жобасынан үлес ұсынғанын жоққа шығармады
-- [Radio Azattyq · exile-funded] Лұқпан Ахмедияров полиция қателігін мойындап, куәлігін жаңартқанын хабарлады
 
 ### Latvia  (24 матеріалів, 1.1% дня)
 - [LSM · public] Serbijas prezidents kritizē ANO tribunālu sakarā ar Mladiča nāvi ieslodzījumā
@@ -654,6 +652,8 @@
 - [Delfi Latvia · reference] Gandrīz sešas dienas pēc vētras bez elektrības vēl 1700 mājsaimniecību
 
 ### Lithuania  (24 матеріалів, 1.1% дня)
+- [LRT · public] Prieš išvyką į Lietuvą – dramatiška bosnių pergalė prieš italus
+- [LRT · public] Norvegija atsisveikina su karaliumi Haraldu V: reformatorius, kurį žmonės vadino „seneliu“
 - [LRT · public] Teherane – paniškas pirkimas, degalinėse nusidriekė ilgos eilės
 - [LRT · public] Trumpas tikina, kad Putinas NATO nepuls, žvalgyba perspėja: Kremlius mato progą eskaluoti
 - [LRT · public] Į regionus grįš bankų skyriai: dešimt savivaldybių jau ieško patalpų
@@ -664,8 +664,6 @@
 - [LRT · public] Vytautas Landsbergis – apie žmogaus užduotį gyvenime: nebūti kvailiu ir kiaule
 - [LRT · public] Kamščiai sugrįžo anksčiau: vairavimo ekspertas dalijasi, kaip išgyventi spūsčių maratoną
 - [LRT · public] Ukrainai pralaimėję graikai dar labiau susikomplikavo padėtį pasaulio čempionato atrankoje
-- [LRT · public] Lietuvoje antrąkart sulaikytas sudanietis mėgino apsimesti Belgijos piliečiu
-- [LRT · public] Į Lietuvą – jachta, stebino milžiniški lietuvių namai: Haraldo V vizitas 1998-aisiais
 - [15min · reference] Kodėl Lukašenka staiga išskubėjo pas Putiną
 - [15min · reference] Lenkijos vyriausybė pažėrė priekaištų dėl prezidento veto užkraunamos naštos valstybės finansams
 
@@ -718,6 +716,7 @@
 - [de Volkskrant · center-left] Zelensky’s plaaggeest Fedorov duikt op als defensie-adviseur van Italië
 
 ### Norway  (24 матеріалів, 1.1% дня)
+- [Aftenposten · center-right] Var uvitende om at han filmet skredet som utløste katastrofeflom i Nepal og Tibet
 - [Aftenposten · center-right] Idrettsglede, varme og humor. Her er øyeblikkene kongen vil bli husket for.
 - [Aftenposten · center-right] Den tidligere soldaten er godt kjent i Grønlands ødemark. I sommer dukket det opp noe helt nytt.
 - [Aftenposten · center-right] 25 minutter etter kongens død ringte telefonen hans. Mannen presenterte seg som den nye kongen.
@@ -729,7 +728,6 @@
 - [Aftenposten · center-right] Leknessund vant etter kongehyllest: – En spesiell dag
 - [Aftenposten · center-right] – Vi hadde planlagt jakter i høst. Han ville holde det gående til det tok slutt.
 - [Aftenposten · center-right] Mulig togstreik i neste uke – slik vil den ramme
-- [Aftenposten · center-right] Ukraina sier de har lagret nok gass for vinteren
 - [NRK · public] Kongen fikk meg ut av skapet
 - [NRK · public] Gjennomfører festival tross kongens død: – Noen mener det er smakløst
 
@@ -779,27 +777,27 @@
 - [G4Media · investigative] Statele Unite acordă o nouă derogare de la sancţiunile împotriva companiei petroliere sârbe NIS
 - [G4Media · investigative] Bolojan: Transelectrica și Rețele Electrice România au emis astăzi acceptul și notificarea de punere sub tensiune pentru două proiecte importante finanțate prin PNRR: CET Palas din Constanța și CET Hidrocarburi din Arad
 - [G4Media · investigative] Un compozitor italian va prezenta o piesă muzicală în limba elfilor la Universitatea Oxford
-- [Digi24 · center] Trump i-a decorat pe astronauţii care au participat la misiunea spaţială Artemis II
+- [Digi24 · center] Legea ANI a fost publicată în Monitorul Oficial, după ce a fost promulgată de Nicușor Dan. Nemulțumirile președintelui
 
 ### Russia  (104 матеріалів, 4.6% дня)
+- [TASS · state] В парках Подмосковья 1 сентября отметят День знаний
+- [TASS · state] Bloomberg: США не сообщили европейским союзникам детали поездки главы ЦРУ в РФ
+- [TASS · state] Политик Мелконян: в Армении демонтируют монумент в Артике в целях войны с историей
+- [TASS · state] В Киеве вновь прогремел взрыв
+- [TASS · state] Прокуратура следит за соблюдением прав граждан после атаки под Белгородом
+- [TASS · state] Ирак и Оман заявили, что санкции США против Ирана негативно повлияют на регион
 - [TASS · state] В Москве опубликовали список лучших школ столицы за 2025/2026 учебный год
 - [TASS · state] В Днепропетровске произошли взрывы
 - [TASS · state] В Киеве объявили воздушную тревогу
 - [TASS · state] В парках Подмосковья 29 августа пройдет акция по проверке здоровья
 - [TASS · state] В Саратовской области при столкновении судна с опорой у берега погиб человек
 - [TASS · state] В Пензенской области на молочном комбинате запустили новую производственную линию
-- [TASS · state] Иран призвал к мобилизации внутренних сил на фоне экономической войны с США
-- [TASS · state] В Харькове снова произошел взрыв
-- [TASS · state] На складах под Киевом произошел пожар с повторными взрывами
-- [TASS · state] WP: США хотят заключить энергетическую сделку с Венесуэлой в начале сентября
-- [TASS · state] Сбер планирует принимать в обеспечение по кредитам биткойн, Ethereum, Tether
-- [TASS · state] Похожих на пропавшего подростка мальчиков замечают в Твери и других городах
 - [RIA Novosti · state] В Киеве прогремел новый взрыв
 - [RIA Novosti · state] Трамп попросил астронавтов передать привет друзьям на МКС
 
 ### Serbia  (48 матеріалів, 2.1% дня)
-- [N1 Serbia · independent] Niški srednjoškolci dižu uzbunu, protest zbog izmena Zakona o obrazovanju: Ako ovo dopustimo, uticaće zauvek
 - [N1 Serbia · independent] Srbija sa Jokićem pobedila Island, novi korak ka Svetskom prvenstvu
+- [N1 Serbia · independent] Niški srednjoškolci dižu uzbunu, protest zbog izmena Zakona o obrazovanju: Ako ovo dopustimo, uticaće zauvek
 - [N1 Serbia · independent] Tusk: Rusija sprema eskalaciju, Poljska mora prva da pomogne ako napadne Estoniju
 - [N1 Serbia · independent] Bivši ministar odbrane Ukrajine postaje savetnik ministra odbrane Italije
 - [N1 Serbia · independent] Hodža: Albanija nije deo bilo kakvog destabilizujućeg scenarija u Crnoj Gori
@@ -810,8 +808,8 @@
 - [N1 Serbia · independent] Pristalice SNS postavile štand na mestu na kome su studenti planirali da razgovaraju sa građanima
 - [N1 Serbia · independent] Ruter bi trebalo povremeno isključiti iz struje, bar jednom mesečno, i to opravdano
 - [N1 Serbia · independent] Južnokorejac došao u Japan sa 15-dnevnom turističkom vizom, pa ostao još 26 godina nelegalno
+- [Danas · independent-left] Nataša Kandić: Verujem da će se nove generacije stideti današnjeg odnosa prema Mladiću
 - [Danas · independent-left] Vašington post: Putin veruje da je Amerika oslabljena ratom sa Iranom, vidi priliku za Rusiju
-- [Danas · independent-left] Tusk: Rusija sprema eskalaciju Poljska mora prva da pomogne ako napadne Estoniju
 
 ### Slovakia  (34 матеріалів, 1.5% дня)
 - [Dennik N · center-right] Svadobná koordinátorka: Mladé páry už nelákajú klasické veľké svadby, radšej prenajmú vilu pri mori pre najbližších
@@ -858,12 +856,12 @@
 - [Yonhap · reference] S. Korean rescue teams struggling to reach Nepal flood site as 9 remain missing
 - [Yonhap · reference] Gov't finalizes Muan County area as site for Gwangju air base relocation
 - [Yonhap · reference] (URGENT) Gov't finalizes Muan County area as site for Gwangju air base relocation
-- [Chosun Ilbo · conservative] 거실에 펴고 자기 딱 좋은 3단 매트리스, 침대에서 잔듯 편안해
-- [Chosun Ilbo · conservative] 62만 세트 판매 넘었다, 뿌리고 30분 후 물로 씻어내니 새 집 같은 욕실과 주방
+- [Chosun Ilbo · conservative] 안 보이고, 안 들리지만... 두려움 없는 ‘금빛 도전’
+- [Chosun Ilbo · conservative] 히말라야에 200개 시한폭탄 더 있다
 
 ### Spain  (72 матеріалів, 3.2% дня)
 - [El Pais · center-left] España pide a la UE el apoyo de Frontex para “agilizar” la clasificación de migrantes en Ceuta
-- [El Pais · center-left] Marlaska alerta sobre los altercados en Ceuta y acusa a PP y Vox de “incitar al odio”
+- [El Pais · center-left] Nuevas marchas en Ceuta en un clima de elevada tensión: “Invasores, explusión”
 - [El Pais · center-left] Los ladrones del Tesoro de Villena abandonaron una de las dos piezas más valiosas del conjunto orfebre
 - [El Pais · center-left] La vendedora del ático de la polémica de Ayuso acepta por escrito que la Comunidad de Madrid revele detalles sobre la compra
 - [El Pais · center-left] El riesgo de una segunda riada amenaza Nepal y Tíbet tras una catástrofe que deja ya al menos 584 muertos
@@ -878,6 +876,7 @@
 - [El Mundo · center-right] El arma que ningún ejército ha usado y que Putin ya ha amenazado con utilizar
 
 ### Sweden  (36 матеріалів, 1.6% дня)
+- [Dagens Nyheter · center-left] Insändare. Noterat av DN:s läsare den 28 augusti
 - [Dagens Nyheter · center-left] Tjuvar stal halsband med 600 diamanter – har burits av egyptisk drottning
 - [Dagens Nyheter · center-left] Kanada tar strid mot Trump – Kina kan vinna på tullkriget
 - [Dagens Nyheter · center-left] Marx Mukaru och Nasir Sarr: Vi lärde oss hur man röstar men fick sällan ordet
@@ -889,7 +888,6 @@
 - [Dagens Nyheter · center-left] Aarati har förlorat både hem och hotell i störtfloden
 - [Dagens Nyheter · center-left] Ståhls mäktiga svit – jagar 13:e raka i Finnkampen
 - [Dagens Nyheter · center-left] Här ska kung Harald vila – i hemlig sarkofag
-- [Dagens Nyheter · center-left] Insändare. Svar: Tacka aktivismen för att vi har demokrati
 - [Svenska Dagbladet · center-right] Ullevi utryms efter åskoväder – spelning pausas
 - [Svenska Dagbladet · center-right] Svensk koppling i fransk påverkansattack
 
@@ -906,10 +904,11 @@
 - [Neue Zuercher Zeitung · center-right] Neuer Knall beim WEF: Der Axa-Chef Thomas Buberl verlässt den Stiftungsrat
 - [Neue Zuercher Zeitung · center-right] Die Amerikaner demonstrieren wieder Präsenz in Europa. Kann die Nato den Kreml wirklich von einer Ausweitung des Kriegs abhalten?
 - [Neue Zuercher Zeitung · center-right] Iran will Kriegsschiffe in der Strasse von Hormuz verbieten, aber sein Druckmittel verliert an Wirkung
+- [Le Temps · center-left] En raison d’un incendie à Ecublens, la ligne ferroviaire Lausanne-Genève subit d’importantes perturbations
 - [Le Temps · center-left] Un incendie dans un centre de recyclage de métaux à Ecublens provoque un fort dégagement de fumée
-- [Le Temps · center-left] La valse de l’aile (très) dure de l’UDC: un vétéran part, une trentenaire radicale arrive
 
 ### Taiwan  (60 матеріалів, 2.6% дня)
+- [Liberty Times · green-DPP] 【高雄】台積電效應發酵!高大特區「百萬里」成形房市轉向科技家庭
 - [Liberty Times · green-DPP] 華許全球央行年會演說 憂通膨高、偏好更安靜的聯準會
 - [Liberty Times · green-DPP] 《TAIPEI TIMES》 Population to plummet, council warns
 - [Liberty Times · green-DPP] 《TAIPEI TIMES》 Taiwan places third in Earth science contest
@@ -921,11 +920,13 @@
 - [Liberty Times · green-DPP] 通膨憂慮升溫 密西根大學:美8月消費者信心下滑6%
 - [Liberty Times · green-DPP] 提早領中秋獎金! 農曆7月下半場「5生肖」財氣狂飆
 - [Liberty Times · green-DPP] 中職》富邦悍將不爽洲際大螢幕出包 兄弟回應了!
-- [Liberty Times · green-DPP] 中職》在大聯盟沒試過!兄弟洋投改善控球獨特妙方「效果很好」
 - [United Daily News · blue-KMT] 鮮活上半年 EPS 8.98元
 - [United Daily News · blue-KMT] 外資錢進來了!台股周漲1,107點 這周最愛的竟不是AI股
 
 ### Turkey  (36 матеріалів, 1.6% дня)
+- [Hurriyet · center-right] Sarıyer'de İETT otobüsü bariyere çarptı
+- [Hurriyet · center-right] Seferihisar Belediyesi soruşturmasında 2 gözaltı
+- [Hurriyet · center-right] Dışişleri Sözcüsü Keçeli’den Yunanistan açıklaması
 - [Hurriyet · center-right] Bakan Çiftçi: Hiçbir karanlık yapı, Türkiye Cumhuriyeti'nin kudretinden ve adaletinden kaçamaz
 - [Hurriyet · center-right] Zeytinburnu'nda tramvaylar kafa kafaya çarpıştı: Yaralılar var
 - [Hurriyet · center-right] Narin Güran belgeseli ile ilgili soruşturmada yeni gelişme... 31 kişinin finansal hareketleri incelenecek
@@ -935,13 +936,10 @@
 - [Hurriyet · center-right] TBMM Başkanı Kurtulmuş'tan trafik kazalarına ilişkin taziye ve geçmiş olsun mesajı
 - [Hurriyet · center-right] Pendik'te askeri araç ve polis aracının karıştığı zincirleme kaza: 3 yaralı
 - [Hurriyet · center-right] KKTC Cumhurbaşkanı Erhürman’dan Rum engellemelerine karşı BM, AB ve Barcelona’ya mektup
-- [Hurriyet · center-right] Son dakika... Cumhurbaşkanı Erdoğan: İsrail savaş bağımlısıdır
-- [Hurriyet · center-right] Bakan Kurum: DOA uygulamasıyla 130 milyon içecek ambalajını geri dönüşüme kazandırdık
-- [Hurriyet · center-right] Ağustos ayı doğum yardımı ödemeleri yatırıldı
 - [Cumhuriyet · secular-opposition] Online sepetini doldurup aylarca 'ödeme' yapmayanlar: Sepette ürün biriktiren 3 burç
 - [Cumhuriyet · secular-opposition] Sabaha dinç ve dinlenmiş uyanmak için akşam rutininizde yapabileceğiniz 3 değişiklik
 
-### UAE  (68 матеріалів, 3.0% дня)
+### UAE  (69 матеріалів, 3.0% дня)
 - [The National · center-state] US revokes visa for former Iraqi finance minister and puts her on terrorism watchlist
 - [The National · center-state] How Trabzonspor - and Turkish football - is banking on Mohamed Salah's global stardom
 - [The National · center-state] My Dubai Salary: 'I pay myself what I need for living – around Dh50,000 a month'
@@ -957,7 +955,7 @@
 - [Gulf News · center-state] UAE expresses solidarity with Algeria after deadly wildfires
 - [Gulf News · center-state] US declares Hormuz mine-cleared as Qatar, Iran seek de-escalation and new carrier heads to Middle East
 
-### UK  (33 матеріалів, 1.4% дня)
+### UK  (32 матеріалів, 1.4% дня)
 - [BBC News · public] Norway mourns King Harald as Haakon VIII ascends throne
 - [BBC News · public] Oslo mayor calls off wedding ceremony after death of Norway's king
 - [BBC News · public] Russia ramps up rhetoric but wants to avoid war with Nato, Western officials say
@@ -976,20 +974,21 @@
 ### USA  (91 матеріалів, 4.0% дня)
 - [The New York Times · center-left] Disaster Experts Say Nepal Glacier Collapse Was Difficult to Predict
 - [The New York Times · center-left] Smaller Revision Points to More Accurate Jobs Numbers
-- [The New York Times · center-left] Why Many Iranians Are Losing Hope After Six Months of War
+- [The New York Times · center-left] How Key Oil Stockpiles Dwindled During the War in Iran
+- [The New York Times · center-left] These Tanks Can Hold 90 Million Barrels of Oil. They Have Just 22 Million.
 - [The New York Times · center-left] Social Media and the Myth of the Big Tobacco Moment
 - [The New York Times · center-left] Why Countries Are Pushing Social Media Bans Despite Their Flaws
 - [The New York Times · center-left] You Can Photograph This Pretty Irish Castle. You Just Can’t Go In.
+- [The New York Times · center-left] Why Putin Is Fighting On, Even as His Problems Multiply
 - [The New York Times · center-left] For Once, a New York Jet Is Destined to Win Something
 - [The New York Times · center-left] With Term Winding Down, Pelosi Tries to Anoint a Successor
 - [The New York Times · center-left] Wyoming Governor Objects to ‘Very Odd’ D.O.J. Election Monitoring
-- [The New York Times · center-left] China Sees Opportunity in America’s Recent A.I. Security Scares
-- [The New York Times · center-left] As A.I. Money Floods the Market, San Francisco Renters Weigh Buyouts
-- [The New York Times · center-left] What if the A.I. Stock Market Rally Is Just Getting Started?
+- [The New York Times · center-left] Trump Administration Asks Supreme Court to Uphold Ban on Transgender Troops
 - [The Wall Street Journal · center-right-business] A Core Egyptian Bank Gets Caught Up in Treasury’s Iran Crackdown
 - [The Wall Street Journal · center-right-business] What’s Left of Russian Democracy? Some Say a Debate Over a Statue
 
 ### Ukraine  (108 матеріалів, 4.7% дня)
+- [Ukrainska Pravda · reference] Прем'єр-міністр: У Бучанському районі триває детонація, трагедія у Вишневому не стала уроком
 - [Ukrainska Pravda · reference] У 16-му корпусі закликають утриматись від передчасних висновків щодо інциденту з Ширшиним
 - [Ukrainska Pravda · reference] У Бучанському районі горять склади, лунають вибухи: перекрили рух житомирською трасою
 - [Ukrainska Pravda · reference] РФ атакує Київ та Київщину другу добу поспіль: є постраждалі
@@ -1001,7 +1000,6 @@
 - [Ukrainska Pravda · reference] На Закарпатті в ДТП потрапили легковик, автобус та вантажівка: загинула дівчина, 7 людей постраждали
 - [Ukrainska Pravda · reference] Угорський парламент обрав голову нового агентства з повернення активів
 - [Ukrainska Pravda · reference] Київ обговорив з американською стороною зустрічі у Москві – Зеленський
-- [Ukrainska Pravda · reference] Федоров погодився стати радником міністра оборони Італії
 - [Dzerkalo Tyzhnia · analysis] Росія платить за війну дедалі вищу ціну: вибір стає жорсткішим
 - [Dzerkalo Tyzhnia · analysis] Знищено до 90% сучасних складів: у Мінагрополітики відповіли, чи буде дефіцит продуктів
 
@@ -1014,4 +1012,4 @@
 - Ukraine’s Zelenskyy plans to hit Russia with ‘1,000 drones’ a day — https://www.aljazeera.com/news/2026/8/28/ukraines-zelenskyy-plans-to-hit-russia-with-1000-drones-a-day?traffic_source=rss
 - US judge denies injunction against Trump’s new birthright citizenship order — https://www.aljazeera.com/news/2026/8/28/us-judge-denies-injunction-against-trumps-new-birthright-citizenship-order?traffic_source=rss
 - Al Jazeera reports from Nepal as flood survivors flee new threat — https://www.aljazeera.com/video/newsfeed/2026/8/28/08-28-26-barnaby-lo-wt-reported?traffic_source=rss
-- Death Toll Rises as Rescuers Search for Victims of Nepal Flood — https://www.wsj.com/world/asia/death-toll-rises-as-rescuers-search-for-victims-of-nepal-flood-5a4c4c6e?mod=rss_worldnews
+- Norway mourns King Harald as Haakon VIII ascends throne — https://www.bbc.co.uk/news/articles/cm2rzxrdr71o?at_medium=RSS&at_campaign=rss
