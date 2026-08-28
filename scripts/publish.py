@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-28.6"
+VERSION = "2026-08-28.7"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -144,10 +144,10 @@ def calendar_nodes():
     return nodes
 
 
-# Точний ліміт Telegraph не документований, а сторінка на 100 вузлів
-# і ~25 КБ уже відхиляється. Тому беремо із запасом і маємо другий захід.
-LIMIT_SAFE = 20000
-LIMIT_TIGHT = 13000
+# Ліміт Telegraph не документований, і будь-яке вгадане число або ріже
+# зайве, або не проходить. Тому не вгадуємо: шлемо повний вміст і, лише
+# отримавши відмову, скорочуємо частками — доки не пройде.
+SHRINK_STEPS = (1.0, 0.82, 0.68, 0.55, 0.42, 0.3)
 
 
 def content_size(nodes):
@@ -333,31 +333,26 @@ def main():
 
     with httpx.Client(timeout=60.0) as client:
         nodes = build_nodes(brief, weekly, iso)
-        # Telegraph міряє вміст суворіше за наш JSON і мовчки віддає
-        # CONTENT_TOO_BIG. Тому спершу тиснемо до безпечного розміру,
-        # а якщо все одно відмовив — ріжемо ще і пробуємо знову.
-        nodes = fit_content(nodes, LIMIT_SAFE)
-
-        r = client.post(f"{API}/createPage", json={
-            "access_token": token,
-            "title": title[:256],
-            "author_name": "Ранковий бріф",
-            "content": nodes,
-            "return_content": False,
-        })
-        data = r.json()
-
-        if not data.get("ok") and "CONTENT_TOO_BIG" in str(data).upper():
-            print("Telegraph відмовив через розмір, пробую ще раз коротше")
-            nodes = fit_content(nodes, LIMIT_TIGHT)
+        full = list(nodes)
+        data = {}
+        for step in SHRINK_STEPS:
+            attempt = full if step == 1.0 else full[:max(8, int(len(full) * step))]
             r = client.post(f"{API}/createPage", json={
                 "access_token": token,
                 "title": title[:256],
                 "author_name": "Ранковий бріф",
-                "content": nodes,
+                "content": attempt,
                 "return_content": False,
             })
             data = r.json()
+            if data.get("ok"):
+                if step < 1.0:
+                    print(f"Вміст скорочено до {len(attempt)} зі {len(full)} "
+                          f"вузлів ({content_size(attempt)} байт)")
+                break
+            if "CONTENT_TOO_BIG" not in str(data).upper():
+                break
+            print(f"Завеликий вміст на {len(attempt)} вузлах, пробую менше")
 
     if not data.get("ok"):
         # Друкуємо ТЕ, ЩО відповів Telegraph, а не здогад про причину.
