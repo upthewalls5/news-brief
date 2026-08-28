@@ -26,6 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
+VERSION = "2026-08-28.2"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -266,6 +267,7 @@ def written_recently(minutes: int = 90) -> bool:
 
 
 def main():
+    print(f"publish.py версія {VERSION}")
     today = datetime.now(timezone.utc).date()
     iso = today.isoformat()
 
@@ -292,11 +294,15 @@ def main():
     # вгадується. Додаємо випадковий хвіст: сторінка лишається публічною,
     # але знайти її перебором дат уже не вийде.
     token = secrets.token_hex(3)
-    title = (f"Ранковий бріф · {today.day} {MONTHS[today.month - 1]} "
-             f"{today.year} · {token}")
+    title = f"Бріф {today.day} {MONTHS[today.month - 1]} {today.year} {token}"[:200]
 
     with httpx.Client(timeout=60.0) as client:
         nodes = build_nodes(brief, weekly, iso)
+        if len(json.dumps(nodes, ensure_ascii=False)) > 60000:
+            print("Вміст завеликий, обрізаю до 60 КБ")
+            while len(json.dumps(nodes, ensure_ascii=False)) > 60000 and len(nodes) > 10:
+                nodes.pop()
+
         r = client.post(f"{API}/createPage", json={
             "access_token": token,
             "title": title[:256],
@@ -307,11 +313,19 @@ def main():
         data = r.json()
 
     if not data.get("ok"):
-        msg = str(data.get("error", data))[:200]
-        if "TOKEN" in msg.upper():
-            print("Telegraph не прийняв токен. Перевірте секрет TELEGRAPH_TOKEN.")
-        else:
-            print(f"Telegraph відмовив: {msg}")
+        # Друкуємо ТЕ, ЩО відповів Telegraph, а не здогад про причину.
+        err = str(data.get("error", data))
+        print(f"Telegraph відмовив: {err[:300]}")
+        print(f"  заголовок: {len(title)} символів | вузлів: {len(nodes)}")
+        hints = {
+            "TITLE": "заголовок задовгий або порожній",
+            "CONTENT": "неприпустимий вузол або завеликий вміст",
+            "TOKEN": "проблема з токеном",
+            "FLOOD": "забагато запитів поспіль",
+        }
+        for k, v in hints.items():
+            if k in err.upper():
+                print(f"  схоже на: {v}")
         return
 
     url = data["result"]["url"]
