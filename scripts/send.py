@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.16"
+VERSION = "2026-08-28.17"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -190,9 +190,18 @@ def shorten(text: str, limit: int = 600, max_points: int = 3) -> str:
 
 
 def read_link():
+    """Тільки сьогоднішнє посилання. Якщо публікація впала, краще
+    повідомлення зовсім без лінка, ніж лінк на позавчорашній випуск:
+    інакше здається, що все працює, а сторінка стара."""
     iso = datetime.now(timezone.utc).date().isoformat()
     p = ROOT / "issues" / f"link-{iso}.txt"
-    return p.read_text(encoding="utf-8").strip() if p.exists() else None
+    if not p.exists():
+        return None
+    age_min = (datetime.now(timezone.utc).timestamp() - p.stat().st_mtime) / 60
+    if age_min > 90:
+        print(f"Посилання застаріле ({int(age_min)} хв), не використовую")
+        return None
+    return p.read_text(encoding="utf-8").strip()
 
 
 def split_message(text: str):
