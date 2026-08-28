@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.12"
+VERSION = "2026-08-28.14"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -106,33 +106,58 @@ def header() -> str:
 # Повний випуск живе на telegra.ph. У Telegram іде верхівка: те, що має
 # бути видно зі сповіщення без жодного тапу.
 
-KEEP = ("🌍", "🔀", "🔮")
+# У повідомлення йдуть лише гачки й ГОЛОВНЕ, по одному реченню на пункт.
+# Решта — на telegra.ph. Мета: щоб усе було видно зі сповіщення без гортання.
+
+RUBRIC_CHARS = "🌍🔀📍💰🗞🕳📡🔮🧭📖"
+FIRST_SENTENCE = re.compile(r"^(.+?[.!?…])(\s|$)")
 
 
-def shorten(text: str, limit: int = 2400) -> str:
-    """Лишає ГОЛОВНЕ, перший сюжет РОЗКОЛУ ОПТИКИ і наші прогнози."""
-    blocks, current, keep = [], [], False
-    for line in text.split("\n"):
-        stripped = line.strip()
-        # Порожній рядок НЕ є рубрикою: "" є підрядком будь-якого рядка,
-        # тому без перевірки на порожнечу кожен відступ обривав би блок.
-        if stripped and stripped[0] in "🌍🔀📍💰🗞🕳📡🔮🧭📖":
-            if current and keep:
-                blocks.append("\n".join(current).strip())
-            current, keep = [line], stripped[:1] in KEEP
-        else:
-            current.append(line)
-    if current and keep:
-        blocks.append("\n".join(current).strip())
+
+DAY_TAG = re.compile(r"^(день)\s+(\d+)\s*[:—-]\s*(.)", re.I)
+
+
+def normalize(line: str) -> str:
+    """Позначка дня має виглядати однаково незалежно від того, як її
+    написала модель: «День 4 — Текст»."""
+    m = DAY_TAG.match(line.strip())
+    if m:
+        return f"День {m.group(2)} — {m.group(3).upper()}" + line.strip()[m.end():]
+    return line
+
+def first_sentence(line: str) -> str:
+    """Перше речення пункту. У ГОЛОВНОМУ їх два: подія і наслідок —
+    для сповіщення лишаємо подію."""
+    line = line.strip()
+    m = FIRST_SENTENCE.match(line)
+    text = normalize(m.group(1).strip() if m else line)
+    return text if len(text) <= 190 else text[:187].rsplit(" ", 1)[0] + "…"
+
+
+def shorten(text: str, limit: int = 1600) -> str:
+    """Лишає тільки блок ГОЛОВНЕ, стиснутий до одного речення на пункт."""
+    lines, inside = [], False
+    for raw in text.split("\n"):
+        stripped = raw.strip()
+        if stripped and stripped[0] in RUBRIC_CHARS:
+            if inside:
+                break
+            inside = stripped[0] == "🌍"
+            continue
+        if not inside or not stripped:
+            continue
+        if stripped.startswith("Джерела:"):
+            continue
+        lines.append(first_sentence(stripped))
 
     out = []
-    for b in blocks:
-        b = "\n".join(l for l in b.split("\n")
-                      if not l.strip().startswith("Джерела:"))
-        if sum(len(x) for x in out) + len(b) > limit:
+    for l in lines:
+        if sum(len(x) + 3 for x in out) + len(l) > limit:
             break
-        out.append(b.strip())
-    return "\n\n".join(out) if out else text[:limit]
+        out.append(l)
+    if not out:
+        return text[:limit]
+    return "\n\n".join(f"• {l}" for l in out)
 
 
 def read_link():
@@ -161,6 +186,25 @@ def split_message(text: str):
     if current.strip():
         parts.append(current.strip())
     return parts
+
+
+def preview_path():
+    iso = datetime.now(timezone.utc).date().isoformat()
+    p = ROOT / "charts" / f"preview-{iso}.png"
+    return p if p.exists() else None
+
+
+def send_photo(token, chat_id, path, caption):
+    """Картка з підписом. Ліміт підпису Telegram — 1024 символи."""
+    with httpx.Client(timeout=90.0) as client:
+        with open(path, "rb") as fh:
+            r = client.post(
+                f"https://api.telegram.org/bot{token}/sendPhoto",
+                data={"chat_id": chat_id, "caption": caption[:1024],
+                      "parse_mode": "HTML"},
+                files={"photo": (path.name, fh, "image/png")})
+    if r.status_code >= 400:
+        raise RuntimeError(f"Telegram sendPhoto {r.status_code}: {r.text[:200]}")
 
 
 def _post(token, payload):
@@ -244,6 +288,17 @@ def main():
     else:
         parts = split_message(text)
         print("Посилання немає, шлю випуск повністю")
+
+    photo = preview_path()
+    if photo and len(parts) == 1 and len(parts[0]) < 900:
+        # Усе вміщується в підпис — шлемо одним повідомленням із карткою
+        caption = f"<b>{esc(header())}</b>\n\n{decorate(parts[0])}"
+        try:
+            send_photo(token, chat_id, photo, caption)
+            print(f"Відправлено карткою, {len(text)} символів")
+            return
+        except Exception as exc:
+            print(f"Картка не пішла ({exc}), шлю текстом")
 
     for i, part in enumerate(parts):
         if len(parts) > 1:
