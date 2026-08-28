@@ -14,6 +14,7 @@ markdown і повертає помилку 400 на будь-який неек�
 
 import os
 import sys
+import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,8 +22,71 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.5"
-LIMIT = 3900  # запас до телеграмівських 4096
+VERSION = "2026-08-28.6"
+LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
+
+
+# ── Оформлення для Telegram ────────────────────────────────────────────
+# Розмітку робимо тут, а не в моделі: модель рано чи пізно зламає тег,
+# і Telegram відповість 400 на весь випуск. Тут же ми спершу екрануємо
+# геть усе, а потім вставляємо власні теги за структурою випуску.
+
+RUBRIC = "🌍🔀📍💰🕳📡🧭📖⚠"
+
+# Прапор (дві регіональні літери) + назва + двокрапка: країна або видання
+FLAG_LINE = re.compile(
+    r"^([\U0001F1E6-\U0001F1FF]{2})\s*([^:]{2,48}):\s*(.*)$")
+
+LABELS = ("Замовчують:", "Чому розходяться:", "Не відповіли:", "Не відповіли (")
+
+
+def esc(t: str) -> str:
+    return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def decorate(text: str) -> str:
+    """Плаский текст випуску -> HTML для Telegram."""
+    out = []
+    for raw in text.split("\n"):
+        line = esc(raw.rstrip())
+        stripped = line.lstrip()
+
+        if not stripped:
+            out.append("")
+            continue
+
+        # Заголовок рубрики — жирним, з відступом зверху
+        if stripped[0] in RUBRIC:
+            body = stripped.lstrip("".join(RUBRIC)).strip()
+            if body and body == body.upper():
+                if out and out[-1] != "":
+                    out.append("")
+                out.append(f"<b>{stripped[0]} {body}</b>")
+                continue
+
+        # Країна або видання: прапор + назва жирним
+        m = FLAG_LINE.match(stripped)
+        if m:
+            flag, name, rest = m.groups()
+            out.append(f"{flag} <b>{name.strip()}:</b> {rest}")
+            continue
+
+        # Службові підписи всередині «Розколу оптики»
+        for lab in LABELS:
+            if stripped.startswith(lab):
+                out.append(f"<i>{stripped}</i>")
+                break
+        else:
+            out.append(line)
+
+    return "\n".join(out)
+
+
+def header() -> str:
+    months = ("січня", "лютого", "березня", "квітня", "травня", "червня",
+              "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
+    now = datetime.now(timezone.utc)
+    return f"<b>РАНКОВИЙ БРІФ</b>\n{now.day} {months[now.month - 1]}\n"
 
 
 def split_message(text: str):
@@ -47,16 +111,22 @@ def split_message(text: str):
     return parts
 
 
-def send(token, chat_id, text):
+def _post(token, payload):
     with httpx.Client(timeout=40.0) as client:
-        r = client.post(
-            f"https://api.telegram.org/bot{token}/sendMessage",
-            json={
-                "chat_id": chat_id,
-                "text": text,
-                "disable_web_page_preview": True,
-            },
-        )
+        return client.post(
+            f"https://api.telegram.org/bot{token}/sendMessage", json=payload)
+
+
+def send(token, chat_id, text, html=True):
+    """Пробує HTML. Якщо Telegram не прийняв розмітку — шле плаский текст,
+    щоб зіпсоване оформлення ніколи не з'їдало сам випуск."""
+    base = {"chat_id": chat_id, "disable_web_page_preview": True}
+    if html:
+        r = _post(token, {**base, "text": decorate(text), "parse_mode": "HTML"})
+        if r.status_code < 400:
+            return
+        print(f"Telegram не прийняв HTML ({r.status_code}), шлю без розмітки")
+    r = _post(token, {**base, "text": text})
     if r.status_code >= 400:
         raise RuntimeError(f"Telegram {r.status_code}: {r.text[:300]}")
 
@@ -86,6 +156,8 @@ def main():
 
     parts = split_message(text)
     for i, part in enumerate(parts):
+        if i == 0:
+            part = header() + "\n" + part
         if len(parts) > 1:
             part = f"{part}\n\n({i + 1}/{len(parts)})"
         send(token, chat_id, part)
