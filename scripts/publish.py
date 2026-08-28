@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-29.1"
+VERSION = "2026-08-29.2"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -37,6 +37,9 @@ FLAG = re.compile(r"^([\U0001F1E6-\U0001F1FF]{2})\s*([^:]{2,48}):\s*(.*)$")
 # У «Розколі оптики» полюсом може бути не країна, а глобальне видання —
 # тоді перед назвою стоїть звичайне емодзі, а не прапор.
 POLE = re.compile(r"^([^\w\s\d.,;:!?()\[\]«»\"'-])\s+([^:]{2,48}):\s*(.*)$")
+# Модель часто пише країну без прапора: «Україна: …». Такий рядок теж має
+# отримати жирну назву, інакше «Пульс країн» читається суцільною стіною.
+NAMED = re.compile(r"^([A-ZА-ЯЄІЇҐ][^:]{1,28}):\s+(.+)$")
 URL = re.compile(r"(https?://\S+)")
 LABELS = ("Замовчують:", "Чому розходяться:", "Наші:", "Кажуть інші:")
 
@@ -240,6 +243,15 @@ def build_nodes(brief, weekly=None, iso=None):
             # Прапор + назва. Цитата доречна лише в «Розколі оптики»:
             # у «Пульсі країн» двадцять цитат поспіль перевантажують сторінку.
             m = FLAG.match(line) or ("РОЗКОЛ" in rubric and POLE.match(line))
+            if not m and any(k in rubric for k in ("ПУЛЬС", "РОЗКОЛ", "ГРОШІ")):
+                m2 = NAMED.match(line)
+                if m2:
+                    name, rest = m2.groups()
+                    tag = "blockquote" if "РОЗКОЛ" in rubric else "p"
+                    nodes.append({"tag": tag, "children":
+                                  [{"tag": "b", "children": [name + ": "]}]
+                                  + rich(rest)})
+                    continue
             if m:
                 flag, name, rest = m.groups()
                 inner = [f"{flag} ", {"tag": "b", "children": [f"{name.strip()}: "]}]
