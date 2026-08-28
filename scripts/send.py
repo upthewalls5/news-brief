@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.15"
+VERSION = "2026-08-28.16"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -142,8 +142,24 @@ def first_sentence(line: str) -> str:
     line = line.strip()
     m = FIRST_SENTENCE.match(line)
     text = normalize(m.group(1).strip() if m else line)
-    if len(text) > 130:
-        text = text[:127].rsplit(" ", 1)[0] + "…"
+    if len(text) > 150:
+        cut = text[:150]
+        # Ріжемо по комі або тире, якщо вони є в останній третині —
+        # так речення обривається на природній паузі, а не на сполучнику.
+        for sep in ("; ", ", ", " — "):
+            i = cut.rfind(sep, 90)
+            if i > 0:
+                cut = cut[:i]
+                break
+        else:
+            cut = cut.rsplit(" ", 1)[0]
+        # Огризки на кшталт «а», «і», «та» в кінці виглядають зламано
+        words = cut.rstrip(" ,;—").split()
+        while words and words[-1].lower() in (
+                "а", "і", "й", "та", "але", "що", "як", "де", "коли",
+                "бо", "чи", "до", "на", "у", "в", "з", "із", "за", "по"):
+            words.pop()
+        text = " ".join(words).rstrip(" ,;—") + "…"
     return text
 
 
