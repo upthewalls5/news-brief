@@ -16,6 +16,7 @@ publish.py — публікує повний випуск на telegra.ph і п�
 
 import json
 import os
+import secrets
 import re
 import sys
 from datetime import datetime, timezone
@@ -82,16 +83,51 @@ def attention_nodes(iso):
             {"tag": "figcaption", "children": [
                 "Частка країни в денному обсязі матеріалів"]}]})
 
-    top = max(r[2] for r in rows)
-    lines = []
-    for name, count, share in rows:
-        bar = "█" * max(1, round(share / top * 22))
-        lines.append(f"{name[:18]:<18} {bar} {share}%")
-    nodes.append({"tag": "pre", "children": ["\n".join(lines)]})
     nodes.append({"tag": "aside", "children": [
         "Скільки місця країна зайняла в новинному потоці за добу. "
         "Висока частка означає, що в країні щось відбувається — навіть коли "
         "світові медіа цього ще не помітили."]})
+    nodes.append({"tag": "hr"})
+    return nodes
+
+
+CAL_LINE = re.compile(r"^\[(\d{4}-\d{2}-\d{2})(?:\s*→\s*(\d{4}-\d{2}-\d{2}))?\]\s*(.+)$")
+MONTHS_GEN = ("січня", "лютого", "березня", "квітня", "травня", "червня",
+              "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
+
+
+def human_date(iso):
+    try:
+        d = datetime.fromisoformat(iso).date()
+    except Exception:
+        return iso
+    return f"{d.day} {MONTHS_GEN[d.month - 1]}"
+
+
+def calendar_nodes():
+    """Календар майбутніх подій: що формуватиме контекст найближчих новин."""
+    p = ROOT / "state" / "calendar.md"
+    if not p.exists():
+        return []
+    rows = []
+    for line in p.read_text(encoding="utf-8").split("\n"):
+        m = CAL_LINE.match(line.strip())
+        if m:
+            rows.append((m.group(1), m.group(2), m.group(3).strip()))
+    if not rows:
+        return []
+    rows.sort(key=lambda r: r[0])
+
+    nodes = [{"tag": "h3", "children": ["🗓 Календар подій попереду"]}]
+    for start, end, body in rows[:20]:
+        when = human_date(start)
+        if end:
+            when += f" → {human_date(end)}"
+        nodes.append({"tag": "p", "children": [
+            {"tag": "b", "children": [when + " · "]}] + rich(body)})
+    nodes.append({"tag": "aside", "children": [
+        "Дати, навколо яких формуватиметься новинний потік найближчих тижнів. "
+        "Береться лише те, що прямо названо в матеріалах випусків."]})
     nodes.append({"tag": "hr"})
     return nodes
 
@@ -144,6 +180,7 @@ def build_nodes(brief, weekly=None, iso=None):
 
     if iso:
         nodes.extend(attention_nodes(iso))
+    nodes.extend(calendar_nodes())
 
     def render(body, level="h3"):
         rubric = ""
@@ -251,7 +288,12 @@ def main():
         return
 
     state = load_state()
-    title = f"Ранковий бріф · {today.day} {MONTHS[today.month - 1]}"
+    # Адреса на telegra.ph утворюється із заголовка, тому «бріф + дата» легко
+    # вгадується. Додаємо випадковий хвіст: сторінка лишається публічною,
+    # але знайти її перебором дат уже не вийде.
+    token = secrets.token_hex(3)
+    title = (f"Ранковий бріф · {today.day} {MONTHS[today.month - 1]} "
+             f"{today.year} · {token}")
 
     with httpx.Client(timeout=60.0) as client:
         nodes = build_nodes(brief, weekly, iso)

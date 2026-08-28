@@ -26,7 +26,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.13"
+VERSION = "2026-08-28.14"
 MODEL = "claude-sonnet-5"
 MAX_TOKENS = 20000
 TIMEOUT = 1200.0      # загальний бюджет на запит
@@ -34,20 +34,24 @@ READ_TIMEOUT = 180.0  # пауза МІЖ частинами потоку, а н
 ATTEMPTS = 3
 
 MAX_DIGEST_CHARS = 120_000
-CAPS = {"threads": 3500, "predictions": 6500, "external": 6500}
+CAPS = {"threads": 3500, "predictions": 6500, "external": 6500,
+        "calendar": 2600}
 
 STATE = {
     "threads": ROOT / "state" / "threads.md",
     "predictions": ROOT / "state" / "predictions.md",
     "external": ROOT / "state" / "external.md",
+    "calendar": ROOT / "state" / "calendar.md",
 }
 
 MARKERS = {
+    "greeting": "===ПРИВІТАННЯ===",
     "hook": "===АНОНС===",
     "brief": "===БРІФ===",
     "threads": "===ПАМЯТЬ===",
     "predictions": "===НАШІ ПРОГНОЗИ===",
     "external": "===ЧУЖІ ПРОГНОЗИ===",
+    "calendar": "===КАЛЕНДАР===",
 }
 
 
@@ -144,7 +148,8 @@ def split_parts(text):
     if MARKERS["brief"] not in text:
         return {"brief": text}, False
 
-    order = ["hook", "brief", "threads", "predictions", "external"]
+    order = ["greeting", "hook", "brief", "threads",
+             "predictions", "external", "calendar"]
     positions = []
     for key in order:
         i = text.find(MARKERS[key])
@@ -232,6 +237,11 @@ def main():
         print("УВАГА: маркерів немає, стан не оновлюю")
 
     (ROOT / "issues").mkdir(exist_ok=True)
+    greet = parts.get("greeting", "").strip().split("\n")[0][:60]
+    if greet:
+        (ROOT / "issues" / f"greet-{today}.txt").write_text(greet, encoding="utf-8")
+        print(f"Привітання: {greet}")
+
     hook = parts.get("hook", "").strip()
     if hook:
         (ROOT / "issues" / f"hook-{today}.txt").write_text(hook, encoding="utf-8")

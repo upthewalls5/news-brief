@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.14"
+VERSION = "2026-08-28.15"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -93,13 +93,24 @@ def read_hook():
     return [l for l in lines if len(l) > 12][:3]
 
 
+def read_greeting():
+    iso = datetime.now(timezone.utc).date().isoformat()
+    p = ROOT / "issues" / f"greet-{iso}.txt"
+    if p.exists():
+        g = p.read_text(encoding="utf-8").strip().split("\n")[0][:60]
+        if len(g) > 4:
+            return g
+    return "Доброго ранку"
+
+
 def header() -> str:
-    """Простий текст без тегів: розмітку навісить send(), уже після
-    екранування. Інакше decorate() сумлінно екранує наші власні теги."""
+    """Привітання під настрій дня плюс дата з роком. Розмітку навісить
+    send() після екранування — інакше decorate() екранує наші ж теги."""
     months = ("січня", "лютого", "березня", "квітня", "травня", "червня",
               "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
     now = datetime.now(timezone.utc)
-    return f"РАНКОВИЙ БРІФ · {now.day} {months[now.month - 1]}"
+    return (f"{read_greeting()} · "
+            f"{now.day} {months[now.month - 1]} {now.year}")
 
 
 # ── Коротка версія для повідомлення ────────────────────────────────────
@@ -131,10 +142,12 @@ def first_sentence(line: str) -> str:
     line = line.strip()
     m = FIRST_SENTENCE.match(line)
     text = normalize(m.group(1).strip() if m else line)
-    return text if len(text) <= 190 else text[:187].rsplit(" ", 1)[0] + "…"
+    if len(text) > 130:
+        text = text[:127].rsplit(" ", 1)[0] + "…"
+    return text
 
 
-def shorten(text: str, limit: int = 1600) -> str:
+def shorten(text: str, limit: int = 600, max_points: int = 3) -> str:
     """Лишає тільки блок ГОЛОВНЕ, стиснутий до одного речення на пункт."""
     lines, inside = [], False
     for raw in text.split("\n"):
@@ -151,7 +164,7 @@ def shorten(text: str, limit: int = 1600) -> str:
         lines.append(first_sentence(stripped))
 
     out = []
-    for l in lines:
+    for l in lines[:max_points]:
         if sum(len(x) + 3 for x in out) + len(l) > limit:
             break
         out.append(l)
