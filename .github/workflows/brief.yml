@@ -38,18 +38,24 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/write.py
 
-      - name: 3. Опублікувати на telegra.ph
+      - name: 3. Намалювати карту уваги й картку
+        if: always()
+        run: |
+          python scripts/chart.py
+          python scripts/collage.py
+          python scripts/preview.py
+      - name: 4. Опублікувати на telegra.ph
         if: always()
         env: {TELEGRAPH_TOKEN: '${{ secrets.TELEGRAPH_TOKEN }}'}
         run: python scripts/publish.py
-      - name: 4. Відправити в Telegram
+      - name: 5. Відправити в Telegram
         if: always()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/send.py
 
-      - name: 5. Зберегти в архів
+      - name: 6. Зберегти в архів
         if: always()
         run: |
           git config user.name  "news-bot"
