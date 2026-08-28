@@ -143,9 +143,30 @@ def build_nodes(brief, weekly=None):
     return nodes
 
 
+def written_recently(minutes: int = 90) -> bool:
+    """Чи писався випуск у цьому запуску. Крок написання може впасти, а
+    публікація й відправка помічені if:always і відпрацюють однаково —
+    без цієї перевірки вони випустили б учорашній файл ще раз."""
+    p = ROOT / "state" / "last-write.txt"
+    if not p.exists():
+        return False
+    try:
+        stamp = datetime.fromisoformat(p.read_text(encoding="utf-8").strip())
+    except Exception:
+        return False
+    age = (datetime.now(timezone.utc) - stamp).total_seconds() / 60
+    return age <= minutes
+
+
 def main():
     today = datetime.now(timezone.utc).date()
     iso = today.isoformat()
+
+    if not written_recently():
+        print("Свіжого випуску немає — крок написання не відпрацював. "
+              "Публікацію пропускаю, щоб не випустити старий випуск удруге.")
+        return
+
     path = ROOT / "issues" / f"{iso}.md"
     if not path.exists():
         print(f"Немає {path.name}, публікувати нічого")
