@@ -1,0 +1,34 @@
+name: Перевірити покриття API
+
+on: {workflow_dispatch: {}}
+
+concurrency:
+  group: news-brief-repo
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -r requirements.txt
+      - name: Перевірити покриття
+        run: python scripts/probe_api.py
+      - name: Зберегти результат
+        run: |
+          git config user.name  "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet && echo "змін немає" && exit 0
+          git commit -m "Покриття API $(date -u +%Y-%m-%d)"
+          for i in 1 2 3 4 5; do
+            if git push; then echo "збережено"; exit 0; fi
+            git pull --rebase --autostash origin main || git rebase --abort
+            sleep $((i * 4))
+          done
+          exit 1
