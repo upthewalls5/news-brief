@@ -2,10 +2,6 @@ name: Перевірити покриття API
 
 on: {workflow_dispatch: {}}
 
-concurrency:
-  group: news-brief-repo
-  cancel-in-progress: false
-
 permissions:
   contents: write
 
@@ -17,8 +13,14 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - run: pip install -r requirements.txt
-      - name: Перевірити покриття
+      - name: Перевірити покриття freenewsapi
         run: python scripts/probe_api.py
+      - name: Перевірити покриття GDELT
+        if: always()
+        run: python scripts/probe_gdelt.py
+      - name: Перевірити покриття Telegram
+        if: always()
+        run: python scripts/probe_telegram.py
       - name: Зберегти результат
         run: |
           git config user.name  "news-bot"
