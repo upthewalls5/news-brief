@@ -26,7 +26,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.17"
+VERSION = "2026-08-29.1"
 MODEL = "claude-sonnet-5"
 # Ліміт спільний для міркувань моделі й тексту. Міркування над дайджестом
 # на 50 тисяч токенів самі з'їдають більшу частину бюджету, тому запас
@@ -51,6 +51,7 @@ STATE = {
 MARKERS = {
     "greeting": "===ПРИВІТАННЯ===",
     "hook": "===АНОНС===",
+    "images": "===ОБРАЗИ===",
     "brief": "===БРІФ===",
     "threads": "===ПАМЯТЬ===",
     "predictions": "===НАШІ ПРОГНОЗИ===",
@@ -154,7 +155,7 @@ def split_parts(text, require="brief"):
         return ({"brief": text}, False) if require == "brief" else ({}, False)
 
     # Порядок розбору не залежить від порядку в тексті — беремо за позиціями.
-    order = ["greeting", "hook", "brief", "calendar", "threads",
+    order = ["greeting", "hook", "brief", "images", "calendar", "threads",
              "predictions", "external"]
     positions = []
     for key in order:
@@ -276,6 +277,11 @@ def main():
     if hook:
         (ROOT / "issues" / f"hook-{today}.txt").write_text(hook, encoding="utf-8")
         print(f"Анонс: {len(hook.splitlines())} рядків")
+
+    keys = parts.get("images", "").strip()
+    if keys:
+        (ROOT / "issues" / f"keys-{today}.txt").write_text(keys, encoding="utf-8")
+        print(f"Образи дня: {len(keys.splitlines())} виразів")
 
     (ROOT / "issues" / f"{today}.md").write_text(brief + "\n", encoding="utf-8")
     (ROOT / "issues" / "latest.md").write_text(brief + "\n", encoding="utf-8")
