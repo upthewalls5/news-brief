@@ -1,10 +1,17 @@
 name: Ранковий бріф
 
+# Планувальник GitHub на безкоштовному тарифі пропускає запуски за розкладом:
+# за весь час він спрацював один раз із багатьох. Тому не одна спроба, а пʼять
+# із інтервалом. Перша, що дійде, робить випуск; решта бачать, що бріф за
+# сьогодні вже є, і мовчки виходять.
+# Час у UTC. Влітку Київ = UTC+3, взимку UTC+2 — тоді зсуньте на годину пізніше.
 on:
   schedule:
-    # 04:00 UTC = 07:00 Київ влітку, 06:00 взимку.
-    # Взимку за потреби змінити на '0 5 * * *'.
-    - cron: '0 4 * * *'
+    - cron: '3 4 * * *'
+    - cron: '20 4 * * *'
+    - cron: '45 4 * * *'
+    - cron: '20 5 * * *'
+    - cron: '10 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -26,34 +33,39 @@ jobs:
           echo "контрольна перевірка:"
           getent hosts apnews.com www.haaretz.com www3.nhk.or.jp suspilne.media feeds.a.dj.com || true
 
+      - name: 0. Чи потрібен випуск
+        id: need
+        run: python scripts/should_run.py
       - name: 1. Зібрати новини
+        if: steps.need.outputs.run == 'yes'
         run: python scripts/collect.py
 
       - name: 2. Написати бріф
+        if: steps.need.outputs.run == 'yes'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/write.py
 
       - name: 3. Намалювати карту уваги й картку
-        if: always()
+        if: always() && steps.need.outputs.run == 'yes'
         run: |
           python scripts/chart.py
           python scripts/collage.py
           python scripts/calendar_img.py
           python scripts/preview.py
       - name: 4. Опублікувати на telegra.ph
-        if: always()
+        if: always() && steps.need.outputs.run == 'yes'
         env: {TELEGRAPH_TOKEN: '${{ secrets.TELEGRAPH_TOKEN }}'}
         run: python scripts/publish.py
       - name: 5. Відправити в Telegram
-        if: always()
+        if: always() && steps.need.outputs.run == 'yes'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/send.py
 
       - name: 6. Зберегти в архів
-        if: always()
+        if: always() && steps.need.outputs.run == 'yes'
         run: |
           git config user.name  "news-bot"
           git config user.email "news-bot@users.noreply.github.com"
