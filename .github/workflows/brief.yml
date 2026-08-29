@@ -66,6 +66,11 @@ jobs:
           python scripts/collage.py
           python scripts/calendar_img.py
           python scripts/preview.py
+      - name: 3а. Обкладинка випуску
+        if: always() && steps.need.outputs.run == 'yes'
+        continue-on-error: true
+        env: {GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}'}
+        run: python scripts/cover.py
       - name: 4. Опублікувати на telegra.ph
         if: always() && steps.need.outputs.run == 'yes'
         env: {TELEGRAPH_TOKEN: '${{ secrets.TELEGRAPH_TOKEN }}'}
