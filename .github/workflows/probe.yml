@@ -26,11 +26,14 @@ jobs:
         if: false
         run: python scripts/probe_api.py
       - name: Перевірити покриття GDELT
-        if: false
+        if: always()
         run: python scripts/probe_gdelt.py
-      - name: Перевірити покриття Telegram
-        if: false
-        run: python scripts/probe_telegram.py
+      - name: Перевірити соцмережі
+        if: always()
+        run: python scripts/probe_social.py
+      - name: Розвідка Китаю
+        if: always()
+        run: python scripts/probe_china.py
       - name: Зберегти результат
         run: |
           git config user.name  "news-bot"
