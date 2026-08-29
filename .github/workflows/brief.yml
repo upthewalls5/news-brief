@@ -49,6 +49,10 @@ jobs:
         if: steps.need.outputs.run == 'yes'
         run: python scripts/collect.py
 
+      - name: 1а. Підняти мертві стрічки
+        if: steps.need.outputs.run == 'yes'
+        continue-on-error: true
+        run: python scripts/heal_feeds.py
       - name: 2. Написати бріф
         if: steps.need.outputs.run == 'yes'
         env:
