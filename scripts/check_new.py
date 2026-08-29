@@ -18,6 +18,7 @@ import argparse
 import asyncio
 import csv
 import json
+import time
 import sys
 from pathlib import Path
 
@@ -76,20 +77,36 @@ def pick(rows, names, include_failed=False):
     return fresh
 
 
+CONCURRENCY = 8
+PER_SOURCE_SECONDS = 45      # більше жодне джерело не варте очікування
+
+
+async def one(client, row, sem):
+    """Перевірка одного джерела з жорстким лімітом часу. Раніше цикл був
+    послідовним, і кілька повільних видань розтягували прогін на години."""
+    async with sem:
+        try:
+            res = await asyncio.wait_for(D.find_feed(client, row),
+                                         timeout=PER_SOURCE_SECONDS)
+        except asyncio.TimeoutError:
+            res = {k: row[k] for k in ("country", "name", "lang", "domain",
+                                       "pole", "tier")}
+            res.update(status="failed",
+                       error=f"не вклалось у {PER_SOURCE_SECONDS} с")
+        mark = {"ok": "OK  ", "failed": "FAIL", "unreachable": "DEAD"}[res["status"]]
+        extra = res.get("feed") or res.get("error", "")
+        print(f"{mark} {res['country']:<12} {res['name']:<22} {str(extra)[:70]}",
+              flush=True)
+        return res
+
+
 async def run(rows):
-    limits = D.httpx.Limits(max_connections=6, max_keepalive_connections=3)
-    results = []
+    limits = D.httpx.Limits(max_connections=16, max_keepalive_connections=8)
+    sem = asyncio.Semaphore(CONCURRENCY)
     async with D.httpx.AsyncClient(headers=D.HEADERS, timeout=D.TIMEOUT,
                                    limits=limits,
                                    transport=D.make_transport()) as client:
-        for row in rows:
-            res = await D.find_feed(client, row)
-            mark = {"ok": "OK  ", "failed": "FAIL", "unreachable": "DEAD"}[res["status"]]
-            extra = res.get("feed") or res.get("error", "")
-            print(f"{mark} {res['country']:<12} {res['name']:<22} {str(extra)[:70]}",
-                  flush=True)
-            results.append(res)
-    return results
+        return list(await asyncio.gather(*(one(client, r, sem) for r in rows)))
 
 
 def main():
@@ -106,7 +123,9 @@ def main():
         print("Нових джерел немає — усе вже у feeds.json")
         return
 
-    print(f"Перевіряю {len(rows)} джерел\n")
+    print(f"Перевіряю {len(rows)} джерел, по {CONCURRENCY} паралельно, "
+          f"не довше {PER_SOURCE_SECONDS} с на кожне\n")
+    started = time.monotonic()
     results = asyncio.run(run(rows))
     live = [r for r in results if r["status"] == "ok"]
     dead = [r for r in results if r["status"] != "ok"]
@@ -134,7 +153,8 @@ def main():
             json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"\nfeeds.json оновлено: було {len(feeds)}, стало {len(merged)}")
 
-    print(f"\nЖивих {len(live)} із {len(results)}. Звіт: new-sources-report.md")
+    print(f"\nЖивих {len(live)} із {len(results)} за "
+          f"{time.monotonic() - started:.0f} с. Звіт: new-sources-report.md")
 
 
 if __name__ == "__main__":
