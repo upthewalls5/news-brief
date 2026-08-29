@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-29.3"
+VERSION = "2026-08-29.4"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -72,6 +72,21 @@ def chart_url(iso):
     if not repo or not (ROOT / "charts" / f"{iso}.png").exists():
         return None
     return f"https://raw.githubusercontent.com/{repo}/main/charts/{iso}.png"
+
+
+def cover_node(iso):
+    """Абстрактна обкладинка над текстом випуску. Тільки абстракція:
+    згенерована сцена реальної події сприймалась би як свідчення."""
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    img = ROOT / "charts" / f"cover-{iso}.png"
+    if not repo or not img.exists():
+        return []
+    return [{"tag": "figure", "children": [
+        {"tag": "img", "attrs": {"src":
+            f"https://raw.githubusercontent.com/{repo}/main/charts/{img.name}"}},
+        {"tag": "figcaption", "children": [
+            "Абстрактна композиція за темами випуску. Згенеровано автоматично, "
+            "не є зображенням реальних подій."]}]}]
 
 
 def attention_nodes(iso):
@@ -211,6 +226,9 @@ def build_nodes(brief, weekly=None, iso=None):
     """Перетворює плаский випуск на оформлену сторінку."""
     nodes = []
     sources_all = []
+
+    if iso:
+        nodes.extend(cover_node(iso))
 
     # Графік не дублюємо: він уже є на картці, яка приходить у Telegram.
 
