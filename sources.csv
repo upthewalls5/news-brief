@@ -33,19 +33,26 @@ Canada,CBC News,en,cbc.ca,public,2,https://www.cbc.ca/webfeed/rss/rss-topstories
 Canada,National Post,en,nationalpost.com,center-right,2,https://nationalpost.com/feed/|https://nationalpost.com/category/news/world/feed/,
 Canada,The Globe and Mail,en,theglobeandmail.com,center,2,https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/,
 China,Caixin,zh,caixin.com,independent-business,1,https://www.caixinglobal.com/rss/all.xml|https://www.caixin.com/rss/all.xml,
+China,Caixin CN,zh,caixin.com,independent-business,2,https://rsshub.rssforever.com/caixin/latest|https://hub.slarker.me/caixin/latest|https://rsshub.app/caixin/latest,
 China,China Daily,en,chinadaily.com.cn,state,2,https://www.chinadaily.com.cn/rss/world_rss.xml|http://www.chinadaily.com.cn/rss/china_rss.xml,Держава КНР
 China,China Digital Times,en,chinadigitaltimes.net,censorship-watch,2,https://chinadigitaltimes.net/feed/,
+China,ChinaTalk,en,chinatalk.media,china-watch,2,https://www.chinatalk.media/feed,
+China,Ginger River Review,en,gingerriver.com,china-watch,2,https://www.gingerriver.com/feed,
 China,Global Times,en,globaltimes.cn,state-nationalist,1,https://www.globaltimes.cn/rss/outbrain.xml,КПК
 China,Guancha,zh,guancha.cn,nationalist,2,https://www.guancha.cn/headline/rss.xml|https://rsshub.app/guancha/headline,
 China,Hong Kong Free Press,en,hongkongfp.com,independent,2,https://hongkongfp.com/feed/,
+China,Pekingnology,en,pekingnology.com,china-watch,2,https://www.pekingnology.com/feed,
 China,People's Daily,zh,people.com.cn,party-organ,1,http://en.people.cn/rss/China.xml|http://www.people.com.cn/rss/politics.xml,КПК
 China,Sinocism,en,sinocism.com,analysis,2,,
 China,Sixth Tone,en,sixthtone.com,state-adjacent,2,https://www.sixthtone.com/rss|https://www.sixthtone.com/feed,
 China,South China Morning Post,en,scmp.com,hongkong,1,,
 China,The Paper,zh,thepaper.cn,mainstream,2,https://www.thepaper.cn/rss_newlist.jsp|https://rsshub.app/thepaper/featured,
 China,The Wire China,en,thewirechina.com,business-analysis,2,https://www.thewirechina.com/feed/,
+China,Trivium China,en,triviumchina.com,china-watch,2,https://triviumchina.com/feed/,
+China,What's on Weibo,en,whatsonweibo.com,china-watch,2,https://www.whatsonweibo.com/feed/,
 China,Xinhua,zh,xinhuanet.com,state,1,http://www.news.cn/english/rss/worldrss.xml|https://english.news.cn/rss/world.xml,Держава КНР
 China,Yicai,zh,yicai.com,business,2,https://www.yicai.com/api/ajax/getlatest|https://rsshub.app/yicai/brief,
+China,Yicai CN,zh,yicai.com,business,2,https://rsshub.rssforever.com/yicai/brief|https://hub.slarker.me/yicai/brief|https://rsshub.app/yicai/brief,
 Croatia,Index.hr,hr,index.hr,independent,2,,
 Croatia,Jutarnji list,hr,jutarnji.hr,center,2,,
 Croatia,N1 Croatia,hr,n1info.hr,reference,2,,

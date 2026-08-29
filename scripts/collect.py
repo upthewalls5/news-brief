@@ -25,6 +25,7 @@ import feedparser
 import httpx
 
 import semantics
+import telegram_feed
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
@@ -390,7 +391,7 @@ def load_seen():
 
 
 def main():
-    print("collect.py версія 2026-08-29.2")
+    print("collect.py версія 2026-08-29.3")
     feeds = json.loads((ROOT / "feeds.json").read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=WINDOW_HOURS)
 
@@ -409,6 +410,12 @@ def main():
     api_items, api_dead = asyncio.run(fetch_api_outlets(cutoff))
     items.extend(api_items)
     dead.extend(api_dead)
+
+    # Telegram — тільки для Ірану й Ізраїлю, куди інакше не дотягнутись.
+    # Це анонси, а не редакційні матеріали, тому їх мало й вони позначені.
+    tg_items, tg_dead = telegram_feed.collect(ROOT, cutoff, norm, is_noise)
+    items.extend(tg_items)
+    dead.extend(tg_dead)
 
     # прибираємо точні дублі заголовків усередині країни
     seen_titles = set()
@@ -479,7 +486,14 @@ def main():
     L.append(f"# Дайджест {today}")
     L.append("")
     L.append(f"Зібрано {len(items)} матеріалів за {WINDOW_HOURS} год "
-             f"({len(feeds)} стрічок RSS + {len(api_items)} матеріалів через API).")
+             f"({len(feeds)} стрічок RSS, {len(api_items)} через API, "
+             f"{len(tg_items)} анонсів у Telegram).")
+    if tg_items:
+        L.append("")
+        L.append("Джерела з поміткою (Telegram) — це АНОНСИ з каналів видань, "
+                 "а не редакційні матеріали: коротші, емоційніші, часто про "
+                 "місцеву поточну повістку. Використовуй їх як сигнал того, "
+                 "чим живе країна, а не як повноцінну публікацію.")
     if dead:
         share = len(dead) / max(1, len(feeds))
         if share > 0.25:
