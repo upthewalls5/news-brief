@@ -3092,5 +3092,70 @@
     "entries": 50,
     "newest_hours": 0.3,
     "weight": "light"
+  },
+  {
+    "country": "China",
+    "name": "Ginger River Review",
+    "lang": "en",
+    "domain": "gingerriver.com",
+    "pole": "china-watch",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.gingerriver.com/feed",
+    "entries": 20,
+    "newest_hours": 364.5,
+    "weight": "heavy"
+  },
+  {
+    "country": "China",
+    "name": "Guancha",
+    "lang": "zh",
+    "domain": "guancha.cn",
+    "pole": "nationalist",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://rsshub.rssforever.com/guancha/headline",
+    "entries": 20,
+    "newest_hours": 0.3,
+    "weight": "heavy"
+  },
+  {
+    "country": "China",
+    "name": "The Paper",
+    "lang": "zh",
+    "domain": "thepaper.cn",
+    "pole": "mainstream",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://rsshub.rssforever.com/thepaper/featured",
+    "entries": 19,
+    "newest_hours": 0.0,
+    "weight": "heavy"
+  },
+  {
+    "country": "China",
+    "name": "What's on Weibo",
+    "lang": "en",
+    "domain": "whatsonweibo.com",
+    "pole": "china-watch",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.whatsonweibo.com/feed/",
+    "entries": 5,
+    "newest_hours": 171.9,
+    "weight": "light"
+  },
+  {
+    "country": "China",
+    "name": "Yicai",
+    "lang": "zh",
+    "domain": "yicai.com",
+    "pole": "business",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://rsshub.rssforever.com/yicai/brief",
+    "entries": 50,
+    "newest_hours": 0.5,
+    "weight": "light"
   }
 ]
