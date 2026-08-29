@@ -84,7 +84,16 @@ def feeds_in_html(text, base_url):
     return found
 
 
-def assess(raw: bytes, url: str):
+# Аналітичні розсилки виходять раз на тиждень або рідше. Для них загальний
+# поріг у 7 днів означав би, що живе джерело вважається мертвим.
+SLOW_POLES = ("china-watch", "analysis", "defense-analysis", "law-security",
+              "asia-analysis", "business-analysis", "censorship-watch",
+              "tech-emerging", "investigative")
+STALE_FAST = 168      # звичайні новинні стрічки — тиждень
+STALE_SLOW = 720      # аналітичні — місяць
+
+
+def assess(raw: bytes, url: str, pole: str = ""):
     """Парсить стрічку. Повертає (ok, кількість_записів, свіжість_годин, вага, помилка)."""
     parsed = feedparser.parse(raw)
     if parsed.bozo and not parsed.entries:
@@ -106,8 +115,10 @@ def assess(raw: bytes, url: str):
     avg = sum(len(entry_text(e)) for e in sample) / len(sample)
     weight = "heavy" if avg > HEAVY_CHARS else "light"
 
-    if age_h is not None and age_h > 168:
-        return False, len(parsed.entries), age_h, weight, f"застаріла: найновіше {age_h} год тому"
+    limit = STALE_SLOW if pole in SLOW_POLES else STALE_FAST
+    if age_h is not None and age_h > limit:
+        return False, len(parsed.entries), age_h, weight, (
+            f"застаріла: найновіше {age_h} год тому (поріг {limit})")
     return True, len(parsed.entries), age_h, weight, None
 
 
@@ -291,7 +302,7 @@ async def find_feed(client, row):
             if err.split(":")[0] in ("ConnectError", "ConnectTimeout"):
                 dead_hosts.add(host)
             continue
-        ok, n, age, weight, why = assess(r.content, url)
+        ok, n, age, weight, why = assess(r.content, url, row.get("pole", ""))
 
         # Прийшов HTML замість стрічки — шукаємо справжню адресу в ньому
         if not ok and why and "не парситься" in why:
@@ -303,7 +314,7 @@ async def find_feed(client, row):
                 r2, e2 = await try_url(client, cand)
                 if r2 is None:
                     continue
-                ok2, n2, age2, w2, why2 = assess(r2.content, cand)
+                ok2, n2, age2, w2, why2 = assess(r2.content, cand, row.get("pole", ""))
                 if ok2:
                     out.update(status="ok", feed=str(r2.url), entries=n2,
                                newest_hours=age2, weight=w2)
@@ -333,7 +344,7 @@ async def find_feed(client, row):
                 r, err = await try_url(client, url)
                 if r is None:
                     continue
-                ok, n, age, weight, why = assess(r.content, url)
+                ok, n, age, weight, why = assess(r.content, url, row.get("pole", ""))
                 if ok:
                     print(f"     автопошук врятував: {url}", flush=True)
                     out.update(status="ok", feed=str(r.url), entries=n,
