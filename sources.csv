@@ -33,7 +33,6 @@ Canada,CBC News,en,cbc.ca,public,2,https://www.cbc.ca/webfeed/rss/rss-topstories
 Canada,National Post,en,nationalpost.com,center-right,2,https://nationalpost.com/feed/|https://nationalpost.com/category/news/world/feed/,
 Canada,The Globe and Mail,en,theglobeandmail.com,center,2,https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/,
 China,Caixin,zh,caixin.com,independent-business,1,https://www.caixinglobal.com/feed/|https://rsshub.rssforever.com/caixin/latest|https://hub.slarker.me/caixin/latest|https://rsshub.app/caixin/latest,
-China,China Daily,en,chinadaily.com.cn,state,2,https://www.chinadaily.com.cn/rss/china_rss.xml|https://www.chinadaily.com.cn/rss/world_rss.xml,Держава КНР
 China,China Digital Times,en,chinadigitaltimes.net,censorship-watch,2,https://chinadigitaltimes.net/feed/,
 China,ChinaTalk,en,chinatalk.media,china-watch,2,https://www.chinatalk.media/feed,
 China,Ginger River Review,en,gingerriver.com,china-watch,2,https://www.gingerriver.com/feed,
@@ -65,7 +64,6 @@ EU-Brussels,EUobserver,en,euobserver.com,center-left,2,,
 EU-Brussels,Euractiv,en,euractiv.com,reference,1,https://www.euractiv.com/feed/|https://www.euractiv.com/sections/all/feed/,
 EU-Brussels,Euronews,en,euronews.com,reference,2,,
 EU-Brussels,Politico Europe,en,politico.eu,reference,1,,Axel Springer
-Egypt,Ahram Online,en,english.ahram.org.eg,state-aligned,2,https://english.ahram.org.eg/RSS.aspx?CategoryID=2|https://english.ahram.org.eg/rss.aspx,
 Estonia,ERR,et,err.ee,public,2,,
 Estonia,Postimees,et,postimees.ee,center-right,2,,
 Finland,Helsingin Sanomat,fi,hs.fi,center,2,https://www.hs.fi/rss/tuoreimmat.xml,
@@ -111,7 +109,6 @@ Hungary,Telex,hu,telex.hu,independent,2,,
 Iceland,RUV,is,ruv.is,public,2,,
 India,Mint,en,livemint.com,business,2,,
 India,NDTV,en,ndtv.com,mainstream,2,https://feeds.feedburner.com/ndtvnews-top-stories,
-India,Republic World,en,republicworld.com,tabloid,2,https://www.republicworld.com/feed|https://www.republicworld.com/rss/story.xml,
 India,Scroll.in,en,scroll.in,left-critical,2,,
 India,The Economic Times,en,economictimes.indiatimes.com,business,1,https://economictimes.indiatimes.com/rssfeedstopstories.cms,Bennett Coleman
 India,The Hindu,en,thehindu.com,center-left,1,,
