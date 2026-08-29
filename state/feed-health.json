@@ -1,10 +1,15 @@
 {
   "Il Foglio": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-08-29",
     "last": "2026-08-29"
   },
   "Milenio": {
+    "fails": 2,
+    "since": "2026-08-29",
+    "last": "2026-08-29"
+  },
+  "Zerkalo": {
     "fails": 1,
     "since": "2026-08-29",
     "last": "2026-08-29"
