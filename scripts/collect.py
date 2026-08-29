@@ -338,7 +338,7 @@ def load_seen():
 
 
 def main():
-    print("collect.py версія 2026-08-28.9")
+    print("collect.py версія 2026-08-29.1")
     feeds = json.loads((ROOT / "feeds.json").read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=WINDOW_HOURS)
 
@@ -369,7 +369,11 @@ def main():
         uniq.append(it)
     items = uniq
 
-    clusters = cluster(items)
+    # Таблоїди не беруть участі в кластеризації й не потрапляють у розділ
+    # по країнах: інакше вони підмішуються в загальний потік як звичайні
+    # джерела, а модель бере з них факти.
+    quality = [i for i in items if i["pole"] != "tabloid"]
+    clusters = cluster(quality)
 
     # індекс новизни: чи бачили цей сюжет за останні 7 днів
     seen = load_seen()
@@ -391,7 +395,7 @@ def main():
     )
 
     by_country = defaultdict(list)
-    for it in items:
+    for it in quality:
         by_country[it["country"]].append(it)
 
     L = []
@@ -407,6 +411,18 @@ def main():
         L.append(f"Не відповіли ({len(dead)}): " + ", ".join(dead[:15])
                  + (" …" if len(dead) > 15 else ""))
     L.append("")
+
+    tabs = [i for i in items if i["pole"] == "tabloid"]
+    if tabs:
+        L.append("## Таблоїди — ТІЛЬКИ як індикатор настроїв")
+        L.append("")
+        L.append("Ці джерела публікують неперевірене. НЕ бери з них факти, "
+                 "цифри й цитати. Використовуй лише в рубриці МАСОВА ОПТИКА "
+                 "і лише щоб показати, що саме розганяє масова преса.")
+        L.append("")
+        for it in tabs[:40]:
+            L.append(f"- {it['country']} · {it['source']}: {it['title']}")
+        L.append("")
 
     L.append("## Кластери — сюжети в кількох країнах")
     L.append("")
@@ -429,7 +445,7 @@ def main():
              "зіставлення роби сам: та сама подія тут присутня різними мовами "
              "й машиною не помічена.")
     L.append("")
-    total = max(1, len(items))
+    total = max(1, len(quality))
     for country in sorted(by_country):
         rows = by_country[country][:PER_COUNTRY]
         share = round(100 * len(by_country[country]) / total, 1)
