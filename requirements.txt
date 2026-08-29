@@ -2,3 +2,5 @@ feedparser==6.0.14
 httpx[http2]==0.28.1
 curl_cffi==0.16.2
 matplotlib==3.10.0
+numpy>=1.26
+model2vec==0.9.0

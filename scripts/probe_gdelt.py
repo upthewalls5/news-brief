@@ -113,5 +113,40 @@ def main():
     print("Записано: gdelt-coverage.md і gdelt-hosts.json")
 
 
+# ── Агентства ──────────────────────────────────────────────────────────
+# Reuters, AP, AFP і Bloomberg не мають публічних RSS. GDELT їх індексує,
+# тож заголовки можна брати звідти. Поки лише перевірка: чи справді
+# віддає і наскільки свіже.
+WIRES = {
+    "Reuters": "reuters.com",
+    "Associated Press": "apnews.com",
+    "AFP": "afp.com",
+    "Bloomberg": "bloomberg.com",
+}
+
+
+def probe_wires():
+    print("\nПеревірка інформагентств у GDELT")
+    with httpx.Client(timeout=45.0, headers={"User-Agent": UA},
+                      follow_redirects=True) as client:
+        rows = []
+        for name, host in WIRES.items():
+            n, note = query(client, host)
+            mark = f"Є ({n})" if n else ("Немає" if n == 0 else "Помилка")
+            print(f"  {mark:<10} {name:<20} {note}", flush=True)
+            rows.append((name, host, mark, note))
+            time.sleep(PAUSE)
+    out = ["", "## Інформагентства", "",
+           "| Агентство | Домен | У GDELT | Примітка |", "|---|---|---|---|"]
+    out += ["| " + " | ".join(r) + " |" for r in rows]
+    path = ROOT / "gdelt-coverage.md"
+    prev = path.read_text(encoding="utf-8") if path.exists() else "# Покриття GDELT\n"
+    path.write_text(prev + "\n".join(out) + "\n", encoding="utf-8")
+
+
 if __name__ == "__main__":
     main()
+    probe_wires()
+    probe_wires()
+
+

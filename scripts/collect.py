@@ -14,6 +14,7 @@ import asyncio
 import csv
 import json
 import re
+import sys
 import unicodedata
 from collections import defaultdict
 from urllib.parse import urlparse
@@ -23,6 +24,9 @@ from pathlib import Path
 import feedparser
 import httpx
 
+import semantics
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
@@ -186,6 +190,54 @@ API_BASE = "https://freenewsapi.ai/v1/search"
 API_SIZE = 15
 
 
+def outlet_owners():
+    """Власник видання. Заповнено лише для безсумнівних випадків —
+    решта порожні, бо активи перепродують і застарілі дані гірші за їх
+    відсутність."""
+    owners = {}
+    src = ROOT / "sources.csv"
+    if src.exists():
+        for row in csv.DictReader(src.open(encoding="utf-8")):
+            if row.get("owner"):
+                owners[row["name"]] = row["owner"]
+    return owners
+
+
+def coverage_check(by_country):
+    """Сигнал про втрату покриття: якщо країна ядра дала аномально мало,
+    це радше відвалились її стрічки, ніж у країні стало тихо. Без цього
+    бріф просто перестав би про неї писати, і ніхто б не помітив."""
+    CORE = ["Ukraine", "Russia", "USA", "China", "Germany", "France", "UK",
+            "Poland", "EU-Brussels", "Israel", "Iran", "India", "Taiwan",
+            "Japan", "South Korea"]
+    p = ROOT / "state" / "coverage.json"
+    hist = {}
+    if p.exists():
+        try:
+            hist = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            hist = {}
+
+    today = datetime.now(timezone.utc).date().isoformat()
+    hist[today] = {c: len(v) for c, v in by_country.items()}
+    keep = sorted(hist)[-14:]
+    hist = {d: hist[d] for d in keep}
+    (ROOT / "state").mkdir(exist_ok=True)
+    p.write_text(json.dumps(hist, ensure_ascii=False), encoding="utf-8")
+
+    warnings = []
+    past = [d for d in keep if d != today][-7:]
+    for c in CORE:
+        vals = sorted(hist[d].get(c, 0) for d in past)
+        if len(vals) < 3:
+            continue
+        median = vals[len(vals) // 2]
+        now = hist[today].get(c, 0)
+        if median >= 8 and now < median * 0.4:
+            warnings.append(f"{c}: {now} матеріалів проти звичних ~{median}")
+    return warnings
+
+
 def outlet_meta():
     """Країна й полюс для кожного видання — беремо з реєстру."""
     meta = {}
@@ -338,7 +390,7 @@ def load_seen():
 
 
 def main():
-    print("collect.py версія 2026-08-29.1")
+    print("collect.py версія 2026-08-29.2")
     feeds = json.loads((ROOT / "feeds.json").read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=WINDOW_HOURS)
 
@@ -373,7 +425,23 @@ def main():
     # по країнах: інакше вони підмішуються в загальний потік як звичайні
     # джерела, а модель бере з них факти.
     quality = [i for i in items if i["pole"] != "tabloid"]
-    clusters = cluster(quality)
+
+    model = semantics.load_model()
+    if model is not None:
+        clusters = semantics.cluster_by_meaning(quality, model)
+        print(f"Кластеризація за сенсом: {len(clusters)} кластерів")
+    else:
+        clusters = cluster(quality)
+        print(f"Кластеризація за словами: {len(clusters)} кластерів")
+        for c in clusters:
+            c.setdefault("vecs", None)
+
+    owners = outlet_owners()
+    for c in clusters:
+        c["divergence"], c["div_detail"] = semantics.divergence(c)
+        c["consensus"] = semantics.fake_consensus(c, owners)
+    clusters.sort(key=lambda c: (len(c["countries"]) * 2 + c["n_sources"]
+                                 + c["divergence"] / 25), reverse=True)
 
     # індекс новизни: чи бачили цей сюжет за останні 7 днів
     seen = load_seen()
@@ -381,14 +449,23 @@ def main():
     for day_sigs in seen.values():
         old_sigs.extend(set(s) for s in day_sigs)
 
+    def sig_of(c):
+        s = c.get("sig")
+        if s is None:
+            s = set()
+            for it in c["items"][:4]:
+                s |= signature(it["title"])
+            c["sig"] = s
+        return s
+
     def is_new(c):
         for old in old_sigs:
-            if len(c["sig"] & old) >= 4:
+            if len(sig_of(c) & old) >= 4:
                 return False
         return True
 
     today = datetime.now(timezone.utc).date().isoformat()
-    seen[today] = [sorted(list(c["sig"]))[:12] for c in clusters[:60]]
+    seen[today] = [sorted(list(sig_of(c)))[:12] for c in clusters[:60]]
     (ROOT / "state").mkdir(exist_ok=True)
     (ROOT / "state" / "seen.json").write_text(
         json.dumps(seen, ensure_ascii=False), encoding="utf-8"
@@ -426,16 +503,38 @@ def main():
 
     L.append("## Кластери — сюжети в кількох країнах")
     L.append("")
-    L.append("Формат: [джерел / країн] · НОВЕ якщо не траплялось 7 днів")
+    L.append("Формат: [джерел / країн] · Р=NN індекс розходження (0-100) ·")
+    L.append("НОВЕ якщо не траплялось 7 днів · ПОВТОР якщо вже був у випуску")
+    L.append("")
+    L.append("Індекс розходження показує, наскільки по-різному подають ту саму")
+    L.append("подію. Для РОЗКОЛУ ОПТИКИ бери кластери з найвищим Р, а не")
+    L.append("найгучніші. Позначку ПОВТОР не став у ГОЛОВНЕ, якщо в сюжеті")
+    L.append("нічого не змінилось: краще взяти свіжіший.")
     L.append("")
     for c in clusters[:25]:
-        flag = " · НОВЕ" if is_new(c) else ""
-        L.append(f"### [{c['n_sources']} дж. / {len(c['countries'])} країн]{flag} "
-                 f"{c['items'][0]['title']}")
+        flag = " · НОВЕ" if is_new(c) else " · ПОВТОР"
+        L.append(f"### [{c['n_sources']} дж. / {len(c['countries'])} країн] "
+                 f"Р={c['divergence']}{flag} {c['items'][0]['title']}")
+        if c.get("consensus"):
+            L.append(f"  УВАГА, УЯВНИЙ КОНСЕНСУС: {c['consensus']}. "
+                     f"Це одна редакційна лінія, а не кілька підтверджень.")
+        if c["div_detail"].get("state_vs_free"):
+            L.append("  У кластері є і державні, і незалежні джерела.")
         for it in c["items"][:8]:
             L.append(f"- {it['country']} · {it['source']} ({it['pole']}): {it['title']}")
             if it["lead"]:
                 L.append(f"  {it['lead']}")
+        L.append("")
+
+    warns = coverage_check(by_country)
+    if warns:
+        L.append("## УВАГА: можлива втрата покриття")
+        L.append("")
+        L.append("Ці країни дали значно менше матеріалів, ніж зазвичай. "
+                 "Найімовірніше відвалились їхні стрічки, а не настала тиша. "
+                 "Не роби висновку, що в країні спокійно.")
+        for w in warns:
+            L.append(f"- {w}")
         L.append("")
 
     L.append("## По країнах")
