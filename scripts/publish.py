@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-29.2"
+VERSION = "2026-08-29.3"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -213,7 +213,6 @@ def build_nodes(brief, weekly=None, iso=None):
     sources_all = []
 
     # Графік не дублюємо: він уже є на картці, яка приходить у Telegram.
-    nodes.extend(calendar_nodes())
 
     def render(body, level="h3"):
         rubric = ""
@@ -287,6 +286,9 @@ def build_nodes(brief, weekly=None, iso=None):
         nodes.append({"tag": "hr"})
         nodes.append({"tag": "h3", "children": ["📅 Огляд тижня"]})
         render(weekly, level="h4")
+
+    # Календар — у кінці: читач приходить по новини, а не по дати.
+    nodes.extend(calendar_nodes())
 
     # Підсумковий перелік джерел
     uniq = []
