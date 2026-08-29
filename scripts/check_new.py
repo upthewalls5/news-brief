@@ -41,7 +41,23 @@ def load_feeds():
         return []
 
 
-def pick(rows, names):
+def known_failed():
+    """Видання, які вже перевірялись і не далися. Вони теж відсутні
+    у feeds.json, тому без цього списку «нові» означало б «усі, що
+    колись впали» — а це десятки старих джерел."""
+    p = ROOT / "feed-report.md"
+    if not p.exists():
+        return set()
+    out = set()
+    for line in p.read_text(encoding="utf-8").splitlines():
+        if line.startswith("|") and "---" not in line and "Країна" not in line:
+            cells = [c.strip() for c in line.strip("|").split("|")]
+            if len(cells) > 1:
+                out.add(cells[1])
+    return out
+
+
+def pick(rows, names, include_failed=False):
     if names:
         want = {n.strip().lower() for n in names.split(",") if n.strip()}
         chosen = [r for r in rows if r["name"].lower() in want]
@@ -49,8 +65,15 @@ def pick(rows, names):
         if missing:
             print(f"Немає в реєстрі: {', '.join(sorted(missing))}")
         return chosen
+
     known = {f["name"] for f in load_feeds()}
-    return [r for r in rows if r["name"] not in known]
+    failed = set() if include_failed else known_failed()
+    fresh = [r for r in rows if r["name"] not in known and r["name"] not in failed]
+    if failed:
+        skipped = sum(1 for r in rows if r["name"] in failed and r["name"] not in known)
+        print(f"Пропускаю {skipped} джерел, які вже перевірялись і не далися "
+              f"(--retry-failed щоб узяти й їх)")
+    return fresh
 
 
 async def run(rows):
@@ -72,11 +95,13 @@ async def run(rows):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--names", default="", help="назви через кому")
+    ap.add_argument("--retry-failed", action="store_true",
+                    help="узяти й ті, що раніше не далися")
     ap.add_argument("--merge", action="store_true",
                     help="долити живі стрічки у feeds.json")
     args = ap.parse_args()
 
-    rows = pick(load_registry(), args.names)
+    rows = pick(load_registry(), args.names, args.retry_failed)
     if not rows:
         print("Нових джерел немає — усе вже у feeds.json")
         return
