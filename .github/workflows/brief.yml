@@ -6,13 +6,20 @@ name: Ранковий бріф
 # сьогодні вже є, і мовчки виходять.
 # Час у UTC. Влітку Київ = UTC+3, взимку UTC+2 — тоді зсуньте на годину пізніше.
 on:
-  schedule:
-    - cron: '3 4 * * *'
-    - cron: '20 4 * * *'
-    - cron: '45 4 * * *'
-    - cron: '20 5 * * *'
-    - cron: '10 6 * * *'
+  # Основний тригер — зовнішній сервіс, який щоранку смикає GitHub через API.
+  # Він передає source=cron, і тоді діє захист від дубля.
+  # Ручний запуск із інтерфейсу має source=manual і працює завжди.
   workflow_dispatch:
+    inputs:
+      source:
+        description: 'Хто запустив: manual або cron'
+        required: false
+        default: 'manual'
+  # Власний розклад GitHub лишається запасним: він ненадійний, за весь час
+  # спрацював один раз, але хай буде як підстраховка.
+  schedule:
+    - cron: '25 4 * * *'
+    - cron: '40 5 * * *'
 
 permissions:
   contents: write
@@ -35,6 +42,8 @@ jobs:
 
       - name: 0. Чи потрібен випуск
         id: need
+        env:
+          TRIGGER_SOURCE: ${{ github.event.inputs.source || 'manual' }}
         run: python scripts/should_run.py
       - name: 1. Зібрати новини
         if: steps.need.outputs.run == 'yes'
