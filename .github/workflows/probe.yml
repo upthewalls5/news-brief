@@ -25,11 +25,10 @@ jobs:
       - name: Перевірити покриття freenewsapi
         if: false
         run: python scripts/probe_api.py
-      - name: Перевірити соцмережі
-        if: always()
-        run: python scripts/probe_social.py
+      # Розвідка вже дала результат, потрібні джерела додані в реєстр.
+      # Вмикайте вручну, якщо шукатимете нові шляхи до китайських медіа.
       - name: Розвідка Китаю
-        if: always()
+        if: false
         run: python scripts/probe_china.py
       - name: Зберегти результат
         run: |
