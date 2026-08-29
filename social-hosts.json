@@ -1,0 +1,38 @@
+{
+  "Fars News": {
+    "platform": "telegram",
+    "handle": "farsna"
+  },
+  "Etemad": {
+    "platform": "telegram",
+    "handle": "etemadonline"
+  },
+  "Calcalist": {
+    "platform": "telegram",
+    "handle": "calcalist"
+  },
+  "Verstka": {
+    "platform": "telegram",
+    "handle": "svobodnieslova"
+  },
+  "Nasha Niva": {
+    "platform": "telegram",
+    "handle": "nashaniva"
+  },
+  "Tengrinews": {
+    "platform": "telegram",
+    "handle": "tengrinews"
+  },
+  "ThePrint": {
+    "platform": "telegram",
+    "handle": "theprintindia"
+  },
+  "Capital": {
+    "platform": "telegram",
+    "handle": "capitalbg"
+  },
+  "Xinhua": {
+    "platform": "telegram",
+    "handle": "XHNews"
+  }
+}
