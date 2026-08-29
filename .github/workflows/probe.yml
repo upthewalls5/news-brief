@@ -25,9 +25,6 @@ jobs:
       - name: Перевірити покриття freenewsapi
         if: false
         run: python scripts/probe_api.py
-      - name: Перевірити покриття GDELT
-        if: always()
-        run: python scripts/probe_gdelt.py
       - name: Перевірити соцмережі
         if: always()
         run: python scripts/probe_social.py
