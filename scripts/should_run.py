@@ -20,8 +20,13 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def decide():
-    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
-        return True, "ручний запуск — робимо завжди"
+    # Зовнішній тригер приходить як workflow_dispatch, але з source=cron.
+    # Для нього захист від дубля потрібен так само, як для розкладу:
+    # інакше кілька спроб дали б кілька брифів за ранок.
+    event = os.environ.get("GITHUB_EVENT_NAME", "")
+    source = os.environ.get("TRIGGER_SOURCE", "manual").strip().lower()
+    if event == "workflow_dispatch" and source != "cron":
+        return True, "ручний запуск з інтерфейсу — робимо завжди"
 
     iso = datetime.now(timezone.utc).date().isoformat()
     issue = ROOT / "issues" / f"{iso}.md"
@@ -48,6 +53,8 @@ def decide():
 
 def main():
     run, why = decide()
+    src = os.environ.get("TRIGGER_SOURCE", "manual")
+    print(f"Тригер: {os.environ.get('GITHUB_EVENT_NAME','?')} (source={src})")
     print(f"{'Робимо випуск' if run else 'Пропускаємо'}: {why}")
     out = os.environ.get("GITHUB_OUTPUT")
     if out:
