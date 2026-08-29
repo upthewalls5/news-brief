@@ -47,6 +47,7 @@ def make_transport():
 TIMEOUT = httpx.Timeout(25.0, connect=10.0)
 
 WINDOW_HOURS = 26          # вікно збору
+MAX_DIGEST = 118_000    # запас під ліміт у write.py
 PER_COUNTRY = 14           # заголовків на країну — модель зшиває мови сама
 PER_SOURCE = 12            # записів з однієї стрічки
 SEEN_DAYS = 7              # глибина пам'яті для індексу новизни
@@ -390,7 +391,7 @@ def load_seen():
 
 
 def main():
-    print("collect.py версія 2026-08-29.4")
+    print("collect.py версія 2026-08-29.6")
     feeds = json.loads((ROOT / "feeds.json").read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=WINDOW_HOURS)
 
@@ -527,6 +528,15 @@ def main():
                 L.append(f"  {it['lead']}")
         L.append("")
 
+    # Слід для самолікування: хто саме не відповів сьогодні.
+    # heal_feeds.py рахує поспіль і сам перевідкриває стрічку.
+    (ROOT / "state").mkdir(exist_ok=True)
+    (ROOT / "state" / "last-dead.json").write_text(
+        json.dumps({"date": today,
+                    "dead": [d.split(" (")[0] for d in dead],
+                    "alive": sorted({i["source"] for i in items})},
+                   ensure_ascii=False), encoding="utf-8")
+
     warns = coverage_check(by_country)
     if warns:
         L.append("## УВАГА: можлива втрата покриття")
@@ -538,6 +548,7 @@ def main():
             L.append(f"- {w}")
         L.append("")
 
+    country_start = len(L)
     L.append("## По країнах")
     L.append("")
     L.append("Кластери вище зібрані машинно за збігом слів, тому працюють лише "
@@ -554,6 +565,31 @@ def main():
             L.append(f"- [{it['source']} · {it['pole']}] {it['title']}")
         L.append("")
 
+    def rebuild(per):
+        """Перескладає розділ по країнах із меншою кількістю заголовків."""
+        head = L[:country_start]
+        tail = []
+        tail.append("## По країнах")
+        tail.append("")
+        tail.append("Кластери вище зібрані машинно, тому працюють лише "
+                    "всередині однієї мови. Нижче — сирі заголовки. "
+                    "Крос-мовне зіставлення роби сам.")
+        tail.append("")
+        for c in sorted(by_country):
+            rows = by_country[c][:per]
+            share = round(100 * len(by_country[c]) / total, 1)
+            tail.append(f"### {c}  ({len(by_country[c])} матеріалів, {share}% дня)")
+            for it in rows:
+                tail.append(f"- [{it['source']} · {it['pole']}] {it['title']}")
+            tail.append("")
+        tail.append("## Посилання на топ-сюжети")
+        tail.append("")
+        for c in clusters[:8]:
+            it = c["items"][0]
+            if it["link"]:
+                tail.append(f"- {it['title']} — {it['link']}")
+        return head + tail
+
     L.append("## Посилання на топ-сюжети")
     L.append("")
     for c in clusters[:8]:
@@ -562,6 +598,19 @@ def main():
             L.append(f"- {it['title']} — {it['link']}")
 
     text = "\n".join(L) + "\n"
+
+    # Якщо дайджест не вкладається в бюджет, скорочуємо РІВНОМІРНО — по
+    # кілька заголовків з кожної країни. Обрив із кінця з'їдав розділ по
+    # країнах за абеткою: Україна, США й Тайвань зникали, і модель навіть
+    # не знала, що їх не бачила.
+    if len(text) > MAX_DIGEST:
+        for per in (10, 8, 6, 4, 3):
+            L2 = rebuild(per)
+            text = "\n".join(L2) + "\n"
+            print(f"Дайджест завеликий, скорочую до {per} заголовків на країну "
+                  f"→ {len(text)} символів")
+            if len(text) <= MAX_DIGEST:
+                break
     (ROOT / "digests").mkdir(exist_ok=True)
     (ROOT / "digests" / f"{today}.md").write_text(text, encoding="utf-8")
     (ROOT / "digests" / "latest.md").write_text(text, encoding="utf-8")
