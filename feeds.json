@@ -3027,5 +3027,70 @@
     "entries": 21,
     "newest_hours": 0.4,
     "weight": "light"
+  },
+  {
+    "country": "China",
+    "name": "Caixin CN",
+    "lang": "zh",
+    "domain": "caixin.com",
+    "pole": "independent-business",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://rsshub.rssforever.com/caixin/latest",
+    "entries": 18,
+    "newest_hours": 0.9,
+    "weight": "light"
+  },
+  {
+    "country": "China",
+    "name": "ChinaTalk",
+    "lang": "en",
+    "domain": "chinatalk.media",
+    "pole": "china-watch",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.chinatalk.media/feed",
+    "entries": 20,
+    "newest_hours": 26.6,
+    "weight": "heavy"
+  },
+  {
+    "country": "China",
+    "name": "Pekingnology",
+    "lang": "en",
+    "domain": "pekingnology.com",
+    "pole": "china-watch",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://www.pekingnology.com/feed",
+    "entries": 20,
+    "newest_hours": 92.3,
+    "weight": "heavy"
+  },
+  {
+    "country": "China",
+    "name": "Trivium China",
+    "lang": "en",
+    "domain": "triviumchina.com",
+    "pole": "china-watch",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://triviumchina.com/feed/",
+    "entries": 10,
+    "newest_hours": 16.5,
+    "weight": "light"
+  },
+  {
+    "country": "China",
+    "name": "Yicai CN",
+    "lang": "zh",
+    "domain": "yicai.com",
+    "pole": "business",
+    "tier": "2",
+    "status": "ok",
+    "feed": "https://rsshub.rssforever.com/yicai/brief",
+    "entries": 50,
+    "newest_hours": 0.3,
+    "weight": "light"
   }
 ]
