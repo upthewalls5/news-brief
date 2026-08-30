@@ -53,6 +53,12 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/review.py
+      - name: 2б. Стисла версія для Telegraph
+        if: steps.need.outputs.run == 'yes'
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/shorten_issue.py
       - name: 3. Намалювати карту уваги й картку
         if: always() && steps.need.outputs.run == 'yes'
         run: |
