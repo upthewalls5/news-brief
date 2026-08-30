@@ -117,8 +117,26 @@ p{margin:0 0 17px}
 .ah .d{flex:0 0 92px;font-family:var(--mono);font-size:13.5px;color:var(--accent);
   padding-top:3px}
 
-figure{margin:0 0 30px}
-figure img{width:100%;display:block;border:1px solid var(--line)}
+figure{margin:0 0 26px}
+figure img{width:100%;display:block}
+figure.collage img{max-width:420px;margin:0 auto;border:0}
+
+/* увага преси за добу */
+.attn{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:16px 0 14px;margin:0 0 40px}
+.atth{font-family:var(--sans);font-size:10.5px;font-weight:700;
+  letter-spacing:.19em;text-transform:uppercase;color:var(--faint);
+  margin-bottom:13px}
+.attg{display:grid;grid-template-columns:repeat(4,1fr);gap:15px 18px}
+.att .pc{display:block;font-family:var(--mono);font-size:13px;
+  color:var(--muted);margin-bottom:5px}
+.att .ln{display:block;height:5px;background:#e9e7e1;border-radius:3px;
+  overflow:hidden}
+.att .ln i{display:block;height:100%;background:var(--deep);border-radius:3px}
+.att .nm{display:block;font-family:var(--sans);font-size:12px;
+  color:var(--muted);margin-top:6px}
+.att.hot .pc,.att.hot .nm{color:var(--accent);font-weight:600}
+.att.hot .ln i{background:var(--accent)}
 figcaption{font-family:var(--sans);font-size:12px;color:var(--faint);
   margin-top:8px;text-align:center}
 a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,68,47,.3)}
@@ -147,6 +165,8 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding-top:20px;
   #lead p:first-of-type{font-size:20px}
   #lead p:first-of-type::first-letter{font-size:50px}
   .grid{grid-template-columns:1fr}
+  .attg{grid-template-columns:repeat(2,1fr)}
+  figure.collage img{max-width:280px}
   .grid .row:nth-child(2){border-top:1px solid var(--line)}
   #blind{margin-left:-17px;margin-right:-17px;padding:22px 17px 6px}
   .ah{flex-direction:column;gap:3px}
@@ -163,5 +183,5 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding-top:20px;
 <h1>Архів випусків</h1>
 <div class="meta"><span>1 випусків</span><span><a href="index.html">До останнього</a></span></div>
 </header>
-<div class="arch"><a href="a60a6447a5.html">Острів сказав ні Брюсселю<span>2026-08-30</span></a></div>
+<div class="arch"><a href="a60a6447a5.html">Це досі Онтаріо<span>2026-08-30</span></a></div>
 </div></body></html>

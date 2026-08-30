@@ -1,36 +1,39 @@
 # Дайджест 2026-08-30
 
-Зібрано 2262 матеріалів за 26 год (230 стрічок RSS + 98 через API).
-Не відповіли (8): Caixin (ReadTimeout: ), Guancha (ReadTimeout: ), Yicai (ReadTimeout: ), TVN24 (HTTP 403 (chrome: HTTP 403)), Il Foglio (API порожньо), Milenio (API порожньо), Ekonomichna Pravda (API порожньо), Liga.net (API порожньо)
+Зібрано 2265 матеріалів за 26 год (230 стрічок RSS + 94 через API).
+Не відповіли (9): Caixin (ReadTimeout: ), Guancha (ReadTimeout: ), The Paper (ReadTimeout: ), Yicai (ReadTimeout: ), Corriere della Sera (API порожньо), Il Foglio (API порожньо), Milenio (API порожньо), Ekonomichna Pravda (API порожньо), Liga.net (API порожньо)
 
 ## Таблоїди — ТІЛЬКИ як індикатор настроїв
 
 Ці джерела публікують неперевірене. НЕ бери з них факти, цифри й цитати. Використовуй лише в рубриці МАСОВА ОПТИКА і лише щоб показати, що саме розганяє масова преса.
 
-- Germany · Bild: Nach Elfer-Fehlschuss - Darum schickte Ilzer den Unerfahrensten vor
-- Germany · Bild: Fünf deutsche Siege beim ISTAF - 41.000 Fans feiern Leichtathletik-Party
-- Germany · Bild: Kolumne: Geht das nur mir so? - Was Kräne über kleine Prinzen in Behörden verraten
-- Germany · Bild: Vor seiner BVB-Zeit - Kovac hatte neue HSV-Stars auf dem Zettel
-- Germany · Bild: Sony und Warner gegen Anthropic - Mega-Klage gegen „größten Diebstahl aller Zeiten“
-- Germany · Bild: Nürnberg-Doppelpacker Markhiev - Angst-Ansage an die Liga!
-- Germany · Bild: Neuer Einrichtungstrend mit Balance - Midimalismus - die goldene Mitte der Wohnstile
-- Germany · Bild: Niedrigwasser legt Fiat frei - Knochen-Rätsel um ein Autowrack aus dem Rhein
-- Germany · Bild: Verrückter Coup in Ägypten - Diebe räumen Lkw während der Fahrt leer
-- Germany · Bild: Schiffsunglück mit 7 Toten in Zypern - Todesfähre liegt jetzt in 514 Meter Tiefe
-- Germany · Bild: Magdeburg schon Fünfter - Nix Chávez! FCM jubelt ohne Schönheitspreis
-- Germany · Bild: Viel Zoff um Schiri - Kabinen-Ärger bei Zweitliga-Trainer
+- Germany · Bild: Hockey-Herren verteidigen den Titel - Wir sind Weltmeister!
+- Germany · Bild: BVB bestätigt es - Schock-Diagnose für BVB-Star!
+- Germany · Bild: Klage droht - Wilder Wechsel-Zoff im tiefen Fußball-Osten
+- Germany · Bild: Shaboozeys knallhartes Training - Vom Plank-Versager zum Fitness-Monster
+- Germany · Bild: Mein Haus, mein Job, mein Mann - „Meine beste Freundin hat mein Leben geklaut“
+- Germany · Bild: Große Sorge bei Lok Leipzig - Kapitän nach Abpfiff direkt in die Klinik
+- Germany · Bild: Kommentar - Auto-Wende? Jetzt ist von der Leyen gefragt!
+- Germany · Bild: EM-Held gewinnt ungewöhnlichen Wettkampf - Neugebauers nächste Leichtathletik-Show
+- Germany · Bild: Wahlkampf in Sachsen-Anhalt - Ist Merz der CDU zu teuer?
+- Germany · Bild: Nervenkrimi in Gummersbach - Titel-Ansage vom Handball-Meister
+- Germany · Bild: Weil sie sich um seine Pferde sorgte - Malle-Kutscher greift deutsche Touristin (31) an
+- Germany · Bild: Starke Aktion vor dem Gästeblock - Respekt-Geste vom Gegner für verstorbenen Fan
+- India · Times Now: 'Don't Kill A Mosquito With A Sword': First Court Blow To Tukaram Mundhe's FDA, Revives MCA's License
+- India · Times Now: Vivek Strikes Gold In 40+ Men’s Singles At Pickleball World Cup
+- India · Times Now: Ghatak Ghus Ke Maarega: Sunny Deol To Reprise Cult Role, But Rajkumar Santoshi Confirms 'It's Not A Sequel'
+- India · Times Now: Chennai Grand Prix: Aarush Nitture Crowned Open Men’s Singles Champion
+- India · Times Now: IITians Allege Illegal Surveillance by Plainclothes Delhi Policemen
+- India · Times Now: Chennai Grand Prix: Sonicka Jadeesh Edges Lakshmi Prabha To Win Open Women’s Singles Title
+- India · Times Now: New Jersey 5s Stage Dramatic Comeback Against St. Louis Shock in MLP Championship
 - India · Times Now: India’s Growth To Stay Above 7% In FY27; Borrowing Targeted At 50% Of GDP By 2030: Nirmala Sitharaman
 - India · Times Now: 16 to 64: Building on 2025, India Open Pickleball World Cup With Close Calls and Gold in Da Nang
 - India · Times Now: Mohammad Abbas Breaks Vinoo Mankad's 72-Year-Old Record, Goes Past Kapil Dev To Set All-Time Asian Record
 - India · Times Now: Oppn Pans Mohan Bhagwat's Words on Hindu-Muslim Unity - 'Oldest Trick in RSS Play Book,' Says Owaisi
 - India · Times Now: NEET PG 2026: NBEMS Forms 3-Member Panel to Probe Jaipur Centre Power Failure
-- India · Times Now: Sri Lanka Stripped Of Hosting Rights For Inaugural ICC Women's Champions Trophy In 2027 - Here Is Why
-- India · Times Now: Indian Bank To Open 100 New Branches, Hire 2,500 Employees
-- India · Times Now: Himachal Pradesh to Strengthen Medical Colleges with ₹500 Crore Diagnostic Upgrade, Says CM Sukhu
-- India · Times Now: Raaka: Allu Arjun Wraps Mumbai Schedule For Atlee’s Film, Shoots Key Scenes For His Character - Report
-- India · Times Now: IITians Allege Illegal Surveillance by Plainclothes Delhi Policemen
-- India · Times Now: Raaka: Deepika Padukone Plays Pregnant Woman; Janhvi Kapoor Is A Tribal Queen, Rashmika's Role Revealed - Report
-- India · Times Now: West Bengal Govt Explores BPHC Tie-Up with Private Medical Colleges; Know What it Means for Students
+- Switzerland · Blick: Haben die Rückschläge jetzt ein Ende?: Schweizer Abfahrer rappelt sich nach Horror-Frühling wieder auf
+- Switzerland · Blick: Birkin-Taschen und Bargeld: Rapper Drake beschenkt Frauen in Toronto
+- Switzerland · Blick: «Oh Gott, so peinlich!»: Biene sticht Andrea Kiewel im «Fernsehgarten» unters Kleid
 - Switzerland · Blick: Die Investoren-Legende wird 96: Was Anleger über den König der Investoren wissen müssen
 - Switzerland · Blick: Lugano-Noten gegen Sion: Tessiner können sich auf Mittelfeldmotor Grgic verlassen
 - Switzerland · Blick: Einsatz läuft: Scheune brennt in Oberkirch LU – Feuerwehr vor Ort
@@ -40,13 +43,10 @@
 - Switzerland · Blick: Konsumentenschutz warnt: Der fiese Trinkgeld-Trick der Gastrobranche
 - Switzerland · Blick: Ruth Stöckli hat sich in Frankreich ihren Traum verwirklicht: Schweizerin verwandelt verlotterte Villa im Burgund in ein Traumhaus
 - Switzerland · Blick: Deutscher Politstar staunt: Ausgerechnet darum ist Sahra Wagenknecht neidisch auf die Schweiz
-- Switzerland · Blick: Piemont kann auch weiss: Timorasso ist Italiens mächtigster Weisswein
-- Switzerland · Blick: Nach Harry und Meghan: Nun kehrt wohl auch Sarah Ferguson nach England zurück
-- Switzerland · Blick: Mit 83 noch auf der Bühne: Das wurde aus «Mandy»-Sänger Barry Manilow
-- UK · Daily Mail: Ex-BBC star who bought a derelict water tower for £138k and turned it into a spectacular Grand Designs style home is selling it for £3m
-- UK · Daily Mail: Tense launch for NASA's new ultra-powerful $4.3bn telescope: 'It's going to find tens of thousands of planets'
-- UK · Daily Mail: Shark attack survivor Leah Stewart describes how she willed herself back to life when she lay dying on Coogee Beach - and her first words to her mother when she woke from her coma
-- UK · Daily Mail: Hero teacher saves lives of 1,600 children in Nepal floods as school 200 feet above river is washed away by landslide
+- UK · Daily Mail: Muslim group planning to turn Grade II-listed pub in leafy Norfolk suburb into mosque hits back at critics and claims it 'only had three regulars'
+- UK · Daily Mail: My 'orange peel legs' mean I've always hated wearing a swimsuit. But this is the groundbreaking new cure for cellulite that means - after 20 years - I can finally wear shorts again
+- UK · Daily Mail: Read the last ten texts between you and your husband. These are the signs that your marriage is on the rocks. I've spent 30 years dealing with divorcing couples... and the clues are all there
+- UK · Daily Mail: 'They are smashing it. It's the ultimate sod you to the BBC': Inside John Torode's VERY lucrative new life with wife Lisa Faulkner... as sources tell KATIE HIND how couple got last laugh after he was dumped from MasterChef
 
 ## Кластери — сюжети в кількох країнах
 
@@ -58,26 +58,26 @@
 найгучніші. Позначку ПОВТОР не став у ГОЛОВНЕ, якщо в сюжеті
 нічого не змінилось: краще взяти свіжіший.
 
-### [62 дж. / 25 країн] Р=83 · ПОВТОР Российский топ-истеблишмент, аграрный апгрейд и чудо армейской школы. Итоги недели Президента
+### [68 дж. / 26 країн] Р=84 · ПОВТОР Исландцы на референдуме проголосовали против возобновления переговоров о вступлении в ЕС
   У кластері є і державні, і незалежні джерела.
+- Belarus · BelTA (state): Исландцы на референдуме проголосовали против возобновления переговоров о вступлении в ЕС
+  Противники продолжения евроинтеграционного процесса набрали 52,8% голосов, а сторонники вступления в ЕС - 47,2%. Явка избирателей была высокой и составила 82,5%.
+- Belarus · BelTA (state): Иран предотвратил незаконный проход 30 судов через Ормузский пролив за неделю
+  Движение было пресечено вооруженными силами исламской республики.
 - Belarus · BelTA (state): Российский топ-истеблишмент, аграрный апгрейд и чудо армейской школы. Итоги недели Президента
   Проект "Неделя Президента" - для тех, кто хочет идти в ногу с главой государства, быть в курсе самых актуальных заявлений и решений белорусского лидера.
+- Belarus · BelTA (state): Паром с пассажирами перевернулся у берегов Северного Кипра
+  В районе происшествия проводится поисково-спасательная операция. Данных о возможных погибших не поступало.
 - Belarus · BelTA (state): Меткие, быстрые, сильные. Кто стал победителем спартакиады белорусских СМИ?
   Спартакиада на протяжении двух дней проходила в Республиканском центре олимпийской подготовки "Стайки". Участники соревновались в волейболе, мини-футболе, настольном теннисе, легко
 - Belarus · Zerkalo (exile): Российские дроны летят к Киеву странным маршрутом. В Украине подозревают, что в этом снова задействована Беларусь
   Реактивные дроны, которыми Россия обстреливает украинскую столицу, почему-то не летят к ней кратчайшим путем - вместо этого держатся у беларусской границы. Советник президента Укра
-- Belarus · Zerkalo (exile): В Литве за провокацию у военного завода задержали украинца. Заказчиком может быть беларус
-  Возле офисов оборонных предприятий в Литве и Чехии неизвестные оставили похоронные венки и фотографии руководителей с траурными лентами.
-- Belarus · Zerkalo (exile): Верховный лидер Ирана призвал все мусульманские страны объединиться против США и Израиля
-  Призыв адресован странам, по которым Иран сам наносил удары.
 - Belarus · Zerkalo (exile): В Беларуси начался дефицит грузовых вагонов-платформ. «Железнодорожники Беларуси»: дело в воинских перевозках
   На БЖД не хватает порожних вагонов-платформ: часть парка отдана под воинские перевозки. Что об этом известно и почему сравнивать ситуацию с январем 2022-го пока рано.
-- Belarus · Zerkalo (exile): Жители Исландии на референдуме проголосовали против вступления в ЕС. Явка была рекордно высокой
-  Результат многих разочаровал, но для такого выбора у исландцев были свои причины.
-- Belarus · Zerkalo (exile): В Венгрии мужчина угнал самолет и полетел в сторону АЭС - за ним послали истребители
-  На фоне произошедшего в стране планируют проверить не только аэродром вылета угонщика, но и все подобные места стоянки самолетов.
+- Belarus · Zerkalo (exile): В Литве за провокацию у военного завода задержали украинца. Заказчиком может быть беларус
+  Возле офисов оборонных предприятий в Литве и Чехии неизвестные оставили похоронные венки и фотографии руководителей с траурными лентами.
 
-### [51 дж. / 18 країн] Р=85 · ПОВТОР Hundreds lost in Nepal mourned in vigils across Australia
+### [55 дж. / 23 країн] Р=86 · ПОВТОР Hundreds lost in Nepal mourned in vigils across Australia
   У кластері є і державні, і незалежні джерела.
 - Australia · ABC News (public): Hundreds lost in Nepal mourned in vigils across Australia
   As recovery efforts enter the fifth day in Nepal, hundreds have gathered across Australia to grieve the lives lost in this week's devastating floods.
@@ -89,74 +89,39 @@
   Leah Stewart says she took a deep breath as a four-metre great white shark bit into her leg and pulled her under the water. She thought this was how she would die.
 - Australia · Sydney Morning Herald (center-left): ‘I did think she was going to die’: How strangers saved shark attack victim Leah Stewart
   The thought of not being there for her daughter helped Leah Stewart beat the shark away. But her fight was only beginning after she made it to shore.
-- Bulgaria · Dnevnik (center-right): "Ужасна трагедия, тя бе млада": Жена загина след стрелба на техно парти в Швейцария
-  Жена на 22 години е била убита, а петима души са ранени, някои от тях сериозно, в швейцарския град Аарау. Инцидентът е станал при избухнала стрелба на техно парти, съобщи местната 
-- Canada · CBC News (public): FIBA Women's World Cup begins without Canada. Is it a setback for national team, or a reset for LA28?
-  It was a cruel twist of fate. Just three days before the WNBA and its players landed on a new collective bargaining agreement — one that would officialize Canada’s first WNBA team’
-- Canada · CBC News (public): Nova Scotia father and son haul hooked bald eagle out of lake, safely free it on shore
-  Bryan Esbaugh and his 15-year-old son, Wyatt, were fishing on Ponhook Lake in Queens County, N.S., when they accidentally hooked a bald eagle. After safely untangling the bird on s
+- Belarus · BelTA (state): Число жертв наводнения в Непале возросло до 788
+  Как отмечалось ранее, почти 2,5 тыс. человек числятся пропавшими, включая 588 иностранцев. К поисково-спасательной операции привлечены почти 20 тыс. человек.
+- Belgium · De Standaard (center-right): 22-jarige vrouw doodgeschoten op technorave in Zwitserse Aarau: “Nog geen dader of motief”
+  Bij een schietincident op een rave in het noorden van Zwitserland zijn in de nacht van zaterdag op zondag meerdere mensen gewond geraakt. Een 22-jarige vrouw overleefde de aanval n
+- Belgium · De Standaard (center-right): Massazaaddonor Simon schrijft ouders dat hij minstens 199 kinderen heeft verwekt, van wie 11 in België
+  De Nederlandse massazaaddonor die door het Nederlandse nieuwsprogramma Nieuwsuur geïdentificeerd werd, heeft in een appgroep een ‘persoonlijke verklaring’ gestuurd aan de ouders di
 
-### [44 дж. / 20 країн] Р=68 · ПОВТОР EEUU alertó que la volatilidad del yen podría encarecer el crédito y presionar a los bonos del Tesoro
-- Argentina · Ambito Financiero (business): EEUU alertó que la volatilidad del yen podría encarecer el crédito y presionar a los bonos del Tesoro
-  Scott Bessent defendió la intervención conjunta realizada a fines de julio y advirtió que una liquidación forzada de activos japoneses tendría consecuencias sobre los hogares y las
-- Argentina · Ambito Financiero (business): "Se demora la recuperación": apuntan a una caída de la actividad, pese al motor energético
-  Un índice estimó una baja mensual desestacionalizada del 0,9% en julio y apenas un avance interanual del 0,3%. Minas y canteras volvió a liderar el crecimiento sectorial.
-- Argentina · Ambito Financiero (business): Desde la apertura del cepo, los argentinos compraron casi u$s45.000 millones
-  El dato salió de un último informe del BCRA. Además, tras compras netas destinadas al atesoramiento desde el BCRA se alcanzaron casi u$s 3.000 millones.
-- Argentina · Ambito Financiero (business): Vaca Muerta acelera y el petróleo desplazaría a la soja como principal exportador antes de fin de año
-  El crecimiento de las exportaciones vinculadas al sector energético achicó con fuerza la distancia con el histórico liderazgo sojero. Durante el primer semestre de 2026, el complej
-- Argentina · Ambito Financiero (business): La reforma que prometía empleo lleva tres meses de caída
-  Con 137.500 asalariados privados menos y un crecimiento del monotributo, la nueva normativa abarató los despidos y los litigios, pero dejó intactos los costos de contratación.
-- Argentina · Clarin (center-right): Una nueva encuesta muestra una baja de Milei y advierte por la reelección
-  Es el último estudio de RDT Consultores, una de las firmas que mejor anticipó el fenómeno libertario. Los números de intención para primera vuelta y los balotajes vs. Kicillof y Ma
-- Argentina · Clarin (center-right): Independiente vs Gimnasia de Mendoza por el Torneo Clausura 2026, EN VIVO: a qué hora juegan, formaciones y cómo ver el partido
-  El Rojo y el Lobo chocan en Avellaneda por la séptima jornada del torneo. Con el arbitraje de Sebastián Zunino y Adrián Franklin en el VAR. Por ESPN Premium.
-- Argentina · Clarin (center-right): En 1924, Hollywood llevó 14 bisontes a la isla Catalina para una película; cuando el equipo de filmación se fue, los animales se quedaron y finalmente se multiplicaron hasta superar los 500
-  En este lugar turístico todavía puede verse una pequeña manada, heredera de aquellos primeros ejemplares. La necesidad de introducir nuevos ejemplares para mantener la genética.
-
-### [39 дж. / 16 країн] Р=76 · НОВЕ Google Maps will show ‘Lake America’ in U.S. instead of ‘Lake Ontario’
+### [48 дж. / 21 країн] Р=80 · ПОВТОР Google Maps will show ‘Lake America’ in U.S. instead of ‘Lake Ontario’
   У кластері є і державні, і незалежні джерела.
 - Canada · The Globe and Mail (center): Google Maps will show ‘Lake America’ in U.S. instead of ‘Lake Ontario’
   Trump’s order affects the U.S. Geographic Names Information System (GNIS), which sets the standards for official U.S. maps
 - China · Sixth Tone (state-adjacent): Underground No More: China’s ‘History Fangirls’ Stand Up
   One of China’s hottest idols is a 1,700-year-old emperor. Another is his dad. China’s “history fangirls” are chasing celebrities through bookstores and tomb complexes nationwide.
+- China · Sixth Tone (state-adjacent): Tracing the Route of ‘Cathay’
+  In the Age of Discovery, European explorers set out to find the mythical land of “Cathay,” which they believed was separate from China. Yet even after learning the truth, the name 
 - China · Sixth Tone (state-adjacent): Inside China’s Shift From Short-Drama Sets to AI Factories
 - China · Sixth Tone (state-adjacent): China’s Short-Drama Boom Was Built on Speed. Then AI Got Faster.
   AI-powered production is upending China’s ultrashorts market, cutting shoots, budgets, and specialized crew work while forcing companies to find cheaper ways to keep live-action pr
-- China · The Paper (mainstream): 受持续强降雨影响,云南磨憨紧急组织转移8115人
-  记者8月30日从昆明市防汛抗旱指挥部办公室和磨憨—磨丁经济合作区应急指挥中心获悉,受29日强降雨影响,磨憨镇已紧急组织转移8115人。相关部门紧急调拨各类救援物资运至集中安置点,各类生活物资保障到位,可满足集中安置点群众需求。 受持续强降雨影响,昆明市防汛抗旱指挥部8月29日14时30分起,对磨憨—磨丁经济合作区启动防汛重大级(II级)应急响应,组织危险区域
-- China · The Paper (mainstream): 消防救援队伍持续在吉隆泥石流核心区开展排查搜寻
-  西藏日喀则市吉隆县泥石流灾害发生后,应急管理部、国家消防救援局调派消防救援力量跨区域增援,全力支持地方做好救援处置工作。 8月30日,西藏消防救援总队利用直升机投送11名指战员、1240件(套)救援装备物资进入受灾核心区。截至目前,共调集消防救援力量711人、车辆120台、搜救犬13只,持续开展不间断拉网式搜寻。 受灾核心区被大量淤泥覆盖,淤泥深度超过一米,
-- China · The Paper (mainstream): 视频丨习近平同吉尔吉斯斯坦总统小范围晤谈
-  当地时间8月30日晚,国家主席习近平和夫人彭丽媛应邀同吉尔吉斯斯坦总统扎帕罗夫和夫人扎帕罗娃在总统官邸共进晚餐,在亲切友好的气氛中进行了交流。
-- China · The Paper (mainstream): 中国驻塞浦路斯大使馆:暂未发现中国公民乘坐涉事渡轮
-  总台记者当地时间8月30日从中国驻塞浦路斯大使馆了解到,暂未发现有中国籍公民乘坐当天在塞北部海域倾覆的渡轮。 一艘载有约270名乘客的渡轮30日下午在塞北部附近海域倾覆。事发海域位于塞浦路斯北部基利尼亚港以北2公里处,海域和港口均位于塞浦路斯土族控制区,出事渡轮原本的目的港是土耳其塔苏科港。
+- China · South China Morning Post (hongkong): FROM PATIENTS TO CITIZENS: RETHINKING SCHIZOPHRENIA CARE IN HONG KONG
+  [The content of this article has been produced by our advertising partner.] In Hong Kong, around 40,000 people live with schizophrenia. Many move through a system designed to stabi
+- China · South China Morning Post (hongkong): HOW CULTURAL INNOVATION IS SHAPING BETTER GOVERNANCE AND SUSTAINABLE DEVELOPMENT
+  [The content of this article has been produced by our advertising partner.] When policymakers talk about sustainable development and better governance, the conversation usually cen
+- China · South China Morning Post (hongkong): HOW CHINA’S 12345 HOTLINE IS REWIRING CITIZEN SERVICES
+  [The content of this article has been produced by our advertising partner.] In cities around the world, the mechanics of local government often grind slowly: a pothole reported but
 
-### [34 дж. / 18 країн] Р=84 · ПОВТОР От музея до смотровой вышки: как устроены туристические маршруты в зоне отчуждения
+### [33 дж. / 20 країн] Р=78 · ПОВТОР Минимум семь человек погибли при крушении парома у берегов Северного Кипра
   У кластері є і державні, і незалежні джерела.
-- Belarus · BelTA (state): От музея до смотровой вышки: как устроены туристические маршруты в зоне отчуждения
-  Наполнение маршрута меняется в зависимости от времени года. В осенне-зимний период для туристов организуют заезд к специальной подкормочной базе для зубров, позволяющей увидеть их 
-- Belarus · Zerkalo (exile): Для водителей появилось несколько существенных изменений - вы могли пропустить их. А на горизонте маячат еще новшества
-  Изменения касаются как техосмотра транспорта, так и здоровья водителей.
-- Bulgaria · Mediapool (independent): Намаление на приходите от туризъм с между 15 и 25% за този сезон отчитат от бранша
-  Труден сезон с лек спад на туристите от около 5-7%, но и с до 25 на сто по-малко приходи изпращат от Българската хотелска и ресторантьорска асоциация. Има намаление и туристите от 
-- Bulgaria · Mediapool (independent): "Луди" ентусиасти не се отказват да въртят фермерски пазари из цялата страна
-  В България, в която голяма част от храната по рафтовете на магазините идва от чужбина, малките производители все още трудно намират своето място. Повече от десетилетие "Хранкооп" с
-- Bulgaria · Mediapool (independent): Интензивни валежи се очакват в седем области на страната
-  Жълт код за интензивни валежи е обявен за днес за седем области на страната. Това съобщиха от Националния институт по метеорология и хидрология (НИМХ) на сайта си. Предупреждението
-- Czechia · Denik N (center-right): Všichni kandidáti na jedné mapě. Podívejte se, kdo chce řídit vaši obec
-  V podzimních komunálních volbách se letos o hlasy voličů uchází přes 190 tisíc kandidátů. Mandát chtějí získat poslanci, senátoři i několik ministrů a předsedů politických stran. V
-- Czechia · Seznam Zpravy (investigative): „Jako betonová džungle.“ Stromy ustoupily kanalizaci, má se to změnit
-  Místo jednoho stromu šly k zemi kvůli rekonstrukci všechny. V Brně to chtějí do budoucna změnit a kancelář architekta dokončuje nový manuál, který by měl sjednotit pravidla pro výs
-- Global · Financial Times (business): Summer might be ending, but we can hold on to some of its magic
-  It offers not the opportunity to do nothing but to have the time to do things slowly
-
-### [34 дж. / 18 країн] Р=81 · ПОВТОР Паром с пассажирами перевернулся у берегов Северного Кипра
-  У кластері є і державні, і незалежні джерела.
-- Belarus · BelTA (state): Паром с пассажирами перевернулся у берегов Северного Кипра
-  В районе происшествия проводится поисково-спасательная операция. Данных о возможных погибших не поступало.
+- Belarus · BelTA (state): Минимум семь человек погибли при крушении парома у берегов Северного Кипра
+  Паром с 267 людьми на борту перевернулся в море в 2,5 км от берега города Гирне Северного Кипра. Спасены 237 человек, еще 23 человека спасатели ищут.
 - Belarus · Zerkalo (exile): У берегов Северного Кипра опрокинулся паром с почти 300 пассажирами
   Он опрокинулся и набрал воду в 2−3 км от берега вскоре после выхода из порта.
+- Belgium · De Standaard (center-right): Gekapseisde veerboot met 267 passagiers “volledig gezonken” voor kust van Cyprus, minstens zeven doden
+  Voor de kust van Noord-Cyprus is een ferry met 267 passagiers om nog onbekende redenen gekapseisd. Volgens Turkse media zijn zeker zeven mensen om het leven gekomen.
 - Bulgaria · Dnevnik (center-right): Ферибот с 270 души се преобърна северно от Кипър, поне седмина загинаха
   Пътнически ферибот с около 270 души на борда се преобърна северно от Кипър в неделя. Започнали са операции по спасяване и издирване на хората, съобщи турска кипърска медия, цитиран
 - Bulgaria · Mediapool (independent): Ферибот с 270 души на борда се преобърна край Кипър, най-малко седем души са загинали
@@ -165,68 +130,84 @@
   Sedam je ljudi smrtno stradalo nakon što se putnički brod prevrnuo u nedjelju nedaleko od Sjevernog Cipra, rekao je premijer Turske Republike Sjeverno
 - Czechia · Seznam Zpravy (investigative): U Kypru se převrátil trajekt s 267 lidmi. Nehoda má nejméně sedm obětí
   Záchranáři zasahují u Severního Kypru, kde se převrátila loď s téměř 270 lidmi na palubě. Dosud se podařilo zachránit 237 cestujících, 23 je zatím pohřešovaných. Sedm lidí zemřelo.
-- Denmark · Jyllands-Posten (center-right): Skib med 270 passagerer er kæntret ud for Cypern. Nu sætter myndighederne tal på antallet af omkomne
-  23 personer er endnu savnede, efter at et passagerskib med omkring 270 personer om bord kæntrede søndag.
-- Denmark · Politiken (center-left): Flere omkomne og savnede: Passagerskib med 270 mennesker om bord er kæntret ud for Cypern
-  Redningsaktion er i gang, efter et passagerskib er kæntret ud for det nordlige Cypern søndag.
+- Czechia · iDNES (center): U Kypru se převrhla loď s 270 lidmi, sedm zemřelo, další desítky pohřešují
+  U pobřeží Kypru se převrhla výletní loď s přibližně 270 lidmi na palubě. Podle tamních úřadů nejméně sedm lidí zemřelo. Zhruba stovku osob se zatím podařilo zachránit, některé byly
 
-### [26 дж. / 18 країн] Р=78 · ПОВТОР Iceland rejects EU-accession talks in close-fought referendum
+### [37 дж. / 16 країн] Р=67 · НОВЕ Aumenta el transporte en septiembre: cuánto costará viajar en colectivo, tren y subte en el AMBA
+- Argentina · Ambito Financiero (business): Aumenta el transporte en septiembre: cuánto costará viajar en colectivo, tren y subte en el AMBA
+  Con el inicio del nuevo mes, aumentarán las tarifas del transporte público que circula por la Ciudad y el conurbano bonaerense. De cuánto será el boleto mínimo.
+- Argentina · Ambito Financiero (business): Mario Blejer, expresidente del BCRA: “El que dice que el dólar está barato es porque gana cuando devalúan”
+  El economista advirtió sobre las consecuencias de una corrección del tipo de cambio y pidió más pragmatismo al Gobierno de cara a las elecciones. Además, analizó el aumento de la m
+- Argentina · Ambito Financiero (business): Plazo fijo: cuánto ganás si invertís $1.500.000 durante 60 días
+  Debido a los salarios congelados, cada vez más ahorristas buscan más herramientas para mejorar el rendimiento de su dinero.
+- Argentina · Ambito Financiero (business): Salarios y consumo en alerta: el Gobierno busca reaccionar, pero el dogma libertario le pone un límite
+  Pese a las señales recientes, el salario mínimo aumentará por debajo de la inflación. Llegará a los $437.000 recién en abril del 2027.
+- Argentina · Ambito Financiero (business): Alquileres temporarios en dólares: cómo reservar en plataformas de forma segura
+  Para evitar problemas o gastos innecesarios hay que revisar la reputación, mantener toda la comunicación dentro de la aplicación y elegir bien el medio de pago.
+- Argentina · Ambito Financiero (business): EEUU alertó que la volatilidad del yen podría encarecer el crédito y presionar a los bonos del Tesoro
+  Scott Bessent defendió la intervención conjunta realizada a fines de julio y advirtió que una liquidación forzada de activos japoneses tendría consecuencias sobre los hogares y las
+- Argentina · Ambito Financiero (business): "Se demora la recuperación": apuntan a una caída de la actividad, pese al motor energético
+  Un índice estimó una baja mensual desestacionalizada del 0,9% en julio y apenas un avance interanual del 0,3%. Minas y canteras volvió a liderar el crecimiento sectorial.
+- Argentina · Ambito Financiero (business): Desde la apertura del cepo, los argentinos compraron casi u$s45.000 millones
+  El dato salió de un último informe del BCRA. Además, tras compras netas destinadas al atesoramiento desde el BCRA se alcanzaron casi u$s 3.000 millones.
+
+### [27 дж. / 11 країн] Р=82 · ПОВТОР Verbot des politischen Islam? Stockers Vorstoß stößt bei SPÖ und Neos auf Vorbehalte
+  У кластері є і державні, і незалежні джерела.
+- Austria · Der Standard (center-left): Verbot des politischen Islam? Stockers Vorstoß stößt bei SPÖ und Neos auf Vorbehalte
+  Der Kanzler will ein Verbot des politischen Islam in der Verfassung verankern. Die Koalitionspartner lehnen das Vorhaben nicht grundsätzlich ab: Die Neos sind "gespannt auf einen u
+- Austria · Der Standard (center-left): "Impertinentes Verhalten": AfD-Politiker streitet wegen russischer Armeetasse mit "Bild"-Reporter
+  "Hören Sie mit dieser blöden Tasse auf", sagt der AfD-Politiker Hans-Thomas Tillschneider auf Fragen von Paul Ronzheimer. Dieser fand Erstaunliches in dessen Wahlkampfbüro
+- Austria · Der Standard (center-left): Spitzenspiel der Bundesliga live: Rapid geht gegen Sturm wieder in Führung - 2:1
+  Am Sonntag kommt es zu zwei Spitzenspielen. Um 19 Uhr empfängt Salzburg die Wiener Austria. Dazwischen: Hartberg gegen Ried! Wir berichten live
+- Austria · Der Standard (center-left): Trump will Journalistin "bestrafen" lassen, weil sie Macht seiner Wahlempfehlungen anzweifelte
+  Der US-Präsident greift die Präsentatorin der Sendung "Meet the Press", Kristen Welker, an. Sie hatte gesagt, die Empfehlungen des Präsidenten in den Vorwahlen seien auf "gemischte
+- Austria · Der Standard (center-left): Fähre mit rund 270 Menschen an Bord vor Nordzypern gekentert, mindestens sieben Todesopfer
+  Die Rettungsaktion sei laut türkisch-zypriotischen Medien im Gange. Bestätigt sind bisher sieben Todesopfer, es gibt aber auch zahlreiche Vermisste. Die Unfallursache ist unklar
+- Austria · Der Standard (center-left): Chefin der Bauhaus-Stiftung Barbara Steiner: "AfD und FPÖ geht es um Diffamierung"
+  Einen "Irrweg der Moderne" nennt die wahlkämpfende AfD in Sachsen-Anhalt das legendäre Bauhaus-Erbe. Barbara Steiner, die aus Österreich stammende Chefin der Bauhaus-Stiftung, fühl
+- Austria · Der Standard (center-left): Neue Vorwürfe: Benko soll einen Gesellschafterbeschluss gefälscht haben
+  Neuen Ermittlungen zufolge soll René Benko Unterschriften von drei Signa-Investoren "nachträglich" auf einen Gesellschafterbeschluss "eingefügt" haben. Es ging um seinen Dienstvert
+- Austria · Der Standard (center-left): Baut Niederösterreich eine Brücke in die Slowakei? Landbauer will es "ernsthaft angehen"
+  Die Autofähre zwischen Angern und der slowakischen Gemeinde Záhorská Ves steht seit Monaten still. Landbauer befürwortet eine "verlässliche Straßenverbindung"
+
+### [21 дж. / 14 країн] Р=76 · ПОВТОР Iceland rejects EU-accession talks in close-fought referendum
   У кластері є і державні, і незалежні джерела.
 - Australia · ABC News (public): Iceland rejects EU-accession talks in close-fought referendum
   Icelanders have rejected a government push to reopen membership talks and side with those who said Iceland's fishing waters were too important to risk.
 - Canada · CBC News (public): Icelanders vote to stay out of EU in close-fought referendum
   Icelanders voted to stay out of the European Union, referendum results showed on Sunday, as they rejected a government push to reopen membership talks and sided with those who said
-- Canada · The Globe and Mail (center): Iceland rejects talks to join EU in close-fought referendum
-  Brussels officials had hoped an Iceland vote to join would curb euroscepticism
-- Croatia · N1 Croatia (reference): Island rekao ne Europskoj uniji
-  Islanđani su odbacili prijedlog nastavka pregovora o pristupanju Europskoj uniji, pokazali su konačni rezultati referenduma u nedjelju.
+- EU-Brussels · Euronews (reference): Relief and sorrow in Iceland after EU membership talks referendum fails
+  The result of the referendum has also been hailed by right-wing figures from across the UK and France.
+- EU-Brussels · Euronews (reference): 'A close partner': EU offers muted reaction after Iceland rebuffs accession talks
+  The EU institutions say they fully respect the choice of the Icelandic people after voters said "no" to reopening accession negotiations. The result threatens to dampen the momentu
 - EU-Brussels · Euronews (reference): Iceland says 'No': Four takeaways from the EU accession referendum
   Iceland has voted 52.8% to 47.2% against resuming accession negotiations with the European Union, effectively closing the door on membership. Here are the four takeaways from the r
 - EU-Brussels · Euronews (reference): Icelanders react as the EU referendum results come in
   Icelanders react as voters reject a proposal to restart European Union accession talks in a closely contested referendum.
 - EU-Brussels · Euronews (reference): Iceland's rejection of accession talks deals major blow to EU enlargement
   The "No" vote in the referendum to reopen accession talks could be seen as a political message to Brussels: the burdens of EU membership outweigh the benefits – at least in the pub
-- EU-Brussels · Euronews (reference): PM calls for unity as Iceland narrowly rejects EU accession talks
-  Kristrún Frostadóttir has called on Icelanders to respect the large number of voters who backed reopening EU talks, as she addressed the nation following the referendum's "No" resu
+- EU-Brussels · Politico Europe (reference): Iceland’s parliament will ‘discuss’ withdrawing EU bid after failed referendum
+  Talks on joining the bloc will not resume soon, Iceland's Prime Minister Kristrún Frostadóttir said.
 
-### [22 дж. / 15 країн] Р=83 · НОВЕ Bilist sigtet for vanvidskørsel efter u-vending i Øresundstunnelen
-  У кластері є і державні, і незалежні джерела.
-- Denmark · DR (public): Bilist sigtet for vanvidskørsel efter u-vending i Øresundstunnelen
-- Estonia · ERR (public): Sõudekuningas Zeidler sai Amsterdamis neljanda kulla
-  Amsterdamis kulmineerunud sõudmise maailmameistrivõistlustel võitis meeste ühepaadil sakslane Oliver Zeidler ja naiste ühepaadil britt Lauren Henry.
-- Estonia · ERR (public): Opositsioonierakonnad kutsuvad üles erakorralisi valimisi korraldama
-  Riigikogu opositsioonierakonnad Isamaa, Keskerakond ja EKRE kutsuvad üles tagandama praegust Reformierakonna ja Eesti 200 vähemusvalitsust ning korraldama Eestis erakorralised vali
-- Estonia · ERR (public): Mäeuibo sai mäestlaskumise MM-il 48. koha
-  Itaalias Val di Soles peetud mäestlaskumise maailmameistrivõistlustel pälvis esimest aastat eliitmeeste konkurentsis võistelnud Riko Mäeuibo 48. koha.
-- Estonia · Postimees (center-right): «MA TEAN, MA TEAN!» ⟩ «Härrad kõiketeadjad ajavad mind marru.» Eestlased jagavad pööraseid lugusid kolleegidest
-  Redditis vallandas ühe eestlase postitus elava arutelu kolleegidest, kelle jutt ja teod ei lähe alati kokku. Kommentaariumis jagatakse nii humoorikaid kui ka üsna kulukaks läinud k
-- Estonia · Postimees (center-right): Naabrid keeldusid koera tagant koristamast: mehe geniaalne plaan hoolimatutele koeraomanikele andis aga unustamatu õppetunni
-  Aateline võitlus puhta aia nimel kulmineerus 36-kraadise kuumalainega, kui hooletud naabrid ei suutnud ära mõista, kust nende majja jube hais tuleb.
-- Estonia · Postimees (center-right): Algasid uue raketi testid: USA merevägi katsetab taskukohast ründeraketti Blackbeard
-  USA merevägi ja relvatootja Castelion katsetavad hävitaja F/A-18 Super Hornet tiiva alla paigaldatavat uut sooja- ja optilis-elektroonilise sihiku süsteemiga hüperhelikiiruselist r
-- Finland · Helsingin Sanomat (center): Islannin kansanäänestys | Islanti äänesti EU-jäsenyys­neuvotteluja vastaan
-  Ei-äänet voittivat 52,8 prosentilla äänistä.
+### [22 дж. / 13 країн] Р=68 · НОВЕ Ich schlafe nur noch mit meinem Mann, weil er das möchte
+- Austria · Der Standard (center-left): Ich schlafe nur noch mit meinem Mann, weil er das möchte
+  Sie liebt ihren Mann, nur die Lust auf Sex ist weg. Trotzdem schläft sie weiterhin mit ihm, ihm zuliebe. Ist das in langen Beziehungen normal? Und wie kann die Lust wiederkommen?
+- Denmark · Politiken (center-left): Jeg sejler rundt med krævende afdøde
+  Jeg troede, jeg havde downloadet et hyggespil til mine flossede nerver. Nu har jeg ansvaret for en båd fuld af ånder, som jeg springer rundt for at stille tilfredse, fortæller Hele
+- Denmark · Politiken (center-left): Jeg huskede filmen som et mesterværk. Det er den ikke. Men én scene er fantastisk
+  Da Al Pacino og Robert De Niro mødtes til en kop forståelseskaffe i filmen ’Heat’, demonstrerede de også, hvorfor det er så svært at gøre præcis dét, skriver Erik Jensen i den klum
+- Denmark · Politiken (center-left): Stormuftien er blevet dømt for forbrydelser mod sin egen menighed
+  Assad, hans bror og flere fætre er nu dømt til døden i Syrien. Deres præst, stormuftien, slipper med livsvarigt fængsel. Efter retsopgøret kommer en ekstremt bekostelig genopbygnin
+- Germany · Frankfurter Allgemeine (center-right): EU-Referendum: Das isländische Ergebnis passt ins Bild
+  Die Anziehungskraft der EU wird nicht größer, auch in ihren Mitgliedstaaten nicht. In Deutschland geht es sogar um noch mehr als in Island.
+- Germany · Sueddeutsche Zeitung (center-left): Referendum: Die Isländer sehen keinen Grund, etwas zu ändern
+  Dem Inselstaat im Nordatlantik geht es gut, kein Wunder also, dass die Wähler gegen erneute Beitrittsgespräche mit der EU stimmen. Falsch aber war, dass es überhaupt zu diesem Refe
+- Germany · Sueddeutsche Zeitung (center-left): Oktoberfest: Gegen das echte Problem des Teufelsrads hilft keine Farbe
+  Die Wiesn hat noch gar nicht begonnen, schon gibt es die erste Debatte über freizügige Darstellungen. Und die geht direkt am großen Problem vorbei.
+- Hungary · HVG (business-independent): A Fekete Zaj olyan, mint egy nagy család, csak idegesítő rokonok nélkül
+  Mit tud az egyik legkisebb magyar fesztivál, amit a nagyobbak nem? Miért érzi itt úgy magát az ember, mintha egy alternatív valóságba csöppenne? Ki nyerte az idei felhozatalból a l
 
-### [26 дж. / 12 країн] Р=81 · ПОВТОР Fähre mit rund 270 Menschen an Bord vor Nordzypern gekentert, mindestens sieben Todesopfer
-  У кластері є і державні, і незалежні джерела.
-- Austria · Der Standard (center-left): Fähre mit rund 270 Menschen an Bord vor Nordzypern gekentert, mindestens sieben Todesopfer
-  Die Rettungsaktion sei laut türkisch-zypriotischen Medien im Gange. Bestätigt sind bisher sieben Todesopfer, es gibt aber auch zahlreiche Vermisste. Die Unfallursache ist unklar
-- Austria · Der Standard (center-left): Spitzenspiel der Bundesliga live: Rapid geht per Elfmeter gegen Sturm früh in Führung
-  Am Sonntag kommt es zu zwei Spitzenspielen. Um 19 Uhr empfängt Salzburg die Wiener Austria. Dazwischen: Hartberg gegen Ried! Wir berichten live
-- Austria · Der Standard (center-left): Trump will Journalistin "bestrafen" lassen, weil sie Macht seiner Wahlempfehlungen anzweifelte
-  Der US-Präsident greift die Präsentatorin der Sendung "Meet the Press", Kristen Welker, an. Sie hatte gesagt, die Empfehlungen des Präsidenten in den Vorwahlen seien auf "gemischte
-- Austria · Der Standard (center-left): Kritik an extrem knappem Flyover mit zwei Passagierjets über Rugby-Stadion in Südafrika
-  Zwei Embraer-Jets der südafrikanischen Linie Airlink flogen in offenbar nur wenigen Metern Abstand über das Dach des vollbesetzten Stadions. Die Airline weist Kritik an dem Manöver
-- Austria · Der Standard (center-left): Neue Vorwürfe: Benko soll einen Gesellschafterbeschluss gefälscht haben
-  Neuen Ermittlungen zufolge soll René Benko Unterschriften von drei Signa-Investoren "nachträglich" auf einen Gesellschafterbeschluss "eingefügt" haben. Es ging um seinen Dienstvert
-- Austria · Der Standard (center-left): 52,8 Prozent sagen "Nein": Island lehnt EU-Beitrittsgespräche ab
-  Eine zunächst bestehende, leichte Führung für das "Ja"-Lager drehte sich im Laufe der Nacht. Island wird damit keine Beitrittsgespräche mit der EU aufnehmen
-- Austria · Der Standard (center-left): Baut Niederösterreich eine Brücke in die Slowakei? Landbauer will es "ernsthaft angehen"
-  Die Autofähre zwischen Angern und der slowakischen Gemeinde Záhorská Ves steht seit Monaten still. Landbauer befürwortet eine "verlässliche Straßenverbindung"
-- Austria · Die Presse (center-right): Mehr als die Hälfte der Salzburger war noch nie bei den Festspielen
-  Laut einer von der KPÖ in Auftrag gegebenen Umfrage halten vor allem hohe Ticketpreise viele Salzburger vom Besuch der Festspiele ab.
-
-### [16 дж. / 11 країн] Р=74 · ПОВТОР Flood waters rise in Nepal as rescuers search for survivors
+### [20 дж. / 12 країн] Р=78 · ПОВТОР Flood waters rise in Nepal as rescuers search for survivors
   У кластері є і державні, і незалежні джерела.
 - Canada · The Globe and Mail (center): Flood waters rise in Nepal as rescuers search for survivors
   Residents gathered on higher ground for safety on Sunday (August 30) as river water levels rose in Roshuki Bazar in Nepal. Drone footage on Saturday (August 29) showed the extent o
@@ -234,73 +215,93 @@
   Rescuers in Nepal and China battled Sunday through leg-sucking mud and the threat of rising rivers and a newly formed lake to search for thousands missing after a deadly wall of wa
 - China · Sixth Tone (state-adjacent): Hundreds Still Missing After Deadly China-Nepal Border Mudslide
   Search teams are still working through deep mud and broken roads as an upstream landslide dam raises fears of further flooding.
+- France · France 24 (public): Niger junta puts down mutiny with help from Russia's Africa Corps
+  Life returned to normal in Niger's capital on Sunday, a day after mutineers stormed the presidential palace and a military base at Niamey's main airport, resisting forces loyal to 
+- France · France 24 (public): Week in pictures: devastating floods in Nepal, death of Dolly Parton and a tornado in France
+  A look back at some of the week's key news stories and the most striking images: a devastating flood tears through Nepal and Tibet, the death of global icon Dolly Parton, a tornado
 - France · Le Monde (center-left): Navigating the Suez Canal demands technical skills costing hundreds of thousands of dollars
   'Suez, a historic canal' (5/6). The waterway connecting the Mediterranean Sea to the Red Sea is a vital artery for global trade. To travel through it, vessels must comply with stri
 - France · Le Monde (center-left): Rescuers dig into tunnel with hopes to rescue dozens as missing toll from Nepal, China flood nears 3,000
   The Nepali army was able to insert a pipe into a tunnel in Nepal, where over 100 workers may still be alive. Disaster authorities urged rescue teams to exercise caution as rains an
 - Global · Al Jazeera English (center-left): Road collapses in Nepal landslide four days after floods
   A vital highway weakened by Nepal’s floodwaters has collapsed four days after the catastrophic glacial outburst.
-- Global · Deutsche Welle (reference): Nepal issues fresh flood warning as 3,000 still missing
-  Rescuers are trying to reach dozens of hydropower workers trapped in flooded tunnels, but have been hampered by further rainfall.
-- India · Mint (business): Nepal floods: 149 Indians rescued amid evacuation efforts, MEA releases names
-  India and China have joined intensified rescue and relief operations in flood-hit Nepal, where devastating flash floods along the Bhote Koshi and Trishuli river corridors have left
 
-### [14 дж. / 12 країн] Р=66 · НОВЕ Manhunt underway for rave shooter in Switzerland
+### [13 дж. / 11 країн] Р=71 · ПОВТОР Manhunt underway for rave shooter in Switzerland
   У кластері є і державні, і незалежні джерела.
 - Australia · ABC News (public): Manhunt underway for rave shooter in Switzerland
   A major operation is underway after a shooter left one person dead and five more injured at a nightclub in Switzerland.
-- Belgium · De Standaard (center-right): 22-jarige vrouw sterft bij schietpartij op technorave in Zwitsere Aarau, grootschalige klopjacht op dader
-  Bij een schietincident op een rave in het noorden van Zwitserland zijn in de nacht van zaterdag op zondag meerdere mensen gewond geraakt. Een 22-jarige vrouw overleefde de aanval n
 - Canada · The Globe and Mail (center): One dead and five wounded in a shooting at Swiss rave
   Public shootings are rare in the Alpine country despite relatively widespread gun ownership
 - Canada · The Globe and Mail (center): Death toll rises to 38 from Russia’s deadliest attack on Ukraine this year
   At least three people were injured in a separate Russian drone strike on Kyiv late Saturday
-- France · Liberation (left): Une morte, cinq blessés et des suspects en fuite... Ce que l’on sait des coups de feu tirés dans une rave party en Suisse
-  Plusieurs personnes ont été touchées, dont une mortellement, par des coups de feu dans la nuit de samedi à dimanche à Aarau, près de Zurich. Un important dispositif policier a été 
+- EU-Brussels · Euronews (reference): Russia threatens mass strikes on Ukraine energy sites as Kyiv depot death toll hits 38
+  As Moscow warns of a fresh bombing campaign and Kyiv absorbs one of the deadliest strikes to hit its own soil since the invasion began, four years of fighting show no sign of neari
+- France · Le Monde (center-left): Russian strike kills 38 near Kyiv, raising concerns over Ukrainian sensitive urban sites
+  The strike, which targeted an ammunition depot on the outskirts of the capital of Ukraine, was one of the deadliest attacks the region has suffered since the start of the Russian i
 - Global · Deutsche Welle (reference): Manhunt underway after woman killed in Swiss rave shooting
   The shooting at a rave in the northern Swiss town of Aarau, near Zürich, left at least one person dead and five wounded. Police said they were still searching for the perpetrator o
 - Ireland · Irish Independent (center-right): One dead and five injured in shooting at rave in Switzerland
 - Ireland · RTE (public): Manhunt under way after woman dies at Swiss rave shooting
   One person was killed and five others were wounded, some of them seriously, in a shooting at a rave party in northern Switzerland, local police have said.
 
-### [16 дж. / 10 країн] Р=66 · НОВЕ Ich schlafe nur noch mit meinem Mann, weil er das möchte
-- Austria · Der Standard (center-left): Ich schlafe nur noch mit meinem Mann, weil er das möchte
-  Sie liebt ihren Mann, nur die Lust auf Sex ist weg. Trotzdem schläft sie weiterhin mit ihm, ihm zuliebe. Ist das in langen Beziehungen normal? Und wie kann die Lust wiederkommen?
-- Denmark · Jyllands-Posten (center-right): Muslimsk kvinde blev tortureret: »Den dag jeg fødte, håbede jeg, at mit hjerte ville stoppe, så jeg kunne beholde barnet inde i min mave«
-  Aisha flygtede fra vold, tvangsægteskab og social kontrol i et strengt muslimsk miljø. Nu står hun frem med en bøn.
-- Denmark · Jyllands-Posten (center-right): Da kommunen spærrede ringvejen, brød der kaos ud i et sovende parcelhuskvarter
-  Jeg glemmer ikke sådan lige synet af dyttende biler, trusler og kaos på vores villavej.
-- Denmark · Politiken (center-left): Jeg sejler rundt med krævende afdøde
-  Jeg troede, jeg havde downloadet et hyggespil til mine flossede nerver. Nu har jeg ansvaret for en båd fuld af ånder, som jeg springer rundt for at stille tilfredse, fortæller Hele
-- Denmark · Politiken (center-left): Lyngby smider sejren væk i sidste minut mod OB
-  Lyngby var tæt på sæsonens første sejr, men OB reddede sig et point med en udligning i overtiden.
-- Denmark · Politiken (center-left): Island lukkede døren til EU. Nøglen ligger nu i Oslo
-  Det lignede længe et ’já’, men islændingene endte med at afvise flere EU-forhandlinger. Det er dog for tidligt at slå fast, at Island aldrig kommer med i EU, mener ekspert.
-- Denmark · Politiken (center-left): »Jeg er skræmt fra vid og sans«: DF vokser trods skandalesommer
-  Trods flere dårlige sager er Dansk Folkeparti på himmelflugt i meningsmålingerne. Hos nogle af de øvrige blå partier vokser bekymringen. Andre er mere positive, og hos Liberal Alli
-- Denmark · Politiken (center-left): Jeg huskede filmen som et mesterværk. Det er den ikke. Men én scene er fantastisk
-  Da Al Pacino og Robert De Niro mødtes til en kop forståelseskaffe i filmen ’Heat’, demonstrerede de også, hvorfor det er så svært at gøre præcis dét, skriver Erik Jensen i den klum
-
-### [15 дж. / 10 країн] Р=72 · ПОВТОР Nasa sender stort teleskop i rummet - skal på planetjagt
+### [12 дж. / 10 країн] Р=82 · ПОВТОР Tigers pip Dons in AFLW Dreamtime classic; Bunny on the run as Dees belt Lions; Lamentable jumper clash
   У кластері є і державні, і незалежні джерела.
-- Denmark · Politiken (center-left): Nasa sender stort teleskop i rummet - skal på planetjagt
-  Nyt rumteleskop bygger videre på Hubble- og James Webb-teleskopernes egenskaber.
+- Australia · Sydney Morning Herald (center-left): Tigers pip Dons in AFLW Dreamtime classic; Bunny on the run as Dees belt Lions; Lamentable jumper clash
+  Caitlin Greiser has kicked a goal with 72 seconds remaining to lift Richmond to a thrilling five-point AFLW win over Essendon in a nail biting Dreamtime classic. The weekend action
+- China · Sixth Tone (state-adjacent): Eye of the Storm: Viral Podcaster Breaks Silence Over Plagiarism Scandal
+  A Chinese podcaster famed for grilling filmmaker Christopher Nolan takes shelter from claims she lifts content from overseas sources.
+- Czechia · iDNES (center): Pidcock triumfoval na MS bikerů, vítězství věnoval Tarlingovi. Ženám vládla Freiová
+  Všestranný britský cyklista Thomas Pidcock získal druhý titul mistra světa v cross country horských kol. Stříbro v italském Val di Sole vybojoval jeho krajan Charlie Aldridge, bron
+- Ireland · RTE (public): The stormy maritime history of Baltimore's 'rocket car'
+  Every St Patrick's Day in Baltimore, west Cork, a little piece of maritime history emerges from the darkness of the cove boathouse for a celebrated jaunt around the village.
+- Ireland · The Irish Times (center): Medals for Ireland as Fiona Murtagh, Mags Cremen and Konan Pazzaia win silvers at World Rowing Championships
+  Reigning world champion Murtagh digs deep to take second in women’s single sculls in Amsterdam
+- Israel · The Jerusalem Post (center-right): 'Ballsack Zionist': Jewish politician Lander insulted while protesting NYC Hindu nationalist event
+  "You look like a scrotum, you filthy ballsack!" one protester shouted at Democratic Congressional candidate Brad Lander at Madison Square Garden, adding. "F*** you, ballsack Zionis
+- South Africa · Daily Maverick (investigative): Conservation without inclusion: Why iSimangaliso protests reflect a governance crisis
+  The fever tree felling, fence cutting and road blockades at iSimangaliso are not random acts of criminality but an explosive symptom of a failed co‐management deal: communities for
+- South Africa · Daily Maverick (investigative): UNEARTHING HISTORIES: Hiss of brush, ring of trowel: the ancestors speak at Gwalala Hill
+  In the Pafuri region of the Limpopo Valley, archeologists have painstakingly uncovered pottery sherds, glass beads and other artefacts in what turns out was a major centre of trade
+
+### [15 дж. / 8 країн] Р=81 · ПОВТОР Для водителей появилось несколько существенных изменений - вы могли пропустить их. А на горизонте маячат еще новшества
+  У кластері є і державні, і незалежні джерела.
+- Belarus · Zerkalo (exile): Для водителей появилось несколько существенных изменений - вы могли пропустить их. А на горизонте маячат еще новшества
+  Изменения касаются как техосмотра транспорта, так и здоровья водителей.
+- Russia · Novaya Gazeta Europe (exile): Занимайтесь горошинами, а не войной
+  Несколько дней назад стало известно о смерти Яёи Кусамы. В новом тысячелетии она оказалась одной из самых известных в мире художниц. Карьера Кусамы началась в Нью-Йорке 1960-х — же
+- Russia · Novaya Gazeta Europe (exile): Убийца из казематов
+  Юрген Барч начал убивать еще в детстве. Ему было всего 19 лет, когда его арестовали и предъявили обвинение в четырех убийствах. Приемная мать запрещала Юргену общаться с другими де
+- Russia · Novaya Gazeta Europe (exile): В московском метро с помощью «новейших технологий» задержали около 140 мигрантов. Их планируют выдворить
+  Полиция задержала около 140 иностранцев во время рейда на одной из станций московского метро. Для их поиска использовали систему, которую МВД называет «новейшей технологией». Всех 
+- Russia · RBC (business): Появились новые фотографии экс-президента Венесуэлы Мадуро из тюрьмы
+  В соцсети X появились новые фото Николаса Мадуро, сделанные в американской тюрьме. Снимки — от 25 июня, политик обращается к близким и сторонникам, заявляя о своей непоколебимости
+- Serbia · N1 Serbia (independent): Nenad Gugl: Problem s politikom je što nesposobni ljudi dolaze na ta mesta, ali oni ne mogu da zaustave ono što postoji u nama
+  "Problem s politikom je što nesposobni ljudi dolaze na ta mesta. I mi imamo kontinuitet nepoštenih i nedostojnih ljudi na pozicijama na kojima se nala
+- Serbia · Nova.rs (independent): Međedović gore nije mogao na početku drugog seta
+  Prvi dan US Opena je pred nama, a sve detalje iz Njujorka pratite na portalu Nova.rs.
+- Serbia · Nova.rs (independent): Odbojkašice kreću u bitku za medalje, prva prepreka Hrvatice - ali nije u "igri" samo zlato, već nešto mnogo veće od toga
+  Ženska odbojkaška reprezentacija Srbije u nedelju od 19.00 odmeriće snage sa Hrvatskom u češkom Brnu u borbi za plasman u četvrtfinale Evropskog prven
+
+### [13 дж. / 9 країн] Р=70 · ПОВТОР NASA launches Nancy Grace Roman Space Telescope to explore mysteries of the universe
+  У кластері є і державні, і незалежні джерела.
+- Canada · The Globe and Mail (center): NASA launches Nancy Grace Roman Space Telescope to explore mysteries of the universe
+  NASA's new flagship astronomical observatory was launched into space from Florida on Sunday on a mission to probe some of the biggest mysteries in astrophysics and cosmology.
+- Canada · The Globe and Mail (center): How NASA's new telescope could shed light on mysteries of the universe
+  Mark Clampin, NASA’s Deputy Associate Administrator for Science, says the new telescope's panoramic view of space and its rapid survey speeds offer the opportunity for scientists t
 - France · France 24 (public): NASA launches new space telescope
   NASA has successfully launched its newest space telescope from the Kennedy Space Center in Florida. The telescope reached orbit just 10 minutes after liftoff and is now beginning i
 - France · Le Monde (center-left): Roman, NASA's new space telescope, sets out to search for dark energy and exoplanets
-  Scheduled to launch on Sunday aboard a SpaceX rocket from Cape Canaveral, Florida, this telescope is the US agency's most ambitious scientific mission since the James Webb Space Te
+  Successfully launched on Sunday aboard a SpaceX rocket from Cape Canaveral, Florida, this telescope is the US agency's most ambitious scientific mission since the James Webb Space 
+- Iran · Iran International (opposition-exile): ناسا تلسکوپ رومن را برای کشف رازهای کیهان به فضا فرستاد
+  ناسا تازه‌ترین تلسکوپ فضایی بزرگ خود به نام «نانسی گریس رومن» را به فضا پرتاب کرد. این تلسکوپ با آینه‌ای هم‌اندازه تلسکوپ فضایی هابل و میدان دیدی نزدیک به ۱۰۰ برابر وسیع‌تر، قرار ا
+- Iran · Radio Farda (exile): ناسا تلسکوپ «نانسی رومن» را برای بررسی اسرار کیهان به فضا پرتاب کرد
+  .
 - Mexico · El Financiero (business): NASA lanzará el telescopio Nancy Grace Roman: ¿Qué podrá ver y por qué es tan importante?
   El telescopio Nancy Grace Roman de la NASA está listo para su lanzamiento y podrá observar miles de galaxias.
 - Portugal · Expresso (center-right): NASA lança maior observatório panorâmico para explorar o universo a bordo de foguetão da SpaceX
   O telescópio Nancy Grace Roman tem como objetivo explorar o universo e procurar respostas sobre energia escura, os exoplanetas e a astrofísica de infravermelhos. O Roman rumou a um
-- Portugal · Publico (center-left): NASA lança o maior telescópio espacial para explorar universo
-  Lançamento aconteceu à hora prevista (12h26). O telescópio terá um campo de visão 100 vezes superior ao do telescópio Hubble.
-- Russia · Kommersant (business): NASA запустила 12-метровый телескоп в космос для создания карты
-  NASA запустила на орбиту свой первый космический телескоп для создания карты космоса. Об этом сообщила пресс-служба организации.
-- Russia · RBC (business): NASA запустило телескоп «Роман» для изучения темной материи
-  Ракета-носитель SpaceX Falcon Heavy стартовала в 7:26 утра по восточному времени (14:26 мск). «Роман» сможет помочь ученым составить карту миллиардов галактик, найти планеты за пре
 
-### [13 дж. / 9 країн] Р=55 · ПОВТОР At least 7 dead after ferry carrying nearly 270 passengers and crew capsizes off northern Cyprus
+### [13 дж. / 8 країн] Р=56 · ПОВТОР At least 7 dead after ferry carrying nearly 270 passengers and crew capsizes off northern Cyprus
   У кластері є і державні, і незалежні джерела.
 - Canada · CBC News (public): At least 7 dead after ferry carrying nearly 270 passengers and crew capsizes off northern Cyprus
   Some 237 people have been rescued, Northern Cyprus Prime Minister Unal Ustel told Turkish state-run TRT news channel. He said a search was underway for another 24 people.
@@ -314,67 +315,12 @@
   Authorities say several people have died after a ferry accident off the coast of northern Cyprus. The catamaran-style vessel was carrying nearly 270 passengers and crew when it cap
 - France · France 24 (public): Several killed, rescues under way after ferry with more than 260 on board sinks off northern Cyprus
   At least seven people died when a ferry carrying more than 260 people capsized and sunk off the coast of northern Cyprus on Sunday, according to local authorities. Rescue crews wer
+- Global · Al Jazeera English (center-left): At least seven dead and 23 missing after boat capsizes off northern Cyprus
+  Videos show rescue after a ferry capsized off northern Cyprus, with officials reporting several dead.
 - Global · Deutsche Welle (reference): Ferry carrying over 260 people capsizes off Cyprus
   Several people have died after a passenger ⁠boat carrying more than 260 people capsized off ‌northern Cyprus, Turkish media reported. ‌
-- India · Mint (business): At Least Seven People Die in Northern Cyprus Ferry Capsizing
-  At least seven people died after a ferry carrying about 267 capsized while sailing from Kyrenia in northern Cyprus to Tasucu in southern Turkey, the Anadolu news agency reported, c
 
-### [9 дж. / 9 країн] Р=76 · ПОВТОР Russia preparing ‘massive strikes against Ukraine’s energy facilities’
-  У кластері є і державні, і незалежні джерела.
-- EU-Brussels · Politico Europe (reference): Russia preparing ‘massive strikes against Ukraine’s energy facilities’
-  The Russian announcement comes amid intensfying drone strikes against Ukraine.
-- Germany · Der Spiegel (center-left): Krieg gegen Ukraine: Moskau kündigt »massive Angriffe« an
-  Russland bereitet nach eigenen Angaben umfassende Attacken gegen den ukrainischen Energiesektor vor. Aber auch die Regierung in Kyjiw macht nach ihren jüngsten Drohungen offenbar e
-- Moldova · Ziarul de Garda (investigative): LIVE TEXT/ Rusia pregătește „atacuri masive împotriva instalațiilor energetice ale Ucrainei”. Război în Ucraina, ziua 1649
-  UPDATE 15:36 Armata rusă se pregătește pentru o ofensivă semnificativă împotriva infrastructurii energetice ucrainene, potrivit Ministerului Apărării rus de duminică, la doar câtev
-- Slovakia · SME (center): SME Online: Rusko začalo prípravy na masívne údery proti ukrajinským energetickým zariadeniam
-  Vojnu na Ukrajine sledujeme minútu po minúte.
-- Slovenia · RTVSLO (public): Moskva načrtuje napade na ukrajinsko energetsko infrastrukturo
-  Rusko obrambno ministrstvo je sporočilo, da v odgovor na ukrajinske napade ruska vojska pripravlja silovite napade na ukrajinsko energetsko infrastrukturo. Ukrajinska vojska je med
-- South Africa · Mail & Guardian (center-left): Ukraine’s Plan A is peace
-  As Russia intensifies attacks on civilian infrastructure, Ukraine is bolstering its strike capabilities while reiterating that its primary goal remains a just and lasting peace.
-- UAE · Al Arabiya (saudi-aligned): Russia says preparing ‘massive strikes’ on Ukraine’s energy sector
-  Russia’s defense ministry on Sunday said it was gearing up for large-scale attacks on Ukraine’s energy infrastructure in a tit-for-tat response to strikes by Kyiv.“Russian forces h
-- USA · The Wall Street Journal (center-right-business): Russia Is Bombarding Europe With a New Wave of ‘Gray Zone’ Attacks
-  NATO countries see Moscow’s appetite for conflict increasing as it flounders against Ukraine.
-
-### [10 дж. / 8 країн] Р=60 · ПОВТОР How will Trump's oil deal with Venezuela work?
-- Australia · ABC News (public): How will Trump's oil deal with Venezuela work?
-  The "historic" agreement is set to last for 25 years and will see Venezuela increase its output to 1.5 million barrels a day, but many important details remain unclear.
-- Canada · CBC News (public): Trump's Venezuelan oil deal: What we know and how it could impact Canada's oil industry
-  Several questions about the U.S. deal to develop vast Venezuelan oil reserves remain unanswered, and a rapid and large-scale increase in production is unlikely. But experts say inc
-- Canada · The Globe and Mail (center): Trump says US will refill Strategic Petroleum Reserve using Venezuelan oil
-  It is unclear how quickly the Venezuela deal could provide oil for the reserve or deliver any near-term benefit to U.S. motorists
-- Canada · The Globe and Mail (center): U.S., Venezuela energy deal will last 25 years, says interim President Rodríguez
-  She says that the country will retain ‘ownership of and sovereignty’ over its natural resources
-- France · France 24 (public): US and Venezuela seal 25-year oil deal
-  US President Donald Trump has called it “the biggest oil deal in world history”, while Venezuela’s interim president has assured the public that the country will retain control of 
-- Mexico · El Financiero (business): Venezuela y EU pactan acuerdo petrolero por 25 años: ¿Qué negociaron Delcy Rodríguez y Donald Trump?
-  El acuerdo petrolero entre Venezuela y Estados Unidos tendrá una vigencia de 25 años y contempla una producción superior a 1.5 millones de barriles diarios.
-- Mexico · El Financiero (business): EU, el ‘ganón’ del acuerdo petrolero de Trump con Venezuela: ¿Qué porcentaje de la producción recibirá?
-  El acuerdo petrolero entre Estados Unidos y Venezuela contempla el desarrollo de 17 campos petroleros venezolanos con un potencial de 65 mil millones de barriles.
-- Netherlands · de Volkskrant (center-left): Venezolaanse interim-president: ‘Venezuela behoudt zeggenschap over bronnen in oliedeal met VS’
-
-### [11 дж. / 7 країн] Р=81 · ПОВТОР Tigers pip Dons in AFLW Dreamtime classic; Bunny on the run as Dees belt Lions; Lamentable jumper clash
-  У кластері є і державні, і незалежні джерела.
-- Australia · Sydney Morning Herald (center-left): Tigers pip Dons in AFLW Dreamtime classic; Bunny on the run as Dees belt Lions; Lamentable jumper clash
-  Caitlin Greiser has kicked a goal with 72 seconds remaining to lift Richmond to a thrilling five-point AFLW win over Essendon in a nail biting Dreamtime classic. The weekend action
-- China · Sixth Tone (state-adjacent): Eye of the Storm: Viral Podcaster Breaks Silence Over Plagiarism Scandal
-  A Chinese podcaster famed for grilling filmmaker Christopher Nolan takes shelter from claims she lifts content from overseas sources.
-- China · South China Morning Post (hongkong): Ka Ying Rising cruises to Sha Tin trial victory ahead of much-anticipated return
-  Trainer David Hayes and jockey Zac Purton gave Ka Ying Rising the seal of approval after the champion sprinter warmed up for his seasonal reappearance with an effortless trial win 
-- Ireland · Irish Independent (center-right): Brian earns bragging rights in battle of Reilly brothers as Lauren Dykstra picks up a good win
-  Drogheda Indoor Bowls
-- Ireland · The Irish Times (center): Medals for Ireland as Fiona Murtagh, Mags Cremen and Konan Pazzaia win silvers at World Rowing Championships
-  Reigning world champion Murtagh digs deep to take second in women’s single sculls in Amsterdam
-- Ireland · The Irish Times (center): Leopardstown officials hoping Ed Walker is ‘greedy’ for Champion Stakes with Almaqam
-  Grand National winner Patrick Mullins aiming for more Epsom ‘Derby’ glory on Monday
-- Israel · Haaretz (left): Chief Rabbi wishes God 'destroys' Israel's attorney general over memorial delay
-  The spiritual leader of the Haredi Shas party slammed Baharav-Miara during his weekly sermon, criticizing her decision to postpone a memorial celebration for his father, Rabbi Ovad
-- Israel · The Jerusalem Post (center-right): 'Ballsack Zionist': Jewish politician Lander insulted while protesting NYC Hindu nationalist event
-  "You look like a scrotum, you filthy ballsack!" one protester shouted at Democratic Congressional candidate Brad Lander at Madison Square Garden, adding. "F*** you, ballsack Zionis
-
-### [11 дж. / 7 країн] Р=75 · ПОВТОР Netanyahu condemns settler attack in flashpoint West Bank village in rare statement
+### [12 дж. / 8 країн] Р=79 · ПОВТОР Netanyahu condemns settler attack in flashpoint West Bank village in rare statement
   У кластері є і державні, і незалежні джерела.
 - France · Le Monde (center-left): Netanyahu condemns settler attack in flashpoint West Bank village in rare statement
   President Isaac Herzog also condemned the attack on a village in the northern occupied West Bank, while Israel's foreign ministry called it 'a disgrace.'
@@ -386,42 +332,96 @@
   Masked Israeli settlers attacked an NBC News crew and a Palestinian woman near Nablus on Saturday, injuring three staffers and damaging equipment, prompting condemnation from Netan
 - Israel · The Jerusalem Post (center-right): Extremist Israeli settlers attack NBC News team interviewing Palestinian in West Bank
   According to NBC, three members of its team had been interviewing 51-year-old Aida Ahmed Abdullah, who claimed that she and her family had been driven out of their home by settlers
+- Italy · Il Sole 24 Ore (business): Gaza, raid di Israele: un morto e diversi feriti
+  Un morto e numerosi feriti nell’attacco israeliano nella Striscia di Gaza centrale. Lo riporta Al Jazeera. L’attacco è stato portato da un raid aereo di Israele su su...
 - Japan · The Japan Times (reference): Killing of Palestinian children and teens by Israel surges in West Bank
   B'Tselem, an Israeli rights group, reported 235 children and teenagers killed by Israeli forces in the West Bank since Oct. 7, 2023, through June 2026.
 - Netherlands · de Volkskrant (center-left): Kolonisten vallen Palestijns dorp aan, Israëlisch leger grijpt in, ook Amerikaanse journalisten belaagd
-- Turkey · Daily Sabah (pro-government): Israel ramps up killing Palestinian children, teens in West Bank
-  Alia al-Hallaq's son Mohammed was 9 when he was killed by an Israeli army bullet last October, but the Palestinian homemaker still speaks of herself as a mother of five, not f...
 
-### [8 дж. / 8 країн] Р=72 · ПОВТОР Russia threatens mass strikes on Ukraine energy sites as Kyiv depot death toll hits 38
+### [9 дж. / 9 країн] Р=76 · ПОВТОР Russia preparing ‘massive strikes against Ukraine’s energy facilities’
   У кластері є і державні, і незалежні джерела.
-- EU-Brussels · Euronews (reference): Russia threatens mass strikes on Ukraine energy sites as Kyiv depot death toll hits 38
-  As Moscow warns of a fresh bombing campaign and Kyiv absorbs one of the deadliest strikes to hit its own soil since the invasion began, four years of fighting show no sign of neari
-- France · Le Monde (center-left): Russian strike kills 38 near Kyiv, raising concerns over Ukrainian sensitive urban sites
-  The strike, which targeted an ammunition depot on the outskirts of the capital of Ukraine, was one of the deadliest attacks the region has suffered since the start of the Russian i
-- South Korea · The Korea Herald (reference): Death toll rises to 38 from Russia s deadliest attack on Ukraine this year
-  KYIV, Ukraine (AP) — The death toll from a Russian strike on a warehouse west of Kyiv, the war s deadliest attack so far this year, rose to 38 with four people still missing, Ukrai
-- UAE · Al Arabiya (saudi-aligned): Death toll from Russia strike on Ukraine arms depot rises to 38
-  The death toll from a Russian strike on an arms depot near Kyiv has risen to 38, Ukrainian President Volodymyr Zelenskyy said Sunday.The strike on the Ukrainian military depot stor
-- UK · BBC News (public): At least 37 dead and hundreds evacuated after strike on Kyiv weapons depot
-  An investigation has begun into the storage of weapons for Ukraine's military near a residential area.
-- USA · The Washington Post (center-left): Russian strikes on food warehouses pose threat of shortages in Ukraine
-  Moscow has shifted to targeting shopping centers and food distribution sites, and markets in Kyiv and other cities are struggling to keep their shelves stocked.
-- Ukraine · Kyiv Independent (reference): At least 4 injured as Kyiv and Kyiv Oblast endure 4th day of drawn-out Russian attack
-  Drones have been flying toward the capital for hours at a time, with explosions and the sound of air defense fire rocking the city throughout the morning and afternoon.
-- Ukraine · Kyiv Independent (reference): Ukraine ambassador to Turkey summoned by Ankara after attacks on ships in Black Sea
-  Amid intensifying attacks in the Black Sea from both Ukraine and Russia, a Turkish-operated vessel was hit on Aug. 26 off the coast of Tuapse — a Russian port city with a large oil
+- EU-Brussels · Politico Europe (reference): Russia preparing ‘massive strikes against Ukraine’s energy facilities’
+  The Russian announcement comes amid intensfying drone strikes against Ukraine.
+- Germany · Der Spiegel (center-left): Krieg gegen Ukraine: Moskau kündigt »massive Angriffe« an
+  Russland bereitet nach eigenen Angaben umfassende Attacken gegen den ukrainischen Energiesektor vor. Aber auch die Regierung in Kyjiw macht nach ihren jüngsten Drohungen offenbar e
+- Serbia · N1 Serbia (independent): Rusija saopštila da priprema masovne napade na energetska postrojenja Ukrajine
+  Ruska vojska priprema veliku ofanzivu na ukrajinsku energetsku infrastrukturu, saopštilo je danas rusko Ministarstvo odbrane, samo nekoliko dana nakon
+- Slovakia · SME (center): SME Online: Rusko začalo prípravy na masívne údery proti ukrajinským energetickým zariadeniam
+  Vojnu na Ukrajine sledujeme minútu po minúte.
+- Slovenia · RTVSLO (public): Moskva načrtuje napade na ukrajinsko energetsko infrastrukturo
+  Rusko obrambno ministrstvo je sporočilo, da v odgovor na ukrajinske napade ruska vojska pripravlja silovite napade na ukrajinsko energetsko infrastrukturo. Ukrajinska vojska je med
+- South Africa · Mail & Guardian (center-left): Ukraine’s Plan A is peace
+  As Russia intensifies attacks on civilian infrastructure, Ukraine is bolstering its strike capabilities while reiterating that its primary goal remains a just and lasting peace.
+- UAE · Al Arabiya (saudi-aligned): Russia says preparing ‘massive strikes’ on Ukraine’s energy sector
+  Russia’s defense ministry on Sunday said it was gearing up for large-scale attacks on Ukraine’s energy infrastructure in a tit-for-tat response to strikes by Kyiv.“Russian forces h
+- USA · The Wall Street Journal (center-right-business): Russia Is Bombarding Europe With a New Wave of ‘Gray Zone’ Attacks
+  NATO countries see Moscow’s appetite for conflict increasing as it flounders against Ukraine.
 
-### [7 дж. / 4 країн] Р=60 · ПОВТОР Scott Stinson: Donald Trump gives Doug Ford the foil he desperately needed
+### [10 дж. / 8 країн] Р=54 · НОВЕ Google Maps cambia el nombre del Lago Ontario a Lago América para usuarios estadounidenses
+- Argentina · Clarin (center-right): Google Maps cambia el nombre del Lago Ontario a Lago América para usuarios estadounidenses
+  Google ha comenzado a cambiar el nombre del Lago Ontario a Lago América para usuarios en EE.UU., tras una orden de Trump en medio de tensiones con Canadá. El cambio se refleja solo
+- Argentina · Infobae (mainstream): Google Maps cambió el nombre del lago Ontario por "Lago América" para usuarios ​​en Estados Unidos
+  La plataforma adaptó la denominación para el sitio compartido con Canadá, tras una orden firmada por Donald Trump en plena disputa comercial entre ambos países
+- Belgium · Le Soir (center-left): Google Maps change le nom du lac Ontario pour les Etats-Unis après un décret de Trump contesté
+  Google Maps change le nom du lac Ontario pour les Etats-Unis après un décret de Trump contesté Localisation du lac Ontario. - Capture d’écran Google maps. L a Maison Blanche s’est 
+- France · Le Figaro (center-right): États-Unis : Google Maps se plie aux exigences de Donald Trump et affichera désormais «Lac d’Amérique» plutôt que «Lac Ontario»
+  Engagé dans une confrontation commerciale avec le Canada, le président américain a signé jeudi un décret qui selon lui change «immédiatement» le nom de cette étendue d’eau située à
+- France · Les Echos (business): Accord avec le Venezuela : « Donald Trump impose sa stratégie, y compris aux pétroliers américains »
+  Le président américain veut créer un « empire pétrolier » regroupant, sous domination américaine, le Canada, le Guyana et le Venezuela, explique Thierry Bros, professeur à Sciences
+- France · Les Echos (business): Trump signe un décret changeant le nom du « lac Ontario » en « lac d'Amérique »
+  Après avoir changé le « golfe du Mexique » en « golfe d'Amérique », le président américain a récidivé en modifiant le nom de ce lac situé à la frontière américano-canadienne. Et dè
+- Italy · Il Sole 24 Ore (business): Google Maps cambia il nome del Lago Ontario in “Lake America” per gli utenti Usa
+  Google Maps ha cambiato il nome del Lago Ontario in “ Lake America ” per gli utenti negli Stati Uniti. Lo ha annunciato la capogruppo di Alphabet, società madre di Google. La...
+- Mexico · El Financiero (business): Venezuela y EU pactan acuerdo petrolero por 25 años: ¿Qué negociaron Delcy Rodríguez y Donald Trump?
+  El acuerdo petrolero entre Venezuela y Estados Unidos tendrá una vigencia de 25 años y contempla una producción superior a 1.5 millones de barriles diarios.
+
+### [6 дж. / 4 країн] Р=76 · НОВЕ Campanha de Lula faz ofensiva no TSE contra Flávio Bolsonaro, Caiado e Zema por postagens e discursos
+  У кластері є і державні, і незалежні джерела.
+- Brazil · Folha de S.Paulo (center-left): Campanha de Lula faz ofensiva no TSE contra Flávio Bolsonaro, Caiado e Zema por postagens e discursos
+  A Federação Brasil da Esperança, composta por PT , PV e PC do B, fez uma ofensiva no TSE (Tribunal Superior Eleitoral) contra adversários na eleição presidencial. Os partidos que i
+- Brazil · Folha de S.Paulo (center-left): Flávio Bolsonaro encontra ministro de Bukele, ignora violações e diz que há poucos presos no Brasil
+  O senador Flávio Bolsonaro ( PL ), candidato à Presidência, se encontrou com Gustavo Villatoro, ministro da Justiça e Segurança Pública do governo de Nayib Bukele , de El Salvador 
+- Brazil · O Globo (center-right): Dias Toffoli é visto em quadra da Mangueira, no Rio, durante semifinal de samba-enredo
+  O ministro do Supremo Tribunal Federal (STF) Dias Toffoli esteve na quadra da Mangueira neste sábado (29), durante a semifinal da disputa que escolherá o samba-enredo da escola par
+- Brazil · O Globo (center-right): 'Tem pouco preso no Brasil', diz Flávio Bolsonaro após encontro com ministro da Segurança de El Salvador
+  O candidato à presidência da República Flávio Bolsonaro (PL) se encontrou, neste domingo (30), com o ministro de Justiça e Segurança Pública de El Salvador, Gustavo Villatoro, com 
+- Mexico · El Financiero (business): Fátima Bosch cede la corona a María Vargas: Reina de Jalisco es la GANADORA de Miss Universe México 2026
+  María Vargas, de Jalisco, ganó Miss Universo México 2026 y representará al país en el certamen internacional en Puerto Rico.
+- Mexico · El Universal (center): Miss Universo México 2026: María Vargas, de Jalisco, es la nueva representante del país
+  La mexicana, Fátima Bosch, entregará la corona a la nueva representante del país
+- Portugal · Publico (center-left): Isabel Moreira: “Maior perigo para a democracia é a direita clássica ceder ao Chega”
+  Revisão Constitucional em discussão na rentrée do Bloco de Esquerda. A deputada socialista diz que o Governo AD se apropriou da agenda do partido de Ventura.
+- Turkey · Daily Sabah (pro-government): Galatasaray complete Rafael Leao signing from Serie A's AC Milan
+  Portugal forward Rafael Leao, whose dip in form coincided with AC Milan's struggles in recent seasons, joined Galatasaray Sunday, the Istanbul club announced. The four-time r...
+
+### [6 дж. / 4 країн] Р=67 · ПОВТОР How will Trump's oil deal with Venezuela work?
+  У кластері є і державні, і незалежні джерела.
+- Australia · ABC News (public): How will Trump's oil deal with Venezuela work?
+  The "historic" agreement is set to last for 25 years and will see Venezuela increase its output to 1.5 million barrels a day, but many important details remain unclear.
+- Canada · CBC News (public): Trump's Venezuelan oil deal: What we know and how it could impact Canada's oil industry
+  Several questions about the U.S. deal to develop vast Venezuelan oil reserves remain unanswered, and a rapid and large-scale increase in production is unlikely. But experts say inc
+- Canada · The Globe and Mail (center): Trump says U.S. will refill Strategic Petroleum Reserve using Venezuelan oil
+  It is unclear how quickly the Venezuela deal could provide oil for the reserve or deliver any near-term benefit to U.S. motorists
+- Canada · The Globe and Mail (center): U.S., Venezuela energy deal will last 25 years, says interim President Rodríguez
+  She says that the country will retain ‘ownership of and sovereignty’ over its natural resources
+- UAE · Al Arabiya (saudi-aligned): Trump says US will refill Strategic Petroleum Reserve using Venezuelan oil
+  US President Donald Trump said on Sunday that oil from a recently struck deal with Venezuela will be used to replenish the Strategic Petroleum Reserve, which has been drawn down sh
+- UAE · Middle East Eye (qatar-aligned): 'We will be there to attack': Israeli minister says US deal will not stop strikes on Iran
+  'We will be there to attack': Israeli minister says US deal will not stop strikes on Iran Israeli minister Eli Cohen said Israel would strike Iran again if Tehran attempts to rebui
+- UK · The Guardian (center-left): Venezuela’s Delcy Rodríguez says oil deal with Trump has ‘endless’ benefits
+  Deal that will reportedly see US take control of 65bn barrels of Venezuelan oil has provoked outrage in her country Venezuela’s interim president, Delcy Rodríguez, has defended her
+
+### [7 дж. / 3 країн] Р=58 · ПОВТОР Scott Stinson: Donald Trump gives Doug Ford the foil he desperately needed
 - Canada · National Post (center-right): Scott Stinson: Donald Trump gives Doug Ford the foil he desperately needed
   The Ontario premier is never more popular than when fighting with the U.S. president
 - Canada · National Post (center-right): Doug Ford erects sign to remind Donald Trump ‘it’s Lake Ontario now and forever’
   'Let's be serious. Long before President Trump, this lake was called Lake Ontario. And long after President Trump is gone it will still be called Lake Ontario,' Ford said on X
 - Canada · National Post (center-right): Trump hits back at New York Gov. Hochul after she rejects ‘Lake America’ name
   Trump belittled the Democratic governor, claiming that Canada has been taking economic advantage of Hochul as well as New York state
-- Slovenia · Delo (center): Kanadčani postavili tablo: Jezero Ontario. Zdaj in za vedno.
-  Ameriški predsednik Donald Trump je preimenoval jezero v Lake America, Kanada mu je hitro odgovorila s tablo na obali.
 - UK · BBC News (public): Canada installs large Lake Ontario sign in latest jab at US
   Ontario Premier Doug Ford unveiled a billboard on Canada's shoreline with the message: "Lake Ontario. Now and Always."
+- UK · The Guardian (center-left): Canada erects giant ‘Lake Ontario’ sign as spat with Trump over name escalates
+  Meanwhile, Trump posts video of himself kicking over a Lake Ontario sign and replacing it with Lake America sign Donald Trump and Canada continued a verbal duel on Saturday over th
 - USA · Axios (reference): Google Maps adds 'Lake America' as Ford compares change to 'SNL' skit
   President Trump 's order to rename Lake Ontario to "Lake America" is stirring up more controversy, as tech companies decide whether to comply or not. The big picture: Google and ot
 - USA · NPR (public): Canada claps back at Trump's efforts to rename Lake Ontario as 'Lake America'
@@ -429,86 +429,72 @@
 - USA · The Atlantic (center-left-analysis): Roy Cohn Did It First
   The debasement of American politics didn’t start with Donald Trump.
 
-### [5 дж. / 5 країн] Р=25 · ПОВТОР Nepal warns of possible fresh flooding as communities grapple with devastation
-- Canada · CBC News (public): Nepal warns of possible fresh flooding as communities grapple with devastation
-  Authorities in Nepal warned of possible fresh flooding on Sunday and urged residents in flood-affected districts to remain on high alert after water levels rose in the Bhotekoshi R
-- EU-Brussels · Euronews (reference): Nepal warns of more possible floods as communities grapple with devastation and death toll rises
-  Flood warning notifications were issued to people's phones throughout Sunday morning as rescue workers tried to evacuate a main route connecting Kathmandu to one of the places most
-- Japan · The Japan Times (reference): Fukui cities given emergency warnings for heavy rain
-  Land ministry officials are calling on people to stay away from rivers, irrigation canals and flooded roads.
-- South Korea · The Korea Herald (reference): Nepal warns of possible fresh flooding as communities grapple with devastation
-  DHADING, Nepal (AP) —Authorities in Nepal warned of possible fresh flooding on Sunday and urged residents in flood-affected districts to remain on high alert after water levels ros
-- USA · NPR (public): Nepal warns of possible fresh flooding as communities grapple with devastation
-  Authorities in Nepal warned of possible fresh flooding on Sunday and urged residents in flood-affected districts to remain on high alert after water levels rose in the Bhotekoshi R
+### [4 дж. / 4 країн] Р=64 · ПОВТОР Marquez näitas Aragonis taset
+  У кластері є і державні, і незалежні джерела.
+- Estonia · ERR (public): Marquez näitas Aragonis taset
+  Mootorrataste ringrajasõidu sarja MotoGP etapil Aragoni ringrajal teenis esikoha Marc Marquez (Ducati), kes edestas 1,754 sekundiga Pedro Acostat (KTM).
+- Slovenia · RTVSLO (public): Marc Marquez po zmagi v Aragoniji vse bližje vodilnemu Martinu
+  Sloviti španski motociklist Marc Marquez (Ducati) je po prepričljivi zmagi na dirki za veliko nagrado Aragonije v Alcanizu napredoval na drugo mesto v skupni razvrstitvi v elitnem 
+- Turkey · Daily Sabah (pro-government): Marquez confirms Aragon GP dominance to cut Martin's lead
+  Ducati's Marc Marquez won the Aragon Grand Prix for the third consecutive year Sunday, closing the gap on championship leader Jorge Martin and further cementing his dominance...
+- UAE · Gulf News (center-state): Marc Marquez wins Aragon MotoGP Grand Prix
+  Marc Marquez wins Aragon MotoGP Grand Prix rbs/nf
 
-### [4 дж. / 4 країн] Р=60 · НОВЕ SME biz sentiment up for 2nd month for Sept. but still below par
+### [6 дж. / 3 країн] Р=61 · НОВЕ Pēc asiņainās sestdienas Krievija naktī Ukrainai uzbrukusi ar "Iskander-M" un 130 droniem
+- Latvia · Delfi Latvia (reference): Pēc asiņainās sestdienas Krievija naktī Ukrainai uzbrukusi ar "Iskander-M" un 130 droniem
+  Krievija naktī uz svētdienu uzbrukusi Ukrainai ar divām ballistiskajām raķetēm "Iskander-M" un 130 droniem, pavēstīja Ukrainas Gaisa spēki.
+- Russia · Kommersant (business): Главные новости за выходные 29–30 августа // У берегов Кипра перевернулся паром с 279 людьми на борту
+  Владимир Путин 29 августа встретился с белорусским коллегой Александром Лукашенко в подмосковной резиденции в Ново-Огарево. Как позднее заявил пресс-секретарь президента РФ Дмитрий
+- Russia · Novaya Gazeta Europe (exile): Московский университет спорта потратит 8 млн рублей на мониторинг отношения студентов к «традиционным ценностям»
+  Российский университет спорта «ГЦОЛИФК» в Москве, подведомственный Минспорту, объявил закупку на разработку и внедрение системы мониторинга отношения студентов к «традиционным ценн
+- Russia · Vedomosti (business): НЛО над Москвой и американцы во «Внуково». Помните ли вы события 24-30 августа?
+- Ukraine · Babel (investigative): Росіяни вночі вдарили по Україні двома балістичними ракетами та 130 дронами. Під ударами були Київ, Харків та Запоріжжя
+- Ukraine · Dzerkalo Tyzhnia (analysis): У Києві вранці дрони поцілили у склад на 3000 кв. м
+
+### [4 дж. / 4 країн] Р=59 · ПОВТОР SME biz sentiment up for 2nd month for Sept. but still below par
 - South Korea · Yonhap (reference): SME biz sentiment up for 2nd month for Sept. but still below par
   SEOUL, Aug. 30 (Yonhap) -- South Korean smaller companies business outlook rose...
-- South Korea · Yonhap (reference): (profile) Ambassador to Saudi Arabia tapped as new defense minister nominee
-  SEOUL, Aug. 30 (Yonhap) -- Kang Shin-chul, South Korea s ambassador to Saudi Ara...
 - South Korea · Yonhap (reference): (profile) Climate lawyer tapped as new SME minister
   SEOUL, Aug. 30 (Yonhap) -- Small and Medium Enterprises (SME) Minister nominee L...
 - South Korea · Yonhap (reference): (profile) Macroeconomic expert tapped as new finance minister
   SEOUL, Aug. 30 (Yonhap) -- Lee Hyoung-il, named new finance minister Sunday, is ...
 - Taiwan · Focus Taiwan CNA (reference): SEMICON Taiwan 2026: What to watch
   Taipei, Aug. 30 (CNA) SEMICON Taiwan 2026, one of the world's largest semiconductor trade shows, will open Sept. 2 in Taipei with a record number of participants and a broader focu
-- Taiwan · Focus Taiwan CNA (reference): Taiwan's gov't proposes NT$1 billion for industrial park in Eswatini
-  Taipei, Aug. 30 (CNA) Taiwan's government has proposed spending NT$1 billion (US$31.6 million) to build an innovative industrial park in Eswatini, aiming to support industrial upgr
 - USA · National Review (right-analysis): Khalid Sheikh Mohammed Faces Trial . . . Soon . . . Probably
   No, this isn’t 25-year-old news.
 - Mexico · El Universal (center): Portada impresa del 30 de agosto de 2026
   MXM VIDEOS PODCAST NEWSLETTERS CONSULTAS × Secciones El Universal Nuestros Sitios Multimedia Servicios Club El Universal Descubre y Compra Aviso Oportuno Empleos Portada impresa de
 
-### [4 дж. / 4 країн] Р=57 · НОВЕ 'Vamos fazer o diabo para ganhar no primeiro turno'
-- Brazil · O Globo (center-right): 'Vamos fazer o diabo para ganhar no primeiro turno'
-  Duas semanas atrás, em meio às dezenas de gravações que fez com aliados para o horário eleitoral gratuito que começou anteontem, Lula disse a um senador que tenta a reeleição: Maté
-- Portugal · Observador (right): Há quem trabalhe por dois para chegar ao fim do mês com mais
-  Elaine só considera deixar de ter dois trabalhos quando conseguir poupar o suficiente para dar entrada para a compra de casa.
-- Spain · Expansion (business): Qué pasará con los precios de la vivienda este año
-  Cada vez hay menos compradores capaces de asumir los precios de compra actuales, lo que ha provocado una pequeña caída de las transacciones, al tiempo que el alquiler retrocede con
-- Sweden · Dagens Nyheter (center-left): Så gör du när en anhörig behöver hjälp med ekonomin
-  Mycket kan gå fel i kontakten med banker och myndigheter när äldre eller andra anhöriga behöver hjälp, det vittnar både DN-läsare och olika aktörer om. Här är tipsen för att undvik
+### [4 дж. / 3 країн] Р=54 · ПОВТОР Turkey, Saudi, Pak to meet on Mecca Pact
+  У кластері є і державні, і незалежні джерела.
+- India · The Economic Times (business): Turkey, Saudi, Pak to meet on Mecca Pact
+- UAE · Al Arabiya (saudi-aligned): Saudi Arabia, Turkey and Pakistan to hold first Mecca defense pact meeting in Istanbul
+  Top officials from Saudi Arabia, Turkey and Pakistan are expected to gather in Istanbul for the first committee meeting under the Mecca Joint Defense Agreement, the Turkish foreign
+- UAE · Khaleej Times (center-state): Turkey, Saudi Arabia, Pakistan to hold first defence pact meeting, source says
+- Turkey · Daily Sabah (pro-government): Ministers gather in Istanbul for next phase of Mecca defense pact
+  Ministers and top military brass from Türkiye, Saudi Arabia and Pakistan are scheduled to hold the first committee meeting under the landmark Mecca Joint...
 
-### [6 дж. / 3 країн] Р=40 · ПОВТОР Island: Mehrheit gegen EU-Beitrittsverhandlungen
-- Austria · ORF (public): Island: Mehrheit gegen EU-Beitrittsverhandlungen
-- Germany · Die Welt (right): Island stimmt in Wahl-Krimi gegen EU-Beitrittsverhandlungen
-  Island hat abgestimmt: Die Mehrheit lehnt in einem Referendum EU-Beitrittsverhandlungen ab. Das Ergebnis fiel äußerst knapp aus.
-- Germany · Die Zeit (center-left-analysis): Referendum in Island : Island stimmt gegen EU-Beitrittsverhandlungen
-  Die Mehrheit der Isländer votiert gegen die Wiederaufnahme von Beitrittsverhandlungen mit der EU. Der Ausgang des Referendums war sehr knapp.
-- Germany · Sueddeutsche Zeitung (center-left): Referendum: Isländer stimmen gegen EU-Beitrittsverhandlungen
-  Gespaltene Insel: Fast 53 Prozent der Bevölkerung Islands sind nicht daran interessiert, neue Verhandlungen mit Brüssel aufzunehmen.
-- Germany · Tagesschau ARD (public): C. Stichler, ARD Stockholm, über mehrheitliches Nein Islands zu neuen EU-Beitrittsverhandlungen
-  C. Stichler, ARD Stockholm, über mehrheitliches Nein Islands zu neuen EU-Beitrittsverhandlungen
-- Germany · Tagesschau ARD (public): Isländer stimmen per Referendum gegen EU-Beitrittsverhandlungen
-  Die Menschen in Island haben sich gegen die Wiederaufnahme von Beitrittsverhandlungen mit der Europäischen Union entschieden. Das Ergebnis des Referendums fiel mit 52,8 zu 47,2 Pro
-- Switzerland · SRF (public): EU-Referendum – Island lehnt neue EU-Beitrittsgespräche ab
-  Eine Mehrheit der Isländer lehnt neue Verhandlungen mit der Europäischen Union ab. 52.8 Prozent stimmen dagegen.
-
-### [4 дж. / 3 країн] Р=55 · НОВЕ Mega-Sena 3051 acumula e premiação pode chegar a R$ 36 milhões na terça (1o)
-- Brazil · Folha de S.Paulo (center-left): Mega-Sena 3051 acumula e premiação pode chegar a R$ 36 milhões na terça (1o)
-  A Caixa Econômica Federal sorteou na manhã deste domingo (30) o concurso 3051 da Mega-Sena , cujo prêmio principal era de R$ 29,3 milhões. Nenhum apostador, porém, acertou os seis 
-- Brazil · O Globo (center-right): Mega-sena sorteia prêmio de R$ 30 milhões; veja números deste domingo
-  A Caixa Econômica Federal realizou, neste domingo (30), o sorteio do concurso 3.051 da Mega-Sena. O prêmio é de R$ 29.343.361,52. As dezenas sorteadas foram: 11, 15, 20, 21, 38 e 4
-- Iran · Shargh (reformist): پیش‌بینی بورس فردا دوشنبه 9 شهریور۱۴۰۵ / ورود پول حقیقی ادامه پیدا کرد
-  بازار سرمایه روز شنبه نیز سبزپوش بود و شاخص کل با رشد ۱۲۹ هزار و ۶۰۸ واحدی معادل ۲.۰۳ درصد به سطح ۶ میلیون و ۵۱۶ هزار واحد رسید. شاخص هم‌وزن نیز ۱.۴۰ درصد افزایش یافت و شاخص فرابور
-- Iran · Shargh (reformist): پیش‌ بینی قیمت دلار، طلا و سکه دوشنبه ۹ شهریور ۱۴۰۵ / سکه امامی در کانال ۲۱۷ میلیون تومانی بسته شد
-  قیمت دلار روز شنبه با افزایش چهار هزار تومانی نسبت به پایان معاملات هفته گذشته، در محدوده ۲۰۴ هزار تومان بسته شد.
-- South Africa · News24 (mainstream): News24 | In Sunday. | Pastor’s R13.9m mansion ‘sold’ to ‘wife’, trust fraud feud and Boks bounce-back
-  In this week’s News24 Sunday Edition: Khaya Koko reveals how pastor Witness Mazanga transferred his R13.9 million mansion following a News24 investigation; Iavan Pijoos and Jan Cro
+### [3 дж. / 3 країн] Р=69 · ПОВТОР В области Улытау началось строительство жилых комплексов на 300 квартир
+  У кластері є і державні, і незалежні джерела.
+- Kazakhstan · Orda.kz (independent): В области Улытау началось строительство жилых комплексов на 300 квартир
+  В городах Жезказгане и Сатпаеве сегодня состоялась церемония закладки фундаментов новых жилых домов. Строительство объектов осуществляет компания «QazaqStroy», сообщает Orda.kz . Н
+- Russia · TASS (state): В Нижнекамске жители поврежденного при атаке БПЛА дома вернулись в квартиры
+  В доме продолжается ремонт, его закончат в течение недели
+- Ukraine · Dzerkalo Tyzhnia (analysis): Поруйновані склади Auchan, бізнес-центр та житлові будинки: РФ продовжує атакувати Київ та область ударними дронами
 
 ## По країнах
 
 Кластери вище зібрані машинно, тому працюють лише всередині однієї мови. Нижче — сирі заголовки. Крос-мовне зіставлення роби сам.
 
-### Argentina  (54 матеріалів, 2.5% дня)
+### Argentina  (56 матеріалів, 2.5% дня)
+- [Ambito Financiero · business] Aumenta el transporte en septiembre: cuánto costará viajar en colectivo, tren y subte en el AMBA
+- [Ambito Financiero · business] Mario Blejer, expresidente del BCRA: “El que dice que el dólar está barato es porque gana cuando devalúan”
 - [Ambito Financiero · business] Plazo fijo: cuánto ganás si invertís $1.500.000 durante 60 días
 - [Ambito Financiero · business] Salarios y consumo en alerta: el Gobierno busca reaccionar, pero el dogma libertario le pone un límite
 - [Ambito Financiero · business] Alquileres temporarios en dólares: cómo reservar en plataformas de forma segura
 - [Ambito Financiero · business] EEUU alertó que la volatilidad del yen podría encarecer el crédito y presionar a los bonos del Tesoro
-- [Ambito Financiero · business] "Se demora la recuperación": apuntan a una caída de la actividad, pese al motor energético
-- [Ambito Financiero · business] Desde la apertura del cepo, los argentinos compraron casi u$s45.000 millones
 
-### Australia  (45 матеріалів, 2.0% дня)
+### Australia  (44 матеріалів, 2.0% дня)
 - [ABC News · public] Hundreds lost in Nepal mourned in vigils across Australia
 - [ABC News · public] At least 7 killed with more missing after boat capsizes off northern Cyprus
 - [ABC News · public] Manhunt underway for rave shooter in Switzerland
@@ -517,62 +503,62 @@
 - [ABC News · public] One Nation could revive NSW trade posts scrapped in 'jobs for the boys' saga
 
 ### Austria  (36 матеріалів, 1.6% дня)
+- [Der Standard · center-left] Überwachungsforscher: "Smartglasses sind eine ideologische Technologie"
 - [Der Standard · center-left] Verbot des politischen Islam? Stockers Vorstoß stößt bei SPÖ und Neos auf Vorbehalte
-- [Der Standard · center-left] Das Forum Alpbach will Europa siegen sehen, aber wie?
-- [Der Standard · center-left] Fähre mit rund 270 Menschen an Bord vor Nordzypern gekentert, mindestens sieben Todesopfer
-- [Der Standard · center-left] Spitzenspiel der Bundesliga live: Rapid geht per Elfmeter gegen Sturm früh in Führung
+- [Der Standard · center-left] "Impertinentes Verhalten": AfD-Politiker streitet wegen russischer Armeetasse mit "Bild"-Reporter
+- [Der Standard · center-left] Spitzenspiel der Bundesliga live: Rapid geht gegen Sturm wieder in Führung - 2:1
 - [Der Standard · center-left] Trump will Journalistin "bestrafen" lassen, weil sie Macht seiner Wahlempfehlungen anzweifelte
-- [Der Standard · center-left] BYD-Autoakku verlor nach 350 Schnellladungen kaum an Kapazität
+- [Der Standard · center-left] Fähre mit rund 270 Menschen an Bord vor Nordzypern gekentert, mindestens sieben Todesopfer
 
 ### Belarus  (24 матеріалів, 1.1% дня)
+- [BelTA · state] Исландцы на референдуме проголосовали против возобновления переговоров о вступлении в ЕС
+- [BelTA · state] Число жертв наводнения в Непале возросло до 788
 - [BelTA · state] В Минске по пути на пожар загорелась кабина автоподъемника МЧС
 - [BelTA · state] Минимум семь человек погибли при крушении парома у берегов Северного Кипра
 - [BelTA · state] Еврокомиссия готовит закон об ограничении краткосрочной аренды жилья через платформы
 - [BelTA · state] Иран предотвратил незаконный проход 30 судов через Ормузский пролив за неделю
-- [BelTA · state] Смена сезона будет контрастной. Что готовит погода белорусам на следующей неделе
-- [BelTA · state] Сентябрь в Беларуси прогнозируется теплее обычного
 
 ### Belgium  (22 матеріалів, 1.0% дня)
+- [De Standaard · center-right] Oliedeal van Trump stuit op kritiek: “Venezuela is een protectoraat van de VS geworden”
+- [De Standaard · center-right] 22-jarige vrouw doodgeschoten op technorave in Zwitserse Aarau: “Nog geen dader of motief”
+- [De Standaard · center-right] Gekapseisde veerboot met 267 passagiers “volledig gezonken” voor kust van Cyprus, minstens zeven doden
 - [De Standaard · center-right] Ecolo wil “klimaatnoodtoestand” en jaarlijks 1 procent van bbp naar klimaatbeleid
-- [De Standaard · center-right] Zeker zes doden nadat veerboot met 267 passagiers voor kust van Cyprus is gekapseisd
 - [De Standaard · center-right] Snel mee met het nieuws van de dag
 - [De Standaard · center-right] Paradepaardje Nasa moet astronomische kennis over heelal opleveren
-- [De Standaard · center-right] Massazaaddonor Simon schrijft ouders dat hij minstens 199 kinderen heeft verwekt, van wie 11 in België
-- [De Standaard · center-right] Na de val van Pogacar: in de koers lijkt het lichaam nog te vaak wegwerpmateriaal
 
 ### Bosnia  (12 матеріалів, 0.5% дня)
-- [Klix · reference] Premijerka Islanda nakon što je propao referendum o EU: "Ovo ne smatram porazom"
-- [Klix · reference] Remi Muharemovićevog Leedsa i Brentforda, Chelseaju pripala golijada protiv Brightona
-- [Klix · reference] Helikopter Oružanih snaga BiH gasi požar kod Mostara: Izbačeno ukupno 22.000 litara vode
-- [Klix · reference] Hrvatska nakon velikog preokreta savladala Nizozemsku i stigla na korak do plasmana na SP
-- [Klix · reference] Američki vojni vrh upozorio Hegsetha da bi širenje rata s Iranom dodatno oslabilo SAD
-- [Klix · reference] Pogačar objavio fotografiju iz bolnice nakon teškog pada i odustajanja s Vuelte
+- [Klix · reference] Ovi toksični stilovi komunikacije negativno utječu na vašu vezu
+- [Klix · reference] Delegacija Barcelone na čelu s gradonačelnikom Jaumeom Collbonijem stigla u Sarajevo: Cilj jačati pobratimske veze
+- [Klix · reference] Pogledajte kako je Galatasaray najavio dolazak sjajnog Portugalca
+- [Klix · reference] Trump otkrio prvi potez nakon što je preuzeo kontrolu nad naftom iz Venecuele: "Proces kreće vrlo brzo"
+- [Klix · reference] Pokrenuta humanitarna akcija za dječaka (9) iz OŠ "Hrasno": Preko raspusta iznenada teško obolio
+- [Klix · reference] Kirgistan riješio problem nestašice struje: Veliku ulogu u tome imala je kineska kompanija
 
 ### Brazil  (45 матеріалів, 2.0% дня)
+- [Folha de S.Paulo · center-left] Julia Guedes, neta de Beto Guedes, faz as pazes com o peso do sobrenome em disco
+- [Folha de S.Paulo · center-left] Famoso Quem: atriz aparece em foto ainda bebê; adivinhe quem é
+- [Folha de S.Paulo · center-left] Campanha de Lula faz ofensiva no TSE contra Flávio Bolsonaro, Caiado e Zema por postagens e discursos
+- [Folha de S.Paulo · center-left] Tiago Leifert sai em defesa de Neymar, e especialista em leitura labial rebate
+- [Folha de S.Paulo · center-left] Por que o risco de AVC aumenta após picada de cobra? Estudo investiga
 - [Folha de S.Paulo · center-left] Viadutos de acesso à zona leste devem ser demolidos após correção de tombamento no centro histórico de SP
-- [Folha de S.Paulo · center-left] Correr faz mal aos joelhos? Tire dúvidas sobre a atividade física
-- [Folha de S.Paulo · center-left] Diretor de órgão da Prefeitura de SP relatou ameaça de empresa desclassificada de licitação da iluminação
-- [Folha de S.Paulo · center-left] Podemos em breve ter a tecnologia necessária para alcançar outros sistemas estelares
-- [Folha de S.Paulo · center-left] Laura Dern vai entregar Leão de Ouro a George Clooney no Festival de Cinema de Veneza
-- [Folha de S.Paulo · center-left] Flávio Bolsonaro encontra ministro de Bukele, ignora violações e diz que há poucos presos no Brasil
 
 ### Bulgaria  (24 матеріалів, 1.1% дня)
+- [Dnevnik · center-right] НАСА изстреля телескопа "Нанси Грейс Роман" отвъд Луната
 - [Dnevnik · center-right] Горски пожар е възникнал в района на Рилския манастир
 - [Dnevnik · center-right] Полицията иззе близо килограм наркотици при акция в столичния "Младост"
 - [Dnevnik · center-right] Директор на непалско училище успя да евакуира 900 ученици минути преди водната стихия
 - [Dnevnik · center-right] Киев иска да използва предсрочно заем от ЕС, за да покрие дефицита
 - [Dnevnik · center-right] Леко земетресение е отчетено край Пазарджик
-- [Dnevnik · center-right] Половината германци са против влизането във властта на "Алтернатива за Германия"
 
 ### Canada  (33 матеріалів, 1.5% дня)
-- [CBC News · public] Both sides of Alberta separation debate rally as momentum kicks up ahead of vote
-- [CBC News · public] Tenants in Vancouver's Downtown Eastside are working to make their buildings safer during heat waves
+- [CBC News · public] On the road with pro-independence Albertans, one small town at a time
 - [CBC News · public] Toronto cinema says it was forced to cancel screenings over decades-old, unofficial 'zone' system
-- [CBC News · public] Stressed out about politics? It could be impacting your health
+- [CBC News · public] Why this northern B.C. community is giving out 23-year-old toilets for free
+- [CBC News · public] Nepal warns of possible fresh flooding as communities grapple with devastation
 - [CBC News · public] As Germany's far right gains ground, coded symbols are hiding in plain sight
-- [CBC News · public] FIBA Women's World Cup begins without Canada. Is it a setback for national team, or a reset for LA28?
+- [CBC News · public] Stressed out about politics? It could be impacting your health
 
-### China  (38 матеріалів, 1.7% дня)
+### China  (26 матеріалів, 1.2% дня)
 - [Hong Kong Free Press · independent] Rescuers dig into tunnel as missing toll from Nepal, China flood tops 3,000
 - [Hong Kong Free Press · independent] China tightens rules on selling unfinished homes to lift sector
 - [Sixth Tone · state-adjacent] Study Linking Solar Farms to Bird Loss Draws Scrutiny in China
@@ -581,20 +567,20 @@
 - [Sixth Tone · state-adjacent] Eye of the Storm: Viral Podcaster Breaks Silence Over Plagiarism Scandal
 
 ### Croatia  (36 матеріалів, 1.6% дня)
+- [Index.hr · independent] Vozač mopeda poginuo u prometnoj nesreći u Baški
+- [Index.hr · independent] Ovo su najskuplji europski gradovi za kupnju stana
+- [Index.hr · independent] Trump: Lažne ankete u medijima izmakle su kontroli, nešto se mora učiniti
+- [Index.hr · independent] Kritičari razočarani adaptacijom bestselera: "Bljutava sapunica za mlade"
+- [Index.hr · independent] NATO: Rusija pojačava hibridne napade, ali nema neposredne prijetnje
 - [Index.hr · independent] FOTO Auto završio u Cetini kod Radmanovih Mlinica
-- [Index.hr · independent] Studija: Napušteni cjevovodi godišnje ispuštaju tone mikroplastike u oceane
-- [Index.hr · independent] Cijena kvadrata ispod je prosjeka, a stan u centru Zagreba izgleda odlično
-- [Index.hr · independent] Dinamovac Dominik kao svadbeni poklon dobio člansku Hajduka, video je viralan
-- [Index.hr · independent] "Nemoj plakati." Zašto želimo odmah zaustaviti dječje suze?
-- [Index.hr · independent] Harry Styles se narugao bivšoj Taylor Swift jer se udala u Madison Square Gardenu
 
 ### Czechia  (38 матеріалів, 1.7% дня)
-- [Denik N · center-right] Je to psychologický teror. Neustávající ruský útok na Kyjev má vyhnat lidi z města, říká analytik
+- [Denik N · center-right] Dvě a půl hodiny politiky v ČT. Nová Nedělní debata nabídla živé reakce expertů
+- [Denik N · center-right] Kouř, exploze a nekončící proud dronů. Kyjev čelí několikadennímu ruskému útoku
 - [Denik N · center-right] Pacientka vzplála při císařském řezu na Bulovce. Skončila s popáleninami na patnácti procentech těla
 - [Denik N · center-right] Starostové na maximu, ANO v útlumu. Nový průzkum naznačuje nečekaný přeliv hlasů od vlády k opozici
 - [Denik N · center-right] Kompetenční žalobu nestáhnu. Opozice je nevýrazná, jejím lídrem ale nejsem, říká Pavel
 - [Denik N · center-right] Proč Islanďané těsně odmítli Evropskou unii? Bojí se hlavně o práva na rybolov
-- [Denik N · center-right] R5M: USA uzavřely ropnou dohodu s Venezuelou | Babišova vláda kvůli suchu plánuje výstavbu přehrad. Těžit z nich může Agrofert | Zásah skladu a následné exploze u ukrajinské Buči zabily 37 obyvatel
 
 ### Denmark  (29 матеріалів, 1.3% дня)
 - [DR · public] Landboforening melder om stor opbakning til protestmøde
@@ -604,111 +590,111 @@
 - [DR · public] Bilist sigtet for vanvidskørsel efter u-vending i Øresundstunnelen
 - [DR · public] Voldeligt overfald udløste større politiindsats i Horsens
 
-### EU-Brussels  (23 матеріалів, 1.0% дня)
+### EU-Brussels  (22 матеріалів, 1.0% дня)
 - [EUobserver · center-left] [Interview] Irish liberal MEP Barry Andrews: ‘Trade measures are the EU’s only real leverage over Israel’
+- [Euractiv · reference] Trump card fails to clinch Iceland’s EU vote
 - [Euractiv · reference] Kaja Kallas remembers ‘very good’ father Siim Kallas at state funeral
 - [Euractiv · reference] Iceland rejects EU
 - [Euractiv · reference] Iceland poised to reject EU membership talks
-- [Euractiv · reference] Russia strike blows up arms depot near Kyiv, killing 37
-- [Euractiv · reference] This Icelander smells something fishy in Brussels
+- [Euronews · reference] Latest news bulletin | August 30th, 2026 – Evening
 
 ### Estonia  (24 матеріалів, 1.1% дня)
-- [ERR · public] Nepal: üleujutustes hukkunute arv tõusis 781-ni, kadunuid on 2502
-- [ERR · public] ru-lõpuga meiliaadressidelt ei saa enam Eesti riigiga suhelda
-- [ERR · public] Paraguays juhib Sami Pajari
-- [ERR · public] Michal: opositsioon paanitseb, lugu kehvast majandusest ei kanna
-- [ERR · public] Sõudekuningas Zeidler sai Amsterdamis neljanda kulla
-- [ERR · public] Opositsioonierakonnad kutsuvad üles erakorralisi valimisi korraldama
+- [ERR · public] Tartus sai töökorda tinatähtede valmistamise masin
+- [ERR · public] Pelletile on oodata hinnatippu, kaugküttele suurt kallinemist ei tule
+- [ERR · public] Hein pidi noppima võrgust neli palli
+- [ERR · public] Galerii: EKRE volikogu esimeheks valiti tagasi Evelin Poolamets
+- [ERR · public] VAATA OTSE | Eesti korvpallikoondis võõrustab tähtsas MM-valikmängus Soomet
+- [ERR · public] Päevakaja (30.08.2026 18:00:00)
 
 ### Finland  (12 матеріалів, 0.5% дня)
-- [Helsingin Sanomat · center] Talouteen palaa normaali tunnelma
-- [Helsingin Sanomat · center] Sairastuminen | Aleksi Tossavainen oli 28, kun häneltä löytyi aivohermokasvain
-- [Helsingin Sanomat · center] Miniristikko | Nyt kanta-asiakkaille entistä virkistävämpi ristikko!
-- [Helsingin Sanomat · center] Pohjois-Kypros | Matkustaja-alus kaatunut, ainakin seitsemän ihmistä kuollut
-- [Helsingin Sanomat · center] Kuvataide | Helene Schjerfbeck ei halunnut kenenkään tietävän kihlatustaan, mutta nyt salaisuus alkaa aueta
-- [Helsingin Sanomat · center] Ura | Presidentti Stubbin uudella ykkös­adjutantilla on huomattava urheilu-ura – pelasi myös HIFK:ssa
+- [Helsingin Sanomat · center] Pohjois-Kypros | Matkustaja-alus upposi, ainakin seitsemän ihmistä kuollut
+- [Helsingin Sanomat · center] Musiikki | 24-vuotias Helmi Marleena nousi vuodessa tähdeksi – laulujen taustalla on suuri suru
+- [Helsingin Sanomat · center] Elokuvat | Warner Bros yritti haudata 70 miljoonan dollarin elokuvan, joka sai nyt ensi-iltansa
+- [Helsingin Sanomat · center] Konsertti­arvio | Mikä tahansa soitin­yhtye olisi ollut tällä tyylien sekoituksella seka­melska, mutta laulu­yhtyeiden yhteis­konsertti onnistui
+- [Helsingin Sanomat · center] Vammaispalvelut | Kehitysvammaiset ansaitsevat järjestönsä
+- [Helsingin Sanomat · center] Ooppera-arvio | Uusi Aida tuo sodan näyttämölle raadollisimmillaan
 
-### France  (63 матеріалів, 2.9% дня)
+### France  (64 матеріалів, 2.9% дня)
+- [France 24 · public] French LGBTQ rights leader hospitalised after ‘despicable homophobic attack’ in Paris
+- [France 24 · public] Niger junta puts down mutiny with help from Russia's Africa Corps
 - [France 24 · public] NASA launches new space telescope
 - [France 24 · public] Iceland rejects EU accession talks
 - [France 24 · public] Week in pictures: devastating floods in Nepal, death of Dolly Parton and a tornado in France
 - [France 24 · public] France: Far-right and far-left lead polls
-- [France 24 · public] Cyprus: Ferry capsizes with hundreds on board
-- [France 24 · public] Nepal: Hopes fade for thousands still missing
 
-### Germany  (96 матеріалів, 4.4% дня)
+### Germany  (95 матеріалів, 4.3% дня)
 - [Der Spiegel · center-left] Esther Schweins macht Ausbildung zur Trainerin für Stuhl- und Rollatortanz
 - [Der Spiegel · center-left] ADHS bei Lehrern: »Es kann sein, dass ich durch die ADHS nicht der beste Lehrer bin«
 - [Der Spiegel · center-left] Costa Rica: Deutscher Konsul Mario Genz bei Unfall in Lagune tödlich verunglückt
 - [Der Spiegel · center-left] Im Test: Wechselwillige Gepäckträgertaschen
-- [Der Spiegel · center-left] Ein rätselhafter Patient: Das Geheimnis der wunden Nase
 - [Der Spiegel · center-left] Waldbrände verhindern: Wie ein Förster Bäume für die Zukunft wappnet
+- [Der Spiegel · center-left] Ein rätselhafter Patient: Das Geheimnis der wunden Nase
 
 ### Global  (52 матеріалів, 2.4% дня)
+- [Al Jazeera English · center-left] Nepal flood victims fear more bodies are buried under mud
+- [Al Jazeera English · center-left] At least seven dead and 23 missing after boat capsizes off northern Cyprus
 - [Al Jazeera English · center-left] Why did Australia give visas to Israeli soldiers but not Bassem Youssef?
 - [Al Jazeera English · center-left] How does your name taste? The strange science of synaesthesia
 - [Al Jazeera English · center-left] Iceland votes to reject EU accession talks: What happens next?
 - [Al Jazeera English · center-left] Banque Misr, Egypt’s second-largest, hit by US sanctions: What to know
-- [Al Jazeera English · center-left] Dozens of soldiers arrested after apparent coup attempt in Niger’s capital
-- [Al Jazeera English · center-left] Niger’s military-led government says it contained mutiny: What next?
 
-### Greece  (31 матеріалів, 1.4% дня)
+### Greece  (29 матеріалів, 1.3% дня)
+- [Efimerida ton Syntakton · left] Γεωπάρκο Σύρου: Μετά από 9 χρόνια εθελοντικής εργασίας εγκαταλείπεται το σχέδιο – Κόλλησε στα γρανάζια της γραφειοκρατίας
+- [Efimerida ton Syntakton · left] Δεύτερη επιστολή κραυγή – αγωνίας από τους μετανάστες της Σιντικής: «Πληρώνουμε το τίμημα για το ευρωπαϊκό όνειρο»
+- [Efimerida ton Syntakton · left] Αντίδραση ΣΥΡΙΖΑ για τη βράβευση του ιεράρχη Καλαβρύτων Αμβρόσιου: Είχε καταραστεί «να σαπίσει η κοιλιά του Φίλη»
+- [Efimerida ton Syntakton · left] Από το μιλιταρισμό στη γενοκτονία
 - [Efimerida ton Syntakton · left] ΕΛΑΣ για τις άδειες των ιδιωτικών πανεπιστημίων: «O Νόμος Πιερρακάκη πρέπει να καταργηθεί»
 - [Efimerida ton Syntakton · left] Ναυάγιο καταμαράν με 267 επιβαίνοντες στην Κερύνεια: Τουλάχιστον 7 νεκροί, αναζητούνται 23 άτομα [βίντεο]
-- [Efimerida ton Syntakton · left] Πυρκαγιά σε δασική έκταση στο Μαρκόπουλο Ωρωπού: Επιχειρούν 6 εναέρια μέσα – Ήχησε το 112
-- [Efimerida ton Syntakton · left] Πυρκαγιά στον Άγιο Γεώργιο Κέρκυρας: Σηκώθηκαν έξι εναέρια μέσα
-- [Efimerida ton Syntakton · left] Ελληνοτουρκικά: Προμηνύεται χειμώνας με... φουρτούνες στο Αιγαίο
-- [Efimerida ton Syntakton · left] ΚΚΕ για ανάρτηση Μητσοτάκη: Ο λαός θα τους δώσει την απάντηση στο πανελλαδικό συλλαλητήριο στη ΔΕΘ
 
 ### Hungary  (60 матеріалів, 2.7% дня)
+- [444 · independent-left] A láthatatlan óriás – Kégl András (1972–2026)
+- [444 · independent-left] Kirúgták a Külügyből Szabó Bence kétszeres olimpiai bajnokot, aki nagykövetnek készült
 - [444 · independent-left] Trump-hajú, gépfegyverrel lövöldöző ludakat posztolt Donald Trump azután, hogy átnevezte az Ontario-tavat Amerika-tóra
 - [444 · independent-left] Semjén Zsolt: A kereszténydemokrácia önmagában megáll, de azt, hogy „mi a fideszesség nehezebb megmagyarázni”
 - [444 · independent-left] Pócs János attól tart, Navracsicsék miatt úgy járnak majd, mint az MSZP és a DK
 - [444 · independent-left] Rajongóként kezdte, Trump „élő nyomtatója” lett – ki Natalie Harp, az amerikai elnök rejtélyes bizalmasa?
-- [444 · independent-left] Hét ember meghalt és 23 eltűnt, miután felborult egy komp Észak-Ciprus partjainál
-- [444 · independent-left] Magyar Péter: Soha nem vállaltunk olyat, hogy minden vezetői pozícióra megszavaztatjuk a jelölteket a közvéleménnyel
 
 ### Iceland  (1 матеріалів, 0.0% дня)
 - [RUV · public] Síða fannst ekki
 
 ### India  (84 матеріалів, 3.8% дня)
+- [Mint · business] Beer heist? 17,964 litres of alcohol valued at ₹66.76 lakh stolen in California, brand says ‘not a marketing stunt’
 - [Mint · business] India, Uzbekistan target $5 billion trade by 2030, move to cut barriers
 - [Mint · business] Nepal floods: 149 Indians rescued amid evacuation efforts, MEA releases names
 - [Mint · business] At Least Seven People Die in Northern Cyprus Ferry Capsizing
 - [Mint · business] Who is Divya Mittal? Why did IAS officer announce resignation on X after 13 years in civil services? What we know
 - [Mint · business] Fertilizer management gets a digital overhaul for end-to-end tracking, subsidy targeting
-- [Mint · business] Miami man drops out of business college to sell Pokémon cards, clocks ₹74.4 crore sales
 
 ### Iran  (48 матеріалів, 2.2% дня)
-- [IRNA · state] توافق طرف‌های درگیر لیبی درباره برگزاری انتخابات
-- [IRNA · state] پایان خام‌فروشی در همدان؛ ۴۴۴ واحد صنایع تبدیلی حلقه اتصال مزرعه به سفره‌ها
-- [IRNA · state] استاندار کردستان: هفته دولت ۱۹۰۰ میلیارد تومان پروژه در کامیاران بهره‌برداری شد
-- [IRNA · state] هفته وحدت؛ ضرورت همدلی در برابر تفرقه‌افکنی دشمن
-- [IRNA · state] تنکابن در جمع سه شهرستان برتر جذب اعتبارهای عمرانی و زیرساختی مازندران+فیلم
-- [IRNA · state] دسترسی ساحل بابلسر برای سالمندان و توان یابان فراهم شد
+- [IRNA · state] بیانیه باشگاه فوتبال تراکتور درباره اتفاقات یزد و مجری صداوسیما
+- [IRNA · state] راه‌حل‌های مشکلات روستای اهل‌سنت خلخال مشخص شد
+- [IRNA · state] استاندار کرمان: جنوب استان قطب جدید معدنی و صنعتی کشور می‌شود
+- [IRNA · state] ۳۰ گلخانه کوچک‌مقیاس با سرمایه‌گذاری ۹۰ میلیارد ریالی در زابل به بهره‌برداری رسید
+- [IRNA · state] فیلم| گام بلند گلستان برای تکمیل ابرپروژه کریدور شمال به جنوب
+- [IRNA · state] نخست‌وزیر لبنان: مسئولیت ما پایان دادن به اشغالگری است
 
 ### Ireland  (36 матеріалів, 1.6% дня)
-- [Irish Independent · center-right] Galway academy graduate Cillian Tollett (18) signs for Serie A Bologna
+- [Irish Independent · center-right] Wilson Isidor strike proves decisive for Sunderland against Fulham
+- [Irish Independent · center-right] Leeds strike late to deny Keith Andrews’ Brentford
+- [Irish Independent · center-right] Classy Cole Palmer on target as Chelsea hold off Brighton fightback to secure back-to-back wins
+- [Irish Independent · center-right] Barry Egan: Despite the trench foot and pricey burgers, Electric Picnic may just be the new family holiday
+- [Irish Independent · center-right] Galway academy graduate Cillian Tollett (18) signs for Serie A side Bologna
 - [Irish Independent · center-right] ‘These are happy tears’ — silver medal joy for Ireland at World Rowing Championships
-- [Irish Independent · center-right] Kerry IFC quarter-final: David Clifford points Fossa into last four as Listowel Emmets effort falls just short
-- [Irish Independent · center-right] ‘I don’t think there’s any doubt’ – Virgil van Dijk says Liverpool still a big draw for world’s best players
-- [Irish Independent · center-right] At least seven people dead after ferry with 270 aboard capsizes off Cyprus
-- [Irish Independent · center-right] Icelandic voters reject proposal to restart negotiations to join the EU
 
 ### Israel  (55 матеріалів, 2.5% дня)
+- [Haaretz · left] Two Israeli teens charged with spying for Iran, photographing shopping malls
 - [Haaretz · left] After weeks of attacks, Palestinian family evicted by order applying to nearby settlers; police say 'human error'
 - [Haaretz · left] Masked Israeli settlers attack NBC News crew in West Bank
 - [Haaretz · left] When your wedding guest list includes a shady businessman and an ex-president he allegedly bribed
 - [Haaretz · left] Why a planned mikveh has Tel Aviv residents worried
 - [Haaretz · left] Shabbat wars move online: Why did an Israeli fashion brand halt sales on the holy day?
-- [Haaretz · left] After settlers expelled West Bank Palestinians, Israel's top court asks: Who does the IDF protect?
 
 ### Italy  (17 матеріалів, 0.8% дня)
 - [ANSA · reference] Cina, robot cadono ai World Robot Games
 - [ANSA · reference] Volano le vacanze a settembre, 10 milioni in viaggio
 - [ANSA · reference] Pasta al ragù di mare, il piatto di tendenza dell'estate 2026
 - [ANSA · reference] In attesa di Apple, previsioni al rialzo per gli smartphone pieghevoli
-- [ANSA · reference] Spari a un rave party in Svizzera, morta una 22enne abruzzese, cinque feriti. E' caccia all'uomo
+- [ANSA · reference] Spari a un rave party in Svizzera, morta una 22enne abruzzese, due italiani tra i 5 feriti. E' caccia all'uomo
 - [ANSA · reference] Un traghetto si ribalta e affonda al largo di Cipro, almeno 7 morti. Salvate 237 persone, 23 dispersi
 
 ### Japan  (67 матеріалів, 3.0% дня)
@@ -719,45 +705,45 @@
 - [Asahi Shimbun · liberal] 日本海の人口約300人の島の村長選で現職が再選 投票率は91%
 - [Asahi Shimbun · liberal] 山口・美祢で80歳男性死亡 頭に傷複数、妻も骨折 県警が捜査
 
-### Kazakhstan  (29 матеріалів, 1.3% дня)
+### Kazakhstan  (30 матеріалів, 1.4% дня)
+- [Kazinform · state] Судно с сотнями пассажиров перевернулось у Кипра: МИД Казахстана сделал заявление
+- [Kazinform · state] Прицеп с 400 газовыми баллонами загорелся в Костанае
 - [Kazinform · state] Рыбакина впервые поднялась на первое место в live-рейтинге WTA
 - [Kazinform · state] Пожар на заводе пластиковых изделий под Алматы полностью потушили
 - [Kazinform · state] Пьяный мужчина угнал самолет и полетел к АЭС в Венгрии
 - [Kazinform · state] Жительницу пригорода Актау нашли наказали по чеку в выброшенном мусоре
-- [Kazinform · state] Грозы, град и ветер до 28 м/с ожидаются в Казахстане 31 августа
-- [Kazinform · state] Грузовик вспыхнул посреди дороги в Алматы
 
 ### Kenya  (12 матеріалів, 0.5% дня)
+- [Daily Nation · reference] Niger says it regains control of airbase after soldiers mutiny
 - [Daily Nation · reference] Orengo Migori impromptu tour disrupted, vehicle torched
 - [Daily Nation · reference] Orengo cuts short address following tear gas incident in Migori
 - [Daily Nation · reference] Parliament takes cybercrime speech fight to Supreme Court
 - [Daily Nation · reference] Dutch sex convict’s dark Kenya past catches up with him
 - [Daily Nation · reference] Judge cautions politicians against personal attacks as 2027 contests take shape
-- [Daily Nation · reference] Flights disrupted at JKIA as aviation workers resume strike
 
 ### Latvia  (24 матеріалів, 1.1% дня)
+- [Delfi Latvia · reference] Septembra pirmajā nedēļā sagaida rudenīgi laikapstākļi
 - [Delfi Latvia · reference] Islande pagaidām nevirzīsies uz iestāju ES
 - [Delfi Latvia · reference] Pie Kipras apgāžoties prāmim, septiņi bojāgājušie
 - [Delfi Latvia · reference] Bez elektrības jau nedēļu. "Sadales tīklam" vēl nav izdevies atjaunot piegādi 240 klientu
 - [Delfi Latvia · reference] Pēc asiņainās sestdienas Krievija naktī Ukrainai uzbrukusi ar "Iskander-M" un 130 droniem
-- [Delfi Latvia · reference] Kulbergs: "Pagaidām vēl ir cerība atrast mūsu latviešus dzīvus.
-- [Delfi Latvia · reference] Sestdien apturēti 17 šoferi dzērumā, trijiem konfiscēs auto
+- [Delfi Latvia · reference] Kulbergs: Pagaidām vēl ir cerība atrast mūsu latviešus dzīvus
 
-### Lithuania  (22 матеріалів, 1.0% дня)
+### Lithuania  (21 матеріалів, 1.0% дня)
+- [15min · reference] Zambijos opozicijos lyderiui Brianui Mundubilei pareikšti kaltinimai išdavyste
+- [15min · reference] Žvejyba per saulės užtemimą kauniečiui buvo įspūdinga: ištraukė milžinišką šamą
+- [15min · reference] Po potvynio Nepale tebeieškoma apie 85 amerikiečių
 - [15min · reference] Turkija, Saudo Arabija ir Pakistanas rengia pirmąjį gynybos susitarimo susitikimą
 - [15min · reference] BNS Sprintas: svarbiausi savaitės įvykiai
 - [15min · reference] Izraelio kariuomenė Gazos Ruožo ligoninės teritorijoje smogė „Hamas“ vadui
-- [15min · reference] Švietimo ekspertai ragina keisti požiūrį į klaidas: tai – mokymosi dalis
-- [15min · reference] Aleksote sudegė gyvenamasis namas: šeimai renkama pagalba
-- [15min · reference] Ekvadore dėl retų iguanų kontrabandos sulaikyta Rusijos pilietė
 
-### Mexico  (48 матеріалів, 2.2% дня)
+### Mexico  (47 матеріалів, 2.1% дня)
+- [El Financiero · business] Fátima Bosch cede la corona a María Vargas: Reina de Jalisco es la GANADORA de Miss Universe México 2026
+- [El Financiero · business] Debut de ‘La Hormiga’ González con el Olympiacos: ¿Cuándo y dónde ver HOY EN VIVO?
 - [El Financiero · business] Inicio del ciclo escolar 2026-2027: Estos son los días feriados y puentes según el calendario de la SEP
 - [El Financiero · business] ⁠Tras sismos en Colombia, Venezuela y Japón... se acerca septiembre: ¿Estamos en temporada de terremotos?
 - [El Financiero · business] Martí Batres, ‘puma desde la cuna’: ¿Qué clases dio en la UNAM y qué libros publicó?
 - [El Financiero · business] ¿Cuál fue la última telenovela de Adela Noriega? Así fue su último papel antes de desaparecer
-- [El Financiero · business] Fátima Bosch cede la corona a María Vargas: Reina de Jalisco es la GANADORA de Miss Universe México 2026
-- [El Financiero · business] ¿Qué sabemos de los drones derribados por EU en la frontera con México? Esto explicó la Sedena
 
 ### Moldova  (20 матеріалів, 0.9% дня)
 - [Newsmaker · reference] Молдова вновь зафиксировала вторжение беспилотника во время атаки России на Украину
@@ -768,28 +754,36 @@
 - [Newsmaker · reference] В Болгарии в море утонули двое молодых людей из Молдовы
 
 ### Netherlands  (48 матеріалів, 2.2% дня)
-- [De Telegraaf · right] LIVE Vuelta | Pavel Sivakov jaagt dag na uitvallen kopman Tadej Pogacar de zege, peloton nadert
-- [De Telegraaf · right] 'Het is te hopen dat Feyenoord nog wat spelers verkoopt'
-- [De Telegraaf · right] LIVE Eredivisie | Ajax vindt nog geen gaatje in hechte defensie Telstar
-- [De Telegraaf · right] LIVE | Dodental Nepal loopt verder op, schooldirecteur redde levens van honderden studenten
-- [De Telegraaf · right] LIVE Eredivisie | SC Heerenveen speelt gelijk, vanavond Cambuur in actie
-- [De Telegraaf · right] Willem II pakt eerste punt van het seizoen tegen SC Heerenveen
+- [De Telegraaf · right] LIVE Eredivisie | Ajax lijkt duel bij Telstar in paar minuten te beslissen dankzij Berghuis en Tolu
+- [De Telegraaf · right] PSV’er Guus Til verwacht vuurwerk tegen Ajax na spektakelstuk in Utrecht: ’Heet potje wordt dat’
+- [De Telegraaf · right] Ouders piekeren over wie voor hun kinderen zorgt als noodlot toeslaat: zo regel je dat
+- [De Telegraaf · right] Amerikanen overmeesteren drugsboot voor kust van Ecuador
+- [De Telegraaf · right] Enric Mas slaat dag na uitvallen Tadej Pogacar toe en verstevigt leiding in de Vuelta
+- [De Telegraaf · right] Fiets van krantenbezorger tijdens ronde door centrum Schagen gestolen, mét kranten er nog in
+
+### Nigeria  (12 матеріалів, 0.5% дня)
+- [Premium Times · investigative] Abducted Plateau pastor found dead, four others reportedly killed
+- [Premium Times · investigative] Attempted Coup: Niger junta still in control, but situation remains tense
+- [Premium Times · investigative] NFVCB refers Linda Ikeji’s Apo Six film to SSS, suspends cinema release
+- [Premium Times · investigative] Minister challenges Atiku, says Nigeria’s land borders not closed
+- [Premium Times · investigative] CPPE urges NMDPRA to tie petrol imports to verified supply gaps
+- [Premium Times · investigative] Tinubu begins three-week leave, Presidency mum on Shettima as acting president
 
 ### Norway  (23 матеріалів, 1.0% дня)
+- [Aftenposten · center-right] De kongelige sørgeslørene anklages for å tildekke kvinner: – Et sidespor
+- [Aftenposten · center-right] Kong Haralds nære venn gir råd: – Utsett alle feiringer
+- [Aftenposten · center-right] Bil kjørte inn i bensinstasjon: – Store skader på butikken
 - [Aftenposten · center-right] «Nye» Chelsea vant igjen: – En aura av selvsikkerhet
 - [Aftenposten · center-right] Kongeskipet på vei inn Oslofjorden
 - [Aftenposten · center-right] Rekordhøyt antall hetedødsfall i Østerrike
-- [Aftenposten · center-right] Se tallene: Kong Harald hadde seks statsministre. Og nesten 5500 homofile ekteskap.
-- [Aftenposten · center-right] Dronning Sonja er ikke lenger førstedame. Hva nå?
-- [Aftenposten · center-right] Norsk fotball hedrer kong Harald
 
-### Poland  (40 матеріалів, 1.8% дня)
+### Poland  (52 матеріалів, 2.4% дня)
+- [Do Rzeczy · right] Gadżet z Rosji w biurze polityka. Afera w Niemczech
+- [Do Rzeczy · right] Maduro wysłał zdjęcia z więzienia. "Mały prezent"
 - [Do Rzeczy · right] "W każdej epoce są trendy ku nienawiści". Kowal o Wołyniu
 - [Do Rzeczy · right] "Izolowanie nie pomaga". Arcybiskup zabrał głos po powrocie z Moskwy
 - [Do Rzeczy · right] Wielu Niemców chce wyjechać z kraju. Oto powód
 - [Do Rzeczy · right] Kolejna wpadka RCB? Po kilku minutach odwołano alert
-- [Do Rzeczy · right] Prywatnie, ale publicznie
-- [Do Rzeczy · right] Obniżyć składkę zdrowotną!
 
 ### Portugal  (34 матеріалів, 1.5% дня)
 - [Expresso · center-right] Da nova lei da ciência às mudanças na escolha de diretores: os anúncios de Montenegro para a educação
@@ -800,46 +794,46 @@
 - [Expresso · center-right] Tesouros arqueológicos, património mineiro, natureza e vinhos para descobrir em Castro Verde
 
 ### Romania  (23 матеріалів, 1.0% дня)
-- [Digi24 · center] Dominic Fritz: Voi rămâne timişorean implicat şi preşedinte USR. Mă voi bate în continuare cu caracatiţa care sufocă România
-- [Digi24 · center] O dronă a intrat în spaţiul aerian al Republicii Moldova şi a revenit în Ucraina după nouă minute
-- [Digi24 · center] O mașină a ars complet după ce a derapat şi s-a izbit de parapet, pe drumul expres 12. Şoferul şi pasagerul s-au salvat
-- [Digi24 · center] Scott Bessent, test de diplomație economică la G20. SUA cer reducerea dezechilibrelor comerciale și izolarea Iranului
-- [Digi24 · center] Nicuşor Dan, vizită la Baza „Mihail Kogălniceanu” cu delegaţia Congresului SUA. A mâncat la popotă şi s-a pozat cu militarii americani
-- [Digi24 · center] Pe cine ar vota bucureștenii dacă ar fi alegeri. Partidul clasat pe primul loc ar obține 22% din voturi (sondaj CURS)
+- [Digi24 · center] „Dacă mai așteptam 10 minute, eram morți”. Cum a salvat un profesor 900 de elevi înainte ca viitura să lovească o școală din Nepal
+- [Digi24 · center] Prima reacție a premierului Islandei după respingerea aderării la Uniunea Europeană: „Nu e un eșec”
+- [Digi24 · center] În timp ce președinția lui se clatină, Donald Trump este mai periculos ca niciodată. Pe cine se va răzbuna el, după eșecul din Iran
+- [Digi24 · center] Rezultate LOTO - Duminică, 30 august 2026. Numerele extrase și premiile puse în joc de Loteria Română
+- [Digi24 · center] Norvegia își ia rămas-bun de la regele Harald al V-lea. Fiul său, Haakon al VIII-lea, a transmis primul mesaj ca monarh
+- [Digi24 · center] AUR a adoptat o rezoluţie pentru organizarea de alegeri anticipate: „Configuraţia parlamentară a ajuns într-un punct mort”
 
-### Russia  (81 матеріалів, 3.7% дня)
-- [Kommersant · business] В Госдуме прокомментировали слухи о заморозке банковских вкладов россиян // Аксаков: слухи о заморозке банковских вкладов россиян распускают из-за рубежа
-- [Kommersant · business] Бывшего президента Эквадора приговорили к пяти годам тюрьмы за взятки
-- [Kommersant · business] Премьер-министр Онтарио ответил на переименование Трампом озера
-- [Kommersant · business] Из США депортировали блогера и правого активиста Майло Яннопулоса
-- [Kommersant · business] ВСУ ударили ракетами по Белгороду
-- [Kommersant · business] Французская миллионерша оставила все свое наследство Версалю
+### Russia  (80 матеріалів, 3.6% дня)
+- [Kommersant · business] Главные новости за выходные 29–30 августа // У берегов Кипра перевернулся паром с 279 людьми на борту
+- [Kommersant · business] Минобороны РФ сообщило об ударе по центру «Пирогово» под Киевом
+- [Kommersant · business] В Москве несколько машин попали в ДТП на МКАД
+- [Kommersant · business] В Белгороде атакован сортировочный центр Ozon
+- [Kommersant · business] СКР проверит версию об убийстве оперного певца Евгения Кунгурова
+- [Kommersant · business] Запрет на экспорт дизтоплива для НПЗ продлен до 30 сентября для стабильности
 
 ### Serbia  (48 матеріалів, 2.2% дня)
-- [Danas · independent-left] NASA lansirala moćan teleskop koji bi mogao da reši misterije univerzuma
-- [Danas · independent-left] Tamo gde je rođen Nikola Jokić i nastao „Semper Idem“
-- [Danas · independent-left] Mega-zatvori El Salvadora postaju privlačan model za desničarske vlade
-- [Danas · independent-left] „Rusija nastavlja da teroriše civilno stanovništvo“: Opustošeno 3.000 kvadratnih metara zgrade u Kijevu
-- [Danas · independent-left] Trajekt sa 267 putnika se prevrnuo kod Kipra, ima nastradalih
-- [Danas · independent-left] Peter Mađar povodom 110 dana nove vlade: Vratili smo Mađarsku sa ivice ponora, jasno je zašto je u interesu Fidesa i drugih propalih političara da ometaju rad
+- [Danas · independent-left] Sezona ambrozije je u jeku: Svakodnevne greške zbog kojih simptomi mogu biti pojačani
+- [Danas · independent-left] Zvaničnik NATO ne vidi neposrednu pretnju od napada Rusije
+- [Danas · independent-left] Na Bledu sutra počinje Strateški forum: Kako se male države mogu nositi sa geopolitičkim rivalstvima
+- [Danas · independent-left] U Holandiji izdat ‘crveni alarm’ zbog ekstazija u obliku Trampa
+- [Danas · independent-left] Poslanici Skupštine Srbije sutra glasaju o 59 tačaka dnevnog reda
+- [Danas · independent-left] Roditelji đaka pitali Vučića da li je odgovoran za urušavanje novosadske Jovine gimnazije
 
-### Slovakia  (28 матеріалів, 1.3% дня)
-- [Aktuality · reference] Zabudnite na Bukurešť. Rumunsko ukrýva Veselý cintorín aj zábavné parky v soľných jaskyniach
-- [Aktuality · reference] Nedeľa prinesie teploty až do 32 stupňov. Počas dňa sa bude vyjasňovať
-- [Aktuality · reference] Voľný pád Progresívneho Slovenska je len ilúzia. Súboj so Smerom je podľa dát stále mimoriadne tesný
-- [Aktuality · reference] Slovensko vraj sankcie za nedodržaný plán obnovy nečakajú: Tomáš Drucker pripúšťa len drobnú stratu peňazí v doprave
-- [Aktuality · reference] Definitívne rozhodnutie na Islande: Voliči v referende odmietli obnovenie rokovaní o vstupe do Európskej únie
-- [Aktuality · reference] Richard Sulík si myslí, že výstavba nového jadrového bloku by bola rýchlejšia aj lacnejšia, ak by sa na nej podieľal aj ČEZ
+### Slovakia  (24 матеріалів, 1.1% дня)
+- [Aktuality · reference] Berlín čelí hackerskému vydieraniu za dva milióny eur. Vláda mlčí o rozsahu úniku citlivých dát
+- [Aktuality · reference] Nedávno na výročie SNP vešali čiernu zástavu, dnes sa nehanbia sedieť v prvom rade (názor Stanislava Mičeva)
+- [Aktuality · reference] Slovenský tím hasičov naďalej pomáha v Srbsku pri hasení požiarov
+- [Aktuality · reference] Skrytá minulosť kandidáta AfD vyšla na povrch. Sascha Gläser tajil odsúdenie za prepad banky
+- [Aktuality · reference] Premiér Fico kritizoval opozíciu a zastal sa Ruska. Na cenu osláv sa ministra Kaliňáka máme pýtať, keď spočítajú všetky faktúry
+- [Aktuality · reference] Bardejov žije jarmokom. Stovky stánkov, lunaparky aj história na jednom mieste - fotoriport
 
 ### Slovenia  (24 матеріалів, 1.1% дня)
+- [Delo · center] Islandski ribiči slavijo, Bruselj spoštuje odločitev
+- [Delo · center] Muzej Georgea Lucasa: Štirideset tisoč del in dve kinodvorani
+- [Delo · center] Slovenskega državljana na Hrvaškem napadli s kovinsko palico
 - [Delo · center] Vzhodni odgovor na Odisejo
 - [Delo · center] Poplave v Nepalu: že skoraj 800 smrtnih žrtev
 - [Delo · center] Lučka Rakovec bronasta v Franciji
-- [Delo · center] Konec ameriških sanj za Harryja in Meghan
-- [Delo · center] Marquez znova pokazal zobe
-- [Delo · center] Omrzel in Roglič tik za rdečo majico
 
-### South Africa  (32 матеріалів, 1.5% дня)
+### South Africa  (31 матеріалів, 1.4% дня)
 - [Daily Maverick · investigative] Conservation without inclusion: Why iSimangaliso protests reflect a governance crisis
 - [Daily Maverick · investigative] ROBOCASH : The ‘Terminator’ has surprising implications for SA’s platinum group metals industry
 - [Daily Maverick · investigative] SYSTEMS CHANGE: Zaheera Mohamed brings public finance savvy to the fight for ECD systems change
@@ -848,36 +842,36 @@
 - [Daily Maverick · investigative] EYE UP ABOVE: The Cape Town shark spotter who keeps surfers and swimmers safe
 
 ### South Korea  (66 матеріалів, 3.0% дня)
-- [Chosun Ilbo · conservative] 김나희, ♥사업가 남편에 직접 축가..김지민 “나희가 나희한 날”
-- [Chosun Ilbo · conservative] [사설] 대법원은 대법관 재제청하고 청와대는 협의에 응하라
-- [Chosun Ilbo · conservative] 네팔 대홍수서 구조된 두산 현장소장 “사방에 물보라...현장 남아 수색 돕겠다”
-- [Chosun Ilbo · conservative] "훌륭한 선수 보유" '제2 이강인' 김민수, 레인저스 데뷔전 긍정 평가 폭발 '인상적→더 많은 것 보여줄 것으로 기대'
-- [Chosun Ilbo · conservative] 공승연♥트와이스 정연, 이 비주얼이 한 집안...‘넘사벽 자매’ 첫 동반 화보
-- [Chosun Ilbo · conservative] 구조된 두산 현장소장 “사방이 물보라, 건너편이 안 보였다”
+- [Chosun Ilbo · conservative] ‘25년 흡연’ 홍석천, 금연 5일차..금단현상에 “살짝 예민, 건들기만 해봐!”
+- [Chosun Ilbo · conservative] 새 법무장관에 ‘공소취소 모임’ 대표
+- [Chosun Ilbo · conservative] 100km 떠내려갔다, 강 하류를 채운 통곡
+- [Chosun Ilbo · conservative] 저소득층부터 때린 고금리·고물가
+- [Chosun Ilbo · conservative] “남은 후보 중 재제청해야” 대법원장 압박하는 여당
+- [Chosun Ilbo · conservative] 러시아군 전사자 급증, 매달 6000명씩 병력 줄어
 
 ### Spain  (68 матеріалів, 3.1% дня)
-- [ABC · right] Mourinho revoluciona el once del Madrid para recibir al Málaga
-- [ABC · right] Larrubia: «Yo en los parques colocaría un cartel que pusiera 'obligatorio jugar con la pelota'»
-- [ABC · right] El espía masón
-- [ABC · right] Paseo por Madrid y cena romántica: Ester Expósito y Mbappé ya no se esconden
-- [ABC · right] Sarah Santaolalla presentará su propio programa en La Séptima: «La noticia de mi vida»
-- [ABC · right] «Podemos cambiar las propiedades de un material con un simple giro»
+- [ABC · right] El tercero es para Mbappé
+- [ABC · right] Madrid suma 11.516 accidentes hasta junio, con Carabanchel a la cabeza
+- [ABC · right] Islandia rechaza reabrir las negociaciones con la UE en un ajustado referéndum
+- [ABC · right] Naufraga un barco con 270 personas a bordo frente a la costa de Chipre
+- [ABC · right] Noruega despide a Harald V entre colas multitudinarias y un duelo que trasciende las divisiones políticas
+- [ABC · right] Nicolás Maduro reaparece desde la cárcel de Nueva York con unas fotos y un mensaje: «Venezuela renacerá»
 
-### Sweden  (35 матеріалів, 1.6% дня)
+### Sweden  (36 матеріалів, 1.6% дня)
+- [Dagens Nyheter · center-left] Hundratals oidentifierade kroppar begravs i skogen i Nepal
+- [Dagens Nyheter · center-left] Malins axel frös till: ”Vissa nätter orkar jag bara inte mer”
+- [Dagens Nyheter · center-left] Norsk 14-åring stal buss – ville plocka upp passagerare
 - [Dagens Nyheter · center-left] Så gör du när en anhörig behöver hjälp med ekonomin
 - [Dagens Nyheter · center-left] Massflykt från städerna i öster när drönarhotet kryper närmre
 - [Dagens Nyheter · center-left] Island: EU-samtal utesluts under mandatperiod
-- [Dagens Nyheter · center-left] AIK vände – vann händelserikt derby mot Hammarby
-- [Dagens Nyheter · center-left] S-ledaren upprepar ”varning” om Liseberg och mat till gamla
-- [Dagens Nyheter · center-left] Målfoto avgjorde – Sverige hårsmån från dubbelseger
 
 ### Switzerland  (36 матеріалів, 1.6% дня)
+- [Le Temps · center-left] Un bateau de croisière coule au large de Chypre du Nord, faisant 7 morts et 23 disparus
+- [Le Temps · center-left] Le non venu du Nord qui contrarie Bruxelles
 - [Le Temps · center-left] «Les humains projettent beaucoup d’émotionnel sur les chevaux»: D’Hermès à Zara, comment le marketing de mode s’est emparé de l’imagerie équine
 - [Le Temps · center-left] Une sélection de montres «tourbillonnantes»
 - [Le Temps · center-left] Albert Rösti accusé de limiter l’emploi de termes liés au réchauffement climatique dans les textes officiels
 - [Le Temps · center-left] Pour une neutralité armée, solidaire et humanitaire à la conquête du monde
-- [Le Temps · center-left] Ulrich Siegmund, le visage lisse et charmant d’une extrême droite allemande décomplexée
-- [Le Temps · center-left] «Un travail de fourmi»: cinq jours après la catastrophe au Népal, les familles cherchent désespérément leurs disparus
 
 ### Taiwan  (59 матеріалів, 2.7% дня)
 - [Focus Taiwan CNA · reference] Heavy rain forecast as low-pressure system nears Taiwan
@@ -888,22 +882,22 @@
 - [Focus Taiwan CNA · reference] Relocated Taiwan military arsenal boosts efficiency, safety: Chief
 
 ### Turkey  (41 матеріалів, 1.9% дня)
-- [Cumhuriyet · secular-opposition] Batman'da spor salonunda yangın: Mahsur kalanlar var
+- [Cumhuriyet · secular-opposition] Son Dakika... Girne açıklarında batan yolcu gemisine ilişkin 8 kişi gözaltına alındı
+- [Cumhuriyet · secular-opposition] YENİ Parti'den Melih Meriç'e ziyaret: Sağlık durumu hakkında yeni gelişme
+- [Cumhuriyet · secular-opposition] Premier Lig'e 2'de 2 ile başladı: 7 gollü maçta kazanan Chelsea
+- [Cumhuriyet · secular-opposition] YENİ Parti Genel Merkezi'nde hazırlıklar tamamlandı: İlk toplantı tarihi belli oldu
+- [Cumhuriyet · secular-opposition] Batman'da spor salonunda yangın: 2 kişi hayatını kaybetti
 - [Cumhuriyet · secular-opposition] Artvin'de yoğun yağış: Ev ve iş yerlerini su bastı
-- [Cumhuriyet · secular-opposition] Galatasaray'ın rakibi Feyenoord'a Den Haag çelmesi
-- [Cumhuriyet · secular-opposition] Dünyanın en yüksek noktasında kabus: Everest'in 'ölüm bölgesi' insan vücuduna ne yapıyor?
-- [Cumhuriyet · secular-opposition] Ruslan Malinovskyi'den Trabzonspor'a kötü haber
-- [Cumhuriyet · secular-opposition] Odunpazarı’nda ‘okul çantamı birlikte dolduralım’ kampanyası
 
 ### UAE  (72 матеріалів, 3.3% дня)
+- [Al Arabiya · saudi-aligned] Trump says US will refill Strategic Petroleum Reserve using Venezuelan oil
 - [Al Arabiya · saudi-aligned] At least six dead after ferry carrying nearly 270 people capsizes off northern Cyprus
 - [Al Arabiya · saudi-aligned] NASA launches powerful new Roman Space Telescope from Florida
 - [Al Arabiya · saudi-aligned] US must fulfill commitments for Hormuz to reopen, Tehran is in no hurry: Iranian deputy FM
 - [Al Arabiya · saudi-aligned] Saudi Arabia, Turkey and Pakistan to hold first Mecca defense pact meeting in Istanbul
 - [Al Arabiya · saudi-aligned] Israeli strike kills two people including a 3-year-old boy, Gaza medics say
-- [Al Arabiya · saudi-aligned] Death toll from Russia strike on Ukraine arms depot rises to 38
 
-### UK  (29 матеріалів, 1.3% дня)
+### UK  (30 матеріалів, 1.4% дня)
 - [BBC News · public] Iceland votes against restarting EU membership talks
 - [BBC News · public] Manhunt after shooting at Swiss rave kills woman, 22, and injures five
 - [BBC News · public] Canada installs large Lake Ontario sign in latest jab at US
@@ -911,12 +905,12 @@
 - [BBC News · public] At least 37 dead and hundreds evacuated after strike on Kyiv weapons depot
 - [BBC News · public] Zambian opposition leader charged with treason
 
-### USA  (72 матеріалів, 3.3% дня)
+### USA  (71 матеріалів, 3.2% дня)
 - [Axios · reference] Google Maps adds 'Lake America' as Ford compares change to 'SNL' skit
 - [Axios · reference] America's next grocery shock is brewing
 - [Axios · reference] Music publishers sue Anthropic, allege "blantant theft" of copyrighted music
 - [Axios · reference] CIA director Ratcliffe floated Trump-Putin-Zelensky summit during Moscow visit, sources say
-- [Axios · reference] The 5 craziest discoveries from OpenAI's HuggingFace investigation
+- [Fox News · right] Son realizes missing American dad was in path of Nepal disaster after watching viral video
 - [Fox News · right] Major US vacation destination could get more expensive as officials eye new fees
 
 ### Ukraine  (84 матеріалів, 3.8% дня)
@@ -929,11 +923,11 @@
 
 ## Посилання на топ-сюжети
 
-- Российский топ-истеблишмент, аграрный апгрейд и чудо армейской школы. Итоги недели Президента — https://belta.by/president/view/rossijskij-top-isteblishment-agrarnyj-apgrejd-i-chudo-armejskoj-shkoly-itogi-nedeli-prezidenta-798502-2026/
+- Исландцы на референдуме проголосовали против возобновления переговоров о вступлении в ЕС — https://belta.by/world/view/islandtsy-na-referendume-progolosovali-protiv-vozobnovlenija-peregovorov-o-vstuplenii-v-es-798535-2026/
 - Hundreds lost in Nepal mourned in vigils across Australia — https://www.abc.net.au/news/2026-08-31/hundreds-attend-vigils-for-nepal/107095694
-- EEUU alertó que la volatilidad del yen podría encarecer el crédito y presionar a los bonos del Tesoro — https://www.ambito.com/economia/eeuu-alerto-que-la-volatilidad-del-yen-podria-encarecer-el-credito-y-presionar-los-bonos-del-tesoro-n6316297
 - Google Maps will show ‘Lake America’ in U.S. instead of ‘Lake Ontario’ — https://www.theglobeandmail.com/world/article-google-maps-lake-america-lake-ontario/
-- От музея до смотровой вышки: как устроены туристические маршруты в зоне отчуждения — https://belta.by/society/view/ot-muzeja-do-smotrovoj-vyshki-kak-ustroeny-turisticheskie-marshruty-v-zone-otchuzhdenija-798516-2026/
-- Паром с пассажирами перевернулся у берегов Северного Кипра — https://belta.by/world/view/parom-s-passazhirami-perevernulsja-u-beregov-severnogo-kipra-798521-2026/
+- Минимум семь человек погибли при крушении парома у берегов Северного Кипра — https://belta.by/world/view/minimum-sem-chelovek-pogibli-pri-krushenii-paroma-u-beregov-severnogo-kipra-798530-2026/
+- Aumenta el transporte en septiembre: cuánto costará viajar en colectivo, tren y subte en el AMBA — https://www.ambito.com/economia/aumenta-el-transporte-septiembre-cuanto-costara-viajar-colectivo-tren-y-subte-manana-n6316386
+- Verbot des politischen Islam? Stockers Vorstoß stößt bei SPÖ und Neos auf Vorbehalte — https://www.derstandard.at/story/3000000337579/verbot-des-politischen-islam-stockers-vorstoss-stoesst-bei-spoe-und-neos-auf-vorbehalte?ref=rss
 - Iceland rejects EU-accession talks in close-fought referendum — https://www.abc.net.au/news/2026-08-30/iceland-eu-referendum-result/107095748
-- Bilist sigtet for vanvidskørsel efter u-vending i Øresundstunnelen — https://www.dr.dk/nyheder/seneste/bilist-sigtet-vanvidskoersel-efter-u-vending-i-oeresundstunnelen
+- Ich schlafe nur noch mit meinem Mann, weil er das möchte — https://www.derstandard.at/story/3000000337050/ich-schlafe-nur-noch-mit-meinem-mann-weil-er-das-moechte?ref=rss
