@@ -244,6 +244,28 @@ def linkify(t):
     return URL.sub(lambda m: f'<a href="{m.group(1)}">{m.group(1)}</a>', esc(t))
 
 
+
+# Блок тижневого огляду не має місця у випуску: він приходить окремим
+# повідомленням і має власну сторінку. Якщо модель усе ж дописала його
+# в кінець, відрізаємо — інакше він потрапляє і в Telegraph, і на сайт.
+WEEKLY_MARK = ("ОГЛЯД ТИЖНЯ", "ТИЖДЕНЬ ОДНИМ АБЗАЦОМ", "ЩО ЗРУШИЛОСЬ",
+               "ЩО ЗГАСЛО", "ЗСУВ ОПТИКИ", "РАХУНОК ПРОГНОЗІВ",
+               "ТИЖДЕНЬ ПОПЕРЕДУ")
+
+
+def strip_weekly(text):
+    """Відрізає все від першої ознаки тижневого огляду до кінця."""
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        s = line.strip()
+        if len(s) < 60 and any(m in s.upper() for m in WEEKLY_MARK):
+            cut = "\n".join(lines[:i]).rstrip()
+            print(f"  тижневий огляд відрізано з випуску "
+                  f"({len(text) - len(cut)} символів)")
+            return cut
+    return text
+
+
 def parse(brief):
     """Ділить випуск на рубрики: [(емодзі, назва, [рядки])]."""
     out, cur = [], None
@@ -605,7 +627,7 @@ def read(path, default=""):
 
 def main():
     iso = datetime.now(timezone.utc).date().isoformat()
-    brief = read(f"issues/{iso}.md")
+    brief = strip_weekly(read(f"issues/{iso}.md"))
     if not brief:
         print("Немає випуску за сьогодні, сайт не оновлюю")
         return
@@ -620,10 +642,6 @@ def main():
             continue
         keep.append(line)
     brief = "\n".join(keep)
-
-    wpath = ROOT / "issues" / f"weekly-{iso}.md"
-    if wpath.exists():
-        brief += "\n\n" + wpath.read_text(encoding="utf-8").strip()
 
     stats = ""
     digest = read("digests/latest.md")[:400]
