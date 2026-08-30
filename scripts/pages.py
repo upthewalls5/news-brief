@@ -508,9 +508,10 @@ def page(iso, brief, greeting, stats, images, dead=""):
                 f'<img src="{src}" alt="{esc(cap)}" loading="lazy">'
                 f"<figcaption>{esc(cap)}</figcaption></figure>")
 
-    by_name = {cap: src for src, cap in images}
-    cover = by_name.pop("Ілюстрація випуску", "")
-    collage = by_name.pop("Теми дня", "")
+    # Розкладаємо за іменем файлу, а не за підписом: підписи тепер змінні
+    cover = next((s for s, _ in images if "cover-" in s), "")
+    collage = next((s for s, _ in images if "collage-" in s), "")
+    caps = dict((s, c) for s, c in images)
 
     # Візуальне розставлене по тексту, а не купою на початку: колаж тем
     # стоїть перед розколом оптики, смужка уваги — перед пульсом країн.
@@ -519,7 +520,7 @@ def page(iso, brief, greeting, stats, images, dead=""):
     for i, (emoji, name, lines) in enumerate(parse(brief)):
         slug = SLUG.get(name, f"s{i}")
         if slug == "split" and collage:
-            parts.append(figure(collage, "Теми дня"))
+            parts.append(figure(collage, caps.get(collage, "Теми дня")))
             collage = ""
         if slug == "pulse":
             parts.append(attention_strip())
@@ -529,9 +530,9 @@ def page(iso, brief, greeting, stats, images, dead=""):
             f"{esc(name)}</h2>{body}</section>")
 
     # Якщо рубрик чомусь немає, лишки не губимо
-    figs = figure(cover, "Ілюстрація випуску") if cover else ""
+    figs = figure(cover, caps.get(cover, "")) if cover else ""
     if collage:
-        parts.append(figure(collage, "Теми дня"))
+        parts.append(figure(collage, caps.get(collage, "Теми дня")))
 
     return f"""<!doctype html>
 <html lang="uk"><head>
@@ -677,8 +678,18 @@ def main():
     images = []
     # Смужка уваги малюється HTML-блоком нижче, тому картинку з нею сюди
     # не беремо: раніше той самий зміст ішов двічі підряд.
-    for name, cap in ((f"cover-{iso}.png", "Ілюстрація випуску"),
-                      (f"collage-{iso}.png", "Теми дня")):
+    # Підписи мають щось пояснювати. «Ілюстрація випуску» під ілюстрацією
+    # і «Теми дня» під колажем не кажуть читачеві нічого.
+    cover_cap = (read(f"issues/cover-caption-{iso}.txt").split("\n")[0]
+                 or "Метафорична ілюстрація за темами випуску. "
+                    "Згенеровано автоматично, не є зображенням реальних подій.")
+    themes = read(f"issues/collage-themes-{iso}.txt").split("\n")[0]
+    collage_cap = (f"Теми дня: {themes}. Розмір символа — вага теми "
+                   f"в сьогоднішньому випуску."
+                   if themes else "Теми дня за вагою у випуску")
+
+    for name, cap in ((f"cover-{iso}.png", cover_cap),
+                      (f"collage-{iso}.png", collage_cap)):
         src = ROOT / "charts" / name
         if src.exists():
             shutil.copy(src, imgdir / name)
