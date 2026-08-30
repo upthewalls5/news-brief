@@ -118,7 +118,7 @@ def main():
     top = themes[0][2]
     items = []
     for i, (name, glyph, score) in enumerate(themes):
-        size = 20 + 40 * (score / top) ** 0.55
+        size = 30 + 62 * (score / top) ** 0.55
         items.append((name, glyph, score, size))
 
     try:
@@ -129,7 +129,11 @@ def main():
         print(f"matplotlib недоступний ({exc}), колаж пропускаю")
         return
 
-    fig = plt.figure(figsize=(4.4, 4.4), dpi=150)
+    # Той самий колаж двічі: маленький для картки в Telegram і великий
+    # для сайту, де він працює як головна ілюстрація випуску.
+    # Крупніше: на сайті колаж стоїть на всю ширину колонки,
+    # а не мініатюрою в кутку картки.
+    fig = plt.figure(figsize=(7.2, 7.2), dpi=170)
     fig.patch.set_alpha(0)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(-1.22, 1.22); ax.set_ylim(-1.22, 1.22)
@@ -156,6 +160,10 @@ def main():
     out.mkdir(exist_ok=True)
     path = out / f"collage-{iso}.png"
     fig.savefig(path, transparent=True, bbox_inches="tight", pad_inches=0.05)
+    big = out / f"collage-big-{iso}.png"
+    fig.set_size_inches(9.0, 9.0)
+    fig.savefig(big, dpi=170, transparent=True, bbox_inches="tight",
+                pad_inches=0.12)
     plt.close(fig)
     print("Колаж: " + path.name + " · теми: "
           + ", ".join(f"{n}({s})" for n, _, s, _ in items[:6]))
