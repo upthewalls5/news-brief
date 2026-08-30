@@ -22,8 +22,9 @@ from pathlib import Path
 
 import httpx
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-30.3"
+VERSION = "2026-08-30.4"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -238,13 +239,13 @@ def site_link():
         return None
     if not slug:
         return None
-    base = os.environ.get("PAGES_BASE", "").strip().rstrip("/")
+    # Адресу вже перевірив wait_pages.py: він дочекався, поки сторінка
+    # справді відкриється. Порожній файл означає, що вона не з'явилась —
+    # тоді краще зовсім без посилання, ніж із неробочим.
+    live = ROOT / "state" / "live-base.txt"
+    base = live.read_text(encoding="utf-8").strip() if live.exists() else ""
     if not base:
-        repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
-        if not repo or "/" not in repo:
-            return None
-        user, name = repo.split("/", 1)
-        base = f"https://{user}.github.io/{name}"
+        return None
     return f"{base}/{slug}.html"
 
 
