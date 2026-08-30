@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-30.1"
+VERSION = "2026-08-30.2"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -178,7 +178,19 @@ def _trim(text: str) -> str:
     return text
 
 
-def shorten(text: str, limit: int = 600, max_points: int = 3) -> str:
+# Спільні слова шукаємо за ОСНОВАМИ, а не за формами: «підрахунок» і
+# «порахували» мають різні закінчення, а «Ісландія» в гачку й у пункті
+# може стояти в різних відмінках.
+COMMON = {"україн", "росіян", "заявив", "заявил", "сьогод", "вперше",
+          "більше", "меньше", "против", "поперед"}
+
+
+def _stems(t):
+    return {w[:6] for w in re.findall(r"[^\W\d_]{6,}", t.lower())} - COMMON
+
+
+def shorten(text: str, limit: int = 600, max_points: int = 3,
+            hooks=()) -> str:
     """Лишає тільки блок ГОЛОВНЕ, стиснутий до одного речення на пункт."""
     lines, inside = [], False
     for raw in text.split("\n"):
@@ -194,11 +206,19 @@ def shorten(text: str, limit: int = 600, max_points: int = 3) -> str:
             continue
         lines.append(first_sentence(stripped))
 
+    # Пункт, який переказує вже поставлений гачок, у повідомленні зайвий:
+    # читач бачить те саме двічі й вирішує, що випуск про одну тему.
+    hook_stems = [_stems(h) for h in hooks]
     out = []
-    for l in lines[:max_points]:
+    for l in lines:
+        ls = _stems(l)
+        if any(ls & hs for hs in hook_stems):
+            continue
         if sum(len(x) + 3 for x in out) + len(l) > limit:
             break
         out.append(l)
+        if len(out) >= max_points:
+            break
     if not out:
         return text[:limit]
     return "\n\n".join(f"• {l}" for l in out)
@@ -333,7 +353,7 @@ def main():
         # Повний випуск на telegra.ph — у повідомленні лише верхівка
         hooks = read_hook()
         intro = ("\n".join(f"→ {h}" for h in hooks) + "\n\n") if hooks else ""
-        body = intro + shorten(text) + f"\n\n📄 Повний випуск: {link}"
+        body = intro + shorten(text, hooks=hooks) + f"\n\n📄 Повний випуск: {link}"
         if hooks:
             print(f"Анонс: {len(hooks)} рядків")
         parts = split_message(body)
