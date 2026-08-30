@@ -2,7 +2,7 @@
 """
 publish.py — публікує повний випуск на telegra.ph і повертає посилання.
 
-Читає:  issues/YYYY-MM-DD.md, issues/weekly-YYYY-MM-DD.md
+Читає:  issues/short-YYYY-MM-DD.md (або issues/YYYY-MM-DD.md)
 Пише:   state/telegraph.json (токен акаунта + історія посилань)
         issues/link-YYYY-MM-DD.txt (адреса для send.py)
 
@@ -27,7 +27,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-30.7"
+VERSION = "2026-08-30.8"
 STATE = ROOT / "state" / "telegraph.json"
 
 SHRINK_STEPS = (1.0, 0.82, 0.68, 0.55, 0.42, 0.3)
@@ -93,6 +93,28 @@ def split_rubrics(brief):
         if cur is not None:
             cur[1].append(raw)
     return out
+
+
+
+# Блок тижневого огляду не має місця у випуску: він приходить окремим
+# повідомленням і має власну сторінку. Якщо модель усе ж дописала його
+# в кінець, відрізаємо — інакше він потрапляє і в Telegraph, і на сайт.
+WEEKLY_MARK = ("ОГЛЯД ТИЖНЯ", "ТИЖДЕНЬ ОДНИМ АБЗАЦОМ", "ЩО ЗРУШИЛОСЬ",
+               "ЩО ЗГАСЛО", "ЗСУВ ОПТИКИ", "РАХУНОК ПРОГНОЗІВ",
+               "ТИЖДЕНЬ ПОПЕРЕДУ")
+
+
+def strip_weekly(text):
+    """Відрізає все від першої ознаки тижневого огляду до кінця."""
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        s = line.strip()
+        if len(s) < 60 and any(m in s.upper() for m in WEEKLY_MARK):
+            cut = "\n".join(lines[:i]).rstrip()
+            print(f"  тижневий огляд відрізано з випуску "
+                  f"({len(text) - len(cut)} символів)")
+            return cut
+    return text
 
 
 def condense(brief, budget=TELEGRAPH_BUDGET):
@@ -185,7 +207,7 @@ def cover_node(iso):
             "не є зображенням реальних подій."]}]}]
 
 
-def build_nodes(brief, weekly=None, iso=None):
+def build_nodes(brief, iso=None):
     """Перетворює плаский випуск на оформлену сторінку."""
     nodes = []
     sources_all = []
@@ -274,11 +296,6 @@ def build_nodes(brief, weekly=None, iso=None):
 
     render(brief)
 
-    if weekly:
-        nodes.append({"tag": "hr"})
-        nodes.append({"tag": "h3", "children": ["📅 Огляд тижня"]})
-        render(weekly, level="h4")
-
     # Підсумковий перелік джерел
     uniq = []
     for s in sources_all:
@@ -341,13 +358,13 @@ def main():
     # Якщо її немає — відкат на механічний відбір рубрик.
     short = ROOT / "issues" / f"short-{iso}.md"
     if short.exists():
-        brief = short.read_text(encoding="utf-8").strip()
+        brief = strip_weekly(short.read_text(encoding="utf-8").strip())
         print(f"Стисла версія: {len(brief)} символів")
     else:
-        brief = condense(path.read_text(encoding="utf-8").strip())
+        brief = condense(strip_weekly(path.read_text(encoding="utf-8").strip()))
         print(f"Стислої версії немає, скорочую механічно: {len(brief)} символів")
-    wpath = ROOT / "issues" / f"weekly-{iso}.md"
-    weekly = wpath.read_text(encoding="utf-8").strip() if wpath.exists() else None
+    # Тижневий огляд сюди не доклеюємо: він удвічі більший за стислу
+    # версію й переповнює сторінку. Його місце — у повній версії.
 
     token = get_token()
     if not token:
@@ -368,7 +385,7 @@ def main():
     title = f"Ранковий бріф · {today.day} {MONTHS[today.month - 1]} {today.year}"
 
     with httpx.Client(timeout=60.0) as client:
-        nodes = build_nodes(brief, weekly, iso)
+        nodes = build_nodes(brief, iso)
         full = list(nodes)
         data = {}
         for step in SHRINK_STEPS:
