@@ -18,7 +18,9 @@ cover.py — обкладинка випуску через Gemini (Nano Banana)
 
 Читає:  issues/keys-YYYY-MM-DD.txt
 Пише:   charts/cover-YYYY-MM-DD.png
-Потрібен секрет: GEMINI_API_KEY
+Провайдери за пріоритетом: Cloudflare Workers AI (безкоштовно, близько
+230 зображень на добу), Pollinations (без ключа взагалі), Gemini (платний).
+Секрети: CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID, за бажанням GEMINI_API_KEY
 """
 
 import base64
@@ -27,13 +29,28 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import quote
 
 import httpx
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
-API = "https://generativelanguage.googleapis.com/v1beta/models"
-MODEL = os.environ.get("GEMINI_IMAGE_MODEL", "gemini-3.1-flash-image")
-TIMEOUT = 120.0
+TIMEOUT = 150.0
+
+# Три провайдери підряд: перший, що відповість, і малює.
+# Cloudflare — основний: FLUX Schnell коштує близько 43 «нейронів» за
+# зображення, тобто в добовий безкоштовний бюджет вміщується понад двісті
+# картинок. Нам потрібна одна.
+# Pollinations — запасний: не потребує ані ключа, ані реєстрації, але
+# анонімні зображення можуть мати водяний знак.
+# Gemini — останній: платний, вмикається тільки якщо є ключ і перші два
+# не спрацювали.
+CF_API = "https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/{model}"
+CF_MODEL = os.environ.get("CLOUDFLARE_IMAGE_MODEL",
+                          "@cf/black-forest-labs/flux-1-schnell")
+POLLI = "https://image.pollinations.ai/prompt/"
+GEMINI_API = "https://generativelanguage.googleapis.com/v1beta/models"
+GEMINI_MODEL = os.environ.get("GEMINI_IMAGE_MODEL", "gemini-3.1-flash-image")
 
 # 4:3 — класична газетна пропорція. Не банер, не квадрат: під таким
 # співвідношенням ілюстрація над текстом читається на будь-якому екрані,
@@ -54,7 +71,48 @@ def read_keys(iso):
     return [l for l in lines if 6 < len(l) < 90][:8]
 
 
-def build_prompt(keys):
+def scene_from_keys(keys):
+    """Проміжний крок: перетворює образи дня на опис сцени.
+
+    FLUX добре малює за конкретним описом і погано — за переліком
+    абстракцій. Тому між образами й художником стоїть модель, яка
+    знаходить одну сцену, де ці образи сходяться, і описує її
+    англійською: предмети, матеріали, світло, палітра.
+    """
+    key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    system = ROOT / "prompts" / "scene.md"
+    if not key or not system.exists():
+        return ""
+    try:
+        from write import call_api
+        out = call_api(key, system.read_text(encoding="utf-8"),
+                       "ОБРАЗИ ДНЯ:\n" + "\n".join(f"— {k}" for k in keys),
+                       1200)
+    except Exception as exc:
+        print(f"  опис сцени не склався ({type(exc).__name__})")
+        return ""
+    out = (out or "").strip().strip('"')
+    if len(out) < 60 or len(out) > 1200:
+        print(f"  опис сцени підозрілий ({len(out)} символів), беру образи як є")
+        return ""
+    return out
+
+
+def build_prompt(keys, scene=""):
+    if scene:
+        return (
+            f"{scene}\n\n"
+            "Editorial cover illustration for a serious newspaper: painterly, "
+            "restrained, atmospheric, one clear focal point, generous empty "
+            "space, visible texture.\n"
+            f"Format: {ASPECT} landscape, filled edge to edge, no borders, "
+            "no frame, no margins.\n"
+            "AVOID: people, faces or silhouettes; any text, letters, numbers, "
+            "logos or flags; photorealism or anything resembling a news "
+            "photograph; gore; stock-illustration cliches, glossy 3D render, "
+            "neon, HDR."
+        )
+
     joined = "\n".join(f"— {k}" for k in keys)
     return (
         "You are illustrating the cover of today's world-news briefing.\n"
@@ -77,80 +135,98 @@ def build_prompt(keys):
     )
 
 
-def main():
+def from_cloudflare(prompt):
+    token = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
+    acc = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip()
+    if not (token and acc):
+        return None, "немає секретів"
+    url = CF_API.format(acc=acc, model=CF_MODEL)
+    try:
+        with httpx.Client(timeout=TIMEOUT) as client:
+            r = client.post(url, headers={"Authorization": f"Bearer {token}"},
+                            json={"prompt": prompt[:2000], "steps": 6})
+    except Exception as exc:
+        return None, type(exc).__name__
+    if r.status_code >= 400:
+        return None, f"HTTP {r.status_code} {r.text[:120]}"
+    # FLUX повертає base64 у полі result.image, решта моделей — сирі байти
+    ctype = r.headers.get("content-type", "")
+    if "json" in ctype:
+        img = (r.json().get("result") or {}).get("image")
+        if not img:
+            return None, "у відповіді немає зображення"
+        return base64.b64decode(img), None
+    return r.content, None
+
+
+def from_pollinations(prompt):
+    """Без ключа й реєстрації. Анонімні зображення можуть мати водяний знак."""
+    url = POLLI + quote(prompt[:1500], safe="")
+    try:
+        with httpx.Client(timeout=TIMEOUT, follow_redirects=True) as client:
+            r = client.get(url, params={"width": 1280, "height": 960,
+                                        "model": "flux", "nologo": "true",
+                                        "seed": datetime.now(timezone.utc).strftime("%Y%m%d")})
+    except Exception as exc:
+        return None, type(exc).__name__
+    if r.status_code >= 400 or len(r.content) < 5000:
+        return None, f"HTTP {r.status_code}, {len(r.content)} байт"
+    return r.content, None
+
+
+def from_gemini(prompt):
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
-        print("Немає секрету GEMINI_API_KEY — обкладинку пропускаю")
-        return
+        return None, "немає ключа"
+    body = {"contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"imageConfig": {"aspectRatio": ASPECT,
+                                                 "imageSize": IMAGE_SIZE}}}
+    try:
+        with httpx.Client(timeout=TIMEOUT) as client:
+            r = client.post(f"{GEMINI_API}/{GEMINI_MODEL}:generateContent",
+                            headers={"x-goog-api-key": key,
+                                     "Content-Type": "application/json"},
+                            json=body)
+    except Exception as exc:
+        return None, type(exc).__name__
+    if r.status_code >= 400:
+        return None, f"HTTP {r.status_code} {r.text[:120]}"
+    for cand in r.json().get("candidates", []):
+        for part in cand.get("content", {}).get("parts", []):
+            inline = part.get("inlineData") or part.get("inline_data")
+            if inline and inline.get("data"):
+                return base64.b64decode(inline["data"]), None
+    return None, "зображення не повернулось"
 
+
+def main():
     iso = datetime.now(timezone.utc).date().isoformat()
-
     keys = read_keys(iso)
     if not keys:
         print("Немає образів дня (keys-*.txt) — обкладинку пропускаю")
         return
-    prompt = build_prompt(keys)
+
     print("Образи дня: " + " · ".join(keys[:4]))
-    print(f"Модель: {MODEL} | пропорція {ASPECT} | розмір {IMAGE_SIZE}")
+    scene = scene_from_keys(keys)
+    if scene:
+        print(f"Сцена: {scene[:110]}…")
+    prompt = build_prompt(keys, scene)
 
-    try:
-        with httpx.Client(timeout=TIMEOUT) as client:
-            r = client.post(f"{API}/{MODEL}:generateContent",
-                            headers={"x-goog-api-key": key,
-                                     "Content-Type": "application/json"},
-                            json={
-                                "contents": [{"parts": [{"text": prompt}]}],
-                                "generationConfig": {
-                                    "imageConfig": {
-                                        "aspectRatio": ASPECT,
-                                        "imageSize": IMAGE_SIZE,
-                                    }
-                                },
-                            })
-    except Exception as exc:
-        print(f"Gemini недоступний ({type(exc).__name__}), обкладинки не буде")
-        return
-
-    if r.status_code >= 400:
-        print(f"Gemini відмовив: {r.status_code} {r.text[:220]}")
-        # Старіші моделі не знають imageConfig — пробуємо без нього,
-        # хай краще буде картинка іншої пропорції, ніж жодної.
-        if "imageConfig" in r.text or "Unknown name" in r.text:
-            print("Повторюю без imageConfig")
-            try:
-                with httpx.Client(timeout=TIMEOUT) as client:
-                    r = client.post(f"{API}/{MODEL}:generateContent",
-                                    headers={"x-goog-api-key": key,
-                                             "Content-Type": "application/json"},
-                                    json={"contents": [{"parts": [{"text": prompt}]}]})
-            except Exception:
-                return
-            if r.status_code >= 400:
-                return
-        else:
-            return
-
-    data = r.json()
-    blob = None
-    for cand in data.get("candidates", []):
-        for part in cand.get("content", {}).get("parts", []):
-            inline = part.get("inlineData") or part.get("inline_data")
-            if inline and inline.get("data"):
-                blob = inline["data"]
-                break
+    for name, fn in (("Cloudflare", from_cloudflare),
+                     ("Pollinations", from_pollinations),
+                     ("Gemini", from_gemini)):
+        blob, err = fn(prompt)
         if blob:
-            break
+            out = ROOT / "charts"
+            out.mkdir(exist_ok=True)
+            path = out / f"cover-{iso}.png"
+            path.write_bytes(blob)
+            print(f"Обкладинка від {name}: {path.name}, "
+                  f"{path.stat().st_size // 1024} КБ")
+            return
+        print(f"  {name}: {err}")
 
-    if not blob:
-        reason = data.get("candidates", [{}])[0].get("finishReason", "?")
-        print(f"Зображення не повернулось (finishReason={reason})")
-        return
-
-    out = ROOT / "charts"
-    out.mkdir(exist_ok=True)
-    path = out / f"cover-{iso}.png"
-    path.write_bytes(base64.b64decode(blob))
-    print(f"Обкладинка: {path.name}, {path.stat().st_size // 1024} КБ")
+    print("Жоден провайдер не дав зображення — обкладинки не буде")
 
 
 if __name__ == "__main__":
