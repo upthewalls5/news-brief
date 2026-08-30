@@ -165,8 +165,26 @@ p{margin:0 0 17px}
 .ah .d{flex:0 0 92px;font-family:var(--mono);font-size:13.5px;color:var(--accent);
   padding-top:3px}
 
-figure{margin:0 0 30px}
-figure img{width:100%;display:block;border:1px solid var(--line)}
+figure{margin:0 0 26px}
+figure img{width:100%;display:block}
+figure.collage img{max-width:420px;margin:0 auto;border:0}
+
+/* увага преси за добу */
+.attn{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:16px 0 14px;margin:0 0 40px}
+.atth{font-family:var(--sans);font-size:10.5px;font-weight:700;
+  letter-spacing:.19em;text-transform:uppercase;color:var(--faint);
+  margin-bottom:13px}
+.attg{display:grid;grid-template-columns:repeat(4,1fr);gap:15px 18px}
+.att .pc{display:block;font-family:var(--mono);font-size:13px;
+  color:var(--muted);margin-bottom:5px}
+.att .ln{display:block;height:5px;background:#e9e7e1;border-radius:3px;
+  overflow:hidden}
+.att .ln i{display:block;height:100%;background:var(--deep);border-radius:3px}
+.att .nm{display:block;font-family:var(--sans);font-size:12px;
+  color:var(--muted);margin-top:6px}
+.att.hot .pc,.att.hot .nm{color:var(--accent);font-weight:600}
+.att.hot .ln i{background:var(--accent)}
 figcaption{font-family:var(--sans);font-size:12px;color:var(--faint);
   margin-top:8px;text-align:center}
 a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,68,47,.3)}
@@ -195,6 +213,8 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding-top:20px;
   #lead p:first-of-type{font-size:20px}
   #lead p:first-of-type::first-letter{font-size:50px}
   .grid{grid-template-columns:1fr}
+  .attg{grid-template-columns:repeat(2,1fr)}
+  figure.collage img{max-width:280px}
   .grid .row:nth-child(2){border-top:1px solid var(--line)}
   #blind{margin-left:-17px;margin-right:-17px;padding:22px 17px 6px}
   .ah{flex-direction:column;gap:3px}
@@ -376,6 +396,47 @@ def human_date(iso):
     return f"{d.day} {MONTHS[d.month - 1]}"
 
 
+COUNTRY_HEAD = re.compile(r"^###\s+(.+?)\s+\((\d+)\s+матеріал\w*,\s*([\d.]+)%")
+UA_NAME = {
+    "Ukraine": "Україна", "USA": "США", "Russia": "росія", "China": "Китай",
+    "Germany": "Німеччина", "France": "Франція", "UK": "Британія",
+    "Poland": "Польща", "Israel": "Ізраїль", "Iran": "Іран", "India": "Індія",
+    "Taiwan": "Тайвань", "Japan": "Японія", "South Korea": "Корея",
+    "Italy": "Італія", "Spain": "Іспанія", "Turkey": "Туреччина",
+    "Hungary": "Угорщина", "UAE": "ОАЕ", "EU-Brussels": "Брюссель",
+    "Global": "Агенції", "Netherlands": "Нідерланди", "Sweden": "Швеція",
+    "Norway": "Норвегія", "Switzerland": "Швейцарія", "Serbia": "Сербія",
+    "Brazil": "Бразилія", "Mexico": "Мексика", "Canada": "Канада",
+}
+
+
+def attention_strip(limit=8):
+    """Увага преси за добу — розміткою, а не картинкою. Так вона
+    підлаштовується під ширину екрана й лишається чіткою."""
+    d = read("digests/latest.md")
+    rows = []
+    for line in d.split("\n"):
+        m = COUNTRY_HEAD.match(line.strip())
+        if m:
+            rows.append((m.group(1), int(m.group(2)), float(m.group(3))))
+    if len(rows) < 4:
+        return ""
+    rows.sort(key=lambda r: r[1], reverse=True)
+    rows = rows[:limit]
+    top = rows[0][2] or 1
+
+    cells = []
+    for name, _, share in rows:
+        ua = UA_NAME.get(name, name)
+        hot = " hot" if name in ("Ukraine", "Україна") else ""
+        cells.append(
+            f'<div class="att{hot}"><span class="pc">{share:g}%</span>'
+            f'<span class="ln"><i style="width:{max(6, share / top * 100):.0f}%">'
+            f"</i></span><span class=\"nm\">{esc(ua)}</span></div>")
+    return ('<div class="attn rv"><div class="atth">Увага преси за добу</div>'
+            + '<div class="attg">' + "".join(cells) + "</div></div>")
+
+
 def calendar_section():
     """Календар подій попереду — з файлу стану, а не з тексту випуску."""
     raw = read("state/calendar.md")
@@ -428,7 +489,8 @@ def page(iso, brief, greeting, stats, images, dead=""):
             f"{esc(name)}</h2>{body}</section>")
 
     figs = "".join(
-        f'<figure class="rv"><img src="{src}" alt="{esc(cap)}" loading="lazy">'
+        f'<figure class="rv{" collage" if "collage" in src else ""}">'
+        f'<img src="{src}" alt="{esc(cap)}" loading="lazy">'
         f"<figcaption>{esc(cap)}</figcaption></figure>" for src, cap in images)
 
     return f"""<!doctype html>
@@ -449,6 +511,7 @@ def page(iso, brief, greeting, stats, images, dead=""):
   <div class="meta"><span>{date_h}</span><span>{esc(stats)}</span></div>
 </header>
 {figs}
+{attention_strip()}
 {"".join(parts)}
 {calendar_section()}
 {footnotes(dead)}
@@ -558,6 +621,10 @@ def main():
         keep.append(line)
     brief = "\n".join(keep)
 
+    wpath = ROOT / "issues" / f"weekly-{iso}.md"
+    if wpath.exists():
+        brief += "\n\n" + wpath.read_text(encoding="utf-8").strip()
+
     stats = ""
     digest = read("digests/latest.md")[:400]
     m = re.search(r"Зібрано (\d+) матеріалів", digest)
@@ -573,8 +640,9 @@ def main():
     imgdir = DOCS / "img"
     imgdir.mkdir(parents=True, exist_ok=True)
     images = []
-    for name, cap in ((f"cover-{iso}.png", "Обкладинка випуску"),
-                      (f"{iso}.png", "Карта уваги світової преси")):
+    for name, cap in ((f"cover-{iso}.png", "Ілюстрація випуску"),
+                      (f"collage-{iso}.png", "Теми дня"),
+                      (f"{iso}.png", "Увага преси за добу")):
         src = ROOT / "charts" / name
         if src.exists():
             shutil.copy(src, imgdir / name)
