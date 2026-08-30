@@ -1,26 +1,21 @@
 {
   "Il Foglio": {
-    "fails": 17,
+    "fails": 18,
     "since": "2026-08-29",
     "last": "2026-08-30"
   },
   "Milenio": {
-    "fails": 17,
+    "fails": 18,
     "since": "2026-08-29",
     "last": "2026-08-30"
   },
   "Liga.net": {
-    "fails": 11,
-    "since": "2026-08-30",
-    "last": "2026-08-30"
-  },
-  "Ekonomichna Pravda": {
-    "fails": 7,
+    "fails": 12,
     "since": "2026-08-30",
     "last": "2026-08-30"
   },
   "Corriere della Sera": {
-    "fails": 6,
+    "fails": 7,
     "since": "2026-08-30",
     "last": "2026-08-30"
   }
