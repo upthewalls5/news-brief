@@ -1,25 +1,16 @@
 name: Ранковий бріф
 
-# Планувальник GitHub на безкоштовному тарифі пропускає запуски за розкладом:
-# за весь час він спрацював один раз із багатьох. Тому не одна спроба, а пʼять
-# із інтервалом. Перша, що дійде, робить випуск; решта бачать, що бріф за
-# сьогодні вже є, і мовчки виходять.
-# Час у UTC. Влітку Київ = UTC+3, взимку UTC+2 — тоді зсуньте на годину пізніше.
+# Запускається зовнішнім сервісом cron-job.org щоранку о 07:00 за Києвом.
+# Він передає source=cron, і тоді діє захист від дубля.
+# Власний планувальник GitHub тут не використовується: він ненадійний і
+# доставляє події із затримкою в години, через що приходили зайві запуски.
 on:
-  # Основний тригер — зовнішній сервіс, який щоранку смикає GitHub через API.
-  # Він передає source=cron, і тоді діє захист від дубля.
-  # Ручний запуск із інтерфейсу має source=manual і працює завжди.
   workflow_dispatch:
     inputs:
       source:
         description: 'Хто запустив: manual або cron'
         required: false
         default: 'manual'
-  # Власний розклад GitHub лишається запасним: він ненадійний, за весь час
-  # спрацював один раз, але хай буде як підстраховка.
-  schedule:
-    - cron: '25 4 * * *'
-    - cron: '40 5 * * *'
 
 permissions:
   contents: write
@@ -38,8 +29,7 @@ jobs:
           pip install httpx
           sudo $(which python) scripts/prewarm_dns.py || true
           echo "контрольна перевірка:"
-          getent hosts apnews.com www.haaretz.com www3.nhk.or.jp suspilne.media feeds.a.dj.com || true
-
+          getent hosts apnews.com www.haaretz.com www3.nhk.or.jp suspilne.media || true
       - name: 0. Чи потрібен випуск
         id: need
         env:
@@ -48,7 +38,6 @@ jobs:
       - name: 1. Зібрати новини
         if: steps.need.outputs.run == 'yes'
         run: python scripts/collect.py
-
       - name: 1а. Підняти мертві стрічки
         if: steps.need.outputs.run == 'yes'
         continue-on-error: true
@@ -58,7 +47,6 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/write.py
-
       - name: 2а. Редактори перевіряють випуск
         if: steps.need.outputs.run == 'yes'
         continue-on-error: true
@@ -71,17 +59,10 @@ jobs:
           python scripts/chart.py
           python scripts/collage.py
           python scripts/preview.py
-      - name: 3а. Обкладинка випуску
-        if: always() && steps.need.outputs.run == 'yes'
-        continue-on-error: true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/cover.py
       - name: 4. Опублікувати на telegra.ph
         if: always() && steps.need.outputs.run == 'yes'
-        env: {TELEGRAPH_TOKEN: '${{ secrets.TELEGRAPH_TOKEN }}'}
+        env:
+          TELEGRAPH_TOKEN: ${{ secrets.TELEGRAPH_TOKEN }}
         run: python scripts/publish.py
       - name: 5. Відправити в Telegram
         if: always() && steps.need.outputs.run == 'yes'
@@ -89,7 +70,6 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/send.py
-
       - name: 6. Зберегти в архів
         if: always() && steps.need.outputs.run == 'yes'
         run: |
