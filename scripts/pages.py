@@ -502,18 +502,36 @@ def footnotes(dead):
 def page(iso, brief, greeting, stats, images, dead=""):
     d = datetime.fromisoformat(iso).date()
     date_h = f"{d.day} {MONTHS[d.month - 1]} {d.year}"
+    def figure(src, cap):
+        cls = " collage" if "collage" in src else ""
+        return (f'<figure class="rv{cls}">'
+                f'<img src="{src}" alt="{esc(cap)}" loading="lazy">'
+                f"<figcaption>{esc(cap)}</figcaption></figure>")
+
+    by_name = {cap: src for src, cap in images}
+    cover = by_name.pop("Ілюстрація випуску", "")
+    collage = by_name.pop("Теми дня", "")
+
+    # Візуальне розставлене по тексту, а не купою на початку: колаж тем
+    # стоїть перед розколом оптики, смужка уваги — перед пульсом країн.
+    # Три картинки поспіль угорі відсували випуск нижче екрана.
     parts = []
     for i, (emoji, name, lines) in enumerate(parse(brief)):
         slug = SLUG.get(name, f"s{i}")
+        if slug == "split" and collage:
+            parts.append(figure(collage, "Теми дня"))
+            collage = ""
+        if slug == "pulse":
+            parts.append(attention_strip())
         body = RENDER.get(slug, render_plain)(lines)
         parts.append(
             f'<section id="{slug}" class="rv"><h2><span class="ic">{emoji}</span>'
             f"{esc(name)}</h2>{body}</section>")
 
-    figs = "".join(
-        f'<figure class="rv{" collage" if "collage" in src else ""}">'
-        f'<img src="{src}" alt="{esc(cap)}" loading="lazy">'
-        f"<figcaption>{esc(cap)}</figcaption></figure>" for src, cap in images)
+    # Якщо рубрик чомусь немає, лишки не губимо
+    figs = figure(cover, "Ілюстрація випуску") if cover else ""
+    if collage:
+        parts.append(figure(collage, "Теми дня"))
 
     return f"""<!doctype html>
 <html lang="uk"><head>
@@ -533,7 +551,6 @@ def page(iso, brief, greeting, stats, images, dead=""):
   <div class="meta"><span>{date_h}</span><span>{esc(stats)}</span></div>
 </header>
 {figs}
-{attention_strip()}
 {"".join(parts)}
 {calendar_section()}
 {footnotes(dead)}
@@ -658,9 +675,10 @@ def main():
     imgdir = DOCS / "img"
     imgdir.mkdir(parents=True, exist_ok=True)
     images = []
+    # Смужка уваги малюється HTML-блоком нижче, тому картинку з нею сюди
+    # не беремо: раніше той самий зміст ішов двічі підряд.
     for name, cap in ((f"cover-{iso}.png", "Ілюстрація випуску"),
-                      (f"collage-{iso}.png", "Теми дня"),
-                      (f"{iso}.png", "Увага преси за добу")):
+                      (f"collage-{iso}.png", "Теми дня")):
         src = ROOT / "charts" / name
         if src.exists():
             shutil.copy(src, imgdir / name)
