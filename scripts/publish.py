@@ -26,7 +26,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-29.4"
+VERSION = "2026-08-29.5"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -384,7 +384,15 @@ def main():
         full = list(nodes)
         data = {}
         for step in SHRINK_STEPS:
-            attempt = full if step == 1.0 else full[:max(8, int(len(full) * step))]
+            if step == 1.0:
+                attempt = full
+            else:
+                # Скорочуємо з кінця, але ПЕРШИМ прибираємо обкладинку:
+                # текст випуску важливіший за ілюстрацію, а вона стоїть
+                # першим вузлом і інакше пережила б рубрики.
+                body = [n for n in full if not (n.get("tag") == "figure"
+                                                and "cover-" in str(n))]
+                attempt = body[:max(8, int(len(body) * step))]
             r = client.post(f"{API}/createPage", json={
                 "access_token": token,
                 "title": tmp_title,

@@ -26,7 +26,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-29.1"
+VERSION = "2026-08-30.1"
 MODEL = "claude-sonnet-5"
 # Ліміт спільний для міркувань моделі й тексту. Міркування над дайджестом
 # на 50 тисяч токенів самі з'їдають більшу частину бюджету, тому запас
@@ -224,7 +224,12 @@ def main():
         print(f"УВАГА: дайджест обрізано до {MAX_DIGEST_CHARS} символів")
 
     today = datetime.now(timezone.utc).date().isoformat()
-    user = (f"ПАМ'ЯТЬ (сюжетні лінії з попередніх днів):\n{read_state('threads')}\n\n"
+    lessons_path = ROOT / "state" / "lessons.md"
+    lessons = lessons_path.read_text(encoding="utf-8") if lessons_path.exists() else ""
+
+    user = ((f"УРОКИ ПОПЕРЕДНІХ ВИПУСКІВ (зауваження редакторів — не повторюй "
+             f"цих помилок):\n{lessons}\n\n" if lessons.strip() else "")
+            + f"ПАМ'ЯТЬ (сюжетні лінії з попередніх днів):\n{read_state('threads')}\n\n"
             f"НАШІ ПРОГНОЗИ:\n{read_state('predictions')}\n\n"
             f"ЧУЖІ ПРОГНОЗИ:\n{read_state('external')}\n\n"
             f"СЬОГОДНІ {today}\n\nДАЙДЖЕСТ:\n{digest}")
