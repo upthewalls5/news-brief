@@ -1,0 +1,53 @@
+name: Огляд тижня
+
+# Окрема доставка тижневого огляду. Сам огляд пише write.py у неділю разом
+# із випуском, а це — його відправка о власній годині, об 11:00 за Києвом,
+# щоб він не змішувався з ранковим брифом.
+#
+# Запускається зовнішнім тригером cron-job.org, окремим завданням.
+# Захист від дубля всередині: повторний виклик за той самий день мовчки
+# виходить, а ручний запуск із інтерфейсу шле повторно навмисно.
+
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'Хто запустив: manual або cron'
+        required: false
+        default: 'manual'
+
+permissions:
+  contents: write
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install httpx
+      - name: Надіслати огляд тижня
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAPH_TOKEN: ${{ secrets.TELEGRAPH_TOKEN }}
+        env:
+          TRIGGER_SOURCE: ${{ github.event.inputs.source || 'manual' }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAPH_TOKEN: ${{ secrets.TELEGRAPH_TOKEN }}
+        run: python scripts/send_weekly.py
+      - name: Зберегти мітку
+        if: always()
+        run: |
+          git config user.name  "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet && echo "змін немає" && exit 0
+          git commit -m "Огляд тижня $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git push && exit 0
+            git pull --rebase --autostash origin main || git rebase --abort
+          done
