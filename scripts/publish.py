@@ -153,13 +153,25 @@ def fit_content(nodes, limit):
 
 
 def site_url(iso=None):
-    """Адреса випуску на GitHub Pages."""
-    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
-    if not repo or "/" not in repo:
-        return ""
-    user, name = repo.split("/", 1)
+    """Адреса повної версії. Випадковий слаг веде site.py."""
     iso = iso or datetime.now(timezone.utc).date().isoformat()
-    return f"https://{user}.github.io/{name}/{iso}.html"
+    p = ROOT / "state" / "pages.json"
+    if not p.exists():
+        return ""
+    try:
+        slug = json.loads(p.read_text(encoding="utf-8")).get(iso)
+    except Exception:
+        return ""
+    if not slug:
+        return ""
+    base = os.environ.get("PAGES_BASE", "").strip().rstrip("/")
+    if not base:
+        repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+        if not repo or "/" not in repo:
+            return ""
+        user, name = repo.split("/", 1)
+        base = f"https://{user}.github.io/{name}"
+    return f"{base}/{slug}.html"
 
 
 def load_state():
