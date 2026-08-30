@@ -26,18 +26,19 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-30.1"
+VERSION = "2026-08-30.2"
 MODEL = "claude-sonnet-5"
 # Ліміт спільний для міркувань моделі й тексту. Міркування над дайджестом
 # на 50 тисяч токенів самі з'їдають більшу частину бюджету, тому запас
 # має бути кратним, а не впритул.
-MAX_TOKENS = 32000        # на випуск
+MAX_TOKENS = 48000        # на випуск: міркування над 70к вхідних
+                          # токенів самі з'їдають більшу частину
 MAX_TOKENS_STATE = 20000  # на файли стану
 TIMEOUT = 1200.0      # загальний бюджет на запит
 READ_TIMEOUT = 180.0  # пауза МІЖ частинами потоку, а не на всю відповідь
 ATTEMPTS = 3
 
-MAX_DIGEST_CHARS = 120_000
+MAX_DIGEST_CHARS = 100_000
 CAPS = {"threads": 3500, "predictions": 6500, "external": 6500,
         "calendar": 2600}
 
@@ -111,7 +112,14 @@ def stream_once(key, payload):
                     stop = data.get("delta", {}).get("stop_reason", stop)
                     usage["output"] = data.get("usage", {}).get("output_tokens")
                 elif event == "error":
-                    return None, 0, str(data)[:300], stop, usage
+                    # SSE-помилка: раніше поверталась із кодом 0, не
+                    # потрапляла в жодну перевірку і мовчки ставала
+                    # «порожньою відповіддю» з вигаданим поясненням.
+                    err = data.get("error", data)
+                    kind = str(err.get("type", "")) if isinstance(err, dict) else ""
+                    code = 529 if "overload" in kind else (
+                        429 if "rate_limit" in kind else 500)
+                    return None, code, f"{kind or 'error'}: {str(err)[:200]}", stop, usage
 
     return "".join(text_parts).strip(), 200, None, stop, usage
 
@@ -132,13 +140,23 @@ def call_api(key, system, user, max_tokens=None):
             continue
 
         if code in (429, 529) or code >= 500:
-            print(f"  спроба {attempt + 1}: API перевантажений ({code})")
+            print(f"  спроба {attempt + 1}: {err or f'код {code}'}")
             if attempt == ATTEMPTS - 1:
                 sys.exit(f"API перевантажений ({code})")
             time.sleep(20 * (attempt + 1))
             continue
         if code >= 400:
             sys.exit(f"API повернув {code}: {err}")
+
+        if not text:
+            print(f"  спроба {attempt + 1}: потік обірвався без тексту "
+                  f"(вхід {usage['input']}, зупинка {stop})")
+            if attempt < ATTEMPTS - 1:
+                time.sleep(15 * (attempt + 1))
+                continue
+            sys.exit("Потік тричі обірвався без тексту. Дивіться повідомлення "
+                     "вище: якщо там rate_limit або overloaded — це тимчасове, "
+                     "перезапустіть. Якщо max_tokens — підніміть MAX_TOKENS.")
 
         print(f"  вхід {usage['input']} | вихід {usage['output']} | зупинка: {stop}")
         if stop == "max_tokens":
@@ -241,8 +259,7 @@ def main():
     text = call_api(key, (ROOT / "prompts" / "brief.md").read_text(encoding="utf-8"),
                     user, MAX_TOKENS)
     if not text:
-        sys.exit("API повернув порожню відповідь: увесь бюджет пішов на "
-                 "міркування. Підніміть MAX_TOKENS у scripts/write.py.")
+        sys.exit("Перший запит не дав тексту")
 
     parts, structured = split_parts(text)
     brief = parts.get("brief", "").strip()
