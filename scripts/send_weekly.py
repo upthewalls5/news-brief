@@ -26,6 +26,59 @@ MONTHS = ("січня", "лютого", "березня", "квітня", "тр�
           "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
 
 
+def first_paragraph(text, limit=700):
+    """Перший змістовний абзац — «тиждень одним абзацом». Заголовки
+    рубрик пропускаємо: вони без тексту нічого не кажуть."""
+    for block in text.split("\n\n"):
+        b = block.strip()
+        if len(b) < 120 or b.isupper():
+            continue
+        return b if len(b) <= limit else b[:limit].rsplit(" ", 1)[0] + "…"
+    return text[:limit]
+
+
+def publish_weekly(text, today):
+    """Окрема сторінка на telegra.ph. Своя адреса, не пов'язана з випуском."""
+    try:
+        import publish as P
+    except Exception as exc:
+        print(f"publish.py недоступний ({type(exc).__name__})")
+        return ""
+    token = os.environ.get("TELEGRAPH_TOKEN", "").strip()
+    if not token:
+        print("Немає TELEGRAPH_TOKEN, сторінку не створюю")
+        return ""
+
+    nodes = P.build_nodes(text)
+    slug = P.secrets.token_hex(3)
+    title = f"Огляд тижня {today.day} {MONTHS[today.month - 1]} {today.year}"
+    try:
+        with P.httpx.Client(timeout=60.0) as client:
+            r = client.post(f"{P.API}/createPage", json={
+                "access_token": token, "title": f"w{slug}",
+                "author_name": "Ранковий бріф",
+                "content": P.fit_content(nodes, P.LIMIT_SAFE),
+                "return_content": False,
+            })
+            data = r.json()
+            if not data.get("ok"):
+                print(f"Telegraph відмовив: {str(data)[:160]}")
+                return ""
+            url = data["result"]["url"]
+            path = data["result"].get("path")
+            if path:
+                client.post(f"{P.API}/editPage/{path}", json={
+                    "access_token": token, "title": title[:256],
+                    "author_name": "Ранковий бріф",
+                    "content": P.fit_content(nodes, P.LIMIT_SAFE),
+                    "return_content": False,
+                })
+            return url
+    except Exception as exc:
+        print(f"Сторінка не створилась ({type(exc).__name__}: {exc})")
+        return ""
+
+
 def main():
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
@@ -54,15 +107,28 @@ def main():
         return
 
     header = f"📅 ОГЛЯД ТИЖНЯ · {today.day} {MONTHS[today.month - 1]} {today.year}"
-    parts = split_message(text)
-    for i, part in enumerate(parts):
-        body = decorate(part)
-        if i == 0:
-            body = f"<b>{esc(header)}</b>\n\n{body}"
+
+    # Огляд великий — сім тисяч символів у стрічці читати незручно.
+    # Тому повний текст іде на telegra.ph окремою сторінкою зі своєю
+    # адресою, а в канал — перший абзац і посилання.
+    link = publish_weekly(text, today)
+
+    if link:
+        body = (f"<b>{esc(header)}</b>\n\n{decorate(first_paragraph(text))}"
+                f"\n\n📄 Огляд повністю: {link}")
         send(token, chat_id, body)
+        print(f"Огляд тижня: {len(text)} символів, сторінка {link}")
+    else:
+        parts = split_message(text)
+        for i, part in enumerate(parts):
+            body = decorate(part)
+            if i == 0:
+                body = f"<b>{esc(header)}</b>\n\n{body}"
+            send(token, chat_id, body)
+        print(f"Сторінки немає, надіслано текстом: {len(parts)} повідомлень")
+
     mark.parent.mkdir(exist_ok=True)
     mark.write_text(today.isoformat(), encoding="utf-8")
-    print(f"Огляд тижня надіслано: {len(text)} символів, {len(parts)} повідомлень")
 
 
 if __name__ == "__main__":
