@@ -1,12 +1,22 @@
 {
   "Il Foglio": {
-    "fails": 3,
+    "fails": 4,
     "since": "2026-08-29",
-    "last": "2026-08-29"
+    "last": "2026-08-30"
   },
   "Milenio": {
-    "fails": 3,
+    "fails": 4,
     "since": "2026-08-29",
-    "last": "2026-08-29"
+    "last": "2026-08-30"
+  },
+  "Euractiv": {
+    "fails": 1,
+    "since": "2026-08-30",
+    "last": "2026-08-30"
+  },
+  "Daily Nation": {
+    "fails": 1,
+    "since": "2026-08-30",
+    "last": "2026-08-30"
   }
 }
