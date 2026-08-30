@@ -71,14 +71,7 @@ jobs:
           TELEGRAPH_TOKEN: ${{ secrets.TELEGRAPH_TOKEN }}
           PAGES_BASE: ${{ vars.PAGES_BASE }}
         run: python scripts/publish.py
-      - name: 5. Відправити в Telegram
-        if: always() && steps.need.outputs.run == 'yes'
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          PAGES_BASE: ${{ vars.PAGES_BASE }}
-        run: python scripts/send.py
-      - name: 6. Зберегти в архів
+      - name: 5. Зберегти в архів
         if: always() && steps.need.outputs.run == 'yes'
         run: |
           git config user.name  "news-bot"
@@ -93,3 +86,16 @@ jobs:
             sleep $((i * 4))
           done
           echo "не вдалося запушити після 5 спроб"; exit 1
+      - name: 6. Дочекатись, поки сторінка відкриється
+        if: always() && steps.need.outputs.run == 'yes'
+        continue-on-error: true
+        env:
+          PAGES_BASE: ${{ vars.PAGES_BASE }}
+        run: python scripts/wait_pages.py
+      - name: 7. Відправити в Telegram
+        if: always() && steps.need.outputs.run == 'yes'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAGES_BASE: ${{ vars.PAGES_BASE }}
+        run: python scripts/send.py
