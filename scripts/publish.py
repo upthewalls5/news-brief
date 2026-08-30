@@ -24,6 +24,7 @@ from pathlib import Path
 
 import httpx
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
 VERSION = "2026-08-30.5"
@@ -164,13 +165,10 @@ def site_url(iso=None):
         return ""
     if not slug:
         return ""
-    base = os.environ.get("PAGES_BASE", "").strip().rstrip("/")
+    import pages
+    base = pages.base_url()
     if not base:
-        repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
-        if not repo or "/" not in repo:
-            return ""
-        user, name = repo.split("/", 1)
-        base = f"https://{user}.github.io/{name}"
+        return ""
     return f"{base}/{slug}.html"
 
 
