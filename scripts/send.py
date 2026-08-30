@@ -12,6 +12,7 @@ markdown і повертає помилку 400 на будь-який неек�
 Повідомлення довші за 4096 символів ріжуться по порожньому рядку.
 """
 
+import json
 import os
 import sys
 import re
@@ -225,13 +226,26 @@ def shorten(text: str, limit: int = 600, max_points: int = 3,
 
 
 def site_link():
-    """Повна версія на GitHub Pages."""
-    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
-    if not repo or "/" not in repo:
-        return None
-    user, name = repo.split("/", 1)
+    """Повна версія. Адреса випадкова, тому беремо її з мапи, яку веде
+    site.py. База — Cloudflare Pages, якщо налаштований, інакше GitHub."""
     iso = datetime.now(timezone.utc).date().isoformat()
-    return f"https://{user}.github.io/{name}/{iso}.html"
+    p = ROOT / "state" / "pages.json"
+    if not p.exists():
+        return None
+    try:
+        slug = json.loads(p.read_text(encoding="utf-8")).get(iso)
+    except Exception:
+        return None
+    if not slug:
+        return None
+    base = os.environ.get("PAGES_BASE", "").strip().rstrip("/")
+    if not base:
+        repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+        if not repo or "/" not in repo:
+            return None
+        user, name = repo.split("/", 1)
+        base = f"https://{user}.github.io/{name}"
+    return f"{base}/{slug}.html"
 
 
 def read_link():
