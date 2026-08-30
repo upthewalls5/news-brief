@@ -62,17 +62,21 @@ jobs:
       - name: 3б. Зібрати повну версію на сайті
         if: always() && steps.need.outputs.run == 'yes'
         continue-on-error: true
-        run: python scripts/site.py
+        env:
+          PAGES_BASE: ${{ vars.PAGES_BASE }}
+        run: python scripts/pages.py
       - name: 4. Опублікувати на telegra.ph
         if: always() && steps.need.outputs.run == 'yes'
         env:
           TELEGRAPH_TOKEN: ${{ secrets.TELEGRAPH_TOKEN }}
+          PAGES_BASE: ${{ vars.PAGES_BASE }}
         run: python scripts/publish.py
       - name: 5. Відправити в Telegram
         if: always() && steps.need.outputs.run == 'yes'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAGES_BASE: ${{ vars.PAGES_BASE }}
         run: python scripts/send.py
       - name: 6. Зберегти в архів
         if: always() && steps.need.outputs.run == 'yes'
