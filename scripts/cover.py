@@ -82,7 +82,7 @@ def scene_from_keys(keys):
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     system = ROOT / "prompts" / "scene.md"
     if not key or not system.exists():
-        return ""
+        return "", ""
     try:
         from write import call_api
         out = call_api(key, system.read_text(encoding="utf-8"),
@@ -90,12 +90,25 @@ def scene_from_keys(keys):
                        1200)
     except Exception as exc:
         print(f"  опис сцени не склався ({type(exc).__name__})")
-        return ""
-    out = (out or "").strip().strip('"')
+        return "", ""
+    out = (out or "").strip()
+    caption = ""
+    if "===ПІДПИС===" in out:
+        out, caption = out.split("===ПІДПИС===", 1)
+        caption = caption.strip().strip('"').split("\n")[0][:200]
+    out = out.replace("===СЦЕНА===", "").strip().strip('"')
+
     if len(out) < 60 or len(out) > 1200:
         print(f"  опис сцени підозрілий ({len(out)} символів), беру образи як є")
-        return ""
-    return out
+        return "", caption
+
+    if caption:
+        iso = datetime.now(timezone.utc).date().isoformat()
+        (ROOT / "issues").mkdir(exist_ok=True)
+        (ROOT / "issues" / f"cover-caption-{iso}.txt").write_text(
+            caption, encoding="utf-8")
+        print(f"  підпис: {caption}")
+    return out, caption
 
 
 def build_prompt(keys, scene=""):
@@ -207,7 +220,7 @@ def main():
         return
 
     print("Образи дня: " + " · ".join(keys[:4]))
-    scene = scene_from_keys(keys)
+    scene, _ = scene_from_keys(keys)
     if scene:
         print(f"Сцена: {scene[:110]}…")
     prompt = build_prompt(keys, scene)
