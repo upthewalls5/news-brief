@@ -19,6 +19,11 @@ TOP = 12
 
 INK = "#1c1c1c"
 MUTED = "#8a8a8a"
+BG = "#12161d"
+CARD = "#1a1f28"
+BAR = "#4d6b82"
+MUTED = "#8b95a5"
+DIM = "#5a6472"
 BASE = "#2f4858"
 ACCENT = "#c0442f"
 HIGHLIGHT = {"Ukraine", "Україна"}
@@ -71,64 +76,56 @@ def main():
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
-        from matplotlib.patches import FancyBboxPatch
+        from matplotlib.patches import Rectangle
     except Exception as exc:
         print(f"matplotlib недоступний ({exc}), графік пропускаю")
         return
 
-    rows = all_rows[:TOP]
+    rows = all_rows[:8]
     total_items = sum(r[1] for r in all_rows)
-    top_share = rows[0][2]
-
-    n = len(rows)
-    fig_h = 0.40 * n + 1.7
-    fig, ax = plt.subplots(figsize=(7.6, fig_h), dpi=200)
-    fig.patch.set_facecolor("white")
-    ax.set_facecolor("white")
-
-    # Ранжування читається через насиченість: перші рядки темніші.
-    for i, (name, count, share) in enumerate(rows):
-        y = n - i
-        w = share / top_share
-        accent = name in HIGHLIGHT
-        color = ACCENT if accent else BASE
-        alpha = 1.0 if accent else 0.92 - 0.045 * i
-
-        ax.add_patch(FancyBboxPatch(
-            (0, y - 0.21), w, 0.42,
-            boxstyle="round,pad=0,rounding_size=0.06",
-            linewidth=0, facecolor=color, alpha=alpha,
-            mutation_aspect=0.18))
-
-        ax.text(-0.02, y, UA.get(name, name), ha="right", va="center",
-                fontsize=10.5, color=INK,
-                fontweight="semibold" if accent else "normal")
-        ax.text(w + 0.015, y, f"{share:g}%", ha="left", va="center",
-                fontsize=9.5, color=color if accent else MUTED,
-                fontweight="semibold" if accent else "normal")
-
+    top = rows[0][2]
     today = datetime.now(timezone.utc).date()
-    ax.text(-0.34, n + 1.22, "Карта уваги світової преси",
-            ha="left", va="bottom", fontsize=14, fontweight="bold", color=INK)
-    ax.text(-0.34, n + 0.84,
-            f"Частка країни в новинному потоці за добу · {today:%d.%m.%Y}",
-            ha="left", va="bottom", fontsize=9.5, color=MUTED)
-    ax.text(-0.34, 0.30,
-            f"{total_items} матеріалів · {len(all_rows)} країн · "
-            f"показано {n} найбільших",
-            ha="left", va="top", fontsize=8.5, color=MUTED)
 
-    ax.set_xlim(-0.34, 1.09)
-    ax.set_ylim(0.05, n + 1.6)
-    ax.axis("off")
-    fig.tight_layout(pad=0.6)
+    # Та сама смужка, що на картці в Telegram: відсоток згори, брусок,
+    # назва знизу. Стовпчикова діаграма займала пів екрана й повторювала
+    # те саме кількома способами.
+    W, H = 12.0, 1.75
+    fig = plt.figure(figsize=(W, H), dpi=170)
+    fig.patch.set_facecolor(BG)
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, W); ax.set_ylim(0, H); ax.axis("off")
+    ax.add_patch(Rectangle((0.18, 0.16), W - 0.36, H - 0.32,
+                           facecolor=CARD, edgecolor="none"))
+    ax.add_patch(Rectangle((0.18, 0.16), 0.06, H - 0.32,
+                           facecolor=ACCENT, edgecolor="none"))
+
+    x, right = 0.62, W - 0.62
+    ax.text(x, H - 0.38, "УВАГА ПРЕСИ ЗА ДОБУ", fontsize=10.5, color=DIM,
+            fontweight="bold", va="top")
+    ax.text(right, H - 0.38,
+            f"{total_items} матеріалів · {len(all_rows)} країн · {today:%d.%m.%Y}",
+            fontsize=10, color=DIM, va="top", ha="right")
+
+    seg = (right - x) / len(rows)
+    y = H - 0.95
+    for i, (name, _, share) in enumerate(rows):
+        sx = x + i * seg
+        accent = name in HIGHLIGHT
+        color = ACCENT if accent else BAR
+        ax.text(sx, y, f"{share:g}%", fontsize=11.5,
+                color=ACCENT if accent else MUTED, va="bottom",
+                fontweight="bold" if accent else "normal")
+        ax.add_patch(Rectangle((sx, y - 0.20), seg * 0.82 * (share / top), 0.11,
+                               facecolor=color, edgecolor="none"))
+        ax.text(sx, y - 0.30, UA.get(name, name)[:12], fontsize=10.5,
+                color=ACCENT if accent else MUTED, va="top")
 
     out = ROOT / "charts"
     out.mkdir(exist_ok=True)
     path = out / f"{today.isoformat()}.png"
-    fig.savefig(path, bbox_inches="tight", facecolor="white", pad_inches=0.35)
+    fig.savefig(path, facecolor=BG)
     plt.close(fig)
-    print(f"Графік: {path.name}, країн {n}")
+    print(f"Смужка уваги: {path.name}, країн {len(rows)}")
 
 
 if __name__ == "__main__":
