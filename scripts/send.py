@@ -24,7 +24,7 @@ import httpx
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-30.5"
+VERSION = "2026-08-30.6"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -389,19 +389,37 @@ def main():
         print("Посилання немає, шлю випуск повністю")
 
     photo = preview_path()
-    caption = ""
-    if photo and len(parts) == 1:
-        caption = f"<b>{esc(header())}</b>\n\n{decorate(parts[0])}"
-    # Ліміт підпису в Telegram — 1024 символи. Рахуємо саме підпис, а не
-    # текст до розмітки: раніше стояв запас «менше 900», і два посилання
-    # замість одного вивели повідомлення за поріг — картка зникла.
-    if photo and caption and len(caption) <= 1024:
-        try:
-            send_photo(token, chat_id, photo, caption)
-            print(f"Відправлено карткою, {len(text)} символів")
-            return
-        except Exception as exc:
-            print(f"Картка не пішла ({exc}), шлю текстом")
+    if photo and link:
+        # Ліміт підпису в Telegram — 1024 символи разом із розміткою.
+        # Раніше я складав повідомлення, а потім намагався його вкоротити,
+        # і воно щоразу не вкладалось. Тепер бюджет рахується наперед:
+        # від ліміту віднімаємо шапку, гачки й посилання, а решта —
+        # скільки лишається на самі пункти.
+        head = f"<b>{esc(header())}</b>\n\n"
+        tail = f"\n\n📄 Стисло: {link}"
+        site = site_link()
+        if site:
+            tail += f"\n📰 Повна версія: {site}"
+        intro_html = decorate(intro) if intro else ""
+        budget = 1024 - len(head) - len(intro_html) - len(tail) - 20
+
+        if budget > 180:
+            body = shorten(text, limit=budget, max_points=4, hooks=hooks)
+            caption = head + intro_html + decorate(body) + tail
+            while len(caption) > 1024 and "\n\n•" in body:
+                body = body[:body.rindex("\n\n•")]
+                caption = head + intro_html + decorate(body) + tail
+            if len(caption) <= 1024:
+                try:
+                    send_photo(token, chat_id, photo, caption)
+                    print(f"Відправлено карткою, підпис {len(caption)} символів")
+                    return
+                except Exception as exc:
+                    print(f"Картка не пішла ({exc}), шлю текстом")
+            else:
+                print(f"Підпис {len(caption)} символів не стискається, шлю текстом")
+        else:
+            print(f"На пункти лишається {budget} символів, шлю текстом")
 
     for i, part in enumerate(parts):
         if len(parts) > 1:
