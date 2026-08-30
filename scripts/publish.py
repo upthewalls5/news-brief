@@ -26,10 +26,29 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-30.4"
+VERSION = "2026-08-30.5"
 STATE = ROOT / "state" / "telegraph.json"
 
 SHRINK_STEPS = (1.0, 0.82, 0.68, 0.55, 0.42, 0.3)
+
+# Telegraph приймає приблизно 20,6 КБ — це близько 10 тисяч символів
+# українською. Повний випуск удвічі більший, тому сюди йде стисла версія:
+# аналітичне ядро без переліків. Усе решта — на сайті.
+TELEGRAPH_RUBRICS = ("ГОЛОВНЕ", "РОЗКОЛ ОПТИКИ", "ЩО З ЧОГО ВИПЛИВАЄ",
+                     "УКРАЇНСЬКИЙ ВИМІР", "ПРОГНОЗИ")
+
+
+def condense(brief, keep=TELEGRAPH_RUBRICS):
+    """Лишає тільки названі рубрики. Решта — ПУЛЬС КРАЇН, ГРОШІ, МАСОВА
+    ОПТИКА, СЛІПА ЗОНА, РАДАР, ЩО ПОПЕРЕДУ — живуть у повній версії."""
+    out, take = [], False
+    for raw in brief.split("\n"):
+        line = raw.strip()
+        if line and line[0] in RUBRIC_EMOJI and line[1:].strip().isupper():
+            take = any(k in line for k in keep)
+        if take:
+            out.append(raw)
+    return "\n".join(out).strip() or brief
 LIMIT_TIGHT = 13000
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -131,6 +150,16 @@ def fit_content(nodes, limit):
     print(f"Вміст обрізано: {len(nodes)} → {len(keep)} вузлів, "
           f"{content_size(keep)} байт")
     return keep
+
+
+def site_url(iso=None):
+    """Адреса випуску на GitHub Pages."""
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    if not repo or "/" not in repo:
+        return ""
+    user, name = repo.split("/", 1)
+    iso = iso or datetime.now(timezone.utc).date().isoformat()
+    return f"https://{user}.github.io/{name}/{iso}.html"
 
 
 def load_state():
@@ -273,6 +302,15 @@ def build_nodes(brief, weekly=None, iso=None):
             f"Випуск зібрано з {len(uniq)} видань, зіставлених між собою: "
             + ", ".join(uniq) + "."]})
 
+    site = site_url()
+    if site:
+        nodes.append({"tag": "hr"})
+        nodes.append({"tag": "p", "children": [
+            "Це стисла версія. Повний випуск — пульс країн, гроші, масова "
+            "оптика, сліпа зона, радар і календар — ",
+            {"tag": "a", "attrs": {"href": site}, "children": ["на сайті"]},
+            "."]})
+
     nodes.append({"tag": "aside", "children": [
         "Автоматичний огляд світової преси. Порівнюються видання з протилежними "
         "редакційними позиціями; матеріали державних медіа подаються як офіційна "
@@ -310,7 +348,7 @@ def main():
         print(f"Немає {path.name}, публікувати нічого")
         return
 
-    brief = path.read_text(encoding="utf-8").strip()
+    brief = condense(path.read_text(encoding="utf-8").strip())
     wpath = ROOT / "issues" / f"weekly-{iso}.md"
     weekly = wpath.read_text(encoding="utf-8").strip() if wpath.exists() else None
 
