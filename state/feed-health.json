@@ -1,45 +1,30 @@
 {
   "Il Foglio": {
-    "fails": 12,
+    "fails": 13,
     "since": "2026-08-29",
     "last": "2026-08-30"
   },
   "Milenio": {
-    "fails": 12,
+    "fails": 13,
     "since": "2026-08-29",
     "last": "2026-08-30"
   },
   "Liga.net": {
-    "fails": 6,
-    "since": "2026-08-30",
-    "last": "2026-08-30"
-  },
-  "Yicai": {
-    "fails": 2,
-    "since": "2026-08-30",
-    "last": "2026-08-30"
-  },
-  "Guancha": {
-    "fails": 2,
-    "since": "2026-08-30",
-    "last": "2026-08-30"
-  },
-  "Caixin": {
-    "fails": 2,
+    "fails": 7,
     "since": "2026-08-30",
     "last": "2026-08-30"
   },
   "Ekonomichna Pravda": {
-    "fails": 2,
-    "since": "2026-08-30",
-    "last": "2026-08-30"
-  },
-  "The Paper": {
-    "fails": 1,
+    "fails": 3,
     "since": "2026-08-30",
     "last": "2026-08-30"
   },
   "Corriere della Sera": {
+    "fails": 2,
+    "since": "2026-08-30",
+    "last": "2026-08-30"
+  },
+  "Polityka": {
     "fails": 1,
     "since": "2026-08-30",
     "last": "2026-08-30"
