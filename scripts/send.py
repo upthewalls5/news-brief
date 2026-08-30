@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-30.2"
+VERSION = "2026-08-30.3"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -224,6 +224,16 @@ def shorten(text: str, limit: int = 600, max_points: int = 3,
     return "\n\n".join(f"• {l}" for l in out)
 
 
+def site_link():
+    """Повна версія на GitHub Pages."""
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    if not repo or "/" not in repo:
+        return None
+    user, name = repo.split("/", 1)
+    iso = datetime.now(timezone.utc).date().isoformat()
+    return f"https://{user}.github.io/{name}/{iso}.html"
+
+
 def read_link():
     """Тільки сьогоднішнє посилання. Якщо публікація впала, краще
     повідомлення зовсім без лінка, ніж лінк на позавчорашній випуск:
@@ -353,7 +363,11 @@ def main():
         # Повний випуск на telegra.ph — у повідомленні лише верхівка
         hooks = read_hook()
         intro = ("\n".join(f"→ {h}" for h in hooks) + "\n\n") if hooks else ""
-        body = intro + shorten(text, hooks=hooks) + f"\n\n📄 Повний випуск: {link}"
+        tail = f"\n\n📄 Стисло: {link}"
+        site = site_link()
+        if site:
+            tail += f"\n📰 Повна версія: {site}"
+        body = intro + shorten(text, hooks=hooks) + tail
         if hooks:
             print(f"Анонс: {len(hooks)} рядків")
         parts = split_message(body)
