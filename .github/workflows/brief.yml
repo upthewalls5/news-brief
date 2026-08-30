@@ -59,6 +59,12 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/write.py
 
+      - name: 2а. Редактори перевіряють випуск
+        if: steps.need.outputs.run == 'yes'
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/review.py
       - name: 3. Намалювати карту уваги й картку
         if: always() && steps.need.outputs.run == 'yes'
         run: |
