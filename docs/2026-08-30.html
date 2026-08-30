@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="uk"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Перевага у кілька відсотків, що зачинила двері в ЄС · 30 серпня 2026</title>
+<meta name="description" content="Огляд світової преси за 30 серпня 2026. 2297 матеріалів · 230 джерел">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic,latin" rel="stylesheet">
+<style>
+:root{
+  --ink:#14161a; --muted:#6b7280; --faint:#9aa3af; --line:#e3e2de;
+  --paper:#faf9f6; --card:#ffffff; --accent:#c0442f; --deep:#1b2430;
+  --serif:'Literata',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:19px;line-height:1.62;
+  font-feature-settings:"kern","liga";text-rendering:optimizeLegibility}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px 96px}
+
+/* ── шапка ─────────────────────────────────────────────── */
+.masthead{border-bottom:2px solid var(--ink);margin:0 0 34px;padding:38px 0 14px}
+.masthead .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.masthead h1{font-family:var(--serif);font-weight:700;font-size:38px;
+  line-height:1.16;margin:0 0 12px;letter-spacing:-.015em}
+.masthead .meta{display:flex;justify-content:space-between;align-items:baseline;
+  gap:14px;font-family:var(--sans);font-size:12.5px;color:var(--muted);
+  border-top:1px solid var(--line);padding-top:11px;flex-wrap:wrap}
+.masthead .meta b{color:var(--ink);font-weight:600}
+
+/* ── рубрики ───────────────────────────────────────────── */
+section{margin:0 0 52px;scroll-margin-top:20px}
+section>h2{font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  margin:0 0 20px;padding-bottom:9px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:9px}
+section>h2 .ic{font-size:15px;filter:grayscale(1) opacity(.75)}
+p{margin:0 0 17px}
+
+/* ГОЛОВНЕ — передовиця */
+#lead p{font-size:20.5px;line-height:1.58}
+#lead p:first-of-type{font-size:23px;line-height:1.48}
+#lead p:first-of-type::first-letter{float:left;font-size:62px;line-height:.82;
+  padding:5px 11px 0 0;font-weight:700;color:var(--accent)}
+#lead .dur{font-family:var(--sans);font-size:12px;color:var(--faint)}
+
+/* РОЗКОЛ ОПТИКИ — полюси */
+.pole{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--deep);
+  padding:13px 17px;margin:0 0 9px;font-size:17.5px;line-height:1.55}
+.pole b{font-family:var(--sans);font-size:14px;letter-spacing:.01em}
+.pole .fl{margin-right:7px}
+.note{font-family:var(--sans);font-size:15px;color:var(--muted);
+  margin:13px 0 8px;padding-left:14px;border-left:2px solid var(--accent)}
+.note b{color:var(--ink);font-weight:600}
+.evt{font-family:var(--sans);font-weight:600;font-size:16px;margin:26px 0 12px;
+  color:var(--deep)}
+.evt::before{content:"";display:inline-block;width:16px;height:1px;
+  background:var(--accent);vertical-align:middle;margin-right:9px}
+
+/* ЩО З ЧОГО ВИПЛИВАЄ — стрічка */
+.chain{border-left:2px solid var(--line);margin:0 0 26px;padding:2px 0 2px 22px;
+  position:relative}
+.chain h3{font-family:var(--sans);font-size:15.5px;font-weight:600;margin:0 0 9px}
+.chain h3::before{content:"";position:absolute;left:-5px;top:8px;width:8px;height:8px;
+  border-radius:50%;background:var(--accent)}
+.chain p{font-size:17px;color:#2c3138;margin:0}
+.chain .ar{color:var(--accent);font-weight:600;padding:0 3px}
+.chain .dt{font-family:var(--mono);font-size:13.5px;color:var(--muted);
+  background:#f1efe9;padding:1px 6px;border-radius:3px}
+
+/* ПУЛЬС КРАЇН — сітка */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.row{border-top:1px solid var(--line);padding:10px 0;font-size:16.5px;line-height:1.5}
+.row:first-child,.grid .row:nth-child(2){border-top:0}
+.row .cn{display:block;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+
+/* ГРОШІ */
+#money p{font-size:17px}
+#money .num{font-family:var(--mono);font-size:16px;font-variant-numeric:tabular-nums}
+
+/* МАСОВА ОПТИКА */
+#mass p{font-style:italic;color:#4b5159;font-size:17.5px}
+
+/* СЛІПА ЗОНА — інверсія */
+#blind{background:var(--deep);color:#e8eaed;padding:26px 24px 10px;
+  margin-left:-24px;margin-right:-24px}
+#blind>h2{color:#e2603f;border-bottom-color:rgba(255,255,255,.14)}
+#blind p{color:#c9cdd3;font-size:17.5px}
+
+/* РАДАР */
+.sig{display:flex;gap:13px;align-items:flex-start;border-top:1px solid var(--line);
+  padding:14px 0}
+.badge{flex:0 0 auto;font-family:var(--sans);font-size:10.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px;
+  margin-top:3px;white-space:nowrap}
+.b-high{background:var(--accent);color:#fff}
+.b-mid{background:#e5e2da;color:#4b5159}
+.b-low{background:transparent;color:var(--faint);border:1px solid var(--line)}
+.sig p{margin:0;font-size:16.5px}
+
+/* ПРОГНОЗИ */
+.fc{background:var(--card);border:1px solid var(--line);padding:15px 17px;
+  margin:0 0 10px}
+.fc p{margin:0 0 11px;font-size:17px}
+.bar{height:4px;background:#eceae4;position:relative;border-radius:2px;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:2px}
+.bar .base{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--deep)}
+.fcmeta{display:flex;justify-content:space-between;font-family:var(--sans);
+  font-size:11.5px;color:var(--muted);margin-top:6px}
+
+/* ЩО ПОПЕРЕДУ */
+.ah{display:flex;gap:15px;border-top:1px solid var(--line);padding:11px 0;
+  font-size:16.5px}
+.ah .d{flex:0 0 92px;font-family:var(--mono);font-size:13.5px;color:var(--accent);
+  padding-top:3px}
+
+figure{margin:0 0 30px}
+figure img{width:100%;display:block;border:1px solid var(--line)}
+figcaption{font-family:var(--sans);font-size:12px;color:var(--faint);
+  margin-top:8px;text-align:center}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,68,47,.3)}
+a:hover{border-bottom-color:var(--accent)}
+footer{border-top:1px solid var(--line);margin-top:56px;padding-top:20px;
+  font-family:var(--sans);font-size:12.5px;color:var(--faint);line-height:1.65}
+.arch{font-family:var(--sans);font-size:14px}
+.arch a{display:block;padding:11px 0;border-bottom:1px solid var(--line);
+  border-bottom-color:var(--line);color:var(--ink)}
+.arch a span{color:var(--muted);font-size:12.5px;margin-left:9px}
+
+/* поява під час гортання — стримано, без атракціону */
+.rv{opacity:0;transform:translateY(9px)}
+.rv.on{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+
+@media(max-width:640px){
+  body{font-size:18px}
+  .wrap{padding:0 17px 70px}
+  .masthead h1{font-size:29px}
+  #lead p:first-of-type{font-size:20px}
+  #lead p:first-of-type::first-letter{font-size:50px}
+  .grid{grid-template-columns:1fr}
+  .grid .row:nth-child(2){border-top:1px solid var(--line)}
+  #blind{margin-left:-17px;margin-right:-17px;padding:22px 17px 6px}
+  .ah{flex-direction:column;gap:3px}
+  .ah .d{flex:none}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .rv{opacity:1;transform:none}
+  #blind{background:#fff;color:#000;margin:0;padding:0}
+  #blind p,#blind>h2{color:#000}
+}
+</style>
+</head><body>
+<div class="wrap">
+<header class="masthead">
+  <p class="kicker">Ранковий бріф · огляд світової преси</p>
+  <h1>Перевага у кілька відсотків, що зачинила двері в ЄС</h1>
+  <div class="meta"><span>30 серпня 2026</span><span>2297 матеріалів · 230 джерел</span></div>
+</header>
+<figure class="rv"><img src="../charts/2026-08-30.png" alt="Карта уваги світової преси" loading="lazy"><figcaption>Карта уваги світової преси</figcaption></figure>
+<section id="lead" class="rv"><h2><span class="ic">🌍</span>ГОЛОВНЕ</h2><p>Ніч видалась насиченою, а візуальним символом дня став перекинутий пором біля Північного Кіпру. Судно з приблизно 270 пасажирами перекинулось невдовзі після виходу з порту — рятувальна операція триває, різні джерела називають від одного до шести підтверджених загиблих. Це вже другий масовий морський інцидент за літо в цьому регіоні, і поки незрозуміло, чи витримає перевізник перевірку на перевантаження судна.</p><p>А ісландці тим часом влаштували несподіванку, надто яскраво спростувавши наш власний прогноз: на референдумі країна відхилила відновлення переговорів про вступ до ЄС — за даними ЦВК Ісландії, 52,8% проти, перевагу забезпечили сільські округи, які переграли Рейк'явік. Це перша відчутна поразка стратегії розширення ЄС за останні роки і сигнал Брюсселю, що навіть заможна й лояльна НАТО країна не поспішає в союз (сюжет ЄС-розширення, тривалість: підбито результат за добу).</p><p>На фронті теж неспокійно: кількість загиблих через вибух складу боєприпасів у селі Мила під Києвом зросла до 38, а Україна тим часом завдала удару по нафтопереробному заводу в Киришах Ленобласті на тлі серії обстрілів Києва, Харкова й Запоріжжя. Міноборони РФ офіційно оголосило про підготовку "масованих ударів" по енергетиці України — це вже третя доба поспіль таких ударів, і ризик зимових блекаутів зростає (удари по енергетиці й ескалація, тривалість: третя доба).</p><p>У Гімалаях ситуація лишається важкою: у зоні повені на кордоні Китаю й Непалу число загиблих перевищило 750, зниклими лишаються майже 3000 людей. Китай уже третю добу поспіль не публікує власну статистику постраждалих у Тибеті, обмежуючись звітами про гумдопомогу Непалу й телефонним дзвінком міністра Ван І (наслідки повені, тривалість: третя доба).</p><p>І нарешті дипломатична інтрига: пропозиція директора ЦРУ Реткліффа провести тристоронній саміт Трампа, Путіна й Зеленського лишається офіційно непідтвердженою ні Кремлем, ні Вашингтоном — поки що ця інформація є тільки в Axios з посиланням на джерела, інші редакції лише переказують саме це повідомлення. Київ так і не отримав сигналу, готуватися до перемовин чи до продовження війни (дипломатична розвилка, тривалість: третій день невизначеності).</p></section><section id="split" class="rv"><h2><span class="ic">🔀</span>РОЗКОЛ ОПТИКИ</h2><p class="evt">Референдум в Ісландії про вступ до ЄС.</p><div class="pole"><span class="fl">🇨🇿</span><b>Denik N:</b> подає результат крізь призму страху за рибальство — "чому ісландці ледь відхилили ЄС? Бояться передусім прав на риболовлю". Для чеської аудиторії це знайома історія: маленька країна боїться розчинити суверенітет у великому союзі.</div><div class="pole"><span class="fl">🇪🇺</span><b>Euronews:</b> трактує голосування як інституційну поразку Брюсселя — "результат ставить під сумнів усю стратегію розширення". Мотиви самих ісландців тут другорядні, головне — репутаційний удар по проєкту.</div><div class="pole"><span class="fl">🇸🇪</span><b>Dagens Nyheter (аналітик Карін Еріксон):</b> вписує подію в геополітику Арктики — поразка референдуму, за її оцінкою, "може зміцнити" позиції Трампа щодо Гренландії.</div><div class="pole"><span class="fl">🇮🇳</span><b>Mint:</b> подає це універсально, як приклад економічного суверенітету — "риболовля, суверенітет і економічна політика" малої багатої країни, яка може дозволити собі відмову від інтеграції.</div><p class="note"><b>Замовчують:</b> жодне з видань не розбирає окремо, як голосував Рейк'явік проти сільських округів — регіональний розкол лишається лише побіжною згадкою.</p><p class="note"><b>Чому розходяться:</b> чеська преса дивиться на референдум через власний досвід дебатів про суверенітет у Центральній Європі. Брюссельське видання оцінює подію як удар по інституційному проєкту розширення. Шведська газета вписує голосування в ширший контекст арктичного суперництва з Вашингтоном, бо саме ця тема визначає порядок денний Півночі. Індійське ділове видання дивиться на випадок узагальнено, як приклад того, що ресурсна незалежність дозволяє малим країнам відмовлятись від союзів.</p><p class="evt">Нафтова угода США-Венесуела.</p><p class="evt">🌐 Al Jazeera English (передає офіційну позицію Делcі Родрігес): "Венесуела зберігає суверенітет" — угода подається як контрольоване партнерство, а не капітуляція.</p><div class="pole"><span class="fl">🇬🇧</span><b>Financial Times:</b> фіксує розкол усередині країни — "угоду засуджують по обидва боки венесуельської політики": хардлайнери називають це грабунком і зрадою, опозиція — втручанням Вашингтона.</div><div class="pole"><span class="fl">🇲🇽</span><b>El Financiero:</b> прагматичний рахунок вигоди — хто справжній переможець угоди і який відсоток видобутку з 65 млрд барелів і 17 родовищ отримають США.</div><div class="pole"><span class="fl">🇦🇺</span><b>ABC News:</b> скептичний технічний фрейм — багато ключових деталей лишаються нез'ясованими, швидке й масштабне нарощування видобутку малоймовірне.</div><p class="note"><b>Замовчують:</b> структуру угоди й ім'я приватного оператора-партнера не називає жодне з видань — деталь лишається закритою вже понад тиждень попри детальний розбір пресою кількох країн.</p><p class="note"><b>Чому розходяться:</b> офіційна венесуельська рамка потребує показати угоду як досягнення суверенної влади, інакше легітимність перехідного уряду похитнеться. Financial Times фокусується на внутрішньому розколі, бо для британської ділової аудиторії важливо, наскільки стабільний партнер, з яким укладається угода. Мексиканська преса рахує вигоду для сусідів по регіону, бо власна економіка залежить від динаміки нафтових цін і присутності США в Латинській Америці. Австралійська громадська служба ставить технічні питання про здійсненність, бо для неї головне — чи не є "історична угода" переважно риторикою.</p></section><section id="chain" class="rv"><h2><span class="ic">🔗</span>ЩО З ЧОГО ВИПЛИВАЄ</h2><div class="chain"><h3>Ескалація по енергетиці</h3><p><span class="dt">остання декада серпня</span> РФ нарощує удари дронами й ракетами по українських містах, майже 2000 дронів за тиждень <span class="ar">→</span> <span class="dt">28–30 серпня</span> обстріли Києва, Харкова й Запоріжжя тривають третю добу поспіль <span class="ar">→</span> <span class="dt">30 серпня</span> Україна завдає удару у відповідь по НПЗ у Киришах <span class="ar">→</span> <span class="dt">30 серпня</span> Міноборони РФ офіційно оголошує підготовку "масованих ударів" по енергетиці — до чого веде: ризик масштабних зимових блекаутів і подальша ескалація обміну ударами напередодні опалювального сезону.</p></div><div class="chain"><h3>Ісландія-Брюссель-Meta</h3><p><span class="dt">29 серпня</span> Ісландія на референдумі відхиляє відновлення переговорів про вступ до ЄС <span class="ar">→</span> <span class="dt">30 серпня</span> Брюссель трактує поразку як удар по всій стратегії розширення <span class="ar">→</span> <span class="dt">11 вересня</span> Єврокомісія має ухвалити рішення щодо додаткових вимог до Meta на тлі того самого послабленого політичного капіталу — до чого веде: прямого зв'язку між подіями поки ніхто офіційно не проводить, але обидва сюжети підсилюють враження про інституційну слабкість Брюсселя цієї осені.</p></div><div class="chain"><h3>Непал-мовчання з різних боків</h3><p><span class="dt">26 серпня</span> прорив льодовикового озера на кордоні Тибету й Непалу спричиняє масштабну повінь <span class="ar">→</span> <span class="dt">27-30 серпня</span> число жертв зростає до понад 750, Китай третю добу не публікує власну статистику постраждалих у Тибеті <span class="ar">→</span> <span class="dt">30 серпня</span> німецькі таблоїди Bild і Blick, за спостереженням МАСОВОЇ ОПТИКИ, взагалі не згадують тему майже 3000 зниклих — до чого веде: реальний масштаб трагедії ризикує лишитися невідомим одразу з двох боків — і державної цензури, і байдужості західних медіа.</p></div></section><section id="pulse" class="rv"><h2><span class="ic">📍</span>ПУЛЬС КРАЇН</h2><div class="grid"><div class="row"><span class="cn">Україна</span>третя доба поспіль ударів по Києву, Харкову й Запоріжжю, число загиблих на складі в Мила зросло до 38.</div><div class="row"><span class="cn"></span>рф: Міноборони офіційно оголосило підготовку "масованих ударів" по енергетиці України у відповідь на удар по НПЗ в Киришах.</div><div class="row"><span class="cn">США</span>директор ЦРУ лишається в центрі неперевіреної інформації про пропозицію саміту, тоді як голова Fed натякнув на підвищення ставки.</div><div class="row"><span class="cn">Китай</span>третю добу не публікує статистику постраждалих від повені у Тибеті, обмежуючись звітами про гумдопомогу Непалу.</div><div class="row"><span class="cn">Німеччина</span>Мерц готує офіційне звинувачення Росії щодо дрона над Лейпцигом, Берлін мовчить про дедлайн хакерів Rhysida.</div><div class="row"><span class="cn">Польща</span>Туск публічно зачепив екс-президента Дуду в соцмережі, той відповів згадкою про Путіна.</div><div class="row"><span class="cn">ЄС-Брюссель</span>референдум в Ісландії трактують як удар по стратегії розширення напередодні рішення щодо Meta.</div><div class="row"><span class="cn">Ізраїль</span>син Нетаньягу терміново повернувся з США через погрози, міністр Бен-Гвір опублікував відео з глузуванням над ув'язненими палестинками.</div><div class="row"><span class="cn">Іран</span>верховний лідер Хаменеї закликав мусульманські країни "визнати справжнього ворога".</div><div class="row"><span class="cn">Японія</span>спецпопередження про сильні дощі у Фукуі, за даними метеослужби Японії понад 300 тисяч людей отримали наказ про термінову евакуацію.</div><div class="row"><span class="cn">Ісландія</span>референдум відхилив відновлення переговорів про вступ до ЄС з різницею 52,8% на 47,2%.</div><div class="row"><span class="cn">Венесуела</span>обидва табори — хардлайнери й опозиція — критикують нафтову угоду з США, кожен зі своїх позицій.</div><div class="row"><span class="cn">Непал</span>число загиблих через повінь перевищило 750, майже 3000 людей досі не знайдено.</div><div class="row"><span class="cn">Сербія</span>завтра Скупщина голосує щодо процедури поховання Ратка Младича на тлі погроз Хорватії заблокувати вступ у ЄС.</div><div class="row"><span class="cn">Швейцарія</span>поліція кантону Аргау проводить масштабну спецоперацію після стрілянини на рейві в Аарау, нападника досі не знайдено.</div><div class="row"><span class="cn">Норвегія</span>футбольні клуби вшановують пам'ять короля Харальда напередодні присяги Хокона VIII 1 вересня.</div></div></section><section id="money" class="rv"><h2><span class="ic">💰</span>ГРОШІ</h2><p>Голова Fed Уорш у Джексон-Хоулі натякнув на можливе підвищення ставки; міністр фінансів США Бессент попередив, що вимушений розпродаж японських активів вдарить по дохідності казначейських облігацій на тлі держборгу у 40 трлн доларів.</p><p>За даними центробанку Аргентини, з моменту відкриття валютних обмежень населення купило майже 45 млрд доларів — ознака недовіри до песо попри урядові заходи стабілізації.</p><p>Нафтова угода США-Венесуела, за заявами венесуельської влади, обіцяє зростання видобутку до 1,5 млн барелів на добу, але структура фінансування і оператор-партнер лишаються нерозкритими.</p></section><section id="mass" class="rv"><h2><span class="ic">🗞</span>МАСОВА ОПТИКА</h2><p>Bild і Blick цього тижня розганяють травму Ральфа Шумахера на джетскі й укус бджоли ведучої "Fernsehgarten" наживо, тоді як тема майже 3000 зниклих у Непалі в їхніх стрічках не з'являється взагалі.</p><p>Катастрофу порому біля Північного Кіпру таблоїди подають нарівні з якісною пресою — рідкісний збіг порядку денного, коли є видовищна картинка судна, що перевертається.</p><p>Індійський Times Now ставить новину про відхилення Ісландією вступу до ЄС в один ряд з новинами про акторів і теніс — геополітичний сюжет розчиняється у загальному потоці.</p></section><section id="ua" class="rv"><h2><span class="ic">🎯</span>УКРАЇНСЬКИЙ ВИМІР</h2><p>Число загиблих на складі боєприпасів у Мила зросло до 38 — тема посилює тиск на слідство щодо відповідальності за зберігання, слідство триває, конкретних термінів оголошення підозри поки не називають.</p><p>Удар у відповідь по НПЗ в Киришах передував офіційній заяві РФ про підготовку "масованих ударів" по українській енергетиці — опалювальний сезон під загрозою нової хвилі атак.</p><p>За повідомленнями європейських ЗМІ, Бельгія не хоче передавати заморожені російські активи для підтримки України — позиція одного з ключових утримувачів активів безпосередньо впливає на обсяг доступного фінансування для Києва.</p></section><section id="blind" class="rv"><h2><span class="ic">🕳</span>СЛІПА ЗОНА</h2><p>Китай третю добу поспіль не публікує статистику постраждалих від повені у Тибеті, обмежуючись звітами про гумдопомогу Непалу і дзвінком міністра закордонних справ. Мовчить саме китайська державна преса, тоді як непальська й міжнародна преса рахує власні втрати відкрито. Причина — чутливий статус Тибетського автономного району, де будь-яка масштабна статистика травм автоматично стає політичним питанням.</p><p>Заколот у Нігері — хунта заявляла про контроль після нічних перестрілок біля палацу й авіабази в Ніамеї — за добу практично зник з порядку денного, витіснений повінню в Непалі й катастрофою порому. Мовчать майже всі великі редакції, крім кількох профільних видань; причина проста — подія не має яскравої картинки для західної аудиторії, а конкуруючі сюжети цього тижня видовищніші.</p><p>Хакерська атака на Берлін — група Rhysida вимагає 2 млн євро за 6 терабайт даних, а міська влада мовчить про наближення дедлайну ультиматуму. Тема тихо випала з порядку денного попри це. Мовчать німецькі та міжнародні редакції одночасно; ймовірна причина — відсутність нового витоку даних чи офіційного коментаря робить історію "замороженою" до наступного розвитку подій.</p></section><section id="radar" class="rv"><h2><span class="ic">📡</span>РАДАР</h2><div class="sig"><span class="badge b-high">висока</span><p>Заявлена Міноборони РФ підготовка "масованих ударів" по енергетиці України вказує на початок нової хвилі атак протягом найближчого тижня. На чому ґрунтується: офіційна заява РФ, дані про майже 2000 дронів за тиждень і історична модель осінніх кампаній минулих років.</p></div><div class="sig"><span class="badge b-mid">середня</span><p>Дрон над Лейпцигом і очікуване звинувачення Мерца можуть стати приводом для нового пакету санкцій ЄС проти Росії до середини вересня. На чому ґрунтується: повторна згадка теми сьогодні у двох німецьких виданнях та попередні сигнали про підготовку "пакету заходів" урядом.</p></div><div class="sig"><span class="badge b-low">низька</span><p>Стрілянина на рейві в Аарау може призвести до посилення заходів безпеки на масових заходах у Швейцарії найближчими тижнями. На чому ґрунтується: одна поліцейська операція без затримання нападника, попередніх системних сигналів у дайджесті немає.</p></div></section><section id="forecast" class="rv"><h2><span class="ic">🔮</span>ПРОГНОЗИ</h2><p>Наші: рахунок 0 з 1 (базово 0 з 1) — прогноз щодо ісландського референдуму не справдився.</p><div class="fc"><p>1. РФ розпочне заявлену масштабну кампанію ударів по енергетиці України до 10 вересня 2026</p><div class="bar"><i style="width:70%"></i><span class="base" style="left:55%"></span></div><div class="fcmeta"><span>впевненість 70%</span><span>базово 55%</span></div></div><div class="fc"><p>2. Підтверджена кількість жертв аварії порому біля Північного Кіпру перевищить 15 осіб до 5 вересня 2026</p><div class="bar"><i style="width:55%"></i><span class="base" style="left:40%"></span></div><div class="fcmeta"><span>впевненість 55%</span><span>базово 40%</span></div></div><div class="fc"><p>3. Уряд Ісландії публічно оголосить перегляд коаліційної стратегії чи позачергові консультації через поразку на референдумі до 20 вересня 2026</p><div class="bar"><i style="width:30%"></i><span class="base" style="left:15%"></span></div><div class="fcmeta"><span>впевненість 30%</span><span>базово 15%</span></div></div><p>Кажуть інші:</p><p>Карін Еріксон (Dagens Nyheter): поразка на референдумі в Ісландії "може зміцнити" позиції Трампа щодо Гренландії, горизонт — кілька місяців.</p><p>Александар Вучич (президент Сербії, за N1): Скупщина ухвалить процедуру поховання Ратка Младича до кінця тижня.</p><p>Міністр юстиції Сербії Вуїч (за Danas): очікує розслідування обставин смерті Младича "якнайшвидше", орієнтовно протягом двох тижнів.</p><p>МАГАТЕ: Запорізька АЕС може лишитися без зовнішнього електропостачання протягом десяти днів, тобто орієнтовно до середини вересня.</p></section><section id="ahead" class="rv"><h2><span class="ic">🗓</span>ЩО ПОПЕРЕДУ</h2><div class="ah"><span class="d">31 серпня</span><span>Скупщина Сербії голосує щодо процедури поховання Ратка Младича. 1 вересня — Хокон VIII офіційно присягне як король Норвегії. 2 вересня — у Тайбеї відкривається SEMICON Taiwan 2026, одна з найбільших виставок напівпровідників у світі.</span></div><div class="ah"><span class="d">5 вересня</span><span>орієнтовний горизонт офіційної заяви Мерца щодо дрона над Лейпцигом і можливих санкцій проти Росії. 11 вересня — Єврокомісія має оприлюднити рішення щодо додаткових вимог до Meta стосовно захисту дітей. Вересень (дата не уточнена) — засідання FOMC щодо ставки Fed на тлі сигналів Уорша. Орієнтовно 20 вересня — очікуваний початок процедури розгляду заборони регіональної філії AfD в Німеччині.</span></div><p>Не відповіли: Daily Nation, Al Arabiya, Il Foglio, Milenio, Liga.net.</p></section>
+<footer>
+  Автоматичний огляд світової преси. Порівнюються видання з протилежними
+  редакційними позиціями; матеріали державних медіа подаються як офіційна
+  позиція, а не як факт.<br>
+  <a href="archive.html">Архів випусків</a>
+</footer>
+</div>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},
+  {rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body></html>

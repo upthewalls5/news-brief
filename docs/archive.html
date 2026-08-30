@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Архів випусків</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;700&family=Inter:wght@400;600;700&display=swap&subset=cyrillic,latin" rel="stylesheet">
+<style>
+:root{
+  --ink:#14161a; --muted:#6b7280; --faint:#9aa3af; --line:#e3e2de;
+  --paper:#faf9f6; --card:#ffffff; --accent:#c0442f; --deep:#1b2430;
+  --serif:'Literata',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:19px;line-height:1.62;
+  font-feature-settings:"kern","liga";text-rendering:optimizeLegibility}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px 96px}
+
+/* ── шапка ─────────────────────────────────────────────── */
+.masthead{border-bottom:2px solid var(--ink);margin:0 0 34px;padding:38px 0 14px}
+.masthead .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.masthead h1{font-family:var(--serif);font-weight:700;font-size:38px;
+  line-height:1.16;margin:0 0 12px;letter-spacing:-.015em}
+.masthead .meta{display:flex;justify-content:space-between;align-items:baseline;
+  gap:14px;font-family:var(--sans);font-size:12.5px;color:var(--muted);
+  border-top:1px solid var(--line);padding-top:11px;flex-wrap:wrap}
+.masthead .meta b{color:var(--ink);font-weight:600}
+
+/* ── рубрики ───────────────────────────────────────────── */
+section{margin:0 0 52px;scroll-margin-top:20px}
+section>h2{font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  margin:0 0 20px;padding-bottom:9px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:9px}
+section>h2 .ic{font-size:15px;filter:grayscale(1) opacity(.75)}
+p{margin:0 0 17px}
+
+/* ГОЛОВНЕ — передовиця */
+#lead p{font-size:20.5px;line-height:1.58}
+#lead p:first-of-type{font-size:23px;line-height:1.48}
+#lead p:first-of-type::first-letter{float:left;font-size:62px;line-height:.82;
+  padding:5px 11px 0 0;font-weight:700;color:var(--accent)}
+#lead .dur{font-family:var(--sans);font-size:12px;color:var(--faint)}
+
+/* РОЗКОЛ ОПТИКИ — полюси */
+.pole{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--deep);
+  padding:13px 17px;margin:0 0 9px;font-size:17.5px;line-height:1.55}
+.pole b{font-family:var(--sans);font-size:14px;letter-spacing:.01em}
+.pole .fl{margin-right:7px}
+.note{font-family:var(--sans);font-size:15px;color:var(--muted);
+  margin:13px 0 8px;padding-left:14px;border-left:2px solid var(--accent)}
+.note b{color:var(--ink);font-weight:600}
+.evt{font-family:var(--sans);font-weight:600;font-size:16px;margin:26px 0 12px;
+  color:var(--deep)}
+.evt::before{content:"";display:inline-block;width:16px;height:1px;
+  background:var(--accent);vertical-align:middle;margin-right:9px}
+
+/* ЩО З ЧОГО ВИПЛИВАЄ — стрічка */
+.chain{border-left:2px solid var(--line);margin:0 0 26px;padding:2px 0 2px 22px;
+  position:relative}
+.chain h3{font-family:var(--sans);font-size:15.5px;font-weight:600;margin:0 0 9px}
+.chain h3::before{content:"";position:absolute;left:-5px;top:8px;width:8px;height:8px;
+  border-radius:50%;background:var(--accent)}
+.chain p{font-size:17px;color:#2c3138;margin:0}
+.chain .ar{color:var(--accent);font-weight:600;padding:0 3px}
+.chain .dt{font-family:var(--mono);font-size:13.5px;color:var(--muted);
+  background:#f1efe9;padding:1px 6px;border-radius:3px}
+
+/* ПУЛЬС КРАЇН — сітка */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.row{border-top:1px solid var(--line);padding:10px 0;font-size:16.5px;line-height:1.5}
+.row:first-child,.grid .row:nth-child(2){border-top:0}
+.row .cn{display:block;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+
+/* ГРОШІ */
+#money p{font-size:17px}
+#money .num{font-family:var(--mono);font-size:16px;font-variant-numeric:tabular-nums}
+
+/* МАСОВА ОПТИКА */
+#mass p{font-style:italic;color:#4b5159;font-size:17.5px}
+
+/* СЛІПА ЗОНА — інверсія */
+#blind{background:var(--deep);color:#e8eaed;padding:26px 24px 10px;
+  margin-left:-24px;margin-right:-24px}
+#blind>h2{color:#e2603f;border-bottom-color:rgba(255,255,255,.14)}
+#blind p{color:#c9cdd3;font-size:17.5px}
+
+/* РАДАР */
+.sig{display:flex;gap:13px;align-items:flex-start;border-top:1px solid var(--line);
+  padding:14px 0}
+.badge{flex:0 0 auto;font-family:var(--sans);font-size:10.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px;
+  margin-top:3px;white-space:nowrap}
+.b-high{background:var(--accent);color:#fff}
+.b-mid{background:#e5e2da;color:#4b5159}
+.b-low{background:transparent;color:var(--faint);border:1px solid var(--line)}
+.sig p{margin:0;font-size:16.5px}
+
+/* ПРОГНОЗИ */
+.fc{background:var(--card);border:1px solid var(--line);padding:15px 17px;
+  margin:0 0 10px}
+.fc p{margin:0 0 11px;font-size:17px}
+.bar{height:4px;background:#eceae4;position:relative;border-radius:2px;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:2px}
+.bar .base{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--deep)}
+.fcmeta{display:flex;justify-content:space-between;font-family:var(--sans);
+  font-size:11.5px;color:var(--muted);margin-top:6px}
+
+/* ЩО ПОПЕРЕДУ */
+.ah{display:flex;gap:15px;border-top:1px solid var(--line);padding:11px 0;
+  font-size:16.5px}
+.ah .d{flex:0 0 92px;font-family:var(--mono);font-size:13.5px;color:var(--accent);
+  padding-top:3px}
+
+figure{margin:0 0 30px}
+figure img{width:100%;display:block;border:1px solid var(--line)}
+figcaption{font-family:var(--sans);font-size:12px;color:var(--faint);
+  margin-top:8px;text-align:center}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,68,47,.3)}
+a:hover{border-bottom-color:var(--accent)}
+footer{border-top:1px solid var(--line);margin-top:56px;padding-top:20px;
+  font-family:var(--sans);font-size:12.5px;color:var(--faint);line-height:1.65}
+.arch{font-family:var(--sans);font-size:14px}
+.arch a{display:block;padding:11px 0;border-bottom:1px solid var(--line);
+  border-bottom-color:var(--line);color:var(--ink)}
+.arch a span{color:var(--muted);font-size:12.5px;margin-left:9px}
+
+/* поява під час гортання — стримано, без атракціону */
+.rv{opacity:0;transform:translateY(9px)}
+.rv.on{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+
+@media(max-width:640px){
+  body{font-size:18px}
+  .wrap{padding:0 17px 70px}
+  .masthead h1{font-size:29px}
+  #lead p:first-of-type{font-size:20px}
+  #lead p:first-of-type::first-letter{font-size:50px}
+  .grid{grid-template-columns:1fr}
+  .grid .row:nth-child(2){border-top:1px solid var(--line)}
+  #blind{margin-left:-17px;margin-right:-17px;padding:22px 17px 6px}
+  .ah{flex-direction:column;gap:3px}
+  .ah .d{flex:none}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .rv{opacity:1;transform:none}
+  #blind{background:#fff;color:#000;margin:0;padding:0}
+  #blind p,#blind>h2{color:#000}
+}
+</style></head><body><div class="wrap">
+<header class="masthead"><p class="kicker">Ранковий бріф</p>
+<h1>Архів випусків</h1>
+<div class="meta"><span>1 випусків</span><span><a href="index.html">До останнього</a></span></div>
+</header>
+<div class="arch"><a href="2026-08-30.html">Перевага у кілька відсотків, що зачинила двері в ЄС<span>2026-08-30</span></a></div>
+</div></body></html>
