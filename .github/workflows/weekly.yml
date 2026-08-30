@@ -4,10 +4,9 @@ name: Огляд тижня
 # із випуском, а це — його відправка о власній годині, об 11:00 за Києвом,
 # щоб він не змішувався з ранковим брифом.
 #
-# Запускається зовнішнім тригером cron-job.org, окремим завданням.
-# Захист від дубля всередині: повторний виклик за той самий день мовчки
-# виходить, а ручний запуск із інтерфейсу шле повторно навмисно.
-
+# Запускається зовнішнім тригером cron-job.org окремим завданням.
+# Захист від дубля всередині скрипта: повторний автоматичний виклик за той
+# самий день мовчки виходить, ручний запуск шле повторно навмисно.
 on:
   workflow_dispatch:
     inputs:
@@ -29,10 +28,6 @@ jobs:
           python-version: '3.12'
       - run: pip install httpx
       - name: Надіслати огляд тижня
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAPH_TOKEN: ${{ secrets.TELEGRAPH_TOKEN }}
         env:
           TRIGGER_SOURCE: ${{ github.event.inputs.source || 'manual' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
