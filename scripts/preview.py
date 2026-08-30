@@ -75,7 +75,7 @@ def read_points(iso, limit=3):
     inside, out = False, []
     for raw in p.read_text(encoding="utf-8").split("\n"):
         line = raw.strip()
-        if line and line[0] in "🌍🔀📍💰🗞🕳📡🔮🎯🧭📖":
+        if line and line[0] in "🌍🔀🔗📍💰🗞🕳📡🔮🎯🗓🧭📖":
             if inside:
                 break
             inside = line[0] == "🌍"
