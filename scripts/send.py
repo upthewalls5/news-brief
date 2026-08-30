@@ -24,7 +24,7 @@ import httpx
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-30.4"
+VERSION = "2026-08-30.5"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -392,9 +392,13 @@ def main():
         print("Посилання немає, шлю випуск повністю")
 
     photo = preview_path()
-    if photo and len(parts) == 1 and len(parts[0]) < 900:
-        # Усе вміщується в підпис — шлемо одним повідомленням із карткою
+    caption = ""
+    if photo and len(parts) == 1:
         caption = f"<b>{esc(header())}</b>\n\n{decorate(parts[0])}"
+    # Ліміт підпису в Telegram — 1024 символи. Рахуємо саме підпис, а не
+    # текст до розмітки: раніше стояв запас «менше 900», і два посилання
+    # замість одного вивели повідомлення за поріг — картка зникла.
+    if photo and caption and len(caption) <= 1024:
         try:
             send_photo(token, chat_id, photo, caption)
             print(f"Відправлено карткою, {len(text)} символів")
