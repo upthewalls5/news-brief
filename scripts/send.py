@@ -358,12 +358,9 @@ def main():
     path = ROOT / "issues" / f"{today}.md"
 
     if path.exists() and written_recently():
+        # Тижневий огляд більше не додається сюди: він приходить окремим
+        # повідомленням у неділю об 11:00, скриптом send_weekly.py.
         text = path.read_text(encoding="utf-8").strip()
-        weekly = ROOT / "issues" / f"weekly-{today}.md"
-        if weekly.exists():
-            extra = weekly.read_text(encoding="utf-8").strip()
-            text = f"{text}\n\n{'-' * 24}\n\n📅 ОГЛЯД ТИЖНЯ\n\n{extra}"
-            print("Додано тижневий огляд")
     else:
         prev = sorted((ROOT / "issues").glob("20*.md")) if (ROOT / "issues").exists() else []
         last = prev[-1].stem if prev else "немає"
