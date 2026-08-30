@@ -29,6 +29,7 @@ Telegraph тримає близько 20 КБ і не дає керувати о
 
 import html
 import json
+import shutil
 import os
 import re
 import secrets
@@ -172,6 +173,11 @@ a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,68,4
 a:hover{border-bottom-color:var(--accent)}
 footer{border-top:1px solid var(--line);margin-top:56px;padding-top:20px;
   font-family:var(--sans);font-size:12.5px;color:var(--faint);line-height:1.65}
+.notes{border-top:1px solid var(--line);padding-top:22px}
+.notes>h2{color:var(--muted)}
+.notes p{font-size:14.5px;line-height:1.6;color:var(--muted);
+  font-family:var(--sans);margin:0 0 13px}
+.notes b{color:var(--ink);font-weight:600}
 .arch{font-family:var(--sans);font-size:14px}
 .arch a{display:block;padding:11px 0;border-bottom:1px solid var(--line);
   border-bottom-color:var(--line);color:var(--ink)}
@@ -358,7 +364,59 @@ RENDER = {"lead": render_lead, "split": render_split, "chain": render_chain,
           "forecast": render_forecast, "ahead": render_ahead}
 
 
-def page(iso, brief, greeting, stats, images):
+CAL_LINE = re.compile(
+    r"^\[(\d{4}-\d{2}-\d{2})(?:\s*→\s*(\d{4}-\d{2}-\d{2}))?\]\s*(.+)$")
+
+
+def human_date(iso):
+    try:
+        d = datetime.fromisoformat(iso).date()
+    except Exception:
+        return iso
+    return f"{d.day} {MONTHS[d.month - 1]}"
+
+
+def calendar_section():
+    """Календар подій попереду — з файлу стану, а не з тексту випуску."""
+    raw = read("state/calendar.md")
+    rows = []
+    for line in raw.split("\n"):
+        m = CAL_LINE.match(line.strip())
+        if m:
+            when = human_date(m.group(1))
+            if m.group(2):
+                when += f" → {human_date(m.group(2))}"
+            rows.append((when, m.group(3).strip()))
+    if not rows:
+        return ""
+    body = "".join(f'<div class="ah"><span class="d">{esc(w)}</span>'
+                   f"<span>{linkify(b)}</span></div>" for w, b in rows[:14])
+    return ('<section id="cal" class="rv"><h2><span class="ic">🗓</span>'
+            "КАЛЕНДАР ПОДІЙ ПОПЕРЕДУ</h2>" + body + "</section>")
+
+
+def footnotes(dead):
+    """Виноски. Сюди йде все, що пояснює цифри, і службовий рядок про
+    стрічки, які не відповіли: у тілі випуску їм не місце."""
+    items = [
+        ("Базова лінія у прогнозах",
+         "Відсоток «базово» — це ймовірність події за інерцією, якщо ніхто "
+         "нічого не робитиме й нічого не зміниться. Друге число — наша "
+         "впевненість. Прогноз має сенс лише тоді, коли ці числа "
+         "розходяться: збіг означає, що ми просто описали поточний стан."),
+        ("Відсотки в карті уваги",
+         "Частка країни в денному обсязі зібраних матеріалів. Не показник "
+         "важливості події, а показник того, скільки місця країна зайняла "
+         "в новинному потоці за добу. Різкий стрибок частки зазвичай "
+         "означає, що в країні щось відбувається."),
+    ]
+    if dead:
+        items.append(("Стрічки, які не відповіли", dead))
+    body = "".join(f"<p><b>{esc(t)}.</b> {esc(v)}</p>" for t, v in items)
+    return f'<section id="notes" class="rv notes"><h2>Виноски</h2>{body}</section>'
+
+
+def page(iso, brief, greeting, stats, images, dead=""):
     d = datetime.fromisoformat(iso).date()
     date_h = f"{d.day} {MONTHS[d.month - 1]} {d.year}"
     parts = []
@@ -392,6 +450,8 @@ def page(iso, brief, greeting, stats, images):
 </header>
 {figs}
 {"".join(parts)}
+{calendar_section()}
+{footnotes(dead)}
 <footer>
   Автоматичний огляд світової преси. Порівнюються видання з протилежними
   редакційними позиціями; матеріали державних медіа подаються як офіційна
@@ -489,6 +549,15 @@ def main():
 
     greeting = read(f"issues/greet-{iso}.txt").split("\n")[0] or "Ранковий бріф"
 
+    dead = ""
+    keep = []
+    for line in brief.split("\n"):
+        if line.strip().lower().startswith("не відповіли"):
+            dead = line.strip()
+            continue
+        keep.append(line)
+    brief = "\n".join(keep)
+
     stats = ""
     digest = read("digests/latest.md")[:400]
     m = re.search(r"Зібрано (\d+) матеріалів", digest)
@@ -498,19 +567,23 @@ def main():
         if n:
             stats += f" · {n.group(1)} джерел"
 
+    # Копіюємо картинки в docs: хостинг роздає тільки цю папку, і
+    # посилання на ../charts/ вело за її межі — саме тому карта уваги
+    # не показувалась.
+    imgdir = DOCS / "img"
+    imgdir.mkdir(parents=True, exist_ok=True)
     images = []
-    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
     for name, cap in ((f"cover-{iso}.png", "Обкладинка випуску"),
-                      (f"chart-{iso}.png", "Карта уваги світової преси")):
-        if (ROOT / "charts" / name).exists():
-            images.append((f"../charts/{name}", cap))
-    if (ROOT / "charts" / f"{iso}.png").exists():
-        images.append((f"../charts/{iso}.png", "Карта уваги світової преси"))
+                      (f"{iso}.png", "Карта уваги світової преси")):
+        src = ROOT / "charts" / name
+        if src.exists():
+            shutil.copy(src, imgdir / name)
+            images.append((f"img/{name}", cap))
 
     DOCS.mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     slug = slug_for(iso)
-    doc = page(iso, brief, greeting, stats, images)
+    doc = page(iso, brief, greeting, stats, images, dead)
     (DOCS / f"{slug}.html").write_text(doc, encoding="utf-8")
     (DOCS / "index.html").write_text(doc, encoding="utf-8")
 
