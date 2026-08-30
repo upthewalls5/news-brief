@@ -1,12 +1,22 @@
 {
   "Il Foglio": {
-    "fails": 5,
+    "fails": 6,
     "since": "2026-08-29",
     "last": "2026-08-30"
   },
   "Milenio": {
-    "fails": 5,
+    "fails": 6,
     "since": "2026-08-29",
+    "last": "2026-08-30"
+  },
+  "TVN24": {
+    "fails": 1,
+    "since": "2026-08-30",
+    "last": "2026-08-30"
+  },
+  "The Paper": {
+    "fails": 1,
+    "since": "2026-08-30",
     "last": "2026-08-30"
   }
 }
