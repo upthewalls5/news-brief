@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-28.17"
+VERSION = "2026-08-30.1"
 LIMIT = 3400   # запас під теги розмітки  # запас до телеграмівських 4096
 
 
@@ -31,7 +31,7 @@ LIMIT = 3400   # запас під теги розмітки  # запас до 
 # і Telegram відповість 400 на весь випуск. Тут же ми спершу екрануємо
 # геть усе, а потім вставляємо власні теги за структурою випуску.
 
-RUBRIC = "🌍🔀📍💰🗞🕳📡🔮🎯🧭📖⚠"
+RUBRIC = "🌍🔀🔗📍💰🗞🕳📡🔮🎯🗓🧭📖⚠"
 
 # Прапор (дві регіональні літери) + назва + двокрапка: країна або видання
 FLAG_LINE = re.compile(
@@ -120,7 +120,7 @@ def header() -> str:
 # У повідомлення йдуть лише гачки й ГОЛОВНЕ, по одному реченню на пункт.
 # Решта — на telegra.ph. Мета: щоб усе було видно зі сповіщення без гортання.
 
-RUBRIC_CHARS = "🌍🔀📍💰🗞🕳📡🔮🎯🧭📖"
+RUBRIC_CHARS = "🌍🔀🔗📍💰🗞🕳📡🔮🎯🗓🧭📖"
 FIRST_SENTENCE = re.compile(r"^(.+?[.!?…])(\s|$)")
 
 
@@ -138,10 +138,25 @@ def normalize(line: str) -> str:
 
 def first_sentence(line: str) -> str:
     """Перше речення пункту. У ГОЛОВНОМУ їх два: подія і наслідок —
-    для сповіщення лишаємо подію."""
+    для сповіщення лишаємо подію.
+    Але в розмовному голосі перше речення буває коротким зачином
+    («Отже, Ісландія.») — тоді беремо разом із наступним, інакше в
+    повідомленні лишається два слова без змісту."""
     line = line.strip()
     m = FIRST_SENTENCE.match(line)
+    if m and len(m.group(1)) < 45:
+        rest = line[m.end():].strip()
+        m2 = FIRST_SENTENCE.match(rest)
+        if m2:
+            joined = f"{m.group(1)} {m2.group(1)}"
+            return joined if len(joined) <= 150 else _trim(joined)
+        if rest:
+            return _trim(f"{m.group(1)} {rest}")
     text = normalize(m.group(1).strip() if m else line)
+    return _trim(text)
+
+
+def _trim(text: str) -> str:
     if len(text) > 150:
         cut = text[:150]
         # Ріжемо по комі або тире, якщо вони є в останній третині —
