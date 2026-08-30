@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from send import decorate, esc, send, split_message
+from send import send, split_message
 
 ROOT = Path(__file__).resolve().parent.parent
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
@@ -114,17 +114,16 @@ def main():
     link = publish_weekly(text, today)
 
     if link:
-        body = (f"<b>{esc(header)}</b>\n\n{decorate(first_paragraph(text))}"
-                f"\n\n📄 Огляд повністю: {link}")
-        send(token, chat_id, body)
+        # send() сама екранує текст і навішує розмітку, а шапку бере
+        # окремим аргументом. Готовий HTML сюди подавати не можна:
+        # decorate екранує теги вдруге, і читач бачить <b> як текст.
+        body = f"{first_paragraph(text)}\n\n📄 Огляд повністю: {link}"
+        send(token, chat_id, body, top=header)
         print(f"Огляд тижня: {len(text)} символів, сторінка {link}")
     else:
         parts = split_message(text)
         for i, part in enumerate(parts):
-            body = decorate(part)
-            if i == 0:
-                body = f"<b>{esc(header)}</b>\n\n{body}"
-            send(token, chat_id, body)
+            send(token, chat_id, part, top=header if i == 0 else None)
         print(f"Сторінки немає, надіслано текстом: {len(parts)} повідомлень")
 
     mark.parent.mkdir(exist_ok=True)
