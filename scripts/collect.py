@@ -47,7 +47,7 @@ def make_transport():
 TIMEOUT = httpx.Timeout(25.0, connect=10.0)
 
 WINDOW_HOURS = 26          # вікно збору
-MAX_DIGEST = 118_000    # запас під ліміт у write.py
+MAX_DIGEST = 98_000    # запас під ліміт у write.py
 PER_COUNTRY = 14           # заголовків на країну — модель зшиває мови сама
 PER_SOURCE = 12            # записів з однієї стрічки
 SEEN_DAYS = 7              # глибина пам'яті для індексу новизни
