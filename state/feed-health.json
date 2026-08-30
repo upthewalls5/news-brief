@@ -1,21 +1,31 @@
 {
   "Il Foglio": {
-    "fails": 9,
+    "fails": 10,
     "since": "2026-08-29",
     "last": "2026-08-30"
   },
   "Milenio": {
-    "fails": 9,
+    "fails": 10,
     "since": "2026-08-29",
     "last": "2026-08-30"
   },
   "Liga.net": {
-    "fails": 3,
+    "fails": 4,
     "since": "2026-08-30",
     "last": "2026-08-30"
   },
   "Daily Nation": {
-    "fails": 2,
+    "fails": 3,
+    "since": "2026-08-30",
+    "last": "2026-08-30"
+  },
+  "Al Arabiya": {
+    "fails": 1,
+    "since": "2026-08-30",
+    "last": "2026-08-30"
+  },
+  "Polityka": {
+    "fails": 1,
     "since": "2026-08-30",
     "last": "2026-08-30"
   }
