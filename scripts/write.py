@@ -26,7 +26,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-30.2"
+VERSION = "2026-08-30.3"
 MODEL = "claude-sonnet-5"
 # Ліміт спільний для міркувань моделі й тексту. Міркування над дайджестом
 # на 50 тисяч токенів самі з'їдають більшу частину бюджету, тому запас
@@ -204,6 +204,28 @@ def save_state(parts):
         print(f"  {path.name}: оновлено ({len(body)} символів)")
 
 
+
+# Блок тижневого огляду не має місця у випуску: він приходить окремим
+# повідомленням і має власну сторінку. Якщо модель усе ж дописала його
+# в кінець, відрізаємо — інакше він потрапляє і в Telegraph, і на сайт.
+WEEKLY_MARK = ("ОГЛЯД ТИЖНЯ", "ТИЖДЕНЬ ОДНИМ АБЗАЦОМ", "ЩО ЗРУШИЛОСЬ",
+               "ЩО ЗГАСЛО", "ЗСУВ ОПТИКИ", "РАХУНОК ПРОГНОЗІВ",
+               "ТИЖДЕНЬ ПОПЕРЕДУ")
+
+
+def strip_weekly(text):
+    """Відрізає все від першої ознаки тижневого огляду до кінця."""
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        s = line.strip()
+        if len(s) < 60 and any(m in s.upper() for m in WEEKLY_MARK):
+            cut = "\n".join(lines[:i]).rstrip()
+            print(f"  тижневий огляд відрізано з випуску "
+                  f"({len(text) - len(cut)} символів)")
+            return cut
+    return text
+
+
 def weekly(key, today):
     """Недільний огляд за сімома останніми випусками."""
     issues = sorted((ROOT / "issues").glob("20*-*.md"))
@@ -305,6 +327,7 @@ def main():
         (ROOT / "issues" / f"keys-{today}.txt").write_text(keys, encoding="utf-8")
         print(f"Образи дня: {len(keys.splitlines())} виразів")
 
+    brief = strip_weekly(brief)
     (ROOT / "issues" / f"{today}.md").write_text(brief + "\n", encoding="utf-8")
     (ROOT / "issues" / "latest.md").write_text(brief + "\n", encoding="utf-8")
     # Мітка свіжості: публікація й відправка орієнтуються на неї, а не на
