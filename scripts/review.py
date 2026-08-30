@@ -119,6 +119,27 @@ def main():
         else:
             print("Правка підозріло коротка, лишаю оригінал")
 
+    # Головний редактор: останнє слово, шліфування після правок двох перших
+    issue_now = path.read_text(encoding="utf-8").strip()
+    chief = read("prompts/review-chief.md")
+    if chief:
+        print("Головний редактор...")
+        out = call_api(key, chief, f"{context}\n\nВИПУСК:\n{issue_now}",
+                       MAX_REVISION)
+        text, lessons = split_notes(out or "")
+        # Захист від того, щоб полірування з'їло випуск: головний редактор
+        # має право скоротити на десяту частину, не більше.
+        if text and len(text) > len(issue_now) * 0.75:
+            path.write_text(text.strip() + "\n", encoding="utf-8")
+            (ROOT / "issues" / "latest.md").write_text(
+                text.strip() + "\n", encoding="utf-8")
+            print(f"Відшліфовано: {len(issue_now)} → {len(text)} символів")
+        else:
+            got = len(text) if text else 0
+            print(f"Правка головного підозріла ({got} символів), лишаю як було")
+        if lessons:
+            lessons_new.append(lessons)
+
     if lessons_new:
         merged = merge_lessons(read("state/lessons.md"),
                                "\n".join(lessons_new))
