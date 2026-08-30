@@ -59,6 +59,10 @@ jobs:
           python scripts/chart.py
           python scripts/collage.py
           python scripts/preview.py
+      - name: 3б. Зібрати повну версію на сайті
+        if: always() && steps.need.outputs.run == 'yes'
+        continue-on-error: true
+        run: python scripts/site.py
       - name: 4. Опублікувати на telegra.ph
         if: always() && steps.need.outputs.run == 'yes'
         env:
