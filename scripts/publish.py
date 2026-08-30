@@ -26,8 +26,11 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-30.2"
+VERSION = "2026-08-30.4"
 STATE = ROOT / "state" / "telegraph.json"
+
+SHRINK_STEPS = (1.0, 0.82, 0.68, 0.55, 0.42, 0.3)
+LIMIT_TIGHT = 13000
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
           "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
@@ -191,12 +194,13 @@ def build_nodes(brief, weekly=None, iso=None):
                     nodes.append({"tag": level, "children": [line]})
                     continue
 
-            # Виноска з джерелами під рубрикою
+            # Джерела збираємо, але окремими виносками під кожною рубрикою
+            # більше не друкуємо: одинадцять таких блоків з'їдали помітну
+            # частку ліміту сторінки, а той самий перелік є в кінці.
             if line.startswith("Джерела:"):
                 names = line[len("Джерела:"):].strip()
                 sources_all.extend(
                     n.strip() for n in re.split(r"[,;·]", names) if n.strip())
-                nodes.append({"tag": "aside", "children": [line]})
                 continue
 
             # Прапор + назва. Цитата доречна лише в «Розколі оптики»:
