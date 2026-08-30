@@ -26,13 +26,13 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-29.5"
+VERSION = "2026-08-30.2"
 STATE = ROOT / "state" / "telegraph.json"
 
 MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
           "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
 
-RUBRIC_EMOJI = "🌍🔀📍💰🗞🕳📡🔮🧭📖📅📈📉🎯🔭"
+RUBRIC_EMOJI = "🌍🔀🔗📍💰🗞🕳📡🔮🗓🧭📖📅📈📉🎯🔭"
 FLAG = re.compile(r"^([\U0001F1E6-\U0001F1FF]{2})\s*([^:]{2,48}):\s*(.*)$")
 # У «Розколі оптики» полюсом може бути не країна, а глобальне видання —
 # тоді перед назвою стоїть звичайне емодзі, а не прапор.
@@ -111,64 +111,6 @@ def attention_nodes(iso):
         "світові медіа цього ще не помітили."]})
     nodes.append({"tag": "hr"})
     return nodes
-
-
-CAL_LINE = re.compile(r"^\[(\d{4}-\d{2}-\d{2})(?:\s*→\s*(\d{4}-\d{2}-\d{2}))?\]\s*(.+)$")
-MONTHS_GEN = ("січня", "лютого", "березня", "квітня", "травня", "червня",
-              "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
-
-
-def human_date(iso):
-    try:
-        d = datetime.fromisoformat(iso).date()
-    except Exception:
-        return iso
-    return f"{d.day} {MONTHS_GEN[d.month - 1]}"
-
-
-def calendar_nodes():
-    """Календар майбутніх подій: що формуватиме контекст найближчих новин."""
-    p = ROOT / "state" / "calendar.md"
-    if not p.exists():
-        return []
-    rows = []
-    for line in p.read_text(encoding="utf-8").split("\n"):
-        m = CAL_LINE.match(line.strip())
-        if m:
-            rows.append((m.group(1), m.group(2), m.group(3).strip()))
-    if not rows:
-        return []
-    rows.sort(key=lambda r: r[0])
-
-    nodes = [{"tag": "h3", "children": ["🗓 Календар подій попереду"]}]
-
-    iso_today = datetime.now(timezone.utc).date().isoformat()
-    img = ROOT / "charts" / f"calendar-{iso_today}.png"
-    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
-    if repo and img.exists():
-        nodes.append({"tag": "figure", "children": [
-            {"tag": "img", "attrs": {"src":
-                f"https://raw.githubusercontent.com/{repo}/main/charts/{img.name}"}},
-            {"tag": "figcaption", "children": [
-                "Підсвічені дати — події, навколо яких формуватиметься "
-                "новинний потік"]}]})
-    for start, end, body in rows[:20]:
-        when = human_date(start)
-        if end:
-            when += f" → {human_date(end)}"
-        nodes.append({"tag": "p", "children": [
-            {"tag": "b", "children": [when + " · "]}] + rich(body)})
-    nodes.append({"tag": "aside", "children": [
-        "Дати, навколо яких формуватиметься новинний потік найближчих тижнів. "
-        "Береться лише те, що прямо названо в матеріалах випусків."]})
-    nodes.append({"tag": "hr"})
-    return nodes
-
-
-# Ліміт Telegraph не документований, і будь-яке вгадане число або ріже
-# зайве, або не проходить. Тому не вгадуємо: шлемо повний вміст і, лише
-# отримавши відмову, скорочуємо частками — доки не пройде.
-SHRINK_STEPS = (1.0, 0.82, 0.68, 0.55, 0.42, 0.3)
 
 
 def content_size(nodes):
@@ -259,6 +201,16 @@ def build_nodes(brief, weekly=None, iso=None):
 
             # Прапор + назва. Цитата доречна лише в «Розколі оптики»:
             # у «Пульсі країн» двадцять цитат поспіль перевантажують сторінку.
+            # Назва ланцюга — окремий підзаголовок. Інакше одна назва
+            # ставала звичайним абзацом, а друга — жирною цитатою лише
+            # тому, що в ній трапилась двокрапка.
+            if "ВИПЛИВАЄ" in rubric:
+                if "→" not in line and "[" not in line and len(line) < 80:
+                    nodes.append({"tag": "h4", "children": [line]})
+                else:
+                    nodes.append({"tag": "p", "children": rich(line)})
+                continue
+
             m = FLAG.match(line) or ("РОЗКОЛ" in rubric and POLE.match(line))
             if not m and any(k in rubric for k in ("ПУЛЬС", "РОЗКОЛ", "ГРОШІ")):
                 m2 = NAMED.match(line)
@@ -304,9 +256,6 @@ def build_nodes(brief, weekly=None, iso=None):
         nodes.append({"tag": "hr"})
         nodes.append({"tag": "h3", "children": ["📅 Огляд тижня"]})
         render(weekly, level="h4")
-
-    # Календар — у кінці: читач приходить по новини, а не по дати.
-    nodes.extend(calendar_nodes())
 
     # Підсумковий перелік джерел
     uniq = []
@@ -387,12 +336,19 @@ def main():
             if step == 1.0:
                 attempt = full
             else:
-                # Скорочуємо з кінця, але ПЕРШИМ прибираємо обкладинку:
-                # текст випуску важливіший за ілюстрацію, а вона стоїть
-                # першим вузлом і інакше пережила б рубрики.
-                body = [n for n in full if not (n.get("tag") == "figure"
-                                                and "cover-" in str(n))]
-                attempt = body[:max(8, int(len(body) * step))]
+                # Черга на виліт: спершу службове, текст випуску останнім.
+                # Telegraph тримає приблизно 25 КБ, а кирилиця це два байти
+                # на символ — тож місце під текст треба звільняти за рахунок
+                # виносок і картинок, а не рубрик.
+                attempt = list(full)
+                if step <= 0.82:
+                    attempt = [n for n in attempt
+                               if not (n.get("tag") == "figure"
+                                       and "cover-" in str(n))]
+                if step <= 0.68:
+                    attempt = [n for n in attempt if n.get("tag") != "aside"]
+                if content_size(attempt) > LIMIT_TIGHT:
+                    attempt = attempt[:max(8, int(len(attempt) * step))]
             r = client.post(f"{API}/createPage", json={
                 "access_token": token,
                 "title": tmp_title,
