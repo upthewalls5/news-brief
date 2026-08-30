@@ -440,16 +440,39 @@ def slug_for(iso):
     return m[iso]
 
 
-def base_url():
-    """Адреса сайту. Cloudflare Pages, якщо налаштований, інакше GitHub Pages."""
-    custom = os.environ.get("PAGES_BASE", "").strip().rstrip("/")
-    if custom:
-        return custom
+def github_base():
     repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
     if repo and "/" in repo:
         user, name = repo.split("/", 1)
         return f"https://{user}.github.io/{name}"
     return ""
+
+
+def alive(url, timeout=6.0):
+    """Чи відповідає сайт. Перевіряємо КОРІНЬ, а не сторінку випуску:
+    її ще не існує — коміт у репозиторій відбувається після відправки,
+    і обидва хостинги побачать її лише через хвилину-дві."""
+    if not url:
+        return False
+    try:
+        import httpx
+        r = httpx.get(url + "/", timeout=timeout, follow_redirects=True)
+        return r.status_code < 400
+    except Exception:
+        return False
+
+
+def base_url():
+    """Cloudflare, якщо він справді відповідає. Інакше GitHub Pages.
+    Просто наявності змінної замало: якщо збірка в Cloudflare зламалась,
+    посилання вело б у нікуди."""
+    custom = os.environ.get("PAGES_BASE", "").strip().rstrip("/")
+    gh = github_base()
+    if custom:
+        if alive(custom):
+            return custom
+        print(f"  {custom} не відповідає — беру GitHub Pages")
+    return gh
 
 
 def read(path, default=""):
