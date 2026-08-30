@@ -28,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from write import call_api                # той самий потоковий клієнт
 
 ROOT = Path(__file__).resolve().parent.parent
-MAX_REVIEW = 6000
+MAX_REVIEW = 12000
 MAX_REVISION = 20000
 LESSONS_CAP = 4000
 
