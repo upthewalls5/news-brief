@@ -27,7 +27,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.telegra.ph"
-VERSION = "2026-08-30.5"
+VERSION = "2026-08-30.7"
 STATE = ROOT / "state" / "telegraph.json"
 
 SHRINK_STEPS = (1.0, 0.82, 0.68, 0.55, 0.42, 0.3)
@@ -35,105 +35,34 @@ SHRINK_STEPS = (1.0, 0.82, 0.68, 0.55, 0.42, 0.3)
 # Telegraph приймає приблизно 20,6 КБ — це близько 10 тисяч символів
 # українською. Повний випуск удвічі більший, тому сюди йде стисла версія:
 # аналітичне ядро без переліків. Усе решта — на сайті.
-TELEGRAPH_RUBRICS = ("ГОЛОВНЕ", "РОЗКОЛ ОПТИКИ", "ЩО З ЧОГО ВИПЛИВАЄ",
-                     "УКРАЇНСЬКИЙ ВИМІР", "ПРОГНОЗИ")
-
-
-def condense(brief, keep=TELEGRAPH_RUBRICS):
-    """Лишає тільки названі рубрики. Решта — ПУЛЬС КРАЇН, ГРОШІ, МАСОВА
-    ОПТИКА, СЛІПА ЗОНА, РАДАР, ЩО ПОПЕРЕДУ — живуть у повній версії."""
-    out, take = [], False
-    for raw in brief.split("\n"):
-        line = raw.strip()
-        if line and line[0] in RUBRIC_EMOJI and line[1:].strip().isupper():
-            take = any(k in line for k in keep)
-        if take:
-            out.append(raw)
-    return "\n".join(out).strip() or brief
-LIMIT_TIGHT = 13000
-
-MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
-          "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
-
+# Telegraph приймає близько 20,6 КБ, а кирилиця це два байти на символ.
+# Стеля — приблизно 9 тисяч символів, і впиратись у неї щоразу немає сенсу.
+# Тому тут не просто відбір рубрик, а жорсткий бюджет: беремо їх за
+# пріоритетом, поки вкладаємось, і зупиняємось.
 RUBRIC_EMOJI = "🌍🔀🔗📍💰🗞🕳📡🔮🗓🧭📖📅📈📉🎯🔭"
+
+# Прапор (дві регіональні літери) або звичайне емодзі + назва + двокрапка
 FLAG = re.compile(r"^([\U0001F1E6-\U0001F1FF]{2})\s*([^:]{2,48}):\s*(.*)$")
-# У «Розколі оптики» полюсом може бути не країна, а глобальне видання —
-# тоді перед назвою стоїть звичайне емодзі, а не прапор.
+# У «Розколі оптики» полюсом може бути глобальне видання — тоді перед
+# назвою стоїть звичайне емодзі, а не прапор.
 POLE = re.compile(r"^([^\w\s\d.,;:!?()\[\]«»\"'-])\s+([^:]{2,48}):\s*(.*)$")
-# Модель часто пише країну без прапора: «Україна: …». Такий рядок теж має
-# отримати жирну назву, інакше «Пульс країн» читається суцільною стіною.
+# Модель часто пише країну без прапора: «Україна: …»
 NAMED = re.compile(r"^([A-ZА-ЯЄІЇҐ][^:]{1,28}):\s+(.+)$")
 URL = re.compile(r"(https?://\S+)")
 LABELS = ("Замовчують:", "Чому розходяться:", "Наші:", "Кажуть інші:")
 
+MONTHS = ("січня", "лютого", "березня", "квітня", "травня", "червня",
+          "липня", "серпня", "вересня", "жовтня", "листопада", "грудня")
 
+# Ліміт Telegraph не документований: шлемо повний вміст і скорочуємо
+# частками, лише отримавши відмову.
+SHRINK_STEPS = (1.0, 0.82, 0.68, 0.55, 0.42, 0.3)
+LIMIT_SAFE = 20000
+LIMIT_TIGHT = 13000
 
-# ── Візуальні елементи ─────────────────────────────────────────────────
-# Дві речі, обидві з наших власних даних. Фотографії з матеріалів — чужі,
-# передруковувати їх не можна, тому візуал будуємо з того, що порахували самі.
-
-COUNTRY_HEAD = re.compile(r"^###\s+(.+?)\s+\((\d+)\s+матеріал\w*,\s*([\d.]+)%")
-
-
-def read_shares(limit=12):
-    d = ROOT / "digests" / "latest.md"
-    if not d.exists():
-        return []
-    rows = []
-    for line in d.read_text(encoding="utf-8").split("\n"):
-        m = COUNTRY_HEAD.match(line.strip())
-        if m:
-            rows.append((m.group(1), int(m.group(2)), float(m.group(3))))
-    rows.sort(key=lambda x: x[1], reverse=True)
-    return rows[:limit]
-
-
-def chart_url(iso):
-    """Графік лежить у репозиторії; беремо його за прямою адресою.
-    З'явиться на сторінці після кроку збереження в архів."""
-    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
-    if not repo or not (ROOT / "charts" / f"{iso}.png").exists():
-        return None
-    return f"https://raw.githubusercontent.com/{repo}/main/charts/{iso}.png"
-
-
-def cover_node(iso):
-    """Абстрактна обкладинка над текстом випуску. Тільки абстракція:
-    згенерована сцена реальної події сприймалась би як свідчення."""
-    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
-    img = ROOT / "charts" / f"cover-{iso}.png"
-    if not repo or not img.exists():
-        return []
-    return [{"tag": "figure", "children": [
-        {"tag": "img", "attrs": {"src":
-            f"https://raw.githubusercontent.com/{repo}/main/charts/{img.name}"}},
-        {"tag": "figcaption", "children": [
-            "Абстрактна композиція за темами випуску. Згенеровано автоматично, "
-            "не є зображенням реальних подій."]}]}]
-
-
-def attention_nodes(iso):
-    """Картинка плюс текстова карта. Текст лишається читабельним навіть
-    якщо картинка не завантажилась."""
-    rows = read_shares()
-    if not rows:
-        return []
-
-    nodes = [{"tag": "h3", "children": ["📊 Карта уваги"]}]
-
-    url = chart_url(iso)
-    if url:
-        nodes.append({"tag": "figure", "children": [
-            {"tag": "img", "attrs": {"src": url}},
-            {"tag": "figcaption", "children": [
-                "Частка країни в денному обсязі матеріалів"]}]})
-
-    nodes.append({"tag": "aside", "children": [
-        "Скільки місця країна зайняла в новинному потоці за добу. "
-        "Висока частка означає, що в країні щось відбувається — навіть коли "
-        "світові медіа цього ще не помітили."]})
-    nodes.append({"tag": "hr"})
-    return nodes
+TELEGRAPH_BUDGET = 7000
+TELEGRAPH_ORDER = ("ГОЛОВНЕ", "РОЗКОЛ ОПТИКИ", "ПРОГНОЗИ",
+                   "УКРАЇНСЬКИЙ ВИМІР", "ЩО З ЧОГО ВИПЛИВАЄ")
 
 
 def content_size(nodes):
@@ -141,8 +70,7 @@ def content_size(nodes):
 
 
 def fit_content(nodes, limit):
-    """Відкидає вузли з кінця, поки сторінка не влізе. З кінця — бо там
-    найменш важливе: посилання й службові виноски."""
+    """Відкидає вузли з кінця, поки сторінка не влізе."""
     if content_size(nodes) <= limit:
         return nodes
     keep = list(nodes)
@@ -151,6 +79,44 @@ def fit_content(nodes, limit):
     print(f"Вміст обрізано: {len(nodes)} → {len(keep)} вузлів, "
           f"{content_size(keep)} байт")
     return keep
+
+
+def split_rubrics(brief):
+    out, cur = [], None
+    for raw in brief.split("\n"):
+        line = raw.strip()
+        if line and line[0] in RUBRIC_EMOJI and line[1:].strip().isupper() \
+                and len(line) < 46:
+            cur = [line, []]
+            out.append(cur)
+            continue
+        if cur is not None:
+            cur[1].append(raw)
+    return out
+
+
+def condense(brief, budget=TELEGRAPH_BUDGET):
+    """ЗАПАСНИЙ спосіб, коли shorten_issue.py не спрацював.
+    Складає версію за пріоритетом рубрик у межах бюджету: рубрика або
+    входить цілком, або не входить зовсім. Це гірше за скорочення змісту,
+    бо частина рубрик зникає, але краще за обрив посеред речення."""
+    blocks = {}
+    for head, lines in split_rubrics(brief):
+        name = head[1:].strip()
+        body = "\n".join(lines).strip()
+        if body:
+            blocks[name] = f"{head}\n{body}"
+
+    picked, used = [], 0
+    for want in TELEGRAPH_ORDER:
+        for name, text in blocks.items():
+            if want in name and text not in picked:
+                if used + len(text) > budget and picked:
+                    break
+                picked.append(text)
+                used += len(text)
+                break
+    return "\n\n".join(picked).strip() or brief[:budget]
 
 
 def site_url(iso=None):
@@ -204,6 +170,19 @@ def rich(text):
     if last < len(text):
         nodes.append(text[last:])
     return nodes or [text]
+
+
+def cover_node(iso):
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    img = ROOT / "charts" / f"cover-{iso}.png"
+    if not repo or not img.exists():
+        return []
+    return [{"tag": "figure", "children": [
+        {"tag": "img", "attrs": {"src":
+            f"https://raw.githubusercontent.com/{repo}/main/charts/{img.name}"}},
+        {"tag": "figcaption", "children": [
+            "Ілюстрація за темами випуску. Згенеровано автоматично, "
+            "не є зображенням реальних подій."]}]}]
 
 
 def build_nodes(brief, weekly=None, iso=None):
@@ -358,7 +337,15 @@ def main():
         print(f"Немає {path.name}, публікувати нічого")
         return
 
-    brief = condense(path.read_text(encoding="utf-8").strip())
+    # Стисла версія від редактора: усі рубрики, скорочений зміст.
+    # Якщо її немає — відкат на механічний відбір рубрик.
+    short = ROOT / "issues" / f"short-{iso}.md"
+    if short.exists():
+        brief = short.read_text(encoding="utf-8").strip()
+        print(f"Стисла версія: {len(brief)} символів")
+    else:
+        brief = condense(path.read_text(encoding="utf-8").strip())
+        print(f"Стислої версії немає, скорочую механічно: {len(brief)} символів")
     wpath = ROOT / "issues" / f"weekly-{iso}.md"
     weekly = wpath.read_text(encoding="utf-8").strip() if wpath.exists() else None
 
