@@ -28,6 +28,28 @@ MAX_TOKENS = 8000
 TARGET = 4200          # запас над орієнтиром у промпті
 
 
+
+# Блок тижневого огляду не має місця у випуску: він приходить окремим
+# повідомленням і має власну сторінку. Якщо модель усе ж дописала його
+# в кінець, відрізаємо — інакше він потрапляє і в Telegraph, і на сайт.
+WEEKLY_MARK = ("ОГЛЯД ТИЖНЯ", "ТИЖДЕНЬ ОДНИМ АБЗАЦОМ", "ЩО ЗРУШИЛОСЬ",
+               "ЩО ЗГАСЛО", "ЗСУВ ОПТИКИ", "РАХУНОК ПРОГНОЗІВ",
+               "ТИЖДЕНЬ ПОПЕРЕДУ")
+
+
+def strip_weekly(text):
+    """Відрізає все від першої ознаки тижневого огляду до кінця."""
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        s = line.strip()
+        if len(s) < 60 and any(m in s.upper() for m in WEEKLY_MARK):
+            cut = "\n".join(lines[:i]).rstrip()
+            print(f"  тижневий огляд відрізано з випуску "
+                  f"({len(text) - len(cut)} символів)")
+            return cut
+    return text
+
+
 def main():
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
@@ -45,7 +67,7 @@ def main():
         print("Немає prompts/shorten.md")
         return
 
-    full = src.read_text(encoding="utf-8").strip()
+    full = strip_weekly(src.read_text(encoding="utf-8").strip())
     print(f"Скорочую {len(full)} символів...")
     short = call_api(key, system.read_text(encoding="utf-8"),
                      f"ПОВНИЙ ВИПУСК:\n{full}", MAX_TOKENS)
