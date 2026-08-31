@@ -28,6 +28,11 @@ def decide():
     if event == "workflow_dispatch" and source != "cron":
         return True, "ручний запуск з інтерфейсу — робимо завжди"
 
+    # Неділя належить тижневому огляду: він приходить об 11:00 окремим
+    # повідомленням, і ранковий бріф того ж дня лише дублював би його.
+    if datetime.now(timezone.utc).weekday() == 6:
+        return False, "неділя — виходить тільки тижневий огляд"
+
     iso = datetime.now(timezone.utc).date().isoformat()
     issue = ROOT / "issues" / f"{iso}.md"
     if not issue.exists():
