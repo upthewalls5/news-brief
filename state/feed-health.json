@@ -1,22 +1,32 @@
 {
   "Il Foglio": {
-    "fails": 18,
+    "fails": 19,
     "since": "2026-08-29",
-    "last": "2026-08-30"
+    "last": "2026-08-31"
   },
   "Milenio": {
-    "fails": 18,
+    "fails": 19,
     "since": "2026-08-29",
-    "last": "2026-08-30"
+    "last": "2026-08-31"
   },
   "Liga.net": {
-    "fails": 12,
+    "fails": 13,
     "since": "2026-08-30",
-    "last": "2026-08-30"
+    "last": "2026-08-31"
   },
   "Corriere della Sera": {
-    "fails": 7,
+    "fails": 8,
     "since": "2026-08-30",
-    "last": "2026-08-30"
+    "last": "2026-08-31"
+  },
+  "Hromadske": {
+    "fails": 1,
+    "since": "2026-08-31",
+    "last": "2026-08-31"
+  },
+  "Kathimerini": {
+    "fails": 1,
+    "since": "2026-08-31",
+    "last": "2026-08-31"
   }
 }
