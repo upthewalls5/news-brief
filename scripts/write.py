@@ -26,7 +26,7 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2026-08-30.3"
+VERSION = "2026-08-31.1"
 MODEL = "claude-sonnet-5"
 # Ліміт спільний для міркувань моделі й тексту. Міркування над дайджестом
 # на 50 тисяч токенів самі з'їдають більшу частину бюджету, тому запас
@@ -253,6 +253,17 @@ def weekly(key, today):
 
 
 def main():
+    # Режим «тільки огляд»: у неділю ранковий бріф не виходить, тому
+    # тижневий огляд генерується власним воркфлоу, а не як додаток до
+    # випуску. Дайджест і файли стану для нього не потрібні.
+    if "--weekly" in sys.argv:
+        key = os.environ.get("ANTHROPIC_API_KEY")
+        if not key:
+            sys.exit("Немає ANTHROPIC_API_KEY")
+        today = datetime.now(timezone.utc).date().isoformat()
+        weekly(key, today)
+        return
+
     print(f"write.py версія {VERSION}")
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
