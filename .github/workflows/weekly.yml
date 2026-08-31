@@ -26,8 +26,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install httpx
-      - name: Надіслати огляд тижня
+      - run: pip install -r requirements.txt
+      - name: 1. Написати огляд тижня
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/write.py --weekly
+      - name: 2. Надіслати огляд тижня
         env:
           TRIGGER_SOURCE: ${{ github.event.inputs.source || 'manual' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
