@@ -1,32 +1,47 @@
 {
-  "Il Foglio": {
-    "fails": 19,
-    "since": "2026-08-29",
-    "last": "2026-08-31"
-  },
   "Milenio": {
-    "fails": 19,
+    "fails": 20,
     "since": "2026-08-29",
-    "last": "2026-08-31"
-  },
-  "Liga.net": {
-    "fails": 13,
-    "since": "2026-08-30",
-    "last": "2026-08-31"
+    "last": "2026-09-01"
   },
   "Corriere della Sera": {
-    "fails": 8,
+    "fails": 9,
     "since": "2026-08-30",
-    "last": "2026-08-31"
+    "last": "2026-09-01"
   },
   "Hromadske": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-08-31",
-    "last": "2026-08-31"
+    "last": "2026-09-01"
   },
   "Kathimerini": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-08-31",
-    "last": "2026-08-31"
+    "last": "2026-09-01"
+  },
+  "Yicai": {
+    "fails": 1,
+    "since": "2026-09-01",
+    "last": "2026-09-01"
+  },
+  "Australian Financial Review": {
+    "fails": 1,
+    "since": "2026-09-01",
+    "last": "2026-09-01"
+  },
+  "China Times": {
+    "fails": 1,
+    "since": "2026-09-01",
+    "last": "2026-09-01"
+  },
+  "The Paper": {
+    "fails": 1,
+    "since": "2026-09-01",
+    "last": "2026-09-01"
+  },
+  "Guancha": {
+    "fails": 1,
+    "since": "2026-09-01",
+    "last": "2026-09-01"
   }
 }
