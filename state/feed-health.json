@@ -1,62 +1,37 @@
 {
   "Milenio": {
-    "fails": 21,
+    "fails": 22,
     "since": "2026-08-29",
-    "last": "2026-09-02"
+    "last": "2026-09-03"
   },
   "Corriere della Sera": {
-    "fails": 10,
+    "fails": 11,
     "since": "2026-08-30",
-    "last": "2026-09-02"
+    "last": "2026-09-03"
   },
   "Hromadske": {
-    "fails": 3,
+    "fails": 4,
     "since": "2026-08-31",
-    "last": "2026-09-02"
+    "last": "2026-09-03"
   },
   "Kathimerini": {
-    "fails": 3,
+    "fails": 4,
     "since": "2026-08-31",
-    "last": "2026-09-02"
-  },
-  "Yicai": {
-    "fails": 2,
-    "since": "2026-09-01",
-    "last": "2026-09-02"
+    "last": "2026-09-03"
   },
   "Australian Financial Review": {
-    "fails": 2,
+    "fails": 3,
     "since": "2026-09-01",
-    "last": "2026-09-02"
+    "last": "2026-09-03"
   },
   "China Times": {
-    "fails": 2,
+    "fails": 3,
     "since": "2026-09-01",
-    "last": "2026-09-02"
+    "last": "2026-09-03"
   },
-  "The Paper": {
-    "fails": 2,
-    "since": "2026-09-01",
-    "last": "2026-09-02"
-  },
-  "Suspilne": {
+  "Verstka": {
     "fails": 1,
-    "since": "2026-09-02",
-    "last": "2026-09-02"
-  },
-  "Il Foglio": {
-    "fails": 1,
-    "since": "2026-09-02",
-    "last": "2026-09-02"
-  },
-  "Caixin": {
-    "fails": 1,
-    "since": "2026-09-02",
-    "last": "2026-09-02"
-  },
-  "HotNews": {
-    "fails": 1,
-    "since": "2026-09-02",
-    "last": "2026-09-02"
+    "since": "2026-09-03",
+    "last": "2026-09-03"
   }
 }
