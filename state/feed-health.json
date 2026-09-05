@@ -1,37 +1,7 @@
 {
   "Milenio": {
-    "fails": 23,
+    "fails": 24,
     "since": "2026-08-29",
-    "last": "2026-09-04"
-  },
-  "Corriere della Sera": {
-    "fails": 12,
-    "since": "2026-08-30",
-    "last": "2026-09-04"
-  },
-  "Hromadske": {
-    "fails": 5,
-    "since": "2026-08-31",
-    "last": "2026-09-04"
-  },
-  "Kathimerini": {
-    "fails": 5,
-    "since": "2026-08-31",
-    "last": "2026-09-04"
-  },
-  "Australian Financial Review": {
-    "fails": 4,
-    "since": "2026-09-01",
-    "last": "2026-09-04"
-  },
-  "China Times": {
-    "fails": 4,
-    "since": "2026-09-01",
-    "last": "2026-09-04"
-  },
-  "Il Foglio": {
-    "fails": 1,
-    "since": "2026-09-04",
-    "last": "2026-09-04"
+    "last": "2026-09-05"
   }
 }
