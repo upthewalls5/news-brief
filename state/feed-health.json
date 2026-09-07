@@ -1,7 +1,27 @@
 {
   "Milenio": {
-    "fails": 24,
+    "fails": 25,
     "since": "2026-08-29",
-    "last": "2026-09-05"
+    "last": "2026-09-07"
+  },
+  "Corriere della Sera": {
+    "fails": 1,
+    "since": "2026-09-07",
+    "last": "2026-09-07"
+  },
+  "Liga.net": {
+    "fails": 1,
+    "since": "2026-09-07",
+    "last": "2026-09-07"
+  },
+  "Caixin": {
+    "fails": 1,
+    "since": "2026-09-07",
+    "last": "2026-09-07"
+  },
+  "Il Foglio": {
+    "fails": 1,
+    "since": "2026-09-07",
+    "last": "2026-09-07"
   }
 }
