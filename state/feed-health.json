@@ -1,27 +1,22 @@
 {
   "Milenio": {
-    "fails": 25,
+    "fails": 26,
     "since": "2026-08-29",
-    "last": "2026-09-07"
+    "last": "2026-09-08"
   },
-  "Corriere della Sera": {
+  "TVN24": {
     "fails": 1,
-    "since": "2026-09-07",
-    "last": "2026-09-07"
+    "since": "2026-09-08",
+    "last": "2026-09-08"
   },
-  "Liga.net": {
+  "Vlast.kz": {
     "fails": 1,
-    "since": "2026-09-07",
-    "last": "2026-09-07"
+    "since": "2026-09-08",
+    "last": "2026-09-08"
   },
-  "Caixin": {
+  "Daily Nation": {
     "fails": 1,
-    "since": "2026-09-07",
-    "last": "2026-09-07"
-  },
-  "Il Foglio": {
-    "fails": 1,
-    "since": "2026-09-07",
-    "last": "2026-09-07"
+    "since": "2026-09-08",
+    "last": "2026-09-08"
   }
 }
