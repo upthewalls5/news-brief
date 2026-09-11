@@ -1,22 +1,27 @@
 {
   "Milenio": {
-    "fails": 28,
+    "fails": 29,
     "since": "2026-08-29",
-    "last": "2026-09-10"
-  },
-  "TVN24": {
-    "fails": 1,
-    "since": "2026-09-10",
-    "last": "2026-09-10"
-  },
-  "Polityka": {
-    "fails": 1,
-    "since": "2026-09-10",
-    "last": "2026-09-10"
+    "last": "2026-09-11"
   },
   "What's on Weibo": {
     "fails": 1,
     "since": "2026-09-10",
     "last": "2026-09-10"
+  },
+  "Zerkalo": {
+    "fails": 1,
+    "since": "2026-09-11",
+    "last": "2026-09-11"
+  },
+  "Dzerkalo Tyzhnia": {
+    "fails": 1,
+    "since": "2026-09-11",
+    "last": "2026-09-11"
+  },
+  "Daily Nation": {
+    "fails": 1,
+    "since": "2026-09-11",
+    "last": "2026-09-11"
   }
 }
