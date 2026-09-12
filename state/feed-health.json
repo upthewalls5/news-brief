@@ -1,8 +1,8 @@
 {
   "Milenio": {
-    "fails": 29,
+    "fails": 30,
     "since": "2026-08-29",
-    "last": "2026-09-11"
+    "last": "2026-09-12"
   },
   "What's on Weibo": {
     "fails": 1,
@@ -10,18 +10,18 @@
     "last": "2026-09-10"
   },
   "Zerkalo": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-11",
-    "last": "2026-09-11"
+    "last": "2026-09-12"
   },
-  "Dzerkalo Tyzhnia": {
+  "De Standaard": {
     "fails": 1,
-    "since": "2026-09-11",
-    "last": "2026-09-11"
+    "since": "2026-09-12",
+    "last": "2026-09-12"
   },
-  "Daily Nation": {
+  "TVN24": {
     "fails": 1,
-    "since": "2026-09-11",
-    "last": "2026-09-11"
+    "since": "2026-09-12",
+    "last": "2026-09-12"
   }
 }
