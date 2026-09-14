@@ -1,27 +1,52 @@
 {
   "Milenio": {
-    "fails": 30,
+    "fails": 31,
     "since": "2026-08-29",
-    "last": "2026-09-12"
+    "last": "2026-09-14"
   },
   "What's on Weibo": {
     "fails": 1,
     "since": "2026-09-10",
     "last": "2026-09-10"
   },
-  "Zerkalo": {
-    "fails": 2,
-    "since": "2026-09-11",
-    "last": "2026-09-12"
-  },
-  "De Standaard": {
+  "Australian Financial Review": {
     "fails": 1,
-    "since": "2026-09-12",
-    "last": "2026-09-12"
+    "since": "2026-09-14",
+    "last": "2026-09-14"
   },
-  "TVN24": {
+  "Kathimerini": {
     "fails": 1,
-    "since": "2026-09-12",
-    "last": "2026-09-12"
+    "since": "2026-09-14",
+    "last": "2026-09-14"
+  },
+  "China Times": {
+    "fails": 1,
+    "since": "2026-09-14",
+    "last": "2026-09-14"
+  },
+  "Daily Nation": {
+    "fails": 1,
+    "since": "2026-09-14",
+    "last": "2026-09-14"
+  },
+  "The Paper": {
+    "fails": 1,
+    "since": "2026-09-14",
+    "last": "2026-09-14"
+  },
+  "Hromadske": {
+    "fails": 1,
+    "since": "2026-09-14",
+    "last": "2026-09-14"
+  },
+  "Corriere della Sera": {
+    "fails": 1,
+    "since": "2026-09-14",
+    "last": "2026-09-14"
+  },
+  "Liga.net": {
+    "fails": 1,
+    "since": "2026-09-14",
+    "last": "2026-09-14"
   }
 }
