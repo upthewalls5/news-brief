@@ -1,8 +1,8 @@
 {
   "Milenio": {
-    "fails": 31,
+    "fails": 32,
     "since": "2026-08-29",
-    "last": "2026-09-14"
+    "last": "2026-09-15"
   },
   "What's on Weibo": {
     "fails": 1,
@@ -10,43 +10,63 @@
     "last": "2026-09-10"
   },
   "Australian Financial Review": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-14",
-    "last": "2026-09-14"
+    "last": "2026-09-15"
   },
   "Kathimerini": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-14",
-    "last": "2026-09-14"
+    "last": "2026-09-15"
   },
   "China Times": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-14",
-    "last": "2026-09-14"
-  },
-  "Daily Nation": {
-    "fails": 1,
-    "since": "2026-09-14",
-    "last": "2026-09-14"
-  },
-  "The Paper": {
-    "fails": 1,
-    "since": "2026-09-14",
-    "last": "2026-09-14"
+    "last": "2026-09-15"
   },
   "Hromadske": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-14",
-    "last": "2026-09-14"
+    "last": "2026-09-15"
   },
   "Corriere della Sera": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-14",
-    "last": "2026-09-14"
+    "last": "2026-09-15"
   },
   "Liga.net": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-14",
-    "last": "2026-09-14"
+    "last": "2026-09-15"
+  },
+  "Fakt": {
+    "fails": 1,
+    "since": "2026-09-15",
+    "last": "2026-09-15"
+  },
+  "The Africa Report": {
+    "fails": 1,
+    "since": "2026-09-15",
+    "last": "2026-09-15"
+  },
+  "Zerkalo": {
+    "fails": 1,
+    "since": "2026-09-15",
+    "last": "2026-09-15"
+  },
+  "Guancha": {
+    "fails": 1,
+    "since": "2026-09-15",
+    "last": "2026-09-15"
+  },
+  "Al Arabiya": {
+    "fails": 1,
+    "since": "2026-09-15",
+    "last": "2026-09-15"
+  },
+  "Yicai": {
+    "fails": 1,
+    "since": "2026-09-15",
+    "last": "2026-09-15"
   }
 }
