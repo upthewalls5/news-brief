@@ -178,7 +178,7 @@
     "status": "ok",
     "feed": "https://news.zerkalo.io/rss",
     "entries": 100,
-    "newest_hours": 0.2,
+    "newest_hours": 7.6,
     "weight": "light"
   },
   {
@@ -2778,7 +2778,7 @@
     "status": "ok",
     "feed": "https://english.alarabiya.net/feed/rss2/en.xml",
     "entries": 30,
-    "newest_hours": 0.6,
+    "newest_hours": 10.0,
     "weight": "heavy"
   },
   {

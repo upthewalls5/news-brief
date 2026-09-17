@@ -1,37 +1,27 @@
 {
   "Milenio": {
-    "fails": 33,
+    "fails": 34,
     "since": "2026-08-29",
-    "last": "2026-09-16"
+    "last": "2026-09-17"
   },
   "What's on Weibo": {
     "fails": 1,
     "since": "2026-09-10",
     "last": "2026-09-10"
   },
-  "Zerkalo": {
-    "fails": 2,
-    "since": "2026-09-15",
-    "last": "2026-09-16"
-  },
-  "Guancha": {
-    "fails": 2,
-    "since": "2026-09-15",
-    "last": "2026-09-16"
-  },
-  "Al Arabiya": {
-    "fails": 2,
-    "since": "2026-09-15",
-    "last": "2026-09-16"
-  },
-  "Yicai": {
-    "fails": 2,
-    "since": "2026-09-15",
-    "last": "2026-09-16"
-  },
-  "Dzerkalo Tyzhnia": {
+  "The Paper": {
     "fails": 1,
-    "since": "2026-09-16",
-    "last": "2026-09-16"
+    "since": "2026-09-17",
+    "last": "2026-09-17"
+  },
+  "TVN24": {
+    "fails": 1,
+    "since": "2026-09-17",
+    "last": "2026-09-17"
+  },
+  "Caixin": {
+    "fails": 1,
+    "since": "2026-09-17",
+    "last": "2026-09-17"
   }
 }
