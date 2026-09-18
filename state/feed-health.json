@@ -1,27 +1,32 @@
 {
   "Milenio": {
-    "fails": 34,
+    "fails": 35,
     "since": "2026-08-29",
-    "last": "2026-09-17"
-  },
-  "What's on Weibo": {
-    "fails": 1,
-    "since": "2026-09-10",
-    "last": "2026-09-10"
-  },
-  "The Paper": {
-    "fails": 1,
-    "since": "2026-09-17",
-    "last": "2026-09-17"
+    "last": "2026-09-18"
   },
   "TVN24": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-17",
-    "last": "2026-09-17"
+    "last": "2026-09-18"
   },
-  "Caixin": {
+  "Euractiv": {
     "fails": 1,
-    "since": "2026-09-17",
-    "last": "2026-09-17"
+    "since": "2026-09-18",
+    "last": "2026-09-18"
+  },
+  "Al Arabiya": {
+    "fails": 1,
+    "since": "2026-09-18",
+    "last": "2026-09-18"
+  },
+  "Zerkalo": {
+    "fails": 1,
+    "since": "2026-09-18",
+    "last": "2026-09-18"
+  },
+  "El Universal": {
+    "fails": 1,
+    "since": "2026-09-18",
+    "last": "2026-09-18"
   }
 }
