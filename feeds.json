@@ -709,9 +709,9 @@
     "pole": "reference",
     "tier": "1",
     "status": "ok",
-    "feed": "https://euractiv.com/rss.xml",
+    "feed": "https://www.euractiv.com/feed/",
     "entries": 100,
-    "newest_hours": 1.4,
+    "newest_hours": 0.9,
     "weight": "light"
   },
   {

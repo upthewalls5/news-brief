@@ -1,13 +1,8 @@
 {
   "Milenio": {
-    "fails": 36,
+    "fails": 37,
     "since": "2026-08-29",
-    "last": "2026-09-19"
-  },
-  "Euractiv": {
-    "fails": 2,
-    "since": "2026-09-18",
-    "last": "2026-09-19"
+    "last": "2026-09-21"
   },
   "Zerkalo": {
     "fails": 2,
@@ -15,18 +10,38 @@
     "last": "2026-09-19"
   },
   "Il Foglio": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-19",
-    "last": "2026-09-19"
+    "last": "2026-09-21"
   },
-  "IRNA": {
+  "Guancha": {
     "fails": 1,
-    "since": "2026-09-19",
-    "last": "2026-09-19"
+    "since": "2026-09-21",
+    "last": "2026-09-21"
+  },
+  "Caixin": {
+    "fails": 1,
+    "since": "2026-09-21",
+    "last": "2026-09-21"
+  },
+  "Yicai": {
+    "fails": 1,
+    "since": "2026-09-21",
+    "last": "2026-09-21"
+  },
+  "Liga.net": {
+    "fails": 1,
+    "since": "2026-09-21",
+    "last": "2026-09-21"
   },
   "El Universal": {
     "fails": 1,
-    "since": "2026-09-19",
-    "last": "2026-09-19"
+    "since": "2026-09-21",
+    "last": "2026-09-21"
+  },
+  "Daily Nation": {
+    "fails": 1,
+    "since": "2026-09-21",
+    "last": "2026-09-21"
   }
 }
