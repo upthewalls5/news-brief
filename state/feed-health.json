@@ -1,37 +1,47 @@
 {
   "Milenio": {
-    "fails": 41,
+    "fails": 42,
     "since": "2026-08-29",
-    "last": "2026-09-25"
+    "last": "2026-09-26"
   },
   "Zerkalo": {
     "fails": 2,
     "since": "2026-09-18",
     "last": "2026-09-19"
   },
-  "De Standaard": {
+  "Al Arabiya": {
     "fails": 2,
-    "since": "2026-09-24",
-    "last": "2026-09-25"
+    "since": "2026-09-25",
+    "last": "2026-09-26"
+  },
+  "The Paper": {
+    "fails": 2,
+    "since": "2026-09-25",
+    "last": "2026-09-26"
+  },
+  "Euractiv": {
+    "fails": 2,
+    "since": "2026-09-25",
+    "last": "2026-09-26"
   },
   "El Universal": {
     "fails": 1,
-    "since": "2026-09-25",
-    "last": "2026-09-25"
+    "since": "2026-09-26",
+    "last": "2026-09-26"
   },
-  "Al Arabiya": {
+  "Corriere della Sera": {
     "fails": 1,
-    "since": "2026-09-25",
-    "last": "2026-09-25"
+    "since": "2026-09-26",
+    "last": "2026-09-26"
   },
-  "The Paper": {
+  "Il Foglio": {
     "fails": 1,
-    "since": "2026-09-25",
-    "last": "2026-09-25"
+    "since": "2026-09-26",
+    "last": "2026-09-26"
   },
-  "Euractiv": {
+  "Guancha": {
     "fails": 1,
-    "since": "2026-09-25",
-    "last": "2026-09-25"
+    "since": "2026-09-26",
+    "last": "2026-09-26"
   }
 }
