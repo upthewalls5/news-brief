@@ -1,10 +1,10 @@
 # Звіт перевірки стрічок
 
-Дата: 2026-09-20 07:32 UTC
+Дата: 2026-09-27 07:40 UTC
 
 - Перевірено видань: **282**
-- Живих стрічок: **239** (легких 190, важких 49)
-- Не вдалося: **43**
+- Живих стрічок: **240** (легких 190, важких 50)
+- Не вдалося: **42**
 
 ## Не вдалося — потрібна заміна
 
@@ -12,37 +12,36 @@
 |---|---|---|
 | Australia | Australian Financial Review | HTTP 404  [https://www.afr.com/rss/world] |
 | Belarus | Nasha Niva | HTTP 404  [https://nashaniva.com/feed/] |
-| Belarus | Zerkalo | HTTP 403 (chrome110: HTTP 403)  [https://news.zerkalo.io/feed/] |
 | Brazil | Estadao | HTTP 404  [https://www.estadao.com.br/rss/ultimas.xml] |
 | Bulgaria | Capital | HTTP 403 (chrome110: HTTP 403)  [https://www.capital.bg/rss/] |
-| China | Global Times | застаріла: найновіше 679.4 год тому (поріг 168)  [https://www.globaltimes.cn/rss/outbrain.xml] |
-| China | People's Daily | застаріла: найновіше 132010.5 год тому (поріг 168)  [http://en.people.cn/rss/China.xml] |
-| China | Xinhua | застаріла: найновіше 75871.4 год тому (поріг 168)  [http://www.news.cn/english/rss/worldrss.xml] |
-| Germany | Die Zeit | HTTP 403 (chrome110: HTTP 403)  [https://zeit.de/rss] |
+| China | Global Times | застаріла: найновіше 847.6 год тому (поріг 168)  [https://www.globaltimes.cn/rss/outbrain.xml] |
+| China | People's Daily | застаріла: найновіше 132178.6 год тому (поріг 168)  [http://en.people.cn/rss/China.xml] |
+| China | Xinhua | застаріла: найновіше 76039.6 год тому (поріг 168)  [http://www.news.cn/english/rss/worldrss.xml] |
 | Greece | Kathimerini | HTTP 403 (chrome110: HTTP 403)  [https://www.ekathimerini.com/feed/] |
 | India | The Indian Express | HTTP 403 (chrome110: HTTP 403)  [https://indianexpress.com/section/world/feed/] |
 | India | The Wire | HTTP 403 (chrome110: HTTP 403)  [https://m.thewire.in/rss] |
 | India | ThePrint | не парситься: SAXParseException  [https://theprint.in/feed/] |
-| Iran | Amwaj.media | HTTP 429 (chrome110: HTTP 429)  [https://amwaj.media/rss] |
 | Iran | Etemad | HTTP 404  [https://www.etemadnewspaper.ir/fa/rss/allnews] |
 | Iran | Fars News | не парситься: SAXParseException  [https://www.farsnews.ir/rss/allnews] |
 | Iran | Tasnim | ConnectError: [Errno -2] Name or service not known  [https://www.tasnimnews.com/fa/rss/feed/0/7/0/] |
 | Israel | Calcalist | HTTP 403 (chrome110: HTTP 403)  [https://www.calcalist.co.il/GeneralRSS/0,16335,L-8,00.xml] |
 | Israel | The Times of Israel | HTTP 403 (chrome110: HTTP 403)  [https://www.timesofisrael.com/feed/] |
-| Italy | Corriere della Sera | застаріла: найновіше 20641.3 год тому (поріг 168)  [https://www.corriere.it/rss/homepage.xml] |
+| Italy | Corriere della Sera | застаріла: найновіше 20809.5 год тому (поріг 168)  [https://www.corriere.it/rss/homepage.xml] |
 | Italy | Il Foglio | HTTP 404  [https://www.ilfoglio.it/rss/home.xml] |
 | Japan | Kyodo News | HTTP 404  [https://english.kyodonews.net/rss/all.xml] |
 | Japan | Sankei Shimbun | HTTP 404  [https://www.sankei.com/rss/news/points.xml] |
-| Kazakhstan | Orda.kz | застаріла: найновіше 469.7 год тому (поріг 168)  [https://orda.kz/feed/] |
+| Kazakhstan | Orda.kz | застаріла: найновіше 637.8 год тому (поріг 168)  [https://orda.kz/feed/] |
 | Kazakhstan | Tengrinews | HTTP 404  [https://tengrinews.kz/userdata/rss/rss.xml] |
+| Kenya | Daily Nation | HTTP 403 (chrome110: HTTP 403)  [https://nation.africa/kenya/rss] |
 | Mexico | Animal Politico | HTTP 404  [https://animalpolitico.com/feed/] |
 | Mexico | Aristegui Noticias | стрічка порожня  [https://aristeguinoticias.com/feed/] |
 | Mexico | Milenio | HTTP 403 (chrome110: HTTP 404)  [https://www.milenio.com/rss] |
 | Norway | Dagens Naeringsliv | не парситься: SAXParseException  [https://www.dn.no/rss] |
 | Poland | PAP | не парситься: SAXParseException  [https://www.pap.pl/rss.xml] |
+| Poland | TVN24 | HTTP 403 (chrome110: HTTP 403)  [https://tvn24.pl/najnowsze.xml] |
 | Russia | Faridaily | HTTP 403 (chrome110: HTTP 403)  [https://faridaily.substack.com/feed] |
-| Russia | TASS | ConnectTimeout:   [https://tass.ru/rss/v2.xml] |
 | South Korea | JoongAng Ilbo | HTTP 404  [https://koreajoongangdaily.joins.com/rss] |
+| South Korea | KBS | HTTP 404  [http://world.kbs.co.kr/rss/rss_news.htm?lang=e] |
 | Taiwan | China Times | HTTP 403 (chrome110: HTTP 404)  [https://www.chinatimes.com/rss/politic.xml] |
 | Turkey | Gazete Duvar | HTTP 403 (chrome110: HTTP 403)  [https://www.gazeteduvar.com.tr/rss] |
 | Turkey | T24 | не парситься: SAXParseException  [https://t24.com.tr/rss] |
@@ -78,6 +77,7 @@
 - Hungary · 444
 - India · Scroll.in
 - India · Times Now
+- Iran · Amwaj.media
 - Ireland · The Irish Times
 - Israel · Israel Hayom
 - Kazakhstan · Kazinform
