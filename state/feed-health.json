@@ -1,22 +1,42 @@
 {
   "Milenio": {
-    "fails": 43,
+    "fails": 44,
     "since": "2026-08-29",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
   },
   "Il Foglio": {
-    "fails": 2,
+    "fails": 3,
     "since": "2026-09-26",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
+  },
+  "De Standaard": {
+    "fails": 1,
+    "since": "2026-09-29",
+    "last": "2026-09-29"
   },
   "El Universal": {
     "fails": 1,
-    "since": "2026-09-28",
-    "last": "2026-09-28"
+    "since": "2026-09-29",
+    "last": "2026-09-29"
   },
-  "Liga.net": {
+  "Yicai": {
     "fails": 1,
-    "since": "2026-09-28",
-    "last": "2026-09-28"
+    "since": "2026-09-29",
+    "last": "2026-09-29"
+  },
+  "Guancha": {
+    "fails": 1,
+    "since": "2026-09-29",
+    "last": "2026-09-29"
+  },
+  "Telex": {
+    "fails": 1,
+    "since": "2026-09-29",
+    "last": "2026-09-29"
+  },
+  "Al Arabiya": {
+    "fails": 1,
+    "since": "2026-09-29",
+    "last": "2026-09-29"
   }
 }
