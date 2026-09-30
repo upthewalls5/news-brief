@@ -1,42 +1,42 @@
 {
   "Milenio": {
-    "fails": 44,
+    "fails": 45,
     "since": "2026-08-29",
-    "last": "2026-09-29"
+    "last": "2026-09-30"
   },
   "Il Foglio": {
-    "fails": 3,
+    "fails": 4,
     "since": "2026-09-26",
-    "last": "2026-09-29"
+    "last": "2026-09-30"
   },
   "De Standaard": {
-    "fails": 1,
+    "fails": 2,
     "since": "2026-09-29",
-    "last": "2026-09-29"
+    "last": "2026-09-30"
+  },
+  "Telex": {
+    "fails": 2,
+    "since": "2026-09-29",
+    "last": "2026-09-30"
+  },
+  "Al Arabiya": {
+    "fails": 2,
+    "since": "2026-09-29",
+    "last": "2026-09-30"
+  },
+  "Taipei Times": {
+    "fails": 1,
+    "since": "2026-09-30",
+    "last": "2026-09-30"
+  },
+  "The Japan Times": {
+    "fails": 1,
+    "since": "2026-09-30",
+    "last": "2026-09-30"
   },
   "El Universal": {
     "fails": 1,
-    "since": "2026-09-29",
-    "last": "2026-09-29"
-  },
-  "Yicai": {
-    "fails": 1,
-    "since": "2026-09-29",
-    "last": "2026-09-29"
-  },
-  "Guancha": {
-    "fails": 1,
-    "since": "2026-09-29",
-    "last": "2026-09-29"
-  },
-  "Telex": {
-    "fails": 1,
-    "since": "2026-09-29",
-    "last": "2026-09-29"
-  },
-  "Al Arabiya": {
-    "fails": 1,
-    "since": "2026-09-29",
-    "last": "2026-09-29"
+    "since": "2026-09-30",
+    "last": "2026-09-30"
   }
 }
