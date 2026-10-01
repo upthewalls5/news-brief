@@ -191,7 +191,7 @@
     "status": "ok",
     "feed": "https://www.standaard.be/rss/section/1f2838d4-99ea-49f0-9102-138784c7ea7c",
     "entries": 50,
-    "newest_hours": 0.2,
+    "newest_hours": 4.2,
     "weight": "light"
   },
   {
@@ -2765,7 +2765,7 @@
     "status": "ok",
     "feed": "https://english.alarabiya.net/feed/rss2/en.xml",
     "entries": 30,
-    "newest_hours": 8.5,
+    "newest_hours": 7.4,
     "weight": "heavy"
   },
   {
